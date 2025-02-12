@@ -15,8 +15,9 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./app/*"]
+      "@/*": ["./app/*"]
     },
-    "noEmit": true
+    "noEmit": true,
+    "types": ["vite-plugin-pwa/client"]
   }
 }
