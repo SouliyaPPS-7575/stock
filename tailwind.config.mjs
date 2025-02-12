@@ -8,7 +8,7 @@ export default {
     './app/layouts/**/*.{js,ts,jsx,tsx,mdx}',
     './app/components/**/*.{js,ts,jsx,tsx,mdx}',
     './node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}',
-    'node_modules/@heroui/react/**/*.js',
+    './node_modules/@heroui/react/**/*.js',
   ],
   theme: {
     extend: {
