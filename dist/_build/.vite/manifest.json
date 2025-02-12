@@ -1,184 +1,150 @@
 {
   "/Users/souliya/Documents/FullStackDev/stock/app/styles/app.css": {
-    "file": "assets/app-DU2gGyHe.css",
+    "file": "assets/app-D9nu_773.css",
     "src": "/Users/souliya/Documents/FullStackDev/stock/app/styles/app.css"
   },
-  "_client-HT1YWBzE.js": {
-    "file": "assets/client-HT1YWBzE.js",
+  "_chunk-5PILOUBS-B9-PK6zT.js": {
+    "file": "assets/chunk-5PILOUBS-B9-PK6zT.js",
+    "name": "chunk-5PILOUBS",
+    "imports": [
+      "_client-DU0zCAyp.js"
+    ]
+  },
+  "_client-DU0zCAyp.js": {
+    "file": "assets/client-DU0zCAyp.js",
     "name": "client",
     "dynamicImports": [
-      "app/routes/users.tsx?tsr-split=component",
-      "app/routes/posts.tsx?tsr-split=component",
+      "node_modules/@heroui/dom-animation/dist/index.mjs",
+      "node_modules/@heroui/dom-animation/dist/index.mjs",
+      "node_modules/@heroui/dom-animation/dist/index.mjs",
+      "node_modules/@heroui/dom-animation/dist/index.mjs",
+      "node_modules/@heroui/dom-animation/dist/index.mjs",
+      "app/routes/login.tsx?tsr-split=component",
       "app/routes/deferred.tsx?tsr-split=component",
-      "app/routes/_layout.tsx?tsr-split=component",
       "app/routes/index.tsx?tsr-split=component",
-      "app/routes/users.index.tsx?tsr-split=component",
-      "app/routes/posts.index.tsx?tsr-split=component",
-      "app/routes/users.$userId.tsx?tsr-split=notFoundComponent",
-      "app/routes/users.$userId.tsx?tsr-split=component",
-      "app/routes/posts.$postId.tsx?tsr-split=notFoundComponent",
-      "app/routes/posts.$postId.tsx?tsr-split=component",
-      "app/routes/_layout/_layout-2.tsx?tsr-split=component",
-      "app/routes/posts_.$postId.deep.tsx?tsr-split=component",
-      "app/routes/posts_.$postId.deep.tsx?tsr-split=errorComponent",
-      "app/routes/_layout/_layout-2/layout-b.tsx?tsr-split=component",
-      "app/routes/_layout/_layout-2/layout-a.tsx?tsr-split=component"
+      "app/routes/users/index.tsx?tsr-split=component",
+      "app/routes/products/index.tsx?tsr-split=component",
+      "app/routes/categories/index.tsx?tsr-split=component",
+      "app/routes/products/edit.tsx?tsr-split=component",
+      "app/routes/products/view.$id.tsx?tsr-split=component"
     ],
     "assets": [
-      "assets/app-DU2gGyHe.css"
+      "assets/app-D9nu_773.css"
     ]
   },
-  "app/routes/_layout.tsx?tsr-split=component": {
-    "file": "assets/_layout-Du9RT8RW.js",
-    "name": "_layout",
-    "src": "app/routes/_layout.tsx?tsr-split=component",
-    "isDynamicEntry": true,
+  "_useBaseQuery-BQzYFG3S.js": {
+    "file": "assets/useBaseQuery-BQzYFG3S.js",
+    "name": "useBaseQuery",
     "imports": [
-      "_client-HT1YWBzE.js"
+      "_client-DU0zCAyp.js"
     ]
   },
-  "app/routes/_layout/_layout-2.tsx?tsr-split=component": {
-    "file": "assets/_layout-2-DKxaxIe4.js",
-    "name": "_layout-2",
-    "src": "app/routes/_layout/_layout-2.tsx?tsr-split=component",
-    "isDynamicEntry": true,
+  "_useView-DdCIs3Mw.js": {
+    "file": "assets/useView-DdCIs3Mw.js",
+    "name": "useView",
     "imports": [
-      "_client-HT1YWBzE.js"
+      "_client-DU0zCAyp.js",
+      "_useBaseQuery-BQzYFG3S.js"
     ]
   },
-  "app/routes/_layout/_layout-2/layout-a.tsx?tsr-split=component": {
-    "file": "assets/layout-a-Cmw0HZA8.js",
-    "name": "layout-a",
-    "src": "app/routes/_layout/_layout-2/layout-a.tsx?tsr-split=component",
+  "app/routes/categories/index.tsx?tsr-split=component": {
+    "file": "assets/index-D0okCv9r.js",
+    "name": "index",
+    "src": "app/routes/categories/index.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-HT1YWBzE.js"
-    ]
-  },
-  "app/routes/_layout/_layout-2/layout-b.tsx?tsr-split=component": {
-    "file": "assets/layout-b-k9NRZrTJ.js",
-    "name": "layout-b",
-    "src": "app/routes/_layout/_layout-2/layout-b.tsx?tsr-split=component",
-    "isDynamicEntry": true,
-    "imports": [
-      "_client-HT1YWBzE.js"
+      "_client-DU0zCAyp.js"
+    ],
+    "dynamicImports": [
+      "node_modules/@heroui/dom-animation/dist/index.mjs"
     ]
   },
   "app/routes/deferred.tsx?tsr-split=component": {
-    "file": "assets/deferred-Be5-NqHR.js",
+    "file": "assets/deferred-CIlHlRA0.js",
     "name": "deferred",
     "src": "app/routes/deferred.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-HT1YWBzE.js"
+      "_client-DU0zCAyp.js"
     ]
   },
   "app/routes/index.tsx?tsr-split=component": {
-    "file": "assets/index-BBBDMoji.js",
+    "file": "assets/index-4caWhqkJ.js",
     "name": "index",
     "src": "app/routes/index.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-HT1YWBzE.js"
+      "_client-DU0zCAyp.js"
     ]
   },
-  "app/routes/posts.$postId.tsx?tsr-split=component": {
-    "file": "assets/posts._postId-COi5wao0.js",
-    "name": "posts._postId",
-    "src": "app/routes/posts.$postId.tsx?tsr-split=component",
+  "app/routes/login.tsx?tsr-split=component": {
+    "file": "assets/login-D2dEAcrO.js",
+    "name": "login",
+    "src": "app/routes/login.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-HT1YWBzE.js"
+      "_client-DU0zCAyp.js"
     ]
   },
-  "app/routes/posts.$postId.tsx?tsr-split=notFoundComponent": {
-    "file": "assets/posts._postId-D2U6wOw6.js",
-    "name": "posts._postId",
-    "src": "app/routes/posts.$postId.tsx?tsr-split=notFoundComponent",
+  "app/routes/products/edit.tsx?tsr-split=component": {
+    "file": "assets/edit-CPJRTQHG.js",
+    "name": "edit",
+    "src": "app/routes/products/edit.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-HT1YWBzE.js"
+      "_client-DU0zCAyp.js",
+      "_useView-DdCIs3Mw.js",
+      "_useBaseQuery-BQzYFG3S.js"
     ]
   },
-  "app/routes/posts.index.tsx?tsr-split=component": {
-    "file": "assets/posts.index-DisDkGBu.js",
-    "name": "posts.index",
-    "src": "app/routes/posts.index.tsx?tsr-split=component",
+  "app/routes/products/index.tsx?tsr-split=component": {
+    "file": "assets/index-8pZ4ZClP.js",
+    "name": "index",
+    "src": "app/routes/products/index.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-HT1YWBzE.js"
+      "_client-DU0zCAyp.js",
+      "_chunk-5PILOUBS-B9-PK6zT.js",
+      "_useBaseQuery-BQzYFG3S.js"
     ]
   },
-  "app/routes/posts.tsx?tsr-split=component": {
-    "file": "assets/posts-Da8_RYBm.js",
-    "name": "posts",
-    "src": "app/routes/posts.tsx?tsr-split=component",
+  "app/routes/products/view.$id.tsx?tsr-split=component": {
+    "file": "assets/view._id-B4aOb-BC.js",
+    "name": "view._id",
+    "src": "app/routes/products/view.$id.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-HT1YWBzE.js"
+      "_client-DU0zCAyp.js",
+      "_useView-DdCIs3Mw.js",
+      "_chunk-5PILOUBS-B9-PK6zT.js",
+      "_useBaseQuery-BQzYFG3S.js"
     ]
   },
-  "app/routes/posts_.$postId.deep.tsx?tsr-split=component": {
-    "file": "assets/posts_._postId.deep-DjppqH4G.js",
-    "name": "posts_._postId.deep",
-    "src": "app/routes/posts_.$postId.deep.tsx?tsr-split=component",
+  "app/routes/users/index.tsx?tsr-split=component": {
+    "file": "assets/index-sxeLv2TQ.js",
+    "name": "index",
+    "src": "app/routes/users/index.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-HT1YWBzE.js"
+      "_client-DU0zCAyp.js"
     ]
   },
-  "app/routes/posts_.$postId.deep.tsx?tsr-split=errorComponent": {
-    "file": "assets/posts_._postId.deep-POaYYyot.js",
-    "name": "posts_._postId.deep",
-    "src": "app/routes/posts_.$postId.deep.tsx?tsr-split=errorComponent",
+  "node_modules/@heroui/dom-animation/dist/index.mjs": {
+    "file": "assets/index-kAjUObse.js",
+    "name": "index",
+    "src": "node_modules/@heroui/dom-animation/dist/index.mjs",
     "isDynamicEntry": true,
     "imports": [
-      "_client-HT1YWBzE.js"
-    ]
-  },
-  "app/routes/users.$userId.tsx?tsr-split=component": {
-    "file": "assets/users._userId-DuJzdw9b.js",
-    "name": "users._userId",
-    "src": "app/routes/users.$userId.tsx?tsr-split=component",
-    "isDynamicEntry": true,
-    "imports": [
-      "_client-HT1YWBzE.js"
-    ]
-  },
-  "app/routes/users.$userId.tsx?tsr-split=notFoundComponent": {
-    "file": "assets/users._userId-B0lAzKuh.js",
-    "name": "users._userId",
-    "src": "app/routes/users.$userId.tsx?tsr-split=notFoundComponent",
-    "isDynamicEntry": true,
-    "imports": [
-      "_client-HT1YWBzE.js"
-    ]
-  },
-  "app/routes/users.index.tsx?tsr-split=component": {
-    "file": "assets/users.index-CV_eQ6R2.js",
-    "name": "users.index",
-    "src": "app/routes/users.index.tsx?tsr-split=component",
-    "isDynamicEntry": true,
-    "imports": [
-      "_client-HT1YWBzE.js"
-    ]
-  },
-  "app/routes/users.tsx?tsr-split=component": {
-    "file": "assets/users-CT2GMDdC.js",
-    "name": "users",
-    "src": "app/routes/users.tsx?tsr-split=component",
-    "isDynamicEntry": true,
-    "imports": [
-      "_client-HT1YWBzE.js"
+      "_client-DU0zCAyp.js"
     ]
   },
   "virtual:$vinxi/handler/client": {
-    "file": "assets/client-BhgxrHU_.js",
+    "file": "assets/client-DnlapjMG.js",
     "name": "client",
     "src": "virtual:$vinxi/handler/client",
     "isEntry": true,
     "imports": [
-      "_client-HT1YWBzE.js"
+      "_client-DU0zCAyp.js"
     ]
   }
 }

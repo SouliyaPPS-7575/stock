@@ -1,4 +1,4 @@
-import ae from 'redaxios';
+import i from 'redaxios';
 import { C } from '../nitro/nitro.mjs';
 import { u as u$1 } from './json-Bq9mxVgN.mjs';
 import 'node:http';
@@ -17,8 +17,24 @@ import '@tanstack/react-router';
 import 'tiny-invariant';
 import 'node:async_hooks';
 import 'react/jsx-runtime';
-import '@tanstack/router-devtools';
 import 'react';
+import '@heroui/link';
+import '@heroui/navbar';
+import '@heroui/theme';
+import 'clsx';
+import '@react-aria/visually-hidden';
+import '@heroui/switch';
+import 'pocketbase';
+import '@heroui/modal';
+import '@heroui/react';
+import '@tanstack/react-query';
+import 'react-toastify';
+import '@tanstack/react-query-devtools';
+import '@tanstack/router-devtools';
+import 'react-icons/fa';
+import '@cloudinary/url-gen/actions/resize';
+import '@cloudinary/url-gen';
+import '@heroui/form';
 import 'jsesc';
 import 'isbot';
 import 'react-dom/server';
@@ -26,7 +42,7 @@ import 'node:stream/web';
 
 const u = C("/api/users")({ GET: async ({ request: e }) => {
   console.info("Fetching users... @", e.url);
-  const t = (await ae.get("https://jsonplaceholder.typicode.com/users")).data.slice(0, 10);
+  const t = (await i.get("https://jsonplaceholder.typicode.com/users")).data.slice(0, 10);
   return u$1(t.map((o) => ({ id: o.id, name: o.name, email: o.email })));
 } });
 

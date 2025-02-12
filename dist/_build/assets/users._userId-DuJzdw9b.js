@@ -1,1 +1,0 @@
-import{c as n,j as e}from"./client-HT1YWBzE.js";const a=function(){const s=n.useLoaderData();return e.jsxs("div",{className:"space-y-2",children:[e.jsx("h4",{className:"text-xl font-bold underline",children:s.name}),e.jsx("div",{className:"text-sm",children:s.email})]})};export{a as component};
