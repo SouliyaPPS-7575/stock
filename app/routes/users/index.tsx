@@ -1,9 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/users/')({
-  component: UsersIndexComponent,
+  component: RouteComponent,
 })
 
-function UsersIndexComponent() {
-  return <div>Select a user.</div>
+function RouteComponent() {
+  return <div>Hello "/users/"!</div>
 }

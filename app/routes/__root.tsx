@@ -1,11 +1,22 @@
-import { Link, Outlet, createRootRoute } from '@tanstack/react-router';
+import { DefaultCatchBoundary } from '@/components/DefaultCatchBoundary';
+import { NotFound } from '@/components/NotFound';
+import DefaultLayout from '@/layouts/default';
+import { router } from '@/router';
+import { queryClient } from '@/services/queryClient';
+import appCss from '@/styles/app.css?url';
+import { seo } from '@/utils/seo';
+import { HeroUIProvider } from '@heroui/react';
+import { QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import {
+  createRootRoute,
+  NavigateOptions,
+  Outlet,
+  ToOptions,
+} from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 import { Meta, Scripts } from '@tanstack/start';
 import * as React from 'react';
-import { DefaultCatchBoundary } from '@/components/DefaultCatchBoundary';
-import { NotFound } from '@/components/NotFound';
-import appCss from '@/styles/app.css?url';
-import { seo } from '@/utils/seo';
 
 export const Route = createRootRoute({
   head: () => ({
@@ -19,8 +30,8 @@ export const Route = createRootRoute({
       },
       ...seo({
         title:
-          'TanStack Start | Type-Safe, Client-First, Full-Stack React Framework',
-        description: `TanStack Start is a type-safe, client-first, full-stack React framework. `,
+          'Stock',
+        description: `Stock`,
       }),
     ],
     links: [
@@ -65,6 +76,13 @@ function RootComponent() {
   );
 }
 
+declare module '@react-types/shared' {
+  interface RouterConfig {
+    href: ToOptions['to'];
+    routerOptions: Omit<NavigateOptions, keyof ToOptions>;
+  }
+}
+
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
     <html>
@@ -72,7 +90,19 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <Meta />
       </head>
       <body>
-        {children}
+        <HeroUIProvider
+          navigate={(to, options) => router.navigate({ to, ...options })}
+          useHref={(to) => router.buildLocation({ to }).href}
+        >
+          <QueryClientProvider client={queryClient}>
+            <DefaultLayout>
+              <section className='flex flex-col items-center justify-center gap-1 py-1 md:py-0'>
+                {children}
+              </section>
+            </DefaultLayout>
+            <ReactQueryDevtools initialIsOpen={false} />
+          </QueryClientProvider>
+        </HeroUIProvider>
         <TanStackRouterDevtools position='bottom-right' />
         <Scripts />
       </body>

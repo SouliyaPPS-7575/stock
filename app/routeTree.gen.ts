@@ -11,46 +11,27 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as UsersImport } from './routes/users'
-import { Route as RedirectImport } from './routes/redirect'
-import { Route as PostsImport } from './routes/posts'
+import { Route as LoginImport } from './routes/login'
 import { Route as DeferredImport } from './routes/deferred'
-import { Route as LayoutImport } from './routes/_layout'
 import { Route as IndexImport } from './routes/index'
-import { Route as UsersIndexImport } from './routes/users.index'
-import { Route as PostsIndexImport } from './routes/posts.index'
-import { Route as UsersUserIdImport } from './routes/users.$userId'
-import { Route as PostsPostIdImport } from './routes/posts.$postId'
-import { Route as PostsPostIdDeepImport } from './routes/posts_.$postId.deep'
+import { Route as UsersIndexImport } from './routes/users/index'
+import { Route as ProductsIndexImport } from './routes/products/index'
+import { Route as CategoriesIndexImport } from './routes/categories/index'
+import { Route as ProductsEditImport } from './routes/products/edit'
+import { Route as ProductsCreateImport } from './routes/products/create'
+import { Route as ProductsViewIdImport } from './routes/products/view.$id'
 
 // Create/Update Routes
 
-const UsersRoute = UsersImport.update({
-  id: '/users',
-  path: '/users',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const RedirectRoute = RedirectImport.update({
-  id: '/redirect',
-  path: '/redirect',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const PostsRoute = PostsImport.update({
-  id: '/posts',
-  path: '/posts',
+const LoginRoute = LoginImport.update({
+  id: '/login',
+  path: '/login',
   getParentRoute: () => rootRoute,
 } as any)
 
 const DeferredRoute = DeferredImport.update({
   id: '/deferred',
   path: '/deferred',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const LayoutRoute = LayoutImport.update({
-  id: '/_layout',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -61,32 +42,38 @@ const IndexRoute = IndexImport.update({
 } as any)
 
 const UsersIndexRoute = UsersIndexImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => UsersRoute,
+  id: '/users/',
+  path: '/users/',
+  getParentRoute: () => rootRoute,
 } as any)
 
-const PostsIndexRoute = PostsIndexImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => PostsRoute,
+const ProductsIndexRoute = ProductsIndexImport.update({
+  id: '/products/',
+  path: '/products/',
+  getParentRoute: () => rootRoute,
 } as any)
 
-const UsersUserIdRoute = UsersUserIdImport.update({
-  id: '/$userId',
-  path: '/$userId',
-  getParentRoute: () => UsersRoute,
+const CategoriesIndexRoute = CategoriesIndexImport.update({
+  id: '/categories/',
+  path: '/categories/',
+  getParentRoute: () => rootRoute,
 } as any)
 
-const PostsPostIdRoute = PostsPostIdImport.update({
-  id: '/$postId',
-  path: '/$postId',
-  getParentRoute: () => PostsRoute,
+const ProductsEditRoute = ProductsEditImport.update({
+  id: '/products/edit',
+  path: '/products/edit',
+  getParentRoute: () => rootRoute,
 } as any)
 
-const PostsPostIdDeepRoute = PostsPostIdDeepImport.update({
-  id: '/posts_/$postId/deep',
-  path: '/posts/$postId/deep',
+const ProductsCreateRoute = ProductsCreateImport.update({
+  id: '/products/create',
+  path: '/products/create',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ProductsViewIdRoute = ProductsViewIdImport.update({
+  id: '/products/view/$id',
+  path: '/products/view/$id',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -101,13 +88,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
-    '/_layout': {
-      id: '/_layout'
-      path: ''
-      fullPath: ''
-      preLoaderRoute: typeof LayoutImport
-      parentRoute: typeof rootRoute
-    }
     '/deferred': {
       id: '/deferred'
       path: '/deferred'
@@ -115,60 +95,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DeferredImport
       parentRoute: typeof rootRoute
     }
-    '/posts': {
-      id: '/posts'
-      path: '/posts'
-      fullPath: '/posts'
-      preLoaderRoute: typeof PostsImport
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginImport
       parentRoute: typeof rootRoute
     }
-    '/redirect': {
-      id: '/redirect'
-      path: '/redirect'
-      fullPath: '/redirect'
-      preLoaderRoute: typeof RedirectImport
+    '/products/create': {
+      id: '/products/create'
+      path: '/products/create'
+      fullPath: '/products/create'
+      preLoaderRoute: typeof ProductsCreateImport
       parentRoute: typeof rootRoute
     }
-    '/users': {
-      id: '/users'
-      path: '/users'
-      fullPath: '/users'
-      preLoaderRoute: typeof UsersImport
+    '/products/edit': {
+      id: '/products/edit'
+      path: '/products/edit'
+      fullPath: '/products/edit'
+      preLoaderRoute: typeof ProductsEditImport
       parentRoute: typeof rootRoute
     }
-    '/posts/$postId': {
-      id: '/posts/$postId'
-      path: '/$postId'
-      fullPath: '/posts/$postId'
-      preLoaderRoute: typeof PostsPostIdImport
-      parentRoute: typeof PostsImport
+    '/categories/': {
+      id: '/categories/'
+      path: '/categories'
+      fullPath: '/categories'
+      preLoaderRoute: typeof CategoriesIndexImport
+      parentRoute: typeof rootRoute
     }
-    '/users/$userId': {
-      id: '/users/$userId'
-      path: '/$userId'
-      fullPath: '/users/$userId'
-      preLoaderRoute: typeof UsersUserIdImport
-      parentRoute: typeof UsersImport
-    }
-    '/posts/': {
-      id: '/posts/'
-      path: '/'
-      fullPath: '/posts/'
-      preLoaderRoute: typeof PostsIndexImport
-      parentRoute: typeof PostsImport
+    '/products/': {
+      id: '/products/'
+      path: '/products'
+      fullPath: '/products'
+      preLoaderRoute: typeof ProductsIndexImport
+      parentRoute: typeof rootRoute
     }
     '/users/': {
       id: '/users/'
-      path: '/'
-      fullPath: '/users/'
+      path: '/users'
+      fullPath: '/users'
       preLoaderRoute: typeof UsersIndexImport
-      parentRoute: typeof UsersImport
+      parentRoute: typeof rootRoute
     }
-    '/posts_/$postId/deep': {
-      id: '/posts_/$postId/deep'
-      path: '/posts/$postId/deep'
-      fullPath: '/posts/$postId/deep'
-      preLoaderRoute: typeof PostsPostIdDeepImport
+    '/products/view/$id': {
+      id: '/products/view/$id'
+      path: '/products/view/$id'
+      fullPath: '/products/view/$id'
+      preLoaderRoute: typeof ProductsViewIdImport
       parentRoute: typeof rootRoute
     }
   }
@@ -176,130 +149,102 @@ declare module '@tanstack/react-router' {
 
 // Create and export the route tree
 
-interface PostsRouteChildren {
-  PostsPostIdRoute: typeof PostsPostIdRoute
-  PostsIndexRoute: typeof PostsIndexRoute
-}
-
-const PostsRouteChildren: PostsRouteChildren = {
-  PostsPostIdRoute: PostsPostIdRoute,
-  PostsIndexRoute: PostsIndexRoute,
-}
-
-const PostsRouteWithChildren = PostsRoute._addFileChildren(PostsRouteChildren)
-
-interface UsersRouteChildren {
-  UsersUserIdRoute: typeof UsersUserIdRoute
-  UsersIndexRoute: typeof UsersIndexRoute
-}
-
-const UsersRouteChildren: UsersRouteChildren = {
-  UsersUserIdRoute: UsersUserIdRoute,
-  UsersIndexRoute: UsersIndexRoute,
-}
-
-const UsersRouteWithChildren = UsersRoute._addFileChildren(UsersRouteChildren)
-
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '': typeof LayoutRoute
   '/deferred': typeof DeferredRoute
-  '/posts': typeof PostsRouteWithChildren
-  '/redirect': typeof RedirectRoute
-  '/users': typeof UsersRouteWithChildren
-  '/posts/$postId': typeof PostsPostIdRoute
-  '/users/$userId': typeof UsersUserIdRoute
-  '/posts/': typeof PostsIndexRoute
-  '/users/': typeof UsersIndexRoute
-  '/posts/$postId/deep': typeof PostsPostIdDeepRoute
+  '/login': typeof LoginRoute
+  '/products/create': typeof ProductsCreateRoute
+  '/products/edit': typeof ProductsEditRoute
+  '/categories': typeof CategoriesIndexRoute
+  '/products': typeof ProductsIndexRoute
+  '/users': typeof UsersIndexRoute
+  '/products/view/$id': typeof ProductsViewIdRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '': typeof LayoutRoute
   '/deferred': typeof DeferredRoute
-  '/redirect': typeof RedirectRoute
-  '/posts/$postId': typeof PostsPostIdRoute
-  '/users/$userId': typeof UsersUserIdRoute
-  '/posts': typeof PostsIndexRoute
+  '/login': typeof LoginRoute
+  '/products/create': typeof ProductsCreateRoute
+  '/products/edit': typeof ProductsEditRoute
+  '/categories': typeof CategoriesIndexRoute
+  '/products': typeof ProductsIndexRoute
   '/users': typeof UsersIndexRoute
-  '/posts/$postId/deep': typeof PostsPostIdDeepRoute
+  '/products/view/$id': typeof ProductsViewIdRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
-  '/_layout': typeof LayoutRoute
   '/deferred': typeof DeferredRoute
-  '/posts': typeof PostsRouteWithChildren
-  '/redirect': typeof RedirectRoute
-  '/users': typeof UsersRouteWithChildren
-  '/posts/$postId': typeof PostsPostIdRoute
-  '/users/$userId': typeof UsersUserIdRoute
-  '/posts/': typeof PostsIndexRoute
+  '/login': typeof LoginRoute
+  '/products/create': typeof ProductsCreateRoute
+  '/products/edit': typeof ProductsEditRoute
+  '/categories/': typeof CategoriesIndexRoute
+  '/products/': typeof ProductsIndexRoute
   '/users/': typeof UsersIndexRoute
-  '/posts_/$postId/deep': typeof PostsPostIdDeepRoute
+  '/products/view/$id': typeof ProductsViewIdRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | ''
     | '/deferred'
-    | '/posts'
-    | '/redirect'
+    | '/login'
+    | '/products/create'
+    | '/products/edit'
+    | '/categories'
+    | '/products'
     | '/users'
-    | '/posts/$postId'
-    | '/users/$userId'
-    | '/posts/'
-    | '/users/'
-    | '/posts/$postId/deep'
+    | '/products/view/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | ''
     | '/deferred'
-    | '/redirect'
-    | '/posts/$postId'
-    | '/users/$userId'
-    | '/posts'
+    | '/login'
+    | '/products/create'
+    | '/products/edit'
+    | '/categories'
+    | '/products'
     | '/users'
-    | '/posts/$postId/deep'
+    | '/products/view/$id'
   id:
     | '__root__'
     | '/'
-    | '/_layout'
     | '/deferred'
-    | '/posts'
-    | '/redirect'
-    | '/users'
-    | '/posts/$postId'
-    | '/users/$userId'
-    | '/posts/'
+    | '/login'
+    | '/products/create'
+    | '/products/edit'
+    | '/categories/'
+    | '/products/'
     | '/users/'
-    | '/posts_/$postId/deep'
+    | '/products/view/$id'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  LayoutRoute: typeof LayoutRoute
   DeferredRoute: typeof DeferredRoute
-  PostsRoute: typeof PostsRouteWithChildren
-  RedirectRoute: typeof RedirectRoute
-  UsersRoute: typeof UsersRouteWithChildren
-  PostsPostIdDeepRoute: typeof PostsPostIdDeepRoute
+  LoginRoute: typeof LoginRoute
+  ProductsCreateRoute: typeof ProductsCreateRoute
+  ProductsEditRoute: typeof ProductsEditRoute
+  CategoriesIndexRoute: typeof CategoriesIndexRoute
+  ProductsIndexRoute: typeof ProductsIndexRoute
+  UsersIndexRoute: typeof UsersIndexRoute
+  ProductsViewIdRoute: typeof ProductsViewIdRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  LayoutRoute: LayoutRoute,
   DeferredRoute: DeferredRoute,
-  PostsRoute: PostsRouteWithChildren,
-  RedirectRoute: RedirectRoute,
-  UsersRoute: UsersRouteWithChildren,
-  PostsPostIdDeepRoute: PostsPostIdDeepRoute,
+  LoginRoute: LoginRoute,
+  ProductsCreateRoute: ProductsCreateRoute,
+  ProductsEditRoute: ProductsEditRoute,
+  CategoriesIndexRoute: CategoriesIndexRoute,
+  ProductsIndexRoute: ProductsIndexRoute,
+  UsersIndexRoute: UsersIndexRoute,
+  ProductsViewIdRoute: ProductsViewIdRoute,
 }
 
 export const routeTree = rootRoute
@@ -313,58 +258,42 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/_layout",
         "/deferred",
-        "/posts",
-        "/redirect",
-        "/users",
-        "/posts_/$postId/deep"
+        "/login",
+        "/products/create",
+        "/products/edit",
+        "/categories/",
+        "/products/",
+        "/users/",
+        "/products/view/$id"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
-    "/_layout": {
-      "filePath": "_layout.tsx"
-    },
     "/deferred": {
       "filePath": "deferred.tsx"
     },
-    "/posts": {
-      "filePath": "posts.tsx",
-      "children": [
-        "/posts/$postId",
-        "/posts/"
-      ]
+    "/login": {
+      "filePath": "login.tsx"
     },
-    "/redirect": {
-      "filePath": "redirect.tsx"
+    "/products/create": {
+      "filePath": "products/create.tsx"
     },
-    "/users": {
-      "filePath": "users.tsx",
-      "children": [
-        "/users/$userId",
-        "/users/"
-      ]
+    "/products/edit": {
+      "filePath": "products/edit.tsx"
     },
-    "/posts/$postId": {
-      "filePath": "posts.$postId.tsx",
-      "parent": "/posts"
+    "/categories/": {
+      "filePath": "categories/index.tsx"
     },
-    "/users/$userId": {
-      "filePath": "users.$userId.tsx",
-      "parent": "/users"
-    },
-    "/posts/": {
-      "filePath": "posts.index.tsx",
-      "parent": "/posts"
+    "/products/": {
+      "filePath": "products/index.tsx"
     },
     "/users/": {
-      "filePath": "users.index.tsx",
-      "parent": "/users"
+      "filePath": "users/index.tsx"
     },
-    "/posts_/$postId/deep": {
-      "filePath": "posts_.$postId.deep.tsx"
+    "/products/view/$id": {
+      "filePath": "products/view.$id.tsx"
     }
   }
 }
