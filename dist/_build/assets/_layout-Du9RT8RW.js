@@ -1,0 +1,1 @@
+import{j as o,O as s}from"./client-HT1YWBzE.js";const e=function(){return o.jsxs("div",{className:"p-2",children:[o.jsx("div",{className:"border-b",children:"I'm a layout"}),o.jsx("div",{children:o.jsx(s,{})})]})};export{e as component};
