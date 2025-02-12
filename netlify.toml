@@ -1,3 +1,0 @@
-[build]
-  command = "yarn build"
-  publish = "_build"   # Ensure this is the correct output directory
