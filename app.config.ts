@@ -97,15 +97,6 @@ export default defineConfig({
     ],
     build: {
       chunkSizeWarningLimit: 4000, // Increase chunk warning size to 1 MB
-      rollupOptions: {
-        output: {
-          manualChunks: {
-            // Split specific libraries into separate chunks
-            react: ['react', 'react-dom'],
-            lodash: ['lodash'], // Example for splitting lodash
-          },
-        },
-      },
     },
   },
 })
