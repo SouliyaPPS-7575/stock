@@ -1,6 +1,6 @@
 import { Products } from '@/model/products';
 import { router } from '@/router';
-import { Badge, Card, CardBody, CardFooter } from '@heroui/react';
+import { Badge, Card, CardBody, CardFooter, Image } from '@heroui/react';
 
 export default function ProductList({ products }: { products: Products[] }) {
   return (
@@ -28,7 +28,7 @@ export default function ProductList({ products }: { products: Products[] }) {
                 >
                   {/* Product Image */}
                   <CardBody className='p-0'>
-                    <img
+                    <Image
                       alt={product.name}
                       src={
                         product?.imageurl?.[0]

@@ -3,15 +3,15 @@
     "file": "assets/app-D9nu_773.css",
     "src": "/Users/souliya/Documents/FullStackDev/stock/app/styles/app.css"
   },
-  "_chunk-5PILOUBS-B9-PK6zT.js": {
-    "file": "assets/chunk-5PILOUBS-B9-PK6zT.js",
-    "name": "chunk-5PILOUBS",
+  "_chunk-MLPFQTYO-C_FR0VMg.js": {
+    "file": "assets/chunk-MLPFQTYO-C_FR0VMg.js",
+    "name": "chunk-MLPFQTYO",
     "imports": [
-      "_client-DU0zCAyp.js"
+      "_client-CrIQ5dyp.js"
     ]
   },
-  "_client-DU0zCAyp.js": {
-    "file": "assets/client-DU0zCAyp.js",
+  "_client-CrIQ5dyp.js": {
+    "file": "assets/client-CrIQ5dyp.js",
     "name": "client",
     "dynamicImports": [
       "node_modules/@heroui/dom-animation/dist/index.mjs",
@@ -32,119 +32,119 @@
       "assets/app-D9nu_773.css"
     ]
   },
-  "_useBaseQuery-BQzYFG3S.js": {
-    "file": "assets/useBaseQuery-BQzYFG3S.js",
+  "_useBaseQuery-Ds_bxNTK.js": {
+    "file": "assets/useBaseQuery-Ds_bxNTK.js",
     "name": "useBaseQuery",
     "imports": [
-      "_client-DU0zCAyp.js"
+      "_client-CrIQ5dyp.js"
     ]
   },
-  "_useView-DdCIs3Mw.js": {
-    "file": "assets/useView-DdCIs3Mw.js",
+  "_useView-CddLGcfH.js": {
+    "file": "assets/useView-CddLGcfH.js",
     "name": "useView",
     "imports": [
-      "_client-DU0zCAyp.js",
-      "_useBaseQuery-BQzYFG3S.js"
+      "_client-CrIQ5dyp.js",
+      "_useBaseQuery-Ds_bxNTK.js"
     ]
   },
   "app/routes/categories/index.tsx?tsr-split=component": {
-    "file": "assets/index-D0okCv9r.js",
+    "file": "assets/index-C8gdUR_d.js",
     "name": "index",
     "src": "app/routes/categories/index.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-DU0zCAyp.js"
+      "_client-CrIQ5dyp.js"
     ],
     "dynamicImports": [
       "node_modules/@heroui/dom-animation/dist/index.mjs"
     ]
   },
   "app/routes/deferred.tsx?tsr-split=component": {
-    "file": "assets/deferred-CIlHlRA0.js",
+    "file": "assets/deferred-DrXexmPx.js",
     "name": "deferred",
     "src": "app/routes/deferred.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-DU0zCAyp.js"
+      "_client-CrIQ5dyp.js"
     ]
   },
   "app/routes/index.tsx?tsr-split=component": {
-    "file": "assets/index-4caWhqkJ.js",
+    "file": "assets/index-maJYVdRU.js",
     "name": "index",
     "src": "app/routes/index.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-DU0zCAyp.js"
+      "_client-CrIQ5dyp.js"
     ]
   },
   "app/routes/login.tsx?tsr-split=component": {
-    "file": "assets/login-D2dEAcrO.js",
+    "file": "assets/login-CCF8x1Te.js",
     "name": "login",
     "src": "app/routes/login.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-DU0zCAyp.js"
+      "_client-CrIQ5dyp.js"
     ]
   },
   "app/routes/products/edit.tsx?tsr-split=component": {
-    "file": "assets/edit-CPJRTQHG.js",
+    "file": "assets/edit-DAkEaqdV.js",
     "name": "edit",
     "src": "app/routes/products/edit.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-DU0zCAyp.js",
-      "_useView-DdCIs3Mw.js",
-      "_useBaseQuery-BQzYFG3S.js"
+      "_client-CrIQ5dyp.js",
+      "_useView-CddLGcfH.js",
+      "_useBaseQuery-Ds_bxNTK.js"
     ]
   },
   "app/routes/products/index.tsx?tsr-split=component": {
-    "file": "assets/index-8pZ4ZClP.js",
+    "file": "assets/index-acADKn5d.js",
     "name": "index",
     "src": "app/routes/products/index.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-DU0zCAyp.js",
-      "_chunk-5PILOUBS-B9-PK6zT.js",
-      "_useBaseQuery-BQzYFG3S.js"
+      "_client-CrIQ5dyp.js",
+      "_chunk-MLPFQTYO-C_FR0VMg.js",
+      "_useBaseQuery-Ds_bxNTK.js"
     ]
   },
   "app/routes/products/view.$id.tsx?tsr-split=component": {
-    "file": "assets/view._id-B4aOb-BC.js",
+    "file": "assets/view._id-xPb3IwUc.js",
     "name": "view._id",
     "src": "app/routes/products/view.$id.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-DU0zCAyp.js",
-      "_useView-DdCIs3Mw.js",
-      "_chunk-5PILOUBS-B9-PK6zT.js",
-      "_useBaseQuery-BQzYFG3S.js"
+      "_client-CrIQ5dyp.js",
+      "_useView-CddLGcfH.js",
+      "_chunk-MLPFQTYO-C_FR0VMg.js",
+      "_useBaseQuery-Ds_bxNTK.js"
     ]
   },
   "app/routes/users/index.tsx?tsr-split=component": {
-    "file": "assets/index-sxeLv2TQ.js",
+    "file": "assets/index-B2XA7VPH.js",
     "name": "index",
     "src": "app/routes/users/index.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-DU0zCAyp.js"
+      "_client-CrIQ5dyp.js"
     ]
   },
   "node_modules/@heroui/dom-animation/dist/index.mjs": {
-    "file": "assets/index-kAjUObse.js",
+    "file": "assets/index-DdgLZzKH.js",
     "name": "index",
     "src": "node_modules/@heroui/dom-animation/dist/index.mjs",
     "isDynamicEntry": true,
     "imports": [
-      "_client-DU0zCAyp.js"
+      "_client-CrIQ5dyp.js"
     ]
   },
   "virtual:$vinxi/handler/client": {
-    "file": "assets/client-DnlapjMG.js",
+    "file": "assets/client-ByngpesG.js",
     "name": "client",
     "src": "virtual:$vinxi/handler/client",
     "isEntry": true,
     "imports": [
-      "_client-DU0zCAyp.js"
+      "_client-CrIQ5dyp.js"
     ]
   }
 }

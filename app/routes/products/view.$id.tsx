@@ -1,8 +1,8 @@
 import { useView } from '@/hooks/products/useView';
 import { router } from '@/router';
-import { Button, Card, CardBody, CardFooter } from '@heroui/react';
+import { Button, Card, CardBody, CardFooter, Image } from '@heroui/react';
 import { createFileRoute, useMatch } from '@tanstack/react-router';
-import { Image } from 'antd';
+import { Image as ImageAntd } from 'antd';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 export const Route = createFileRoute('/products/view/$id')({
@@ -33,7 +33,7 @@ function RouteComponent() {
           <div className='flex flex-col md:flex-row w-full'>
             {/* Main Image */}
             <div className='flex-1 flex flex-col justify-center items-center p-4 relative w-full'>
-              <Image
+              <ImageAntd
                 src={
                   data?.imageurl?.[selectedImageIndex] ||
                   'https://th.bing.com/th/id/OIP.mhEjokf4cHBCeCsOqohUdwHaHa?rs=1&pid=ImgDetMain'
@@ -78,7 +78,7 @@ function RouteComponent() {
             <div className='flex flex-row md:flex-col space-x-2 md:space-x-0 md:space-y-2 md:w-1/4'>
               {data?.imageurl && data?.imageurl.length > 0 ? (
                 data.imageurl.map((url, index) => (
-                  <img
+                  <Image
                     key={index}
                     src={url}
                     alt={`Thumbnail ${index + 1}`}
@@ -91,7 +91,7 @@ function RouteComponent() {
                   />
                 ))
               ) : (
-                <img
+                <Image
                   src='https://th.bing.com/th/id/OIP.mhEjokf4cHBCeCsOqohUdwHaHa?rs=1&pid=ImgDetMain' // Default thumbnail image
                   alt='Default Thumbnail'
                   className='w-20 h-20 md:w-full md:h-32 object-cover rounded-lg cursor-pointer'

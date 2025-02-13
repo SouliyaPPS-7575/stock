@@ -1,5 +1,5 @@
 import { jsx, jsxs } from 'react/jsx-runtime';
-import { E } from '../nitro/nitro.mjs';
+import { k } from '../nitro/nitro.mjs';
 import { Form, Input, Button } from '@heroui/react';
 import { useMutation } from '@tanstack/react-query';
 import { useNavigate } from '@tanstack/react-router';
@@ -39,9 +39,9 @@ import 'react-dom/server';
 import 'node:stream/web';
 
 const V = function() {
-  const p = useNavigate(), [a, r] = useState(null), i = useMutation({ mutationFn: async (e) => await E.collection("users").authWithPassword(e.email.trim(), e.password), onSuccess: (e) => {
+  const p = useNavigate(), [a, r] = useState(null), i = useMutation({ mutationFn: async (e) => await k.collection("users").authWithPassword(e.email.trim(), e.password), onSuccess: (e) => {
     const o = e.token;
-    o && E.authStore.save(o), p({ to: "/" }), toast.success("Login successful!"), r("Login successful");
+    o && k.authStore.save(o), p({ to: "/" }), toast.success("Login successful!"), r("Login successful");
   }, onError: (e) => {
     toast.error("Login failed. Please check your credentials."), console.error("Login Error:", e), r("Login failed");
   } });
@@ -53,4 +53,4 @@ const V = function() {
 };
 
 export { V as component };
-//# sourceMappingURL=login-DoVRcV5-.mjs.map
+//# sourceMappingURL=login-fJnEXyon.mjs.map

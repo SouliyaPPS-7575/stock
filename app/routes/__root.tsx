@@ -1,4 +1,5 @@
 import { DefaultCatchBoundary } from '@/components/DefaultCatchBoundary';
+import Seo from '@/components/layouts/Seo';
 import { NotFound } from '@/components/NotFound';
 import DefaultLayout from '@/layouts/default';
 import { router } from '@/router';
@@ -29,8 +30,7 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       ...seo({
-        title:
-          'Stock',
+        title: 'Stock',
         description: `Stock`,
       }),
     ],
@@ -87,6 +87,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
   return (
     <html>
       <head>
+        <Seo />
+        <script src='/sw.js'></script>
         <Meta />
       </head>
       <body>

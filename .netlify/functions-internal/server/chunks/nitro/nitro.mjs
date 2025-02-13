@@ -16,19 +16,19 @@ import * as node_path$1 from 'node:path';
 import { resolve, dirname, join as join$1 } from 'node:path';
 import invariant from 'vinxi/lib/invariant';
 import { virtualId, handlerModule, join } from 'vinxi/lib/path';
-import { isPlainObject as isPlainObject$1, isRedirect as isRedirect$1, isNotFound, createMemoryHistory, warning, RouterProvider, pick, TSR_DEFERRED_PROMISE, createControlledPromise, isPlainArray, defer as defer$1, createRootRoute, Outlet, createFileRoute, lazyRouteComponent, createRouter as createRouter$2, Link, useRouter, useMatch, rootRouteId, ErrorComponent, useRouterState, useNavigate, encode as encode$1 } from '@tanstack/react-router';
+import { isPlainObject as isPlainObject$1, isRedirect as isRedirect$1, isNotFound, createMemoryHistory, warning, RouterProvider, pick, TSR_DEFERRED_PROMISE, createControlledPromise, isPlainArray, defer as defer$1, createRootRoute, Outlet, createFileRoute, lazyRouteComponent, redirect, createRouter as createRouter$2, Link, useRouter, useMatch, rootRouteId, ErrorComponent, useRouterState, useNavigate, encode as encode$1 } from '@tanstack/react-router';
 import $ from 'tiny-invariant';
 import { AsyncLocalStorage } from 'node:async_hooks';
 import { jsx, jsxs, Fragment } from 'react/jsx-runtime';
-import * as st from 'react';
+import * as at from 'react';
 import { createContext as createContext$1, useEffect, createElement, useRef, useState, useContext, useMemo } from 'react';
 import { Link as Link$1 } from '@heroui/link';
 import { Navbar, NavbarContent, NavbarBrand, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem } from '@heroui/navbar';
 import { link } from '@heroui/theme';
-import O from 'clsx';
+import A$1 from 'clsx';
 import { VisuallyHidden } from '@react-aria/visually-hidden';
 import { useSwitch } from '@heroui/switch';
-import ht from 'pocketbase';
+import gt from 'pocketbase';
 import { useDisclosure, Modal, ModalContent, ModalHeader, ModalBody, ModalFooter } from '@heroui/modal';
 import { HeroUIProvider, Input, Select, SelectItem, Button, Spinner, Link as Link$2 } from '@heroui/react';
 import { QueryClient, QueryClientProvider, useMutation } from '@tanstack/react-query';
@@ -41,7 +41,7 @@ import { Cloudinary } from '@cloudinary/url-gen';
 import { Form } from '@heroui/form';
 import C$1 from 'jsesc';
 import { isbot } from 'isbot';
-import j from 'react-dom/server';
+import L from 'react-dom/server';
 import { ReadableStream as ReadableStream$1 } from 'node:stream/web';
 
 var commonjsGlobal$1 = typeof globalThis !== 'undefined' ? globalThis : "undefined" !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
@@ -842,7 +842,7 @@ var __publicField$3 = (obj, key, value) => {
   __defNormalProp$3(obj, key + "" , value);
   return value;
 };
-const H$2 = [
+const H$1 = [
   1779033703,
   -1150833019,
   1013904242,
@@ -852,7 +852,7 @@ const H$2 = [
   528734635,
   1541459225
 ];
-const K$1 = [
+const K$2 = [
   1116352408,
   1899447441,
   -1245643825,
@@ -922,14 +922,14 @@ const W$2 = [];
 class SHA256 extends Hasher {
   constructor() {
     super(...arguments);
-    __publicField$3(this, "_hash", new WordArray([...H$2]));
+    __publicField$3(this, "_hash", new WordArray([...H$1]));
   }
   /**
    * Resets the internal state of the hash object to initial values.
    */
   reset() {
     super.reset();
-    this._hash = new WordArray([...H$2]);
+    this._hash = new WordArray([...H$1]);
   }
   _doProcessBlock(M, offset) {
     const H2 = this._hash.words;
@@ -955,7 +955,7 @@ class SHA256 extends Hasher {
       const maj = a & b ^ a & c ^ b & c;
       const sigma0 = (a << 30 | a >>> 2) ^ (a << 19 | a >>> 13) ^ (a << 10 | a >>> 22);
       const sigma1 = (e << 26 | e >>> 6) ^ (e << 21 | e >>> 11) ^ (e << 7 | e >>> 25);
-      const t1 = h + sigma1 + ch + K$1[i] + W$2[i];
+      const t1 = h + sigma1 + ch + K$2[i] + W$2[i];
       const t2 = sigma0 + maj;
       h = g;
       g = f;
@@ -1931,7 +1931,7 @@ class ServerResponse extends Writable {
   }
 }
 
-function hasProp(obj, prop) {
+function hasProp$1(obj, prop) {
   try {
     return prop in obj;
   } catch {
@@ -1945,7 +1945,7 @@ var __publicField$2 = (obj, key, value) => {
   __defNormalProp$2(obj, typeof key !== "symbol" ? key + "" : key, value);
   return value;
 };
-class H3Error extends Error {
+let H3Error$1 = class H3Error extends Error {
   constructor(message, opts = {}) {
     super(message, opts);
     __publicField$2(this, "statusCode", 500);
@@ -1961,29 +1961,29 @@ class H3Error extends Error {
   toJSON() {
     const obj = {
       message: this.message,
-      statusCode: sanitizeStatusCode(this.statusCode, 500)
+      statusCode: sanitizeStatusCode$1(this.statusCode, 500)
     };
     if (this.statusMessage) {
-      obj.statusMessage = sanitizeStatusMessage(this.statusMessage);
+      obj.statusMessage = sanitizeStatusMessage$1(this.statusMessage);
     }
     if (this.data !== void 0) {
       obj.data = this.data;
     }
     return obj;
   }
-}
-__publicField$2(H3Error, "__h3_error__", true);
-function createError$1(input) {
+};
+__publicField$2(H3Error$1, "__h3_error__", true);
+function createError$2(input) {
   if (typeof input === "string") {
-    return new H3Error(input);
+    return new H3Error$1(input);
   }
-  if (isError(input)) {
+  if (isError$1(input)) {
     return input;
   }
-  const err = new H3Error(input.message ?? input.statusMessage ?? "", {
+  const err = new H3Error$1(input.message ?? input.statusMessage ?? "", {
     cause: input.cause || input
   });
-  if (hasProp(input, "stack")) {
+  if (hasProp$1(input, "stack")) {
     try {
       Object.defineProperty(err, "stack", {
         get() {
@@ -2001,9 +2001,9 @@ function createError$1(input) {
     err.data = input.data;
   }
   if (input.statusCode) {
-    err.statusCode = sanitizeStatusCode(input.statusCode, err.statusCode);
+    err.statusCode = sanitizeStatusCode$1(input.statusCode, err.statusCode);
   } else if (input.status) {
-    err.statusCode = sanitizeStatusCode(input.status, err.statusCode);
+    err.statusCode = sanitizeStatusCode$1(input.status, err.statusCode);
   }
   if (input.statusMessage) {
     err.statusMessage = input.statusMessage;
@@ -2012,7 +2012,7 @@ function createError$1(input) {
   }
   if (err.statusMessage) {
     const originalMessage = err.statusMessage;
-    const sanitizedMessage = sanitizeStatusMessage(err.statusMessage);
+    const sanitizedMessage = sanitizeStatusMessage$1(err.statusMessage);
     if (sanitizedMessage !== originalMessage) {
       console.warn(
         "[h3] Please prefer using `message` for longer error messages instead of `statusMessage`. In the future, `statusMessage` will be sanitized by default."
@@ -2031,7 +2031,7 @@ function sendError(event, error, debug) {
   if (event.handled) {
     return;
   }
-  const h3Error = isError(error) ? error : createError$1(error);
+  const h3Error = isError$1(error) ? error : createError$2(error);
   const responseBody = {
     statusCode: h3Error.statusCode,
     statusMessage: h3Error.statusMessage,
@@ -2049,10 +2049,10 @@ function sendError(event, error, debug) {
   event.node.res.setHeader("content-type", MIMES.json);
   event.node.res.end(JSON.stringify(responseBody, void 0, 2));
 }
-function isError(input) {
+function isError$1(input) {
   return input?.constructor?.__h3_error__ === true;
 }
-function isMethod(event, expected, allowHead) {
+function isMethod$1(event, expected, allowHead) {
   if (typeof expected === "string") {
     if (event.method === expected) {
       return true;
@@ -2062,15 +2062,15 @@ function isMethod(event, expected, allowHead) {
   }
   return false;
 }
-function assertMethod(event, expected, allowHead) {
-  if (!isMethod(event, expected)) {
-    throw createError$1({
+function assertMethod$1(event, expected, allowHead) {
+  if (!isMethod$1(event, expected)) {
+    throw createError$2({
       statusCode: 405,
       statusMessage: "HTTP method is not allowed."
     });
   }
 }
-function getRequestHeaders(event) {
+function getRequestHeaders$1(event) {
   const _headers = {};
   for (const key in event.node.req.headers) {
     const val = event.node.req.headers[key];
@@ -2078,51 +2078,17 @@ function getRequestHeaders(event) {
   }
   return _headers;
 }
-const getHeaders = getRequestHeaders;
 function getRequestHeader(event, name) {
-  const headers = getRequestHeaders(event);
+  const headers = getRequestHeaders$1(event);
   const value = headers[name.toLowerCase()];
   return value;
 }
-function getRequestHost(event, opts = {}) {
-  if (opts.xForwardedHost) {
-    const xForwardedHost = event.node.req.headers["x-forwarded-host"];
-    if (xForwardedHost) {
-      return xForwardedHost;
-    }
-  }
-  return event.node.req.headers.host || "localhost";
-}
-function getRequestProtocol(event, opts = {}) {
-  if (opts.xForwardedProto !== false && event.node.req.headers["x-forwarded-proto"] === "https") {
-    return "https";
-  }
-  return event.node.req.connection?.encrypted ? "https" : "http";
-}
-function getRequestURL(event, opts = {}) {
-  const host = getRequestHost(event, opts);
-  const protocol = getRequestProtocol(event, opts);
-  const path = (event.node.req.originalUrl || event.path).replace(
-    /^[/\\]+/g,
-    "/"
-  );
-  return new URL(path, `${protocol}://${host}`);
-}
-function toWebRequest(event) {
-  return event.web?.request || new Request(getRequestURL(event), {
-    // @ts-ignore Undici option
-    duplex: "half",
-    method: event.method,
-    headers: event.headers,
-    body: getRequestWebStream(event)
-  });
-}
 
-const RawBodySymbol = Symbol.for("h3RawBody");
-const PayloadMethods$1 = ["PATCH", "POST", "PUT", "DELETE"];
-function readRawBody(event, encoding = "utf8") {
-  assertMethod(event, PayloadMethods$1);
-  const _rawBody = event._requestBody || event.web?.request?.body || event.node.req[RawBodySymbol] || event.node.req.rawBody || event.node.req.body;
+const RawBodySymbol$1 = Symbol.for("h3RawBody");
+const PayloadMethods$1$1 = ["PATCH", "POST", "PUT", "DELETE"];
+function readRawBody$1(event, encoding = "utf8") {
+  assertMethod$1(event, PayloadMethods$1$1);
+  const _rawBody = event._requestBody || event.web?.request?.body || event.node.req[RawBodySymbol$1] || event.node.req.rawBody || event.node.req.body;
   if (_rawBody) {
     const promise2 = Promise.resolve(_rawBody).then((_resolved) => {
       if (Buffer.isBuffer(_resolved)) {
@@ -2168,7 +2134,7 @@ function readRawBody(event, encoding = "utf8") {
   if (!Number.parseInt(event.node.req.headers["content-length"] || "") && !String(event.node.req.headers["transfer-encoding"] ?? "").split(",").map((e) => e.trim()).filter(Boolean).includes("chunked")) {
     return Promise.resolve(void 0);
   }
-  const promise = event.node.req[RawBodySymbol] = new Promise(
+  const promise = event.node.req[RawBodySymbol$1] = new Promise(
     (resolve, reject) => {
       const bodyData = [];
       event.node.req.on("error", (err) => {
@@ -2183,19 +2149,19 @@ function readRawBody(event, encoding = "utf8") {
   const result = encoding ? promise.then((buff) => buff.toString(encoding)) : promise;
   return result;
 }
-function getRequestWebStream(event) {
-  if (!PayloadMethods$1.includes(event.method)) {
+function getRequestWebStream$1(event) {
+  if (!PayloadMethods$1$1.includes(event.method)) {
     return;
   }
   const bodyStream = event.web?.request?.body || event._requestBody;
   if (bodyStream) {
     return bodyStream;
   }
-  const _hasRawBody = RawBodySymbol in event.node.req || "rawBody" in event.node.req || "body" in event.node.req || "__unenv__" in event.node.req;
+  const _hasRawBody = RawBodySymbol$1 in event.node.req || "rawBody" in event.node.req || "body" in event.node.req || "__unenv__" in event.node.req;
   if (_hasRawBody) {
     return new ReadableStream({
       async start(controller) {
-        const _rawBody = await readRawBody(event, false);
+        const _rawBody = await readRawBody$1(event, false);
         if (_rawBody) {
           controller.enqueue(_rawBody);
         }
@@ -2255,11 +2221,11 @@ const MIMES = {
   json: "application/json"
 };
 
-const DISALLOWED_STATUS_CHARS = /[^\u0009\u0020-\u007E]/g;
-function sanitizeStatusMessage(statusMessage = "") {
-  return statusMessage.replace(DISALLOWED_STATUS_CHARS, "");
+const DISALLOWED_STATUS_CHARS$1 = /[^\u0009\u0020-\u007E]/g;
+function sanitizeStatusMessage$1(statusMessage = "") {
+  return statusMessage.replace(DISALLOWED_STATUS_CHARS$1, "");
 }
-function sanitizeStatusCode(statusCode, defaultStatusCode = 200) {
+function sanitizeStatusCode$1(statusCode, defaultStatusCode = 200) {
   if (!statusCode) {
     return defaultStatusCode;
   }
@@ -2271,9 +2237,9 @@ function sanitizeStatusCode(statusCode, defaultStatusCode = 200) {
   }
   return statusCode;
 }
-function splitCookiesString(cookiesString) {
+function splitCookiesString$1(cookiesString) {
   if (Array.isArray(cookiesString)) {
-    return cookiesString.flatMap((c) => splitCookiesString(c));
+    return cookiesString.flatMap((c) => splitCookiesString$1(c));
   }
   if (typeof cookiesString !== "string") {
     return [];
@@ -2348,7 +2314,7 @@ function sendNoContent(event, code) {
   if (!code && event.node.res.statusCode !== 200) {
     code = event.node.res.statusCode;
   }
-  const _code = sanitizeStatusCode(code, 204);
+  const _code = sanitizeStatusCode$1(code, 204);
   if (_code === 204) {
     event.node.res.removeHeader("content-length");
   }
@@ -2357,17 +2323,14 @@ function sendNoContent(event, code) {
 }
 function setResponseStatus(event, code, text) {
   if (code) {
-    event.node.res.statusCode = sanitizeStatusCode(
+    event.node.res.statusCode = sanitizeStatusCode$1(
       code,
       event.node.res.statusCode
     );
   }
   if (text) {
-    event.node.res.statusMessage = sanitizeStatusMessage(text);
+    event.node.res.statusMessage = sanitizeStatusMessage$1(text);
   }
-}
-function getResponseStatus(event) {
-  return event.node.res.statusCode;
 }
 function defaultContentType(event, type) {
   if (type && event.node.res.statusCode !== 304 && !event.node.res.getHeader("content-type")) {
@@ -2375,7 +2338,7 @@ function defaultContentType(event, type) {
   }
 }
 function sendRedirect(event, location, code = 302) {
-  event.node.res.statusCode = sanitizeStatusCode(
+  event.node.res.statusCode = sanitizeStatusCode$1(
     code,
     event.node.res.statusCode
   );
@@ -2383,9 +2346,6 @@ function sendRedirect(event, location, code = 302) {
   const encodedLoc = location.replace(/"/g, "%22");
   const html = `<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0; url=${encodedLoc}"></head></html>`;
   return send(event, html, MIMES.html);
-}
-function getResponseHeaders(event) {
-  return event.node.res.getHeaders();
 }
 function setResponseHeaders(event, headers) {
   for (const [name, value] of Object.entries(headers)) {
@@ -2419,7 +2379,7 @@ function isStream(data) {
 function isWebResponse(data) {
   return typeof Response !== "undefined" && data instanceof Response;
 }
-function sendStream(event, stream) {
+function sendStream$1(event, stream) {
   if (!stream || typeof stream !== "object") {
     throw new Error("[h3] Invalid stream provided.");
   }
@@ -2428,7 +2388,7 @@ function sendStream(event, stream) {
     event._handled = true;
     return Promise.resolve();
   }
-  if (hasProp(stream, "pipeTo") && typeof stream.pipeTo === "function") {
+  if (hasProp$1(stream, "pipeTo") && typeof stream.pipeTo === "function") {
     return stream.pipeTo(
       new WritableStream({
         write(chunk) {
@@ -2439,7 +2399,7 @@ function sendStream(event, stream) {
       event.node.res.end();
     });
   }
-  if (hasProp(stream, "pipe") && typeof stream.pipe === "function") {
+  if (hasProp$1(stream, "pipe") && typeof stream.pipe === "function") {
     return new Promise((resolve, reject) => {
       stream.pipe(event.node.res);
       if (stream.on) {
@@ -2460,22 +2420,22 @@ function sendStream(event, stream) {
   }
   throw new Error("[h3] Invalid or incompatible stream provided.");
 }
-function sendWebResponse(event, response) {
+function sendWebResponse$1(event, response) {
   for (const [key, value] of response.headers) {
     if (key === "set-cookie") {
-      event.node.res.appendHeader(key, splitCookiesString(value));
+      event.node.res.appendHeader(key, splitCookiesString$1(value));
     } else {
       event.node.res.setHeader(key, value);
     }
   }
   if (response.status) {
-    event.node.res.statusCode = sanitizeStatusCode(
+    event.node.res.statusCode = sanitizeStatusCode$1(
       response.status,
       event.node.res.statusCode
     );
   }
   if (response.statusText) {
-    event.node.res.statusMessage = sanitizeStatusMessage(response.statusText);
+    event.node.res.statusMessage = sanitizeStatusMessage$1(response.statusText);
   }
   if (response.redirected) {
     event.node.res.setHeader("location", response.url);
@@ -2484,7 +2444,7 @@ function sendWebResponse(event, response) {
     event.node.res.end();
     return;
   }
-  return sendStream(event, response.body);
+  return sendStream$1(event, response.body);
 }
 
 const PayloadMethods = /* @__PURE__ */ new Set(["PATCH", "POST", "PUT", "DELETE"]);
@@ -2502,10 +2462,10 @@ async function proxyRequest(event, target, opts = {}) {
   let duplex;
   if (PayloadMethods.has(event.method)) {
     if (opts.streamRequest) {
-      body = getRequestWebStream(event);
+      body = getRequestWebStream$1(event);
       duplex = "half";
     } else {
-      body = await readRawBody(event, false).catch(() => void 0);
+      body = await readRawBody$1(event, false).catch(() => void 0);
     }
   }
   const method = opts.fetchOptions?.method || event.method;
@@ -2535,17 +2495,17 @@ async function sendProxy(event, target, opts = {}) {
       ...opts.fetchOptions
     });
   } catch (error) {
-    throw createError$1({
+    throw createError$2({
       status: 502,
       statusMessage: "Bad Gateway",
       cause: error
     });
   }
-  event.node.res.statusCode = sanitizeStatusCode(
+  event.node.res.statusCode = sanitizeStatusCode$1(
     response.status,
     event.node.res.statusCode
   );
-  event.node.res.statusMessage = sanitizeStatusMessage(response.statusText);
+  event.node.res.statusMessage = sanitizeStatusMessage$1(response.statusText);
   const cookies = [];
   for (const [key, value] of response.headers.entries()) {
     if (key === "content-encoding") {
@@ -2555,7 +2515,7 @@ async function sendProxy(event, target, opts = {}) {
       continue;
     }
     if (key === "set-cookie") {
-      cookies.push(...splitCookiesString(value));
+      cookies.push(...splitCookiesString$1(value));
       continue;
     }
     event.node.res.setHeader(key, value);
@@ -2604,7 +2564,7 @@ async function sendProxy(event, target, opts = {}) {
 }
 function getProxyRequestHeaders(event) {
   const headers = /* @__PURE__ */ Object.create(null);
-  const reqHeaders = getRequestHeaders(event);
+  const reqHeaders = getRequestHeaders$1(event);
   for (const name in reqHeaders) {
     if (!ignoredHeaders.has(name)) {
       headers[name] = reqHeaders[name];
@@ -2672,7 +2632,7 @@ var __publicField = (obj, key, value) => {
   __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
   return value;
 };
-class H3Event {
+let H3Event$1 = class H3Event {
   constructor(req, res) {
     __publicField(this, "__is_event__", true);
     // Context
@@ -2706,7 +2666,7 @@ class H3Event {
   }
   get headers() {
     if (!this._headers) {
-      this._headers = _normalizeNodeHeaders(this.node.req.headers);
+      this._headers = _normalizeNodeHeaders$1(this.node.req.headers);
     }
     return this._headers;
   }
@@ -2716,7 +2676,7 @@ class H3Event {
   }
   respondWith(response) {
     return Promise.resolve(response).then(
-      (_response) => sendWebResponse(this, _response)
+      (_response) => sendWebResponse$1(this, _response)
     );
   }
   // --- Utils ---
@@ -2735,14 +2695,14 @@ class H3Event {
   get res() {
     return this.node.res;
   }
-}
+};
 function isEvent(input) {
-  return hasProp(input, "__is_event__");
+  return hasProp$1(input, "__is_event__");
 }
 function createEvent(req, res) {
-  return new H3Event(req, res);
+  return new H3Event$1(req, res);
 }
-function _normalizeNodeHeaders(nodeHeaders) {
+function _normalizeNodeHeaders$1(nodeHeaders) {
   const headers = new Headers();
   for (const [name, value] of Object.entries(nodeHeaders)) {
     if (Array.isArray(value)) {
@@ -2756,27 +2716,27 @@ function _normalizeNodeHeaders(nodeHeaders) {
   return headers;
 }
 
-function defineEventHandler(handler) {
+function defineEventHandler$1(handler) {
   if (typeof handler === "function") {
     handler.__is_handler__ = true;
     return handler;
   }
   const _hooks = {
-    onRequest: _normalizeArray(handler.onRequest),
-    onBeforeResponse: _normalizeArray(handler.onBeforeResponse)
+    onRequest: _normalizeArray$1(handler.onRequest),
+    onBeforeResponse: _normalizeArray$1(handler.onBeforeResponse)
   };
   const _handler = (event) => {
-    return _callHandler(event, handler.handler, _hooks);
+    return _callHandler$1(event, handler.handler, _hooks);
   };
   _handler.__is_handler__ = true;
   _handler.__resolve__ = handler.handler.__resolve__;
   _handler.__websocket__ = handler.websocket;
   return _handler;
 }
-function _normalizeArray(input) {
+function _normalizeArray$1(input) {
   return input ? Array.isArray(input) ? input : [input] : void 0;
 }
-async function _callHandler(event, handler, hooks) {
+async function _callHandler$1(event, handler, hooks) {
   if (hooks.onRequest) {
     for (const hook of hooks.onRequest) {
       await hook(event);
@@ -2794,9 +2754,9 @@ async function _callHandler(event, handler, hooks) {
   }
   return response.body;
 }
-const eventHandler = defineEventHandler;
+const eventHandler$1 = defineEventHandler$1;
 function isEventHandler(input) {
-  return hasProp(input, "__is_handler__");
+  return hasProp$1(input, "__is_handler__");
 }
 function toEventHandler(input, _, _route) {
   if (!isEventHandler(input)) {
@@ -2832,7 +2792,7 @@ function defineLazyEventHandler(factory) {
     }
     return _promise;
   };
-  const handler = eventHandler((event) => {
+  const handler = eventHandler$1((event) => {
     if (_resolved) {
       return _resolved.handler(event);
     }
@@ -2884,7 +2844,7 @@ function use(app, arg1, arg2, arg3) {
 }
 function createAppEventHandler(stack, options) {
   const spacing = options.debug ? 2 : void 0;
-  return eventHandler(async (event) => {
+  return eventHandler$1(async (event) => {
     event.node.req.originalUrl = event.node.req.originalUrl || event.node.req.url || "/";
     const _reqPath = event._path || event.node.req.url || "/";
     let _layerPath;
@@ -2929,7 +2889,7 @@ function createAppEventHandler(stack, options) {
       }
     }
     if (!event.handled) {
-      throw createError$1({
+      throw createError$2({
         statusCode: 404,
         statusMessage: `Cannot find any path matching ${event.path || "/"}.`
       });
@@ -2992,10 +2952,10 @@ function handleHandlerResponse(event, val, jsonSpace) {
   }
   if (val) {
     if (isWebResponse(val)) {
-      return sendWebResponse(event, val);
+      return sendWebResponse$1(event, val);
     }
     if (isStream(val)) {
-      return sendStream(event, val);
+      return sendStream$1(event, val);
     }
     if (val.buffer) {
       return send(event, val);
@@ -3006,7 +2966,7 @@ function handleHandlerResponse(event, val, jsonSpace) {
       });
     }
     if (val instanceof Error) {
-      throw createError$1(val);
+      throw createError$2(val);
     }
     if (typeof val.end === "function") {
       return true;
@@ -3022,7 +2982,7 @@ function handleHandlerResponse(event, val, jsonSpace) {
   if (valType === "bigint") {
     return send(event, val.toString(), MIMES.json);
   }
-  throw createError$1({
+  throw createError$2({
     statusCode: 500,
     statusMessage: `[h3] Cannot send ${valType} as response.`
   });
@@ -3091,7 +3051,7 @@ function createRouter(opts = {}) {
     const matched = _router.lookup(path);
     if (!matched || !matched.handlers) {
       return {
-        error: createError$1({
+        error: createError$2({
           statusCode: 404,
           name: "Not Found",
           statusMessage: `Cannot find any route matching ${path || "/"}.`
@@ -3119,7 +3079,7 @@ function createRouter(opts = {}) {
     }
     if (!handler) {
       return {
-        error: createError$1({
+        error: createError$2({
           statusCode: 405,
           name: "Method Not Allowed",
           statusMessage: `Method ${method} is not allowed on this route.`
@@ -3129,7 +3089,7 @@ function createRouter(opts = {}) {
     return { matched, handler };
   };
   const isPreemptive = opts.preemptive || opts.preemtive;
-  router.handler = eventHandler((event) => {
+  router.handler = eventHandler$1((event) => {
     const match = matchHandler(
       event.path,
       event.method.toLowerCase()
@@ -3178,8 +3138,8 @@ function toNodeListener(app) {
     try {
       await app.handler(event);
     } catch (_error) {
-      const error = createError$1(_error);
-      if (!isError(_error)) {
+      const error = createError$2(_error);
+      if (!isError$1(_error)) {
         error.unhandled = true;
       }
       setResponseStatus(event, error.statusCode, error.statusMessage);
@@ -3873,7 +3833,7 @@ function normalizeFetchResponse(response) {
   });
 }
 function normalizeCookieHeader(header = "") {
-  return splitCookiesString(joinHeaders(header));
+  return splitCookiesString$1(joinHeaders(header));
 }
 function normalizeCookieHeaders(headers) {
   const outgoingHeaders = new Headers();
@@ -3961,7 +3921,7 @@ function renderHTMLError(error) {
 }
 
 const appConfig$1 = {"name":"vinxi","routers":[{"name":"public","type":"static","dir":"./public","base":"/","root":"/Users/souliya/Documents/FullStackDev/stock","order":0,"outDir":"/Users/souliya/Documents/FullStackDev/stock/.vinxi/build/public"},{"name":"client","type":"client","target":"browser","handler":"app/client.tsx","base":"/_build","build":{"sourcemap":true},"root":"/Users/souliya/Documents/FullStackDev/stock","outDir":"/Users/souliya/Documents/FullStackDev/stock/.vinxi/build/client","order":1},{"name":"ssr","type":"http","target":"server","handler":"app/ssr.tsx","link":{"client":"client"},"root":"/Users/souliya/Documents/FullStackDev/stock","base":"/","outDir":"/Users/souliya/Documents/FullStackDev/stock/.vinxi/build/ssr","order":2},{"name":"server","type":"http","target":"server","base":"/_server","handler":"node_modules/@tanstack/start-server-functions-handler/dist/esm/index.js","root":"/Users/souliya/Documents/FullStackDev/stock","outDir":"/Users/souliya/Documents/FullStackDev/stock/.vinxi/build/server","order":3},{"name":"api","base":"/api","type":"http","handler":"app/api.ts","target":"server","root":"/Users/souliya/Documents/FullStackDev/stock","outDir":"/Users/souliya/Documents/FullStackDev/stock/.vinxi/build/api","order":4}],"server":{"preset":"netlify","experimental":{"asyncContext":true}},"root":"/Users/souliya/Documents/FullStackDev/stock"};
-				const buildManifest = {"client":{"/Users/souliya/Documents/FullStackDev/stock/app/styles/app.css":{"file":"assets/app-D9nu_773.css","src":"/Users/souliya/Documents/FullStackDev/stock/app/styles/app.css"},"_chunk-5PILOUBS-B9-PK6zT.js":{"file":"assets/chunk-5PILOUBS-B9-PK6zT.js","name":"chunk-5PILOUBS","imports":["_client-DU0zCAyp.js"]},"_client-DU0zCAyp.js":{"file":"assets/client-DU0zCAyp.js","name":"client","dynamicImports":["node_modules/@heroui/dom-animation/dist/index.mjs","node_modules/@heroui/dom-animation/dist/index.mjs","node_modules/@heroui/dom-animation/dist/index.mjs","node_modules/@heroui/dom-animation/dist/index.mjs","node_modules/@heroui/dom-animation/dist/index.mjs","app/routes/login.tsx?tsr-split=component","app/routes/deferred.tsx?tsr-split=component","app/routes/index.tsx?tsr-split=component","app/routes/users/index.tsx?tsr-split=component","app/routes/products/index.tsx?tsr-split=component","app/routes/categories/index.tsx?tsr-split=component","app/routes/products/edit.tsx?tsr-split=component","app/routes/products/view.$id.tsx?tsr-split=component"],"assets":["assets/app-D9nu_773.css"]},"_useBaseQuery-BQzYFG3S.js":{"file":"assets/useBaseQuery-BQzYFG3S.js","name":"useBaseQuery","imports":["_client-DU0zCAyp.js"]},"_useView-DdCIs3Mw.js":{"file":"assets/useView-DdCIs3Mw.js","name":"useView","imports":["_client-DU0zCAyp.js","_useBaseQuery-BQzYFG3S.js"]},"app/routes/categories/index.tsx?tsr-split=component":{"file":"assets/index-D0okCv9r.js","name":"index","src":"app/routes/categories/index.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-DU0zCAyp.js"],"dynamicImports":["node_modules/@heroui/dom-animation/dist/index.mjs"]},"app/routes/deferred.tsx?tsr-split=component":{"file":"assets/deferred-CIlHlRA0.js","name":"deferred","src":"app/routes/deferred.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-DU0zCAyp.js"]},"app/routes/index.tsx?tsr-split=component":{"file":"assets/index-4caWhqkJ.js","name":"index","src":"app/routes/index.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-DU0zCAyp.js"]},"app/routes/login.tsx?tsr-split=component":{"file":"assets/login-D2dEAcrO.js","name":"login","src":"app/routes/login.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-DU0zCAyp.js"]},"app/routes/products/edit.tsx?tsr-split=component":{"file":"assets/edit-CPJRTQHG.js","name":"edit","src":"app/routes/products/edit.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-DU0zCAyp.js","_useView-DdCIs3Mw.js","_useBaseQuery-BQzYFG3S.js"]},"app/routes/products/index.tsx?tsr-split=component":{"file":"assets/index-8pZ4ZClP.js","name":"index","src":"app/routes/products/index.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-DU0zCAyp.js","_chunk-5PILOUBS-B9-PK6zT.js","_useBaseQuery-BQzYFG3S.js"]},"app/routes/products/view.$id.tsx?tsr-split=component":{"file":"assets/view._id-B4aOb-BC.js","name":"view._id","src":"app/routes/products/view.$id.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-DU0zCAyp.js","_useView-DdCIs3Mw.js","_chunk-5PILOUBS-B9-PK6zT.js","_useBaseQuery-BQzYFG3S.js"]},"app/routes/users/index.tsx?tsr-split=component":{"file":"assets/index-sxeLv2TQ.js","name":"index","src":"app/routes/users/index.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-DU0zCAyp.js"]},"node_modules/@heroui/dom-animation/dist/index.mjs":{"file":"assets/index-kAjUObse.js","name":"index","src":"node_modules/@heroui/dom-animation/dist/index.mjs","isDynamicEntry":true,"imports":["_client-DU0zCAyp.js"]},"virtual:$vinxi/handler/client":{"file":"assets/client-DnlapjMG.js","name":"client","src":"virtual:$vinxi/handler/client","isEntry":true,"imports":["_client-DU0zCAyp.js"]}},"ssr":{"/Users/souliya/Documents/FullStackDev/stock/app/styles/app.css":{"file":"assets/app-D9nu_773.css","src":"/Users/souliya/Documents/FullStackDev/stock/app/styles/app.css"},"_ssr-BjaG5TdU.js":{"file":"assets/ssr-BjaG5TdU.js","name":"ssr","dynamicImports":["app/routes/login.tsx?tsr-split=component","app/routes/deferred.tsx?tsr-split=component","app/routes/index.tsx?tsr-split=component","app/routes/users/index.tsx?tsr-split=component","app/routes/products/index.tsx?tsr-split=component","app/routes/categories/index.tsx?tsr-split=component","app/routes/products/edit.tsx?tsr-split=component","app/routes/products/view.$id.tsx?tsr-split=component"],"assets":["assets/app-D9nu_773.css"]},"_useView-BsmdBb-o.js":{"file":"assets/useView-BsmdBb-o.js","name":"useView","imports":["_ssr-BjaG5TdU.js"]},"app/routes/categories/index.tsx?tsr-split=component":{"file":"assets/index-BDGrPjxy.js","name":"index","src":"app/routes/categories/index.tsx?tsr-split=component","isDynamicEntry":true},"app/routes/deferred.tsx?tsr-split=component":{"file":"assets/deferred-B47IHYAR.js","name":"deferred","src":"app/routes/deferred.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_ssr-BjaG5TdU.js"]},"app/routes/index.tsx?tsr-split=component":{"file":"assets/index-CuMTP0jl.js","name":"index","src":"app/routes/index.tsx?tsr-split=component","isDynamicEntry":true},"app/routes/login.tsx?tsr-split=component":{"file":"assets/login-DoVRcV5-.js","name":"login","src":"app/routes/login.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_ssr-BjaG5TdU.js"]},"app/routes/products/edit.tsx?tsr-split=component":{"file":"assets/edit-DZNSORIr.js","name":"edit","src":"app/routes/products/edit.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_ssr-BjaG5TdU.js","_useView-BsmdBb-o.js"]},"app/routes/products/index.tsx?tsr-split=component":{"file":"assets/index-V4f2HU0n.js","name":"index","src":"app/routes/products/index.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_ssr-BjaG5TdU.js"]},"app/routes/products/view.$id.tsx?tsr-split=component":{"file":"assets/view._id-5PNNzoex.js","name":"view._id","src":"app/routes/products/view.$id.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_useView-BsmdBb-o.js","_ssr-BjaG5TdU.js"]},"app/routes/users/index.tsx?tsr-split=component":{"file":"assets/index-9XjYg6bF.js","name":"index","src":"app/routes/users/index.tsx?tsr-split=component","isDynamicEntry":true},"virtual:$vinxi/handler/ssr":{"file":"ssr.js","name":"ssr","src":"virtual:$vinxi/handler/ssr","isEntry":true,"imports":["_ssr-BjaG5TdU.js"]}},"server":{"_deferred-B44SK-rK.js":{"file":"assets/deferred-B44SK-rK.js","name":"deferred","isDynamicEntry":true,"imports":["_server-II9tPsql.js"],"dynamicImports":["app/routes/deferred.tsx?tsr-split=component"]},"_server-II9tPsql.js":{"file":"assets/server-II9tPsql.js","name":"server","dynamicImports":["_deferred-B44SK-rK.js","_deferred-B44SK-rK.js"]},"app/routes/deferred.tsx?tsr-split=component":{"file":"assets/deferred-BvmSUPOo.js","name":"deferred","src":"app/routes/deferred.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_deferred-B44SK-rK.js","_server-II9tPsql.js"]},"virtual:$vinxi/handler/server":{"file":"server.js","name":"server","src":"virtual:$vinxi/handler/server","isEntry":true,"imports":["_server-II9tPsql.js"]}},"api":{"virtual:$vinxi/handler/api":{"file":"api.js","name":"api","src":"virtual:$vinxi/handler/api","isEntry":true}}};
+				const buildManifest = {"client":{"/Users/souliya/Documents/FullStackDev/stock/app/styles/app.css":{"file":"assets/app-D9nu_773.css","src":"/Users/souliya/Documents/FullStackDev/stock/app/styles/app.css"},"_chunk-MLPFQTYO-C_FR0VMg.js":{"file":"assets/chunk-MLPFQTYO-C_FR0VMg.js","name":"chunk-MLPFQTYO","imports":["_client-CrIQ5dyp.js"]},"_client-CrIQ5dyp.js":{"file":"assets/client-CrIQ5dyp.js","name":"client","dynamicImports":["node_modules/@heroui/dom-animation/dist/index.mjs","node_modules/@heroui/dom-animation/dist/index.mjs","node_modules/@heroui/dom-animation/dist/index.mjs","node_modules/@heroui/dom-animation/dist/index.mjs","node_modules/@heroui/dom-animation/dist/index.mjs","app/routes/login.tsx?tsr-split=component","app/routes/deferred.tsx?tsr-split=component","app/routes/index.tsx?tsr-split=component","app/routes/users/index.tsx?tsr-split=component","app/routes/products/index.tsx?tsr-split=component","app/routes/categories/index.tsx?tsr-split=component","app/routes/products/edit.tsx?tsr-split=component","app/routes/products/view.$id.tsx?tsr-split=component"],"assets":["assets/app-D9nu_773.css"]},"_useBaseQuery-Ds_bxNTK.js":{"file":"assets/useBaseQuery-Ds_bxNTK.js","name":"useBaseQuery","imports":["_client-CrIQ5dyp.js"]},"_useView-CddLGcfH.js":{"file":"assets/useView-CddLGcfH.js","name":"useView","imports":["_client-CrIQ5dyp.js","_useBaseQuery-Ds_bxNTK.js"]},"app/routes/categories/index.tsx?tsr-split=component":{"file":"assets/index-C8gdUR_d.js","name":"index","src":"app/routes/categories/index.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-CrIQ5dyp.js"],"dynamicImports":["node_modules/@heroui/dom-animation/dist/index.mjs"]},"app/routes/deferred.tsx?tsr-split=component":{"file":"assets/deferred-DrXexmPx.js","name":"deferred","src":"app/routes/deferred.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-CrIQ5dyp.js"]},"app/routes/index.tsx?tsr-split=component":{"file":"assets/index-maJYVdRU.js","name":"index","src":"app/routes/index.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-CrIQ5dyp.js"]},"app/routes/login.tsx?tsr-split=component":{"file":"assets/login-CCF8x1Te.js","name":"login","src":"app/routes/login.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-CrIQ5dyp.js"]},"app/routes/products/edit.tsx?tsr-split=component":{"file":"assets/edit-DAkEaqdV.js","name":"edit","src":"app/routes/products/edit.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-CrIQ5dyp.js","_useView-CddLGcfH.js","_useBaseQuery-Ds_bxNTK.js"]},"app/routes/products/index.tsx?tsr-split=component":{"file":"assets/index-acADKn5d.js","name":"index","src":"app/routes/products/index.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-CrIQ5dyp.js","_chunk-MLPFQTYO-C_FR0VMg.js","_useBaseQuery-Ds_bxNTK.js"]},"app/routes/products/view.$id.tsx?tsr-split=component":{"file":"assets/view._id-xPb3IwUc.js","name":"view._id","src":"app/routes/products/view.$id.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-CrIQ5dyp.js","_useView-CddLGcfH.js","_chunk-MLPFQTYO-C_FR0VMg.js","_useBaseQuery-Ds_bxNTK.js"]},"app/routes/users/index.tsx?tsr-split=component":{"file":"assets/index-B2XA7VPH.js","name":"index","src":"app/routes/users/index.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-CrIQ5dyp.js"]},"node_modules/@heroui/dom-animation/dist/index.mjs":{"file":"assets/index-DdgLZzKH.js","name":"index","src":"node_modules/@heroui/dom-animation/dist/index.mjs","isDynamicEntry":true,"imports":["_client-CrIQ5dyp.js"]},"virtual:$vinxi/handler/client":{"file":"assets/client-ByngpesG.js","name":"client","src":"virtual:$vinxi/handler/client","isEntry":true,"imports":["_client-CrIQ5dyp.js"]}},"ssr":{"/Users/souliya/Documents/FullStackDev/stock/app/styles/app.css":{"file":"assets/app-D9nu_773.css","src":"/Users/souliya/Documents/FullStackDev/stock/app/styles/app.css"},"_ssr-DRVMySYd.js":{"file":"assets/ssr-DRVMySYd.js","name":"ssr","dynamicImports":["app/routes/login.tsx?tsr-split=component","app/routes/deferred.tsx?tsr-split=component","app/routes/index.tsx?tsr-split=component","app/routes/users/index.tsx?tsr-split=component","app/routes/products/index.tsx?tsr-split=component","app/routes/categories/index.tsx?tsr-split=component","app/routes/products/edit.tsx?tsr-split=component","app/routes/products/view.$id.tsx?tsr-split=component"],"assets":["assets/app-D9nu_773.css"]},"_useView-BC_GKDQJ.js":{"file":"assets/useView-BC_GKDQJ.js","name":"useView","imports":["_ssr-DRVMySYd.js"]},"app/routes/categories/index.tsx?tsr-split=component":{"file":"assets/index-BDGrPjxy.js","name":"index","src":"app/routes/categories/index.tsx?tsr-split=component","isDynamicEntry":true},"app/routes/deferred.tsx?tsr-split=component":{"file":"assets/deferred-D-h3hGcr.js","name":"deferred","src":"app/routes/deferred.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_ssr-DRVMySYd.js"]},"app/routes/index.tsx?tsr-split=component":{"file":"assets/index-BGtAJ3n5.js","name":"index","src":"app/routes/index.tsx?tsr-split=component","isDynamicEntry":true},"app/routes/login.tsx?tsr-split=component":{"file":"assets/login-fJnEXyon.js","name":"login","src":"app/routes/login.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_ssr-DRVMySYd.js"]},"app/routes/products/edit.tsx?tsr-split=component":{"file":"assets/edit-BwY5vRCz.js","name":"edit","src":"app/routes/products/edit.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_ssr-DRVMySYd.js","_useView-BC_GKDQJ.js"]},"app/routes/products/index.tsx?tsr-split=component":{"file":"assets/index-BcSOJ4Op.js","name":"index","src":"app/routes/products/index.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_ssr-DRVMySYd.js"]},"app/routes/products/view.$id.tsx?tsr-split=component":{"file":"assets/view._id-BMYC8HfW.js","name":"view._id","src":"app/routes/products/view.$id.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_useView-BC_GKDQJ.js","_ssr-DRVMySYd.js"]},"app/routes/users/index.tsx?tsr-split=component":{"file":"assets/index-9XjYg6bF.js","name":"index","src":"app/routes/users/index.tsx?tsr-split=component","isDynamicEntry":true},"virtual:$vinxi/handler/ssr":{"file":"ssr.js","name":"ssr","src":"virtual:$vinxi/handler/ssr","isEntry":true,"imports":["_ssr-DRVMySYd.js"]}},"server":{"_deferred-B44SK-rK.js":{"file":"assets/deferred-B44SK-rK.js","name":"deferred","isDynamicEntry":true,"imports":["_server-II9tPsql.js"],"dynamicImports":["app/routes/deferred.tsx?tsr-split=component"]},"_server-II9tPsql.js":{"file":"assets/server-II9tPsql.js","name":"server","dynamicImports":["_deferred-B44SK-rK.js","_deferred-B44SK-rK.js"]},"app/routes/deferred.tsx?tsr-split=component":{"file":"assets/deferred-BvmSUPOo.js","name":"deferred","src":"app/routes/deferred.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_deferred-B44SK-rK.js","_server-II9tPsql.js"]},"virtual:$vinxi/handler/server":{"file":"server.js","name":"server","src":"virtual:$vinxi/handler/server","isEntry":true,"imports":["_server-II9tPsql.js"]}},"api":{"virtual:$vinxi/handler/api":{"file":"api.js","name":"api","src":"virtual:$vinxi/handler/api","isEntry":true}}};
 
 				const routeManifest = {"api":{}};
 
@@ -4221,6 +4181,525 @@ plugin,
 app
 ];
 
+function hasProp(obj, prop) {
+  try {
+    return prop in obj;
+  } catch {
+    return false;
+  }
+}
+
+class H3Error extends Error {
+  static __h3_error__ = true;
+  statusCode = 500;
+  fatal = false;
+  unhandled = false;
+  statusMessage;
+  data;
+  cause;
+  constructor(message, opts = {}) {
+    super(message, opts);
+    if (opts.cause && !this.cause) {
+      this.cause = opts.cause;
+    }
+  }
+  toJSON() {
+    const obj = {
+      message: this.message,
+      statusCode: sanitizeStatusCode(this.statusCode, 500)
+    };
+    if (this.statusMessage) {
+      obj.statusMessage = sanitizeStatusMessage(this.statusMessage);
+    }
+    if (this.data !== undefined) {
+      obj.data = this.data;
+    }
+    return obj;
+  }
+}
+function createError$1(input) {
+  if (typeof input === "string") {
+    return new H3Error(input);
+  }
+  if (isError(input)) {
+    return input;
+  }
+  const err = new H3Error(input.message ?? input.statusMessage ?? "", {
+    cause: input.cause || input
+  });
+  if (hasProp(input, "stack")) {
+    try {
+      Object.defineProperty(err, "stack", {
+        get() {
+          return input.stack;
+        }
+      });
+    } catch {
+      try {
+        err.stack = input.stack;
+      } catch {
+      }
+    }
+  }
+  if (input.data) {
+    err.data = input.data;
+  }
+  if (input.statusCode) {
+    err.statusCode = sanitizeStatusCode(input.statusCode, err.statusCode);
+  } else if (input.status) {
+    err.statusCode = sanitizeStatusCode(input.status, err.statusCode);
+  }
+  if (input.statusMessage) {
+    err.statusMessage = input.statusMessage;
+  } else if (input.statusText) {
+    err.statusMessage = input.statusText;
+  }
+  if (err.statusMessage) {
+    const originalMessage = err.statusMessage;
+    const sanitizedMessage = sanitizeStatusMessage(err.statusMessage);
+    if (sanitizedMessage !== originalMessage) {
+      console.warn(
+        "[h3] Please prefer using `message` for longer error messages instead of `statusMessage`. In the future, `statusMessage` will be sanitized by default."
+      );
+    }
+  }
+  if (input.fatal !== undefined) {
+    err.fatal = input.fatal;
+  }
+  if (input.unhandled !== undefined) {
+    err.unhandled = input.unhandled;
+  }
+  return err;
+}
+function isError(input) {
+  return input?.constructor?.__h3_error__ === true;
+}
+function isMethod(event, expected, allowHead) {
+  if (typeof expected === "string") {
+    if (event.method === expected) {
+      return true;
+    }
+  } else if (expected.includes(event.method)) {
+    return true;
+  }
+  return false;
+}
+function assertMethod(event, expected, allowHead) {
+  if (!isMethod(event, expected)) {
+    throw createError$1({
+      statusCode: 405,
+      statusMessage: "HTTP method is not allowed."
+    });
+  }
+}
+function getRequestHeaders(event) {
+  const _headers = {};
+  for (const key in event.node.req.headers) {
+    const val = event.node.req.headers[key];
+    _headers[key] = Array.isArray(val) ? val.filter(Boolean).join(", ") : val;
+  }
+  return _headers;
+}
+const getHeaders = getRequestHeaders;
+function getRequestHost(event, opts = {}) {
+  if (opts.xForwardedHost) {
+    const xForwardedHost = event.node.req.headers["x-forwarded-host"];
+    if (xForwardedHost) {
+      return xForwardedHost;
+    }
+  }
+  return event.node.req.headers.host || "localhost";
+}
+function getRequestProtocol(event, opts = {}) {
+  if (opts.xForwardedProto !== false && event.node.req.headers["x-forwarded-proto"] === "https") {
+    return "https";
+  }
+  return event.node.req.connection?.encrypted ? "https" : "http";
+}
+function getRequestURL(event, opts = {}) {
+  const host = getRequestHost(event, opts);
+  const protocol = getRequestProtocol(event, opts);
+  const path = (event.node.req.originalUrl || event.path).replace(
+    /^[/\\]+/g,
+    "/"
+  );
+  return new URL(path, `${protocol}://${host}`);
+}
+function toWebRequest(event) {
+  return event.web?.request || new Request(getRequestURL(event), {
+    // @ts-ignore Undici option
+    duplex: "half",
+    method: event.method,
+    headers: event.headers,
+    body: getRequestWebStream(event)
+  });
+}
+
+const RawBodySymbol = Symbol.for("h3RawBody");
+const PayloadMethods$1 = ["PATCH", "POST", "PUT", "DELETE"];
+function readRawBody(event, encoding = "utf8") {
+  assertMethod(event, PayloadMethods$1);
+  const _rawBody = event._requestBody || event.web?.request?.body || event.node.req[RawBodySymbol] || event.node.req.rawBody || event.node.req.body;
+  if (_rawBody) {
+    const promise2 = Promise.resolve(_rawBody).then((_resolved) => {
+      if (Buffer.isBuffer(_resolved)) {
+        return _resolved;
+      }
+      if (typeof _resolved.pipeTo === "function") {
+        return new Promise((resolve, reject) => {
+          const chunks = [];
+          _resolved.pipeTo(
+            new WritableStream({
+              write(chunk) {
+                chunks.push(chunk);
+              },
+              close() {
+                resolve(Buffer.concat(chunks));
+              },
+              abort(reason) {
+                reject(reason);
+              }
+            })
+          ).catch(reject);
+        });
+      } else if (typeof _resolved.pipe === "function") {
+        return new Promise((resolve, reject) => {
+          const chunks = [];
+          _resolved.on("data", (chunk) => {
+            chunks.push(chunk);
+          }).on("end", () => {
+            resolve(Buffer.concat(chunks));
+          }).on("error", reject);
+        });
+      }
+      if (_resolved.constructor === Object) {
+        return Buffer.from(JSON.stringify(_resolved));
+      }
+      if (_resolved instanceof URLSearchParams) {
+        return Buffer.from(_resolved.toString());
+      }
+      return Buffer.from(_resolved);
+    });
+    return encoding ? promise2.then((buff) => buff.toString(encoding)) : promise2;
+  }
+  if (!Number.parseInt(event.node.req.headers["content-length"] || "") && !String(event.node.req.headers["transfer-encoding"] ?? "").split(",").map((e) => e.trim()).filter(Boolean).includes("chunked")) {
+    return Promise.resolve(undefined);
+  }
+  const promise = event.node.req[RawBodySymbol] = new Promise(
+    (resolve, reject) => {
+      const bodyData = [];
+      event.node.req.on("error", (err) => {
+        reject(err);
+      }).on("data", (chunk) => {
+        bodyData.push(chunk);
+      }).on("end", () => {
+        resolve(Buffer.concat(bodyData));
+      });
+    }
+  );
+  const result = encoding ? promise.then((buff) => buff.toString(encoding)) : promise;
+  return result;
+}
+function getRequestWebStream(event) {
+  if (!PayloadMethods$1.includes(event.method)) {
+    return;
+  }
+  const bodyStream = event.web?.request?.body || event._requestBody;
+  if (bodyStream) {
+    return bodyStream;
+  }
+  const _hasRawBody = RawBodySymbol in event.node.req || "rawBody" in event.node.req || "body" in event.node.req || "__unenv__" in event.node.req;
+  if (_hasRawBody) {
+    return new ReadableStream({
+      async start(controller) {
+        const _rawBody = await readRawBody(event, false);
+        if (_rawBody) {
+          controller.enqueue(_rawBody);
+        }
+        controller.close();
+      }
+    });
+  }
+  return new ReadableStream({
+    start: (controller) => {
+      event.node.req.on("data", (chunk) => {
+        controller.enqueue(chunk);
+      });
+      event.node.req.on("end", () => {
+        controller.close();
+      });
+      event.node.req.on("error", (err) => {
+        controller.error(err);
+      });
+    }
+  });
+}
+
+const DISALLOWED_STATUS_CHARS = /[^\u0009\u0020-\u007E]/g;
+function sanitizeStatusMessage(statusMessage = "") {
+  return statusMessage.replace(DISALLOWED_STATUS_CHARS, "");
+}
+function sanitizeStatusCode(statusCode, defaultStatusCode = 200) {
+  if (!statusCode) {
+    return defaultStatusCode;
+  }
+  if (typeof statusCode === "string") {
+    statusCode = Number.parseInt(statusCode, 10);
+  }
+  if (statusCode < 100 || statusCode > 999) {
+    return defaultStatusCode;
+  }
+  return statusCode;
+}
+function splitCookiesString(cookiesString) {
+  if (Array.isArray(cookiesString)) {
+    return cookiesString.flatMap((c) => splitCookiesString(c));
+  }
+  if (typeof cookiesString !== "string") {
+    return [];
+  }
+  const cookiesStrings = [];
+  let pos = 0;
+  let start;
+  let ch;
+  let lastComma;
+  let nextStart;
+  let cookiesSeparatorFound;
+  const skipWhitespace = () => {
+    while (pos < cookiesString.length && /\s/.test(cookiesString.charAt(pos))) {
+      pos += 1;
+    }
+    return pos < cookiesString.length;
+  };
+  const notSpecialChar = () => {
+    ch = cookiesString.charAt(pos);
+    return ch !== "=" && ch !== ";" && ch !== ",";
+  };
+  while (pos < cookiesString.length) {
+    start = pos;
+    cookiesSeparatorFound = false;
+    while (skipWhitespace()) {
+      ch = cookiesString.charAt(pos);
+      if (ch === ",") {
+        lastComma = pos;
+        pos += 1;
+        skipWhitespace();
+        nextStart = pos;
+        while (pos < cookiesString.length && notSpecialChar()) {
+          pos += 1;
+        }
+        if (pos < cookiesString.length && cookiesString.charAt(pos) === "=") {
+          cookiesSeparatorFound = true;
+          pos = nextStart;
+          cookiesStrings.push(cookiesString.slice(start, lastComma));
+          start = pos;
+        } else {
+          pos = lastComma + 1;
+        }
+      } else {
+        pos += 1;
+      }
+    }
+    if (!cookiesSeparatorFound || pos >= cookiesString.length) {
+      cookiesStrings.push(cookiesString.slice(start));
+    }
+  }
+  return cookiesStrings;
+}
+
+typeof setImmediate === "undefined" ? (fn) => fn() : setImmediate;
+function getResponseStatus(event) {
+  return event.node.res.statusCode;
+}
+function getResponseHeaders(event) {
+  return event.node.res.getHeaders();
+}
+function sendStream(event, stream) {
+  if (!stream || typeof stream !== "object") {
+    throw new Error("[h3] Invalid stream provided.");
+  }
+  event.node.res._data = stream;
+  if (!event.node.res.socket) {
+    event._handled = true;
+    return Promise.resolve();
+  }
+  if (hasProp(stream, "pipeTo") && typeof stream.pipeTo === "function") {
+    return stream.pipeTo(
+      new WritableStream({
+        write(chunk) {
+          event.node.res.write(chunk);
+        }
+      })
+    ).then(() => {
+      event.node.res.end();
+    });
+  }
+  if (hasProp(stream, "pipe") && typeof stream.pipe === "function") {
+    return new Promise((resolve, reject) => {
+      stream.pipe(event.node.res);
+      if (stream.on) {
+        stream.on("end", () => {
+          event.node.res.end();
+          resolve();
+        });
+        stream.on("error", (error) => {
+          reject(error);
+        });
+      }
+      event.node.res.on("close", () => {
+        if (stream.abort) {
+          stream.abort();
+        }
+      });
+    });
+  }
+  throw new Error("[h3] Invalid or incompatible stream provided.");
+}
+function sendWebResponse(event, response) {
+  for (const [key, value] of response.headers) {
+    if (key === "set-cookie") {
+      event.node.res.appendHeader(key, splitCookiesString(value));
+    } else {
+      event.node.res.setHeader(key, value);
+    }
+  }
+  if (response.status) {
+    event.node.res.statusCode = sanitizeStatusCode(
+      response.status,
+      event.node.res.statusCode
+    );
+  }
+  if (response.statusText) {
+    event.node.res.statusMessage = sanitizeStatusMessage(response.statusText);
+  }
+  if (response.redirected) {
+    event.node.res.setHeader("location", response.url);
+  }
+  if (!response.body) {
+    event.node.res.end();
+    return;
+  }
+  return sendStream(event, response.body);
+}
+
+class H3Event {
+  "__is_event__" = true;
+  // Context
+  node;
+  // Node
+  web;
+  // Web
+  context = {};
+  // Shared
+  // Request
+  _method;
+  _path;
+  _headers;
+  _requestBody;
+  // Response
+  _handled = false;
+  // Hooks
+  _onBeforeResponseCalled;
+  _onAfterResponseCalled;
+  constructor(req, res) {
+    this.node = { req, res };
+  }
+  // --- Request ---
+  get method() {
+    if (!this._method) {
+      this._method = (this.node.req.method || "GET").toUpperCase();
+    }
+    return this._method;
+  }
+  get path() {
+    return this._path || this.node.req.url || "/";
+  }
+  get headers() {
+    if (!this._headers) {
+      this._headers = _normalizeNodeHeaders(this.node.req.headers);
+    }
+    return this._headers;
+  }
+  // --- Respoonse ---
+  get handled() {
+    return this._handled || this.node.res.writableEnded || this.node.res.headersSent;
+  }
+  respondWith(response) {
+    return Promise.resolve(response).then(
+      (_response) => sendWebResponse(this, _response)
+    );
+  }
+  // --- Utils ---
+  toString() {
+    return `[${this.method}] ${this.path}`;
+  }
+  toJSON() {
+    return this.toString();
+  }
+  // --- Deprecated ---
+  /** @deprecated Please use `event.node.req` instead. */
+  get req() {
+    return this.node.req;
+  }
+  /** @deprecated Please use `event.node.res` instead. */
+  get res() {
+    return this.node.res;
+  }
+}
+function _normalizeNodeHeaders(nodeHeaders) {
+  const headers = new Headers();
+  for (const [name, value] of Object.entries(nodeHeaders)) {
+    if (Array.isArray(value)) {
+      for (const item of value) {
+        headers.append(name, item);
+      }
+    } else if (value) {
+      headers.set(name, value);
+    }
+  }
+  return headers;
+}
+
+function defineEventHandler(handler) {
+  if (typeof handler === "function") {
+    handler.__is_handler__ = true;
+    return handler;
+  }
+  const _hooks = {
+    onRequest: _normalizeArray(handler.onRequest),
+    onBeforeResponse: _normalizeArray(handler.onBeforeResponse)
+  };
+  const _handler = (event) => {
+    return _callHandler(event, handler.handler, _hooks);
+  };
+  _handler.__is_handler__ = true;
+  _handler.__resolve__ = handler.handler.__resolve__;
+  _handler.__websocket__ = handler.websocket;
+  return _handler;
+}
+function _normalizeArray(input) {
+  return input ? Array.isArray(input) ? input : [input] : undefined;
+}
+async function _callHandler(event, handler, hooks) {
+  if (hooks.onRequest) {
+    for (const hook of hooks.onRequest) {
+      await hook(event);
+      if (event.handled) {
+        return;
+      }
+    }
+  }
+  const body = await handler(event);
+  const response = { body };
+  if (hooks.onBeforeResponse) {
+    for (const hook of hooks.onBeforeResponse) {
+      await hook(event, response);
+    }
+  }
+  return response.body;
+}
+const eventHandler = defineEventHandler;
+
 function createContext(opts = {}) {
   let currentInstance;
   let isSingleton = false;
@@ -4355,7 +4834,7 @@ function M(e) {
   let t;
   const r = F$1(e), n = { duplex: "half", method: e.method, headers: e.headers };
   return e.node.req.body instanceof ArrayBuffer ? new Request(r, { ...n, body: e.node.req.body }) : new Request(r, { ...n, get body() {
-    return t || (t = B(e), t);
+    return t || (t = B$1(e), t);
   } });
 }
 function P(e) {
@@ -4382,7 +4861,7 @@ function h$1(e) {
     return e(...t);
   };
 }
-const F$1 = h$1(getRequestURL), J = h$1(getResponseStatus), U$1 = h$1(getHeaders), B = h$1(getRequestWebStream);
+const F$1 = h$1(getRequestURL), J = h$1(getResponseStatus), U$1 = h$1(getHeaders), B$1 = h$1(getRequestWebStream);
 function V() {
   var e;
   return getContext("nitro-app", { asyncContext: !!((e = globalThis.app.config.server.experimental) != null && e.asyncContext), AsyncLocalStorage: AsyncLocalStorage });
@@ -4390,18 +4869,18 @@ function V() {
 function x() {
   return V().use().event;
 }
-const G$1 = { "app_routes_deferred_tsx--personServerFn_createServerFn_handler": { functionName: "personServerFn_createServerFn_handler", importer: () => import('../build/deferred-B44SK-rK.mjs').then((e) => e.d) }, "app_routes_deferred_tsx--slowServerFn_createServerFn_handler": { functionName: "slowServerFn_createServerFn_handler", importer: () => import('../build/deferred-B44SK-rK.mjs').then((e) => e.d) } }, re = eventHandler(K), g = G$1;
-async function K(e) {
+const G$1 = { "app_routes_deferred_tsx--personServerFn_createServerFn_handler": { functionName: "personServerFn_createServerFn_handler", importer: () => import('../build/deferred-B44SK-rK.mjs').then((e) => e.d) }, "app_routes_deferred_tsx--slowServerFn_createServerFn_handler": { functionName: "slowServerFn_createServerFn_handler", importer: () => import('../build/deferred-B44SK-rK.mjs').then((e) => e.d) } }, re = eventHandler(K$1), g = G$1;
+async function K$1(e) {
   const t = P(e), r = await X$1(t);
   return Object.entries(U$1()).forEach(([n, o]) => {
     n && o && (!r.headers.has(n) || !r.headers.get(n)) && n.toLowerCase() !== "content-length" && r.headers.set(n, o);
   }), r;
 }
-function Q$1(e) {
+function Q(e) {
   return e.replace(/^\/|\/$/g, "");
 }
 async function X$1(e, t) {
-  const r = e.method, n = new URL(e.url, "http://localhost:3000"), o = new RegExp(`${Q$1("/_server")}/([^/?#]+)`), c = n.pathname.match(o), a = c ? c[1] : null, S = Object.fromEntries(n.searchParams.entries());
+  const r = e.method, n = new URL(e.url, "http://localhost:3000"), o = new RegExp(`${Q("/_server")}/([^/?#]+)`), c = n.pathname.match(o), a = c ? c[1] : null, S = Object.fromEntries(n.searchParams.entries());
   if (typeof a != "string") throw new Error("Invalid server action param for serverFnId: " + a);
   const m = g[a];
   if (!m) throw console.log("serverFnManifest", g), new Error("Server function info not found for " + a);
@@ -4440,14 +4919,14 @@ function S$1(t) {
   let e;
   const s = y$1(t), o = { duplex: "half", method: t.method, headers: t.headers };
   return t.node.req.body instanceof ArrayBuffer ? new Request(s, { ...o, body: t.node.req.body }) : new Request(s, { ...o, get body() {
-    return e || (e = T$1(t), e);
+    return e || (e = T(t), e);
   } });
 }
 function w(t) {
   var _a;
   return (_a = t.web) != null ? _a : t.web = { request: S$1(t), url: y$1(t) }, t.web.request;
 }
-function k() {
+function k$1() {
   return _();
 }
 const d = Symbol("$HTTPEvent");
@@ -4461,13 +4940,13 @@ function m(t) {
     if (D$1(o)) e[0] = o instanceof H3Event || o.__is_event__ ? o : o[d];
     else {
       if (!((s = globalThis.app.config.server.experimental) != null && s.asyncContext)) throw new Error("AsyncLocalStorage was not enabled. Use the `server.experimental.asyncContext: true` option in your app configuration to enable it. Or, pass the instance of HTTPEvent that you have as the first argument to the function.");
-      if (o = k(), !o) throw new Error("No HTTPEvent found in AsyncLocalStorage. Make sure you are using the function within the server runtime.");
+      if (o = k$1(), !o) throw new Error("No HTTPEvent found in AsyncLocalStorage. Make sure you are using the function within the server runtime.");
       e.unshift(o);
     }
     return t(...e);
   };
 }
-const y$1 = m(getRequestURL), T$1 = m(getRequestWebStream);
+const y$1 = m(getRequestURL), T = m(getRequestWebStream);
 function b() {
   var t;
   return getContext("nitro-app", { asyncContext: !!((t = globalThis.app.config.server.experimental) != null && t.asyncContext), AsyncLocalStorage: AsyncLocalStorage });
@@ -4476,7 +4955,7 @@ function _() {
   return b().use().event;
 }
 const E$1 = [{ path: "/__root", filePath: "/Users/souliya/Documents/FullStackDev/stock/app/routes/__root.tsx" }, { path: "/deferred", filePath: "/Users/souliya/Documents/FullStackDev/stock/app/routes/deferred.tsx" }, { path: "/", filePath: "/Users/souliya/Documents/FullStackDev/stock/app/routes/index.tsx" }, { path: "/login", filePath: "/Users/souliya/Documents/FullStackDev/stock/app/routes/login.tsx" }, { path: "/categories", filePath: "/Users/souliya/Documents/FullStackDev/stock/app/routes/categories/index.tsx" }, { path: "/products/create", filePath: "/Users/souliya/Documents/FullStackDev/stock/app/routes/products/create.tsx" }, { path: "/products/edit", filePath: "/Users/souliya/Documents/FullStackDev/stock/app/routes/products/edit.tsx" }, { path: "/products", filePath: "/Users/souliya/Documents/FullStackDev/stock/app/routes/products/index.tsx" }, { path: "/products/view/:$id?", filePath: "/Users/souliya/Documents/FullStackDev/stock/app/routes/products/view.$id.tsx" }, { path: "/users", filePath: "/Users/souliya/Documents/FullStackDev/stock/app/routes/users/index.tsx" }], U = ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS", "HEAD"];
-function A$1(t) {
+function A(t) {
   return eventHandler(async (e) => {
     const s = w(e);
     return await t({ request: s });
@@ -4515,7 +4994,7 @@ function F(t, e) {
   }
 }
 const h = E$1.filter((t) => t.$APIRoute);
-function H$1(t) {
+function H(t) {
   const e = [];
   return t.forEach((s) => {
     const n = s.path.split("/").filter(Boolean).map((r) => r === "*splat" ? "$" : r.startsWith(":$") && r.endsWith("?") ? r.slice(1, -1) : r).join("/");
@@ -4525,7 +5004,7 @@ function H$1(t) {
 const q = async ({ request: t }) => {
   if (!h.length) return new Response("No routes found", { status: 404 });
   if (!U.includes(t.method)) return new Response("Method not allowed", { status: 405 });
-  const e = H$1(h), s = new URL(t.url, "http://localhost:3000"), o = F(s, e);
+  const e = H(h), s = new URL(t.url, "http://localhost:3000"), o = F(s, e);
   if (!o) return new Response("Not found", { status: 404 });
   let n;
   try {
@@ -4536,7 +5015,7 @@ const q = async ({ request: t }) => {
   if (!n) return new Response("Internal server error", { status: 500 });
   const r = t.method, a = n.methods[r];
   return a ? await a({ request: t, params: o.params }) : new Response("Method not allowed", { status: 405 });
-}, W = A$1(q);
+}, W = A(q);
 
 var index_umd$1 = {exports: {}};
 
@@ -10166,39 +10645,39 @@ function Pe({ tag: e, attrs: t, children: r }) {
       return null;
   }
 }
-function Bt(e) {
+function Ut(e) {
   return e instanceof Headers ? new Headers(e) : Array.isArray(e) ? new Headers(e) : typeof e == "object" ? new Headers(e) : new Headers();
 }
-function A(...e) {
+function D(...e) {
   return e.reduce((t, r) => {
-    const n = Bt(r);
-    for (const [o, s] of n.entries()) t.set(o, s);
+    const n = Ut(r);
+    for (const [o, a] of n.entries()) t.set(o, a);
     return t;
   }, new Headers());
 }
-const Ut = [], y = { stringify: (e) => JSON.stringify(e, function(r, n) {
-  const o = this[r], s = H.find((i) => i.stringifyCondition(o));
-  return s ? s.stringify(o) : n;
+const Wt = [], y = { stringify: (e) => JSON.stringify(e, function(r, n) {
+  const o = this[r], a = O.find((i) => i.stringifyCondition(o));
+  return a ? a.stringify(o) : n;
 }), parse: (e) => JSON.parse(e, function(r, n) {
   const o = this[r];
   if (isPlainObject$1(o)) {
-    const s = H.find((i) => i.parseCondition(o));
-    if (s) return s.parse(o);
+    const a = O.find((i) => i.parseCondition(o));
+    if (a) return a.parse(o);
   }
   return n;
 }), encode: (e) => {
   if (Array.isArray(e)) return e.map((r) => y.encode(r));
   if (isPlainObject$1(e)) return Object.fromEntries(Object.entries(e).map(([r, n]) => [r, y.encode(n)]));
-  const t = H.find((r) => r.stringifyCondition(e));
+  const t = O.find((r) => r.stringifyCondition(e));
   return t ? t.stringify(e) : e;
 }, decode: (e) => {
   if (isPlainObject$1(e)) {
-    const t = H.find((r) => r.parseCondition(e));
+    const t = O.find((r) => r.parseCondition(e));
     if (t) return t.parse(e);
   }
   return Array.isArray(e) ? e.map((t) => y.decode(t)) : isPlainObject$1(e) ? Object.fromEntries(Object.entries(e).map(([t, r]) => [t, y.decode(r)])) : e;
-} }, T = (e, t, r, n) => ({ key: e, stringifyCondition: t, stringify: (o) => ({ [`$${e}`]: r(o) }), parseCondition: (o) => Object.hasOwn(o, `$${e}`), parse: (o) => n(o[`$${e}`]) }), H = [T("undefined", (e) => e === void 0, () => 0, () => {
-}), T("date", (e) => e instanceof Date, (e) => e.toISOString(), (e) => new Date(e)), T("error", (e) => e instanceof Error, (e) => ({ ...e, message: e.message, stack: void 0, cause: e.cause }), (e) => Object.assign(new Error(e.message), e)), T("formData", (e) => e instanceof FormData, (e) => {
+} }, E = (e, t, r, n) => ({ key: e, stringifyCondition: t, stringify: (o) => ({ [`$${e}`]: r(o) }), parseCondition: (o) => Object.hasOwn(o, `$${e}`), parse: (o) => n(o[`$${e}`]) }), O = [E("undefined", (e) => e === void 0, () => 0, () => {
+}), E("date", (e) => e instanceof Date, (e) => e.toISOString(), (e) => new Date(e)), E("error", (e) => e instanceof Error, (e) => ({ ...e, message: e.message, stack: void 0, cause: e.cause }), (e) => Object.assign(new Error(e.message), e)), E("formData", (e) => e instanceof FormData, (e) => {
   const t = {};
   return e.forEach((r, n) => {
     const o = t[n];
@@ -10209,13 +10688,13 @@ const Ut = [], y = { stringify: (e) => JSON.stringify(e, function(r, n) {
   return Object.entries(e).forEach(([r, n]) => {
     Array.isArray(n) ? n.forEach((o) => t.append(r, o)) : t.append(r, n);
   }), t;
-}), T("bigint", (e) => typeof e == "bigint", (e) => e.toString(), (e) => BigInt(e))];
-function D(e, t) {
+}), E("bigint", (e) => typeof e == "bigint", (e) => e.toString(), (e) => BigInt(e))];
+function B(e, t) {
   const r = t || e || {};
-  return typeof r.method > "u" && (r.method = "GET"), { options: r, middleware: (n) => D(void 0, Object.assign(r, { middleware: n })), validator: (n) => D(void 0, Object.assign(r, { validator: n })), handler: (...n) => {
-    const [o, s] = n;
-    Object.assign(r, { ...o, extractedFn: o, serverFn: s }), o.url || (console.warn(o), warning(false, "createServerFn must be called with a function that has a 'url' property. Ensure that the @tanstack/start-plugin is ordered **before** the @tanstack/server-functions-plugin."));
-    const i = [...r.middleware || [], Vt(r)];
+  return typeof r.method > "u" && (r.method = "GET"), { options: r, middleware: (n) => B(void 0, Object.assign(r, { middleware: n })), validator: (n) => B(void 0, Object.assign(r, { validator: n })), handler: (...n) => {
+    const [o, a] = n;
+    Object.assign(r, { ...o, extractedFn: o, serverFn: a }), o.url || (console.warn(o), warning(false, "createServerFn must be called with a function that has a 'url' property. Ensure that the @tanstack/start-plugin is ordered **before** the @tanstack/server-functions-plugin."));
+    const i = [...r.middleware || [], Gt(r)];
     return Object.assign(async (l) => fe(i, "client", { ...o, method: r.method, data: l == null ? void 0 : l.data, headers: l == null ? void 0 : l.headers, context: {} }).then((c) => {
       if (c.error) throw c.error;
       return c.result;
@@ -10234,19 +10713,19 @@ function qt(e) {
     return { data: e };
   }
 }
-function Wt(e) {
+function Jt(e) {
   const t = /* @__PURE__ */ new Set(), r = [], n = (o) => {
-    o.forEach((s) => {
-      s.options.middleware && n(s.options.middleware), t.has(s) || (t.add(s), r.push(s));
+    o.forEach((a) => {
+      a.options.middleware && n(a.options.middleware), t.has(a) || (t.add(a), r.push(a));
     });
   };
   return n(e), r;
 }
 const pe = async (e, t, r) => e({ ...t, next: async (n = {}) => {
   var _a, _b;
-  return r({ ...t, ...n, context: { ...t.context, ...n.context }, sendContext: { ...t.sendContext, ...(_a = n.sendContext) != null ? _a : {} }, headers: A(t.headers, n.headers), result: n.result !== void 0 ? n.result : t.result, error: (_b = n.error) != null ? _b : t.error });
+  return r({ ...t, ...n, context: { ...t.context, ...n.context }, sendContext: { ...t.sendContext, ...(_a = n.sendContext) != null ? _a : {} }, headers: D(t.headers, n.headers), result: n.result !== void 0 ? n.result : t.result, error: (_b = n.error) != null ? _b : t.error });
 } });
-function Jt(e, t) {
+function Vt(e, t) {
   if (e == null) return {};
   if ("~standard" in e) {
     const r = e["~standard"].validate(t);
@@ -10259,12 +10738,12 @@ function Jt(e, t) {
   throw new Error("Invalid validator type!");
 }
 async function fe(e, t, r) {
-  const n = Wt([...Ut, ...e]), o = async (s) => {
+  const n = Jt([...Wt, ...e]), o = async (a) => {
     const i = n.shift();
-    if (!i) return s;
-    i.options.validator && (t !== "client" || i.options.validateClient) && (s.data = await Jt(i.options.validator, s.data));
+    if (!i) return a;
+    i.options.validator && (t !== "client" || i.options.validateClient) && (a.data = await Vt(i.options.validator, a.data));
     const l = t === "client" ? i.options.client : i.options.server;
-    return l ? pe(l, s, async (c) => {
+    return l ? pe(l, a, async (c) => {
       const d = i.options.clientAfter;
       if (t === "client" && d) {
         const u = await o(c);
@@ -10274,24 +10753,24 @@ async function fe(e, t, r) {
         if (isRedirect$1(u) || isNotFound(u)) return { ...c, error: u };
         throw u;
       });
-    }) : o(s);
+    }) : o(a);
   };
   return o({ ...r, headers: r.headers || {}, sendContext: r.sendContext || {}, context: r.context || {} });
 }
-function Vt(e) {
+function Gt(e) {
   return { _types: void 0, options: { validator: e.validator, validateClient: e.validateClient, client: async ({ next: t, sendContext: r, ...n }) => {
     var o;
-    const s = await ((o = e.extractedFn) == null ? void 0 : o.call(e, { ...n, context: r }));
-    return t(s);
+    const a = await ((o = e.extractedFn) == null ? void 0 : o.call(e, { ...n, context: r }));
+    return t(a);
   }, server: async ({ next: t, ...r }) => {
     var n;
     const o = await ((n = e.serverFn) == null ? void 0 : n.call(e, r));
     return t({ ...r, result: o });
   } } };
 }
-const Gt = () => {
-  const e = useRouter(), t = useRouterState({ select: (s) => s.matches.map((i) => i.meta).filter(Boolean) }), r = st.useMemo(() => {
-    const s = [], i = {};
+const Qt = () => {
+  const e = useRouter(), t = useRouterState({ select: (a) => a.matches.map((i) => i.meta).filter(Boolean) }), r = at.useMemo(() => {
+    const a = [], i = {};
     let l;
     return [...t].reverse().forEach((c) => {
       [...c].reverse().forEach((d) => {
@@ -10303,81 +10782,81 @@ const Gt = () => {
             if (i[u]) return;
             i[u] = true;
           }
-          s.push({ tag: "meta", attrs: { ...d } });
+          a.push({ tag: "meta", attrs: { ...d } });
         }
       });
-    }), l && s.push(l), s.reverse(), s;
-  }, [t]), n = useRouterState({ select: (s) => s.matches.map((i) => i.links).filter(Boolean).flat(1).map((i) => ({ tag: "link", attrs: { ...i } })), structuralSharing: true }), o = useRouterState({ select: (s) => {
+    }), l && a.push(l), a.reverse(), a;
+  }, [t]), n = useRouterState({ select: (a) => a.matches.map((i) => i.links).filter(Boolean).flat(1).map((i) => ({ tag: "link", attrs: { ...i } })), structuralSharing: true }), o = useRouterState({ select: (a) => {
     const i = [];
-    return s.matches.map((l) => e.looseRoutesById[l.routeId]).forEach((l) => {
+    return a.matches.map((l) => e.looseRoutesById[l.routeId]).forEach((l) => {
       var c, d, u, m;
       return (m = (u = (d = (c = e.ssr) == null ? void 0 : c.manifest) == null ? void 0 : d.routes[l.id]) == null ? void 0 : u.preloads) == null ? void 0 : m.filter(Boolean).forEach((h) => {
         i.push({ tag: "link", attrs: { rel: "modulepreload", href: h } });
       });
     }), i;
   }, structuralSharing: true });
-  return Xt([...r, ...o, ...n], (s) => JSON.stringify(s));
-}, Kt = () => {
-  const e = Gt();
+  return Zt([...r, ...o, ...n], (a) => JSON.stringify(a));
+}, Xt = () => {
+  const e = Qt();
   return jsx(Fragment, { children: e.map((t) => createElement(Pe, { ...t, key: `tsr-meta-${JSON.stringify(t)}` })) });
-}, Qt = () => jsx(Fragment, { children: Kt() });
-function Xt(e, t) {
+}, Kt = () => jsx(Fragment, { children: Xt() });
+function Zt(e, t) {
   const r = /* @__PURE__ */ new Set();
   return e.filter((n) => {
     const o = t(n);
     return r.has(o) ? false : (r.add(o), true);
   });
 }
-const Zt = () => {
+const Yt = () => {
   const e = useRouter(), t = useRouterState({ select: (o) => {
-    var s;
-    const i = [], l = (s = e.ssr) == null ? void 0 : s.manifest;
+    var a;
+    const i = [], l = (a = e.ssr) == null ? void 0 : a.manifest;
     return l ? (o.matches.map((c) => e.looseRoutesById[c.routeId]).forEach((c) => {
       var d, u;
       return (u = (d = l.routes[c.id]) == null ? void 0 : d.assets) == null ? void 0 : u.filter((m) => m.tag === "script").forEach((m) => {
         i.push({ tag: "script", attrs: m.attrs, children: m.children });
       });
     }), i) : (warning(false, "<Scripts /> found no manifest"), []);
-  }, structuralSharing: true }), { scripts: r } = useRouterState({ select: (o) => ({ scripts: o.matches.map((s) => s.scripts).flat(1).filter(Boolean).map(({ children: s, ...i }) => ({ tag: "script", attrs: { ...i, suppressHydrationWarning: true }, children: s })) }) }), n = [...r, ...t];
-  return jsx(Fragment, { children: n.map((o, s) => createElement(Pe, { ...o, key: `tsr-scripts-${o.tag}-${s}` })) });
-}, Yt = `const __TSR_SSR__={matches:[],streamedValues:{},initMatch:o=>(__TSR_SSR__.matches.push(o),o.extracted?.forEach(l=>{if(l.type==="stream"){let r;l.value=new ReadableStream({start(e){r={enqueue:t=>{try{e.enqueue(t)}catch{}},close:()=>{try{e.close()}catch{}}}}}),l.value.controller=r}else{let r,e;l.value=new Promise((t,a)=>{e=a,r=t}),l.value.reject=e,l.value.resolve=r}}),!0),resolvePromise:({matchId:o,id:l,promiseState:r})=>{const e=__TSR_SSR__.matches.find(t=>t.id===o);if(e){const t=e.extracted?.[l];if(t&&t.type==="promise"&&t.value&&r.status==="success")return t.value.resolve(r.data),!0}return!1},injectChunk:({matchId:o,id:l,chunk:r})=>{const e=__TSR_SSR__.matches.find(t=>t.id===o);if(e){const t=e.extracted?.[l];if(t&&t.type==="stream"&&t.value?.controller)return t.value.controller.enqueue(new TextEncoder().encode(r.toString())),!0}return!1},closeStream:({matchId:o,id:l})=>{const r=__TSR_SSR__.matches.find(e=>e.id===o);if(r){const e=r.extracted?.[l];if(e&&e.type==="stream"&&e.value?.controller)return e.value.controller.close(),!0}return!1},cleanScripts:()=>{document.querySelectorAll(".tsr-once").forEach(o=>{o.remove()})}};window.__TSR_SSR__=__TSR_SSR__;
+  }, structuralSharing: true }), { scripts: r } = useRouterState({ select: (o) => ({ scripts: o.matches.map((a) => a.scripts).flat(1).filter(Boolean).map(({ children: a, ...i }) => ({ tag: "script", attrs: { ...i, suppressHydrationWarning: true }, children: a })) }) }), n = [...r, ...t];
+  return jsx(Fragment, { children: n.map((o, a) => createElement(Pe, { ...o, key: `tsr-scripts-${o.tag}-${a}` })) });
+}, er = `const __TSR_SSR__={matches:[],streamedValues:{},initMatch:o=>(__TSR_SSR__.matches.push(o),o.extracted?.forEach(l=>{if(l.type==="stream"){let r;l.value=new ReadableStream({start(e){r={enqueue:t=>{try{e.enqueue(t)}catch{}},close:()=>{try{e.close()}catch{}}}}}),l.value.controller=r}else{let r,e;l.value=new Promise((t,a)=>{e=a,r=t}),l.value.reject=e,l.value.resolve=r}}),!0),resolvePromise:({matchId:o,id:l,promiseState:r})=>{const e=__TSR_SSR__.matches.find(t=>t.id===o);if(e){const t=e.extracted?.[l];if(t&&t.type==="promise"&&t.value&&r.status==="success")return t.value.resolve(r.data),!0}return!1},injectChunk:({matchId:o,id:l,chunk:r})=>{const e=__TSR_SSR__.matches.find(t=>t.id===o);if(e){const t=e.extracted?.[l];if(t&&t.type==="stream"&&t.value?.controller)return t.value.controller.enqueue(new TextEncoder().encode(r.toString())),!0}return!1},closeStream:({matchId:o,id:l})=>{const r=__TSR_SSR__.matches.find(e=>e.id===o);if(r){const e=r.extracted?.[l];if(e&&e.type==="stream"&&e.value?.controller)return e.value.controller.close(),!0}return!1},cleanScripts:()=>{document.querySelectorAll(".tsr-once").forEach(o=>{o.remove()})}};window.__TSR_SSR__=__TSR_SSR__;
 `;
-function er(e, t) {
+function tr(e, t) {
   e.ssr = { manifest: t, serializer: y }, e.serverSsr = { injectedHtml: [], streamedKeys: /* @__PURE__ */ new Set(), injectHtml: (r) => {
     const n = Promise.resolve().then(r);
     return e.serverSsr.injectedHtml.push(n), e.emit({ type: "onInjectedHtml", promise: n }), n.then(() => {
     });
   }, injectScript: (r, n) => e.serverSsr.injectHtml(async () => `<script class='tsr-once'>${await r()}; if (typeof __TSR_SSR__ !== 'undefined') __TSR_SSR__.cleanScripts()<\/script>`), streamValue: (r, n) => {
     warning(!e.serverSsr.streamedKeys.has(r), "Key has already been streamed: " + r), e.serverSsr.streamedKeys.add(r), e.serverSsr.injectScript(() => `__TSR_SSR__.streamedValues['${r}'] = { value: ${C$1(e.ssr.serializer.stringify(n), { isScriptContext: true, wrap: true, json: true })}}`);
-  }, onMatchSettled: nr }, e.serverSsr.injectScript(() => Yt, { logScript: false });
+  }, onMatchSettled: or }, e.serverSsr.injectScript(() => er, { logScript: false });
 }
-function tr(e) {
+function rr(e) {
   var t, r;
   const n = { manifest: e.ssr.manifest, dehydratedData: (r = (t = e.options).dehydrate) == null ? void 0 : r.call(t) };
   e.serverSsr.injectScript(() => `__TSR_SSR__.dehydrated = ${C$1(e.ssr.serializer.stringify(n), { isScriptContext: true, wrap: true, json: true })}`);
 }
-function rr(e, t) {
+function nr(e, t) {
   const r = [];
-  return { replaced: X(e, (o, s) => {
+  return { replaced: K(e, (o, a) => {
     if (o instanceof ReadableStream) {
-      const [i, l] = o.tee(), c = { type: "stream", path: s, id: r.length, matchIndex: t.match.index, stream: l };
+      const [i, l] = o.tee(), c = { type: "stream", path: a, id: r.length, matchIndex: t.match.index, stream: l };
       return r.push(c), i;
     } else if (o instanceof Promise) {
-      const i = defer$1(o), l = { type: "promise", path: s, id: r.length, matchIndex: t.match.index, promise: i };
+      const i = defer$1(o), l = { type: "promise", path: a, id: r.length, matchIndex: t.match.index, promise: i };
       r.push(l);
     }
     return o;
   }), extracted: r };
 }
-function nr(e) {
+function or(e) {
   const { router: t, match: r } = e;
   let n, o;
   if (r.loaderData !== void 0) {
-    const c = rr(r.loaderData, { match: r });
-    r.loaderData = c.replaced, n = c.extracted, o = n.reduce((d, u) => Q(d, ["temp", ...u.path], void 0), { temp: c.replaced }).temp;
+    const c = nr(r.loaderData, { match: r });
+    r.loaderData = c.replaced, n = c.extracted, o = n.reduce((d, u) => X(d, ["temp", ...u.path], void 0), { temp: c.replaced }).temp;
   }
-  const s = `__TSR_SSR__.initMatch(${C$1({ id: r.id, __beforeLoadContext: t.ssr.serializer.stringify(r.__beforeLoadContext), loaderData: t.ssr.serializer.stringify(o), error: t.ssr.serializer.stringify(r.error), extracted: n == null ? void 0 : n.map((c) => pick(c, ["type", "path"])), updatedAt: r.updatedAt, status: r.status }, { isScriptContext: true, wrap: true, json: true })})`;
-  t.serverSsr.injectScript(() => s), n && n.forEach((c) => c.type === "promise" ? i(c) : l(c));
+  const a = `__TSR_SSR__.initMatch(${C$1({ id: r.id, __beforeLoadContext: t.ssr.serializer.stringify(r.__beforeLoadContext), loaderData: t.ssr.serializer.stringify(o), error: t.ssr.serializer.stringify(r.error), extracted: n == null ? void 0 : n.map((c) => pick(c, ["type", "path"])), updatedAt: r.updatedAt, status: r.status }, { isScriptContext: true, wrap: true, json: true })})`;
+  t.serverSsr.injectScript(() => a), n && n.forEach((c) => c.type === "promise" ? i(c) : l(c));
   function i(c) {
     t.serverSsr.injectScript(async () => (await c.promise, `__TSR_SSR__.resolvePromise(${C$1({ matchId: r.id, id: c.id, promiseState: c.promise[TSR_DEFERRED_PROMISE] }, { isScriptContext: true, wrap: true, json: true })})`));
   }
@@ -10398,43 +10877,43 @@ function nr(e) {
     });
   }
 }
-function Q(e, t, r) {
+function X(e, t, r) {
   if (t.length === 0) return r;
   const [n, ...o] = t;
-  return Array.isArray(e) ? e.map((s, i) => i === Number(n) ? Q(s, o, r) : s) : isPlainObject$1(e) ? { ...e, [n]: Q(e[n], o, r) } : e;
+  return Array.isArray(e) ? e.map((a, i) => i === Number(n) ? X(a, o, r) : a) : isPlainObject$1(e) ? { ...e, [n]: X(e[n], o, r) } : e;
 }
-function X(e, t, r = []) {
-  if (isPlainArray(e)) return e.map((o, s) => X(o, t, [...r, `${s}`]));
+function K(e, t, r = []) {
+  if (isPlainArray(e)) return e.map((o, a) => K(o, t, [...r, `${a}`]));
   if (isPlainObject$1(e)) {
     const o = {};
-    for (const s in e) o[s] = X(e[s], t, [...r, s]);
+    for (const a in e) o[a] = K(e[a], t, [...r, a]);
     return o;
   }
   const n = t(e, r);
   return n !== e ? n : e;
 }
-function or({ createRouter: e, getRouterManifest: t }) {
+function sr({ createRouter: e, getRouterManifest: t }) {
   return (r) => eventHandler(async (n) => {
-    const o = toWebRequest(n), s = new URL(o.url), i = s.href.replace(s.origin, ""), l = createMemoryHistory({ initialEntries: [i] }), c = e();
-    er(c, t == null ? void 0 : t()), c.update({ history: l }), await c.load(), tr(c);
-    const d = sr({ event: n, router: c });
+    const o = toWebRequest(n), a = new URL(o.url), i = a.href.replace(a.origin, ""), l = createMemoryHistory({ initialEntries: [i] }), c = e();
+    tr(c, t == null ? void 0 : t()), c.update({ history: l }), await c.load(), rr(c);
+    const d = ar({ event: n, router: c });
     return await r({ request: o, router: c, responseHeaders: d });
   });
 }
-function sr(e) {
+function ar(e) {
   e.event.__tsrHeadersSent = true;
-  let t = A(getResponseHeaders(e.event), { "Content-Type": "text/html; charset=UTF-8" }, ...e.router.state.matches.map((n) => n.headers));
+  let t = D(getResponseHeaders(e.event), { "Content-Type": "text/html; charset=UTF-8" }, ...e.router.state.matches.map((n) => n.headers));
   const { redirect: r } = e.router.state;
-  return r && (t = A(t, r.headers, { Location: r.href })), t;
-}
-function ar(e, t) {
-  return Ee(e, t);
+  return r && (t = D(t, r.headers, { Location: r.href })), t;
 }
 function ir(e, t) {
-  return Readable$1.fromWeb(Ee(e, Readable$1.toWeb(t)));
+  return ke(e, t);
 }
-const cr = /(<body)/, lr = /(<\/body>)/, dr = /(<\/html>)/, ur = /(<head.*?>)/, pr = /(<\/[a-zA-Z][\w:.-]*?>)/g, fr = new TextDecoder();
-function mr() {
+function cr(e, t) {
+  return Readable$1.fromWeb(ke(e, Readable$1.toWeb(t)));
+}
+const lr = /(<body)/, dr = /(<\/body>)/, ur = /(<\/html>)/, pr = /(<head.*?>)/, fr = /(<\/[a-zA-Z][\w:.-]*?>)/g, mr = new TextDecoder();
+function hr() {
   let e;
   const t = new TextEncoder(), n = { stream: new ReadableStream$1({ start(o) {
     e = o;
@@ -10447,29 +10926,29 @@ function mr() {
   }, destroyed: false };
   return n;
 }
-async function hr(e, t) {
+async function gr(e, t) {
   var r, n, o;
   try {
-    const s = e.getReader();
+    const a = e.getReader();
     let i;
-    for (; !(i = await s.read()).done; ) (r = t.onData) == null || r.call(t, i);
+    for (; !(i = await a.read()).done; ) (r = t.onData) == null || r.call(t, i);
     (n = t.onEnd) == null || n.call(t);
-  } catch (s) {
-    (o = t.onError) == null || o.call(t, s);
+  } catch (a) {
+    (o = t.onError) == null || o.call(t, a);
   }
 }
-function Ee(e, t) {
-  const r = mr();
-  let n = true, o = "", s = "", i = false, l = false, c = "", d = "";
+function ke(e, t) {
+  const r = hr();
+  let n = true, o = "", a = "", i = false, l = false, c = "", d = "";
   function u() {
     const f = o;
     return o = "", f;
   }
   function m(f) {
-    return f instanceof Uint8Array ? fr.decode(f) : String(f);
+    return f instanceof Uint8Array ? mr.decode(f) : String(f);
   }
   const h = createControlledPromise();
-  let I = 0;
+  let $ = 0;
   e.serverSsr.injectedHtml.forEach((f) => {
     te(f);
   });
@@ -10477,27 +10956,27 @@ function Ee(e, t) {
     te(f.promise);
   });
   function te(f) {
-    I++, f.then((k) => {
-      i ? r.write(k) : o += k;
+    $++, f.then((N) => {
+      i ? r.write(N) : o += N;
     }).catch(h.reject).finally(() => {
-      I--, !n && I === 0 && (Ue(), h.resolve());
+      $--, !n && $ === 0 && (Ue(), h.resolve());
     });
   }
   return h.then(() => {
-    const f = d + u() + s;
+    const f = d + u() + a;
     r.end(f);
   }).catch((f) => {
     console.error("Error reading routerStream:", f), r.destroy(f);
-  }), hr(t, { onData: (f) => {
-    const k = m(f.value);
-    let g = c + k;
-    const U = g.match(lr), re = g.match(dr);
-    if (i || g.match(cr) && (i = true), !l) {
-      const w = g.match(ur);
+  }), gr(t, { onData: (f) => {
+    const N = m(f.value);
+    let g = c + N;
+    const U = g.match(dr), re = g.match(ur);
+    if (i || g.match(lr) && (i = true), !l) {
+      const w = g.match(pr);
       if (w) {
         l = true;
-        const ne = w.index, oe = w[0], qe = g.slice(ne + oe.length);
-        r.write(g.slice(0, ne) + oe + u()), g = qe;
+        const ne = w.index, oe = w[0], We = g.slice(ne + oe.length);
+        r.write(g.slice(0, ne) + oe + u()), g = We;
       }
     }
     if (!i) {
@@ -10506,93 +10985,64 @@ function Ee(e, t) {
     }
     if (U && re && U.index < re.index) {
       const w = U.index;
-      s = g.slice(w), r.write(g.slice(0, w) + u()), c = "";
+      a = g.slice(w), r.write(g.slice(0, w) + u()), c = "";
       return;
     }
-    let q, $ = 0;
-    for (; (q = pr.exec(g)) !== null; ) $ = q.index + q[0].length;
-    if ($ > 0) {
-      const w = g.slice(0, $) + u() + d;
-      r.write(w), c = g.slice($);
+    let W, H = 0;
+    for (; (W = fr.exec(g)) !== null; ) H = W.index + W[0].length;
+    if (H > 0) {
+      const w = g.slice(0, H) + u() + d;
+      r.write(w), c = g.slice(H);
     } else c = g, d += u();
   }, onEnd: () => {
-    n = false, I === 0 && h.resolve();
+    n = false, $ === 0 && h.resolve();
   }, onError: (f) => {
     console.error("Error reading appStream:", f), r.destroy(f);
   } }), r.stream;
 }
-const gr = async ({ request: e, router: t, responseHeaders: r }) => {
-  if (typeof j.renderToReadableStream == "function") {
-    const n = await j.renderToReadableStream(jsx(ue, { router: t }), { signal: e.signal });
+const yr = async ({ request: e, router: t, responseHeaders: r }) => {
+  if (typeof L.renderToReadableStream == "function") {
+    const n = await L.renderToReadableStream(jsx(ue, { router: t }), { signal: e.signal });
     isbot(e.headers.get("User-Agent")) && await n.allReady;
-    const o = ar(t, n);
-    return new Response(o, { status: t.state.statusCode, headers: r });
-  }
-  if (typeof j.renderToPipeableStream == "function") {
-    const n = new PassThrough();
-    try {
-      const s = j.renderToPipeableStream(jsx(ue, { router: t }), { ...isbot(e.headers.get("User-Agent")) ? { onAllReady() {
-        s.pipe(n);
-      } } : { onShellReady() {
-        s.pipe(n);
-      } }, onError: (i, l) => {
-        console.error("Error in renderToPipeableStream:", i, l);
-      } });
-    } catch (s) {
-      console.error("Error in renderToPipeableStream:", s);
-    }
     const o = ir(t, n);
     return new Response(o, { status: t.state.statusCode, headers: r });
   }
-  throw new Error("No renderToReadableStream or renderToPipeableStream found in react-dom/server. Ensure you are using a version of react-dom that supports streaming.");
-};
-function yr() {
-  return _r();
-}
-const Te = Symbol("$HTTPEvent");
-function vr(e) {
-  return typeof e == "object" && (e instanceof H3Event || (e == null ? void 0 : e[Te]) instanceof H3Event || (e == null ? void 0 : e.__is_event__) === true);
-}
-function Sr(e) {
-  return function(...t) {
-    var r;
-    let n = t[0];
-    if (vr(n)) t[0] = n instanceof H3Event || n.__is_event__ ? n : n[Te];
-    else {
-      if (!((r = globalThis.app.config.server.experimental) != null && r.asyncContext)) throw new Error("AsyncLocalStorage was not enabled. Use the `server.experimental.asyncContext: true` option in your app configuration to enable it. Or, pass the instance of HTTPEvent that you have as the first argument to the function.");
-      if (n = yr(), !n) throw new Error("No HTTPEvent found in AsyncLocalStorage. Make sure you are using the function within the server runtime.");
-      t.unshift(n);
+  if (typeof L.renderToPipeableStream == "function") {
+    const n = new PassThrough();
+    try {
+      const a = L.renderToPipeableStream(jsx(ue, { router: t }), { ...isbot(e.headers.get("User-Agent")) ? { onAllReady() {
+        a.pipe(n);
+      } } : { onShellReady() {
+        a.pipe(n);
+      } }, onError: (i, l) => {
+        console.error("Error in renderToPipeableStream:", i, l);
+      } });
+    } catch (a) {
+      console.error("Error in renderToPipeableStream:", a);
     }
-    return e(...t);
-  };
-}
-const wr = Sr(getHeaders);
-function xr() {
-  var e;
-  return getContext("nitro-app", { asyncContext: !!((e = globalThis.app.config.server.experimental) != null && e.asyncContext), AsyncLocalStorage: AsyncLocalStorage });
-}
-function _r() {
-  return xr().use().event;
-}
-const br = () => ({ routes: { __root__: { filePath: "__root.tsx", children: ["/", "/deferred", "/login", "/products/create", "/products/edit", "/categories/", "/products/", "/users/", "/products/view/$id"], preloads: ["/_build/assets/client-DnlapjMG.js", "/_build/assets/client-DU0zCAyp.js"] }, "/": { filePath: "index.tsx" }, "/deferred": { filePath: "deferred.tsx" }, "/login": { filePath: "login.tsx" }, "/products/create": { filePath: "products/create.tsx" }, "/products/edit": { filePath: "products/edit.tsx" }, "/categories/": { filePath: "categories/index.tsx" }, "/products/": { filePath: "products/index.tsx" }, "/users/": { filePath: "users/index.tsx" }, "/products/view/$id": { filePath: "products/view.$id.tsx" } } });
-function Rr(e) {
+    const o = cr(t, n);
+    return new Response(o, { status: t.state.statusCode, headers: r });
+  }
+  throw new Error("No renderToReadableStream or renderToPipeableStream found in react-dom/server. Ensure you are using a version of react-dom that supports streaming.");
+}, vr = () => ({ routes: { __root__: { filePath: "__root.tsx", children: ["/", "/deferred", "/login", "/products/create", "/products/edit", "/categories/", "/products/", "/users/", "/products/view/$id"], preloads: ["/_build/assets/client-ByngpesG.js", "/_build/assets/client-CrIQ5dyp.js"] }, "/": { filePath: "index.tsx" }, "/deferred": { filePath: "deferred.tsx" }, "/login": { filePath: "login.tsx" }, "/products/create": { filePath: "products/create.tsx" }, "/products/edit": { filePath: "products/edit.tsx" }, "/categories/": { filePath: "categories/index.tsx" }, "/products/": { filePath: "products/index.tsx" }, "/users/": { filePath: "users/index.tsx" }, "/products/view/$id": { filePath: "products/view.$id.tsx" } } });
+function Sr(e) {
   return globalThis.MANIFEST[e];
 }
-function Cr() {
+function wr() {
   var _a;
-  const e = br(), t = e.routes.__root__ = e.routes.__root__ || {};
+  const e = vr(), t = e.routes.__root__ = e.routes.__root__ || {};
   t.assets = t.assets || [];
-  const r = Rr("client");
+  const r = Sr("client");
   return t.assets.push({ tag: "script", attrs: { src: (_a = r.inputs[r.handler]) == null ? void 0 : _a.output.path, type: "module", suppressHydrationWarning: true, async: true } }), e;
 }
-function Pr() {
-  const e = Cr();
+function br() {
+  const e = wr();
   return { ...e, routes: Object.fromEntries(Object.entries(e.routes).map(([t, r]) => {
     const { preloads: n, assets: o } = r;
     return [t, { preloads: n, assets: o }];
   })) };
 }
-function Me({ error: e }) {
+function Ee({ error: e }) {
   const t = useRouter(), r = useMatch({ strict: false, select: (n) => n.id === rootRouteId });
   return console.error("DefaultCatchBoundary Error:", e), jsxs("div", { className: "min-w-0 flex-1 p-4 flex flex-col items-center justify-center gap-6", children: [jsx(ErrorComponent, { error: e }), jsxs("div", { className: "flex gap-2 items-center flex-wrap", children: [jsx("button", { onClick: () => {
     t.invalidate();
@@ -10600,74 +11050,168 @@ function Me({ error: e }) {
     n.preventDefault(), window.history.back();
   }, children: "Go Back" })] })] });
 }
-function Ie({ children: e }) {
+const xr = () => (useEffect(() => {
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("/sw.js").then((r) => {
+        console.log("Service Worker registered successfully with scope:", r.scope);
+      }).catch((r) => {
+        console.error("Service Worker registration failed:", r);
+      });
+    });
+    let e;
+    localStorage.getItem("hasShownA2HS") === "true" || window.addEventListener("beforeinstallprompt", (r) => {
+      var _a, _b;
+      r.preventDefault(), e = r;
+      const n = document.createElement("div");
+      n.style.position = "fixed", n.style.bottom = "20px", n.style.left = "50%", n.style.transform = "translateX(-50%)", n.style.backgroundColor = "#ffffff", n.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.15)", n.style.borderRadius = "12px", n.style.padding = "15px 20px", n.style.zIndex = "999", n.style.display = "flex", n.style.alignItems = "center", n.style.justifyContent = "space-between", n.style.width = "95%", n.style.maxWidth = "400px", n.style.fontFamily = "Arial, sans-serif", n.innerHTML = `
+            <div style="flex: 1; z-index: 999;">
+              <p style="margin: 0; font-size: 16px; font-weight: bold; color: #333;">
+                Add to Home Screen
+              </p>
+              <p style="margin: 0; font-size: 14px; color: #666;">
+                Install this app for a better user experience!
+              </p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; z-index: 999;">
+              <button id="install-pwa-button" style="
+                background-color: #ab5f14;
+                color: #ffffff;
+                font-size: 14px;
+                font-weight: bold;
+                border: none;
+                padding: 8px 12px;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+              ">Install</button>
+              <button id="close-alert-button" style="
+                background-color: #bdbdbd;
+                color: #fff;
+                font-size: 14px;
+                font-weight: bold;
+                border: none;
+                padding: 8px 12px;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+              ">Close</button>
+            </div>
+          `, document.body.appendChild(n);
+      const o = setTimeout(() => {
+        n.remove();
+      }, 15e3);
+      (_a = document.getElementById("install-pwa-button")) == null ? void 0 : _a.addEventListener("click", async () => {
+        if (clearTimeout(o), e) {
+          e.prompt();
+          const { outcome: a } = await e.userChoice;
+          a === "accepted" && localStorage.setItem("hasShownA2HS", "true"), e = null;
+        }
+        n.remove();
+      }), (_b = document.getElementById("close-alert-button")) == null ? void 0 : _b.addEventListener("click", () => {
+        clearTimeout(o), n.remove(), localStorage.setItem("hasShownA2HS", "false");
+      });
+    });
+  }
+}, []), jsxs(Fragment, { children: [jsx("meta", { charSet: "UTF-8" }), jsx("meta", { name: "viewport", content: "width=device-width, initial-scale=1.0" }), jsx("title", { children: "Souvenir Stock" }), jsx("meta", { name: "description", content: "Souvenir Stock Sale App" }), jsx("link", { rel: "manifest", href: "/manifest.json" }), jsx("meta", { property: "og:title", content: "Souvenir Stock" }), jsx("meta", { property: "og:description", content: "Souvenir Stock Sale App" }), jsx("meta", { property: "og:image", content: "https://stock-order.netlify.app/images/favicon.svg" }), jsx("meta", { property: "og:type", content: "website" }), jsx("meta", { property: "og:url", content: "https://stock-order.netlify.app" }), jsx("meta", { name: "twitter:card", content: "summary_large_image" }), jsx("meta", { name: "twitter:title", content: "Souvenir Stock" }), jsx("meta", { name: "twitter:description", content: "Souvenir Stock Sale App" }), jsx("meta", { name: "twitter:image", content: "https://stock-order.netlify.app/images/favicon.svg" }), jsx("link", { rel: "icon", type: "image/png", href: "/images/favicon.svg" }), jsx("meta", { name: "mobile-web-app-capable", content: "yes" }), jsx("meta", { name: "apple-mobile-web-app-status-bar-style", content: "#fff" }), jsx("meta", { name: "apple-mobile-web-app-title", content: "souvenirstock" }), jsx("meta", { name: "theme-color", content: "#fff" }), jsx("link", { rel: "apple-touch-icon", href: "/images/favicon.svg" }), jsx("style", { children: `
+          body {
+            margin: 0;
+            padding: 0;
+          }
+          .install-alert {
+            z-index: 9999;
+            position: fixed;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: auto;
+            pointer-events: auto;
+          }
+          .modal {
+            position: fixed;
+            z-index: 9999;
+          }
+          .install-alert *,
+          .modal * {
+            pointer-events: auto;
+          }
+          .install-alert-blocker,
+          .modal-blocker {
+            pointer-events: none;
+          }
+          .sticky-element {
+            position: sticky;
+            z-index: 999;
+          }
+        ` })] }));
+function Te({ children: e }) {
   return jsxs("div", { className: "space-y-2 p-2", children: [jsx("div", { className: "text-gray-600 dark:text-gray-400", children: e || jsx("p", { children: "The page you are looking for does not exist." }) }), jsxs("p", { className: "flex items-center gap-2 flex-wrap", children: [jsx("button", { onClick: () => window.history.back(), className: "bg-emerald-500 text-white px-2 py-1 rounded uppercase font-black text-sm", children: "Go back" }), jsx(Link, { to: "/", className: "bg-cyan-600 text-white px-2 py-1 rounded uppercase font-black text-sm", children: "Start Over" })] })] });
 }
-const ke = createContext$1(void 0), Er = ({ children: e }) => {
+const Me = createContext$1(void 0), _r = ({ children: e }) => {
   const [t, r] = useState(false);
-  return jsx(ke.Provider, { value: { isMenuOpen: t, setIsMenuOpen: r }, children: e });
-}, Tr = () => {
-  const e = useContext(ke);
+  return jsx(Me.Provider, { value: { isMenuOpen: t, setIsMenuOpen: r }, children: e });
+}, Rr = () => {
+  const e = useContext(Me);
   if (!e) throw new Error("useMenu must be used within a MenuProvider");
   return e;
-}, Mr = ({ size: e = 36, height: t, ...r }) => jsx("svg", { fill: "none", height: e || t, viewBox: "0 0 32 32", width: e || t, ...r, children: jsx("path", { clipRule: "evenodd", d: "M17.6482 10.1305L15.8785 7.02583L7.02979 22.5499H10.5278L17.6482 10.1305ZM19.8798 14.0457L18.11 17.1983L19.394 19.4511H16.8453L15.1056 22.5499H24.7272L19.8798 14.0457Z", fill: "currentColor", fillRule: "evenodd" }) }), Ir = ({ size: e = 24, width: t, height: r, ...n }) => jsx("svg", { "aria-hidden": "true", focusable: "false", height: e || r, role: "presentation", viewBox: "0 0 24 24", width: e || t, ...n, children: jsx("path", { d: "M21.53 15.93c-.16-.27-.61-.69-1.73-.49a8.46 8.46 0 01-1.88.13 8.409 8.409 0 01-5.91-2.82 8.068 8.068 0 01-1.44-8.66c.44-1.01.13-1.54-.09-1.76s-.77-.55-1.83-.11a10.318 10.318 0 00-6.32 10.21 10.475 10.475 0 007.04 8.99 10 10 0 002.89.55c.16.01.32.02.48.02a10.5 10.5 0 008.47-4.27c.67-.93.49-1.519.32-1.79z", fill: "currentColor" }) }), kr = ({ size: e = 24, width: t, height: r, ...n }) => jsx("svg", { "aria-hidden": "true", focusable: "false", height: e || r, role: "presentation", viewBox: "0 0 24 24", width: e || t, ...n, children: jsxs("g", { fill: "currentColor", children: [jsx("path", { d: "M19 12a7 7 0 11-7-7 7 7 0 017 7z" }), jsx("path", { d: "M12 22.96a.969.969 0 01-1-.96v-.08a1 1 0 012 0 1.038 1.038 0 01-1 1.04zm7.14-2.82a1.024 1.024 0 01-.71-.29l-.13-.13a1 1 0 011.41-1.41l.13.13a1 1 0 010 1.41.984.984 0 01-.7.29zm-14.28 0a1.024 1.024 0 01-.71-.29 1 1 0 010-1.41l.13-.13a1 1 0 011.41 1.41l-.13.13a1 1 0 01-.7.29zM22 13h-.08a1 1 0 010-2 1.038 1.038 0 011.04 1 .969.969 0 01-.96 1zM2.08 13H2a1 1 0 010-2 1.038 1.038 0 011.04 1 .969.969 0 01-.96 1zm16.93-7.01a1.024 1.024 0 01-.71-.29 1 1 0 010-1.41l.13-.13a1 1 0 011.41 1.41l-.13.13a.984.984 0 01-.7.29zm-14.02 0a1.024 1.024 0 01-.71-.29l-.13-.14a1 1 0 011.41-1.41l.13.13a1 1 0 010 1.41.97.97 0 01-.7.3zM12 3.04a.969.969 0 01-1-.96V2a1 1 0 012 0 1.038 1.038 0 01-1 1.04z" })] }) }), v = { light: "light", dark: "dark" }, $r = (e) => {
-  const [t, r] = useState(() => v.light), n = useMemo(() => t === v.dark, [t]), o = useMemo(() => t === v.light, [t]), s = (d) => {
-  }, i = () => s(), l = () => s(), c = () => t === v.dark ? i() : l();
+}, Cr = ({ size: e = 36, height: t, ...r }) => jsx("svg", { fill: "none", height: e || t, viewBox: "0 0 32 32", width: e || t, ...r, children: jsx("path", { clipRule: "evenodd", d: "M17.6482 10.1305L15.8785 7.02583L7.02979 22.5499H10.5278L17.6482 10.1305ZM19.8798 14.0457L18.11 17.1983L19.394 19.4511H16.8453L15.1056 22.5499H24.7272L19.8798 14.0457Z", fill: "currentColor", fillRule: "evenodd" }) }), Pr = ({ size: e = 24, width: t, height: r, ...n }) => jsx("svg", { "aria-hidden": "true", focusable: "false", height: e || r, role: "presentation", viewBox: "0 0 24 24", width: e || t, ...n, children: jsx("path", { d: "M21.53 15.93c-.16-.27-.61-.69-1.73-.49a8.46 8.46 0 01-1.88.13 8.409 8.409 0 01-5.91-2.82 8.068 8.068 0 01-1.44-8.66c.44-1.01.13-1.54-.09-1.76s-.77-.55-1.83-.11a10.318 10.318 0 00-6.32 10.21 10.475 10.475 0 007.04 8.99 10 10 0 002.89.55c.16.01.32.02.48.02a10.5 10.5 0 008.47-4.27c.67-.93.49-1.519.32-1.79z", fill: "currentColor" }) }), kr = ({ size: e = 24, width: t, height: r, ...n }) => jsx("svg", { "aria-hidden": "true", focusable: "false", height: e || r, role: "presentation", viewBox: "0 0 24 24", width: e || t, ...n, children: jsxs("g", { fill: "currentColor", children: [jsx("path", { d: "M19 12a7 7 0 11-7-7 7 7 0 017 7z" }), jsx("path", { d: "M12 22.96a.969.969 0 01-1-.96v-.08a1 1 0 012 0 1.038 1.038 0 01-1 1.04zm7.14-2.82a1.024 1.024 0 01-.71-.29l-.13-.13a1 1 0 011.41-1.41l.13.13a1 1 0 010 1.41.984.984 0 01-.7.29zm-14.28 0a1.024 1.024 0 01-.71-.29 1 1 0 010-1.41l.13-.13a1 1 0 011.41 1.41l-.13.13a1 1 0 01-.7.29zM22 13h-.08a1 1 0 010-2 1.038 1.038 0 011.04 1 .969.969 0 01-.96 1zM2.08 13H2a1 1 0 010-2 1.038 1.038 0 011.04 1 .969.969 0 01-.96 1zm16.93-7.01a1.024 1.024 0 01-.71-.29 1 1 0 010-1.41l.13-.13a1 1 0 011.41 1.41l-.13.13a.984.984 0 01-.7.29zm-14.02 0a1.024 1.024 0 01-.71-.29l-.13-.14a1 1 0 011.41-1.41l.13.13a1 1 0 010 1.41.97.97 0 01-.7.3zM12 3.04a.969.969 0 01-1-.96V2a1 1 0 012 0 1.038 1.038 0 01-1 1.04z" })] }) }), v = { light: "light", dark: "dark" }, Er = (e) => {
+  const [t, r] = useState(() => v.light), n = useMemo(() => t === v.dark, [t]), o = useMemo(() => t === v.light, [t]), a = (d) => {
+  }, i = () => a(), l = () => a(), c = () => t === v.dark ? i() : l();
   return useEffect(() => {
   }, []), { theme: t, isDark: n, isLight: o, setLightTheme: i, setDarkTheme: l, toggleTheme: c };
 }, me = ({ className: e, classNames: t }) => {
-  const [r, n] = useState(false), { theme: o, toggleTheme: s } = $r(), i = s, { Component: l, slots: c, isSelected: d, getBaseProps: u, getInputProps: m, getWrapperProps: h } = useSwitch({ isSelected: o === "light", onChange: i });
+  const [r, n] = useState(false), { theme: o, toggleTheme: a } = Er(), i = a, { Component: l, slots: c, isSelected: d, getBaseProps: u, getInputProps: m, getWrapperProps: h } = useSwitch({ isSelected: o === "light", onChange: i });
   return useEffect(() => {
     n(true);
-  }, [r]), r ? jsxs(l, { "aria-label": d ? "Switch to dark mode" : "Switch to light mode", ...u({ className: O("px-px transition-opacity hover:opacity-80 cursor-pointer", e, t == null ? void 0 : t.base) }), children: [jsx(VisuallyHidden, { children: jsx("input", { ...m() }) }), jsx("div", { ...h(), className: c.wrapper({ class: O(["w-auto h-auto", "bg-transparent", "rounded-lg", "flex items-center justify-center", "group-data-[selected=true]:bg-transparent", "!text-default-500", "pt-px", "px-0", "mx-0"], t == null ? void 0 : t.wrapper) }), children: d ? jsx(Ir, { size: 22 }) : jsx(kr, { size: 22 }) })] }) : jsx("div", { className: "w-6 h-6" });
-}, E = new ht("https://souvenirstock-api.up.railway.app");
-E.autoCancellation(false);
-async function Zn(e, t) {
-  return await E.collection(e).getOne(t);
+  }, [r]), r ? jsxs(l, { "aria-label": d ? "Switch to dark mode" : "Switch to light mode", ...u({ className: A$1("px-px transition-opacity hover:opacity-80 cursor-pointer", e, t == null ? void 0 : t.base) }), children: [jsx(VisuallyHidden, { children: jsx("input", { ...m() }) }), jsx("div", { ...h(), className: c.wrapper({ class: A$1(["w-auto h-auto", "bg-transparent", "rounded-lg", "flex items-center justify-center", "group-data-[selected=true]:bg-transparent", "!text-default-500", "pt-px", "px-0", "mx-0"], t == null ? void 0 : t.wrapper) }), children: d ? jsx(Pr, { size: 22 }) : jsx(kr, { size: 22 }) })] }) : jsx("div", { className: "w-6 h-6" });
+}, k = new gt("https://souvenirstock-api.up.railway.app");
+k.autoCancellation(false);
+async function eo(e, t) {
+  return await k.collection(e).getOne(t);
 }
-async function Nr(e, t) {
-  return (await E.collection(e).create(t)).id;
+async function Tr(e, t) {
+  return (await k.collection(e).create(t)).id;
 }
-async function Yn(e, t, r) {
-  await E.collection(e).update(t, r);
+async function to(e, t, r) {
+  await k.collection(e).update(t, r);
 }
-const jr = () => {
-  const e = useNavigate(), [t, r] = useState(false), n = () => r(true), o = () => r(false), s = () => {
-    E.authStore.clear(), e({ to: "/login" });
+const Mr = () => {
+  const e = useNavigate(), [t, r] = useState(false), n = () => r(true), o = () => r(false), a = () => {
+    k.authStore.clear(), e({ to: "/login" });
   };
-  return { logout: s, handleLogout: () => {
-    s(), o();
+  return { logout: a, handleLogout: () => {
+    a(), o();
   }, openModalLogout: n, closeModalLogout: o, isOpen: t };
 }, he = () => {
-  const { handleLogout: e, openModalLogout: t, closeModalLogout: r, isOpen: n } = jr();
+  const { handleLogout: e, openModalLogout: t, closeModalLogout: r, isOpen: n } = Mr();
   return jsxs(Fragment, { children: [jsx(Link$2, { isExternal: true, title: "Logout", className: "flex items-center gap-2 cursor-pointer", onPress: t, children: jsx("span", { className: "font-bold text-red-500", children: "Logout" }) }), jsx(Modal, { isOpen: n, onClose: r, children: jsxs(ModalContent, { children: [jsx(ModalHeader, { children: "Confirm Logout" }), jsx(ModalBody, { children: "Are you sure you want to log out?" }), jsxs(ModalFooter, { children: [jsx(Button, { variant: "ghost", onPress: r, children: "Cancel" }), jsx(Button, { color: "danger", onPress: e, children: "Logout" })] })] }) })] });
-}, G = { navItems: [{ label: "Products", href: "/products" }, { label: "Categories", href: "/categories" }, { label: "Users", href: "/users" }], navMenuItems: [{ label: "Products", href: "/products" }, { label: "Categories", href: "/categories" }, { label: "Users", href: "/users" }] }, Hr = () => {
-  const [e, t] = useState(""), { isMenuOpen: r, setIsMenuOpen: n } = Tr(), o = (s) => {
-    Z.navigate({ to: s }), t(s), n(false);
+}, G = { navItems: [{ label: "Products", href: "/products" }, { label: "Categories", href: "/categories" }, { label: "Users", href: "/users" }], navMenuItems: [{ label: "Products", href: "/products" }, { label: "Categories", href: "/categories" }, { label: "Users", href: "/users" }] }, Ir = () => {
+  const [e, t] = useState(""), { isMenuOpen: r, setIsMenuOpen: n } = Rr(), o = (a) => {
+    Z.navigate({ to: a }), t(a), n(false);
   };
-  return jsxs(Navbar, { maxWidth: "xl", position: "sticky", isMenuOpen: r, onMenuOpenChange: n, children: [jsxs(NavbarContent, { className: "basis-1/5 sm:basis-full", justify: "start", children: [jsx(NavbarBrand, { className: "gap-3 max-w-fit", children: jsxs(Link$1, { className: "flex justify-start items-center gap-1", color: "foreground", href: "/", children: [jsx(Mr, {}), jsx("p", { className: "font-bold text-inherit", children: "Stock" })] }) }), jsx("div", { className: "hidden lg:flex sm:flex gap-4 justify-start ml-2", children: G.navItems.map((s) => jsx(NavbarItem, { children: jsx(Link$1, { className: O(link({ color: "foreground" }), "data-[active=true]:text-primary data-[active=true]:font-medium"), color: "foreground", as: Link, to: s.href, children: s.label }) }, s.href)) })] }), jsx(NavbarContent, { className: "hidden sm:flex basis-1/5 sm:basis-full", justify: "end", children: jsxs(NavbarItem, { className: "hidden sm:flex gap-8", children: [jsx(me, {}), jsx(he, {})] }) }), jsxs(NavbarContent, { className: "sm:hidden basis-1 pl-4", justify: "end", children: [jsx(me, { className: "mr-3" }), jsx(NavbarMenuToggle, { className: "z-50" })] }), jsxs(NavbarMenu, { children: [jsx("div", { className: "mx-4 mt-2 flex flex-col gap-2", children: G.navMenuItems.map((s, i) => jsxs(NavbarMenuItem, { children: [jsx(Link$1, { className: O(link({ color: "foreground" }), "data-[active=true]:text-blue-500 data-[active=true]:font-medium", "flex items-center gap-2", e === s.href ? "text-blue-500 font-medium" : "", "font-bold"), color: "foreground", size: "lg", as: Link, to: s.href, onPress: () => o(s.href), children: jsx("span", { children: s.label }) }), i !== G.navMenuItems.length - 1 && jsx("div", { className: "border-b my-2" })] }, `${s}-${i}`)) }), jsx("div", { className: "border-b my-2" }), jsx("div", { className: "mx-4 mt-1 flex flex-col gap-2", children: jsx(he, {}) })] })] });
+  return jsxs(Navbar, { maxWidth: "xl", position: "sticky", isMenuOpen: r, onMenuOpenChange: n, children: [jsxs(NavbarContent, { className: "basis-1/5 sm:basis-full", justify: "start", children: [jsx(NavbarBrand, { className: "gap-3 max-w-fit", children: jsxs(Link$1, { className: "flex justify-start items-center gap-1", color: "foreground", href: "/", children: [jsx(Cr, {}), jsx("p", { className: "font-bold text-inherit", children: "Stock" })] }) }), jsx("div", { className: "hidden lg:flex sm:flex gap-4 justify-start ml-2", children: G.navItems.map((a) => jsx(NavbarItem, { children: jsx(Link$1, { className: A$1(link({ color: "foreground" }), "data-[active=true]:text-primary data-[active=true]:font-medium"), color: "foreground", as: Link, to: a.href, children: a.label }) }, a.href)) })] }), jsx(NavbarContent, { className: "hidden sm:flex basis-1/5 sm:basis-full", justify: "end", children: jsxs(NavbarItem, { className: "hidden sm:flex gap-8", children: [jsx(me, {}), jsx(he, {})] }) }), jsxs(NavbarContent, { className: "sm:hidden basis-1 pl-4", justify: "end", children: [jsx(me, { className: "mr-3" }), jsx(NavbarMenuToggle, { className: "z-50" })] }), jsxs(NavbarMenu, { children: [jsx("div", { className: "mx-4 mt-2 flex flex-col gap-2", children: G.navMenuItems.map((a, i) => jsxs(NavbarMenuItem, { children: [jsx(Link$1, { className: A$1(link({ color: "foreground" }), "data-[active=true]:text-blue-500 data-[active=true]:font-medium", "flex items-center gap-2", e === a.href ? "text-blue-500 font-medium" : "", "font-bold"), color: "foreground", size: "lg", as: Link, to: a.href, onPress: () => o(a.href), children: jsx("span", { children: a.label }) }), i !== G.navMenuItems.length - 1 && jsx("div", { className: "border-b my-2" })] }, `${a}-${i}`)) }), jsx("div", { className: "border-b my-2" }), jsx("div", { className: "mx-4 mt-1 flex flex-col gap-2", children: jsx(he, {}) })] })] });
 };
-function Or({ children: e }) {
-  const t = useRouterState({ select: (s) => s.location }), r = useNavigate(), o = t.pathname === "/login";
+function $r({ children: e }) {
+  const t = useRouterState({ select: (a) => a.location }), r = useNavigate(), o = t.pathname === "/login";
   return useEffect(() => {
-    !E.authStore.token && !o && r({ to: "/login" });
-  }, [o, r]), jsxs("div", { className: "relative flex flex-col h-screen", children: [!o && jsx(Er, { children: jsx(Hr, {}) }), jsx("main", { className: "container mx-auto max-w-7xl px-1 flex-grow", children: e })] });
+    !k.authStore.token && !o && r({ to: "/login" });
+  }, [o, r]), jsxs("div", { className: "relative flex flex-col h-screen", children: [!o && jsx(_r, { children: jsx(Ir, {}) }), jsx("main", { className: "container mx-auto max-w-7xl px-1 flex-grow", children: e })] });
 }
-const Lr = () => new QueryClient({ defaultOptions: { queries: { retry: 1, staleTime: 5e3, refetchOnWindowFocus: true, throwOnError(e) {
+const Nr = () => new QueryClient({ defaultOptions: { queries: { retry: 1, staleTime: 5e3, refetchOnWindowFocus: true, throwOnError(e) {
   return e instanceof Error ? (console.log("=> Mutation error:", e), false) : true;
 } }, mutations: { onSuccess: (e) => {
   toast.success("Successfully!", { position: "top-right", autoClose: 2e3 }), console.log("=> Mutation success:", e);
 }, onError: (e) => {
   e instanceof Error && (toast.error("Failed, Please try again later.", { position: "top-right", autoClose: 2e3 }), console.log("=> Mutation error:", e));
-} } } }), Fr = Lr(), Ar = "/_build/assets/app-D9nu_773.css", Dr = ({ title: e, description: t, keywords: r, image: n }) => [{ title: e }, { name: "description", content: t }, { name: "keywords", content: r }, { name: "twitter:title", content: e }, { name: "twitter:description", content: t }, { name: "twitter:creator", content: "@tannerlinsley" }, { name: "twitter:site", content: "@tannerlinsley" }, { name: "og:type", content: "website" }, { name: "og:title", content: e }, { name: "og:description", content: t }, ...n ? [{ name: "twitter:image", content: n }, { name: "twitter:card", content: "summary_large_image" }, { name: "og:image", content: n }] : []], S = createRootRoute({ head: () => ({ meta: [{ charSet: "utf-8" }, { name: "viewport", content: "width=device-width, initial-scale=1" }, ...Dr({ title: "Stock", description: "Stock" })], links: [{ rel: "stylesheet", href: Ar }, { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" }, { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" }, { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" }, { rel: "manifest", href: "/site.webmanifest", color: "#fffff" }, { rel: "icon", href: "/favicon.ico" }] }), errorComponent: (e) => jsx($e, { children: jsx(Me, { ...e }) }), notFoundComponent: () => jsx(Ie, {}), component: zr });
-function zr() {
-  return jsx($e, { children: jsx(Outlet, {}) });
+} } } }), Hr = Nr(), jr = "/_build/assets/app-D9nu_773.css", Lr = ({ title: e, description: t, keywords: r, image: n }) => [{ title: e }, { name: "description", content: t }, { name: "keywords", content: r }, { name: "twitter:title", content: e }, { name: "twitter:description", content: t }, { name: "twitter:creator", content: "@tannerlinsley" }, { name: "twitter:site", content: "@tannerlinsley" }, { name: "og:type", content: "website" }, { name: "og:title", content: e }, { name: "og:description", content: t }, ...n ? [{ name: "twitter:image", content: n }, { name: "twitter:card", content: "summary_large_image" }, { name: "og:image", content: n }] : []], S = createRootRoute({ head: () => ({ meta: [{ charSet: "utf-8" }, { name: "viewport", content: "width=device-width, initial-scale=1" }, ...Lr({ title: "Stock", description: "Stock" })], links: [{ rel: "stylesheet", href: jr }, { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" }, { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" }, { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" }, { rel: "manifest", href: "/site.webmanifest", color: "#fffff" }, { rel: "icon", href: "/favicon.ico" }] }), errorComponent: (e) => jsx(Ie, { children: jsx(Ee, { ...e }) }), notFoundComponent: () => jsx(Te, {}), component: Or });
+function Or() {
+  return jsx(Ie, { children: jsx(Outlet, {}) });
 }
-function $e({ children: e }) {
-  return jsxs("html", { children: [jsx("head", { children: jsx(Qt, {}) }), jsxs("body", { children: [jsx(HeroUIProvider, { navigate: (t, r) => Z.navigate({ to: t, ...r }), useHref: (t) => Z.buildLocation({ to: t }).href, children: jsxs(QueryClientProvider, { client: Fr, children: [jsx(Or, { children: jsx("section", { className: "flex flex-col items-center justify-center gap-1 py-1 md:py-0", children: e }) }), jsx(ReactQueryDevtools, { initialIsOpen: false })] }) }), jsx(TanStackRouterDevtools, { position: "bottom-right" }), jsx(Zt, {})] })] });
+function Ie({ children: e }) {
+  return jsxs("html", { children: [jsxs("head", { children: [jsx(xr, {}), jsx("script", { src: "/sw.js" }), jsx(Kt, {})] }), jsxs("body", { children: [jsx(HeroUIProvider, { navigate: (t, r) => Z.navigate({ to: t, ...r }), useHref: (t) => Z.buildLocation({ to: t }).href, children: jsxs(QueryClientProvider, { client: Hr, children: [jsx($r, { children: jsx("section", { className: "flex flex-col items-center justify-center gap-1 py-1 md:py-0", children: e }) }), jsx(ReactQueryDevtools, { initialIsOpen: false })] }) }), jsx(TanStackRouterDevtools, { position: "bottom-right" }), jsx(Yt, {})] })] });
 }
-const Br = () => import('../build/login-DoVRcV5-.mjs'), Ne = createFileRoute("/login")({ component: lazyRouteComponent(Br, "component", () => Ne.ssr) });
-async function Ur(e, t, r) {
+const Ar = () => import('../build/login-fJnEXyon.mjs'), $e = createFileRoute("/login")({ component: lazyRouteComponent(Ar, "component", () => $e.ssr) });
+async function Fr(e, t, r) {
   var n;
   const o = t[0];
   if (isPlainObject$1(o) && o.method) {
@@ -10676,7 +11220,7 @@ async function Ur(e, t, r) {
       const h = encode$1({ payload: y.stringify({ data: l.data, context: l.context }) });
       h && (e.includes("?") ? e += `&${h}` : e += `?${h}`);
     }
-    const u = await r(e, { method: l.method, headers: d, ...qr(l) }), m = await ge(u);
+    const u = await r(e, { method: l.method, headers: d, ...zr(l) }), m = await ge(u);
     if ((n = m.headers.get("content-type")) != null && n.includes("application/json")) {
       const h = y.decode(await m.json());
       if (isRedirect$1(h) || isNotFound(h) || h instanceof Error) throw h;
@@ -10684,10 +11228,10 @@ async function Ur(e, t, r) {
     }
     return m;
   }
-  const s = await ge(await r(e, { method: "POST", headers: { Accept: "application/json", "Content-Type": "application/json" }, body: JSON.stringify(t) })), i = s.headers.get("content-type");
-  return i && i.includes("application/json") ? y.decode(await s.json()) : s.text();
+  const a = await ge(await r(e, { method: "POST", headers: { Accept: "application/json", "Content-Type": "application/json" }, body: JSON.stringify(t) })), i = a.headers.get("content-type");
+  return i && i.includes("application/json") ? y.decode(await a.json()) : a.text();
 }
-function qr(e) {
+function zr(e) {
   var _a;
   return e.method === "POST" ? e.data instanceof FormData ? (e.data.set("__TSR_CONTEXT", y.stringify(e.context)), { body: e.data }) : { body: y.stringify({ data: (_a = e.data) != null ? _a : null, context: e.context }) } : {};
 }
@@ -10698,13 +11242,41 @@ async function ge(e) {
   }
   return e;
 }
-function Wr(e) {
+function Dr() {
+  return Jr();
+}
+const Ne = Symbol("$HTTPEvent");
+function Br(e) {
+  return typeof e == "object" && (e instanceof H3Event || (e == null ? void 0 : e[Ne]) instanceof H3Event || (e == null ? void 0 : e.__is_event__) === true);
+}
+function Ur(e) {
+  return function(...t) {
+    var r;
+    let n = t[0];
+    if (Br(n)) t[0] = n instanceof H3Event || n.__is_event__ ? n : n[Ne];
+    else {
+      if (!((r = globalThis.app.config.server.experimental) != null && r.asyncContext)) throw new Error("AsyncLocalStorage was not enabled. Use the `server.experimental.asyncContext: true` option in your app configuration to enable it. Or, pass the instance of HTTPEvent that you have as the first argument to the function.");
+      if (n = Dr(), !n) throw new Error("No HTTPEvent found in AsyncLocalStorage. Make sure you are using the function within the server runtime.");
+      t.unshift(n);
+    }
+    return e(...t);
+  };
+}
+const Wr = Ur(getHeaders);
+function qr() {
+  var e;
+  return getContext("nitro-app", { asyncContext: !!((e = globalThis.app.config.server.experimental) != null && e.asyncContext), AsyncLocalStorage: AsyncLocalStorage });
+}
+function Jr() {
+  return qr().use().event;
+}
+function Vr(e) {
   return e.replace(/^\/|\/$/g, "");
 }
-const je = (e, t) => {
-  const r = `/${Wr(t)}/${e}`;
-  return Object.assign((...o) => Ur(r, o, async (s, i) => (i.headers = A(wr(), i.headers), $fetch.native(s, i))), { url: r, functionId: e });
-}, Jr = () => import('../build/deferred-B47IHYAR.mjs'), Vr = je("app_routes_deferred_tsx--personServerFn_createServerFn_handler", "/_server"), Gr = D({ method: "GET" }).validator((e) => e).handler(Vr), Kr = je("app_routes_deferred_tsx--slowServerFn_createServerFn_handler", "/_server"), Qr = D({ method: "GET" }).validator((e) => e).handler(Kr), He = createFileRoute("/deferred")({ loader: async () => ({ deferredStuff: new Promise((e) => setTimeout(() => e("Hello deferred!"), 2e3)), deferredPerson: Qr({ data: "Tanner Linsley" }), person: await Gr({ data: "John Doe" }) }), component: lazyRouteComponent(Jr, "component", () => He.ssr) }), Xr = () => import('../build/index-CuMTP0jl.mjs'), Oe = createFileRoute("/")({ component: lazyRouteComponent(Xr, "component", () => Oe.ssr) }), Zr = () => import('../build/index-9XjYg6bF.mjs'), Le = createFileRoute("/users/")({ component: lazyRouteComponent(Zr, "component", () => Le.ssr) }), Yr = () => import('../build/index-V4f2HU0n.mjs'), Fe = createFileRoute("/products/")({ component: lazyRouteComponent(Yr, "component", () => Fe.ssr) }), en = () => import('../build/index-BDGrPjxy.mjs'), Ae = createFileRoute("/categories/")({ component: lazyRouteComponent(en, "component", () => Ae.ssr) }), tn = () => import('../build/edit-DZNSORIr.mjs'), De = createFileRoute("/products/edit")({ component: lazyRouteComponent(tn, "component", () => De.ssr) }), rn = ({ uwConfig: e, setPublicIds: t, setImageUrls: r }) => {
+const He = (e, t) => {
+  const r = `/${Vr(t)}/${e}`;
+  return Object.assign((...o) => Fr(r, o, async (a, i) => (i.headers = D(Wr(), i.headers), $fetch.native(a, i))), { url: r, functionId: e });
+}, Gr = () => import('../build/deferred-D-h3hGcr.mjs'), Qr = He("app_routes_deferred_tsx--personServerFn_createServerFn_handler", "/_server"), Xr = B({ method: "GET" }).validator((e) => e).handler(Qr), Kr = He("app_routes_deferred_tsx--slowServerFn_createServerFn_handler", "/_server"), Zr = B({ method: "GET" }).validator((e) => e).handler(Kr), je = createFileRoute("/deferred")({ loader: async () => ({ deferredStuff: new Promise((e) => setTimeout(() => e("Hello deferred!"), 2e3)), deferredPerson: Zr({ data: "Tanner Linsley" }), person: await Xr({ data: "John Doe" }) }), component: lazyRouteComponent(Gr, "component", () => je.ssr) }), Yr = () => import('../build/index-BGtAJ3n5.mjs'), Le = createFileRoute("/")({ beforeLoad: async () => redirect({ to: "/products" }), component: lazyRouteComponent(Yr, "component", () => Le.ssr) }), en = () => import('../build/index-9XjYg6bF.mjs'), Oe = createFileRoute("/users/")({ component: lazyRouteComponent(en, "component", () => Oe.ssr) }), tn = () => import('../build/index-BcSOJ4Op.mjs'), Ae = createFileRoute("/products/")({ component: lazyRouteComponent(tn, "component", () => Ae.ssr) }), rn = () => import('../build/index-BDGrPjxy.mjs'), Fe = createFileRoute("/categories/")({ component: lazyRouteComponent(rn, "component", () => Fe.ssr) }), nn = () => import('../build/edit-BwY5vRCz.mjs'), ze = createFileRoute("/products/edit")({ component: lazyRouteComponent(nn, "component", () => ze.ssr) }), on = ({ uwConfig: e, setPublicIds: t, setImageUrls: r }) => {
   const n = useRef(null), o = useRef(null);
   return useEffect(() => {
     (() => {
@@ -10719,14 +11291,14 @@ const je = (e, t) => {
       }
     })();
   }, [e, t, r]), jsxs("button", { ref: o, id: "upload_widget", type: "button", className: "cloudinary-button flex items-center justify-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-200", children: [jsx(FaCloudUploadAlt, { className: "text-lg" }), "Upload Images"] });
-}, nn = ({ cld: e, publicId: t }) => {
+}, sn = ({ cld: e, publicId: t }) => {
   const r = { display: "inline-block", cursor: "pointer", borderRadius: "8px", overflow: "hidden", boxShadow: "0 2px 10px rgba(0, 0, 0, 0.2)" }, n = { display: "block", width: "200px", height: "200px", objectFit: "cover", borderRadius: "8px" }, o = e.image(t).resize(thumbnail().width(200).height(200));
   return jsx("div", { className: "image-preview", style: r, children: jsx(index_umdExports.AdvancedImage, { style: n, cldImg: o, plugins: [index_umdExports.responsive(), index_umdExports.placeholder()] }) });
-}, on = () => {
-  const e = process.env.CLOUDINARY_NAME, t = process.env.CLOUDINARY_UPLOAD_PRESET, [r, n] = useState([]), [o, s] = useState([]);
-  return { cld: new Cloudinary({ cloud: { cloudName: e } }), uwConfig: { cloudName: e, uploadPreset: t, multiple: true, folder: "souvenirstock", cropping: false }, publicIds: r, imageUrls: o, setPublicIds: n, setImageUrls: s };
-}, sn = () => {
-  const { cld: e, publicIds: t, uwConfig: r, imageUrls: n, setPublicIds: o, setImageUrls: s } = on(), i = useMutation({ mutationFn: (c) => Nr("products", c), onSuccess: () => {
+}, an = () => {
+  const e = process.env.CLOUDINARY_NAME, t = process.env.CLOUDINARY_UPLOAD_PRESET, [r, n] = useState([]), [o, a] = useState([]);
+  return { cld: new Cloudinary({ cloud: { cloudName: e } }), uwConfig: { cloudName: e, uploadPreset: t, multiple: true, folder: "souvenirstock", cropping: false }, publicIds: r, imageUrls: o, setPublicIds: n, setImageUrls: a };
+}, cn = () => {
+  const { cld: e, publicIds: t, uwConfig: r, imageUrls: n, setPublicIds: o, setImageUrls: a } = an(), i = useMutation({ mutationFn: (c) => Tr("products", c), onSuccess: () => {
     toast.success("Product created successfully!", { position: "top-right", autoClose: 2e3 }), history.back();
   }, onError: (c) => {
     toast.error(`Failed to create product: ${c}`, { position: "top-right", autoClose: 2e3 });
@@ -10735,25 +11307,25 @@ const je = (e, t) => {
     const d = Object.fromEntries(new FormData(c.currentTarget));
     !d.imageurl && n.length > 0 && (d.imageurl = n), i.mutateAsync(d);
   };
-  return { cld: e, uwConfig: r, publicIds: t, imageUrls: n, setPublicIds: o, setImageUrls: s, isPending: i.isPending, handleSubmit: l };
-}, an = [{ key: "Clothing", label: "Clothing" }, { key: "PostCards", label: "PostCards" }, { key: "Souvenir", label: "Souvenir" }], cn = createFileRoute("/products/create")({ component: ln });
-function ln() {
-  const { isOpen: e, onOpenChange: t } = useDisclosure({ defaultOpen: true, onClose: () => history.back() }), { cld: r, uwConfig: n, publicIds: o, setPublicIds: s, setImageUrls: i, isPending: l, handleSubmit: c } = sn();
-  return jsx("div", { children: jsx(Modal, { isOpen: e, scrollBehavior: "inside", onOpenChange: t, backdrop: "opaque", classNames: { backdrop: "bg-gradient-to-t from-zinc-900 to-zinc-900/10 backdrop-opacity-20" }, children: jsx(Form, { validationBehavior: "native", onSubmit: c, children: jsxs(ModalContent, { children: [jsx(ModalHeader, { className: "flex flex-col gap-1", children: "Create Products" }), jsxs(ModalBody, { children: [jsx(Input, { isRequired: true, required: true, errorMessage: "Please enter product name", name: "name", placeholder: "Enter product name" }), jsx(Input, { isRequired: true, required: true, errorMessage: "Please enter product description", name: "description", placeholder: "Enter product description" }), jsx(Input, { isRequired: true, required: true, errorMessage: "Please enter product quantity", name: "quantity", placeholder: "Enter product quantity", type: "number" }), jsx(Input, { isRequired: true, required: true, errorMessage: "Please enter product price", name: "price", placeholder: "Enter product price", type: "number" }), jsx(Select, { isRequired: true, required: true, errorMessage: "Please select a category", name: "category", placeholder: "Select category", items: an, "aria-label": "Select category", children: (d) => jsx(SelectItem, { children: d.label }) }), jsx(rn, { uwConfig: n, setPublicIds: s, setImageUrls: i }), jsx("div", { className: "preview-images", children: o.map((d) => jsx(nn, { publicId: d, cld: r }, d)) })] }), jsxs(ModalFooter, { children: [jsx(Button, { color: "danger", variant: "light", onPress: t, children: "Close" }), jsx(Button, { color: "primary", type: "submit", disabled: l, children: l ? "Creating..." : "Create" })] })] }) }) }) });
+  return { cld: e, uwConfig: r, publicIds: t, imageUrls: n, setPublicIds: o, setImageUrls: a, isPending: i.isPending, handleSubmit: l };
+}, ln = [{ key: "Clothing", label: "Clothing" }, { key: "PostCards", label: "PostCards" }, { key: "Souvenir", label: "Souvenir" }], dn = createFileRoute("/products/create")({ component: un });
+function un() {
+  const { isOpen: e, onOpenChange: t } = useDisclosure({ defaultOpen: true, onClose: () => history.back() }), { cld: r, uwConfig: n, publicIds: o, setPublicIds: a, setImageUrls: i, isPending: l, handleSubmit: c } = cn();
+  return jsx("div", { children: jsx(Modal, { isOpen: e, scrollBehavior: "inside", onOpenChange: t, backdrop: "opaque", classNames: { backdrop: "bg-gradient-to-t from-zinc-900 to-zinc-900/10 backdrop-opacity-20" }, children: jsx(Form, { validationBehavior: "native", onSubmit: c, children: jsxs(ModalContent, { children: [jsx(ModalHeader, { className: "flex flex-col gap-1", children: "Create Products" }), jsxs(ModalBody, { children: [jsx(Input, { isRequired: true, required: true, errorMessage: "Please enter product name", name: "name", placeholder: "Enter product name" }), jsx(Input, { isRequired: true, required: true, errorMessage: "Please enter product description", name: "description", placeholder: "Enter product description" }), jsx(Input, { isRequired: true, required: true, errorMessage: "Please enter product quantity", name: "quantity", placeholder: "Enter product quantity", type: "number" }), jsx(Input, { isRequired: true, required: true, errorMessage: "Please enter product price", name: "price", placeholder: "Enter product price", type: "number" }), jsx(Select, { isRequired: true, required: true, errorMessage: "Please select a category", name: "category", placeholder: "Select category", items: ln, "aria-label": "Select category", children: (d) => jsx(SelectItem, { children: d.label }) }), jsx(on, { uwConfig: n, setPublicIds: a, setImageUrls: i }), jsx("div", { className: "preview-images", children: o.map((d) => jsx(sn, { publicId: d, cld: r }, d)) })] }), jsxs(ModalFooter, { children: [jsx(Button, { color: "danger", variant: "light", onPress: t, children: "Close" }), jsx(Button, { color: "primary", type: "submit", disabled: l, children: l ? "Creating..." : "Create" })] })] }) }) }) });
 }
-const dn = () => import('../build/view._id-5PNNzoex.mjs'), ze = createFileRoute("/products/view/$id")({ component: lazyRouteComponent(dn, "component", () => ze.ssr) }), un = Ne.update({ id: "/login", path: "/login", getParentRoute: () => S }), pn = He.update({ id: "/deferred", path: "/deferred", getParentRoute: () => S }), fn = Oe.update({ id: "/", path: "/", getParentRoute: () => S }), mn = Le.update({ id: "/users/", path: "/users/", getParentRoute: () => S }), hn = Fe.update({ id: "/products/", path: "/products/", getParentRoute: () => S }), gn = Ae.update({ id: "/categories/", path: "/categories/", getParentRoute: () => S }), yn = De.update({ id: "/products/edit", path: "/products/edit", getParentRoute: () => S }), vn = cn.update({ id: "/products/create", path: "/products/create", getParentRoute: () => S }), Sn = ze.update({ id: "/products/view/$id", path: "/products/view/$id", getParentRoute: () => S }), wn = { IndexRoute: fn, DeferredRoute: pn, LoginRoute: un, ProductsCreateRoute: vn, ProductsEditRoute: yn, CategoriesIndexRoute: gn, ProductsIndexRoute: hn, UsersIndexRoute: mn, ProductsViewIdRoute: Sn }, xn = S._addFileChildren(wn)._addFileTypes();
-function _n() {
+const pn = () => import('../build/view._id-BMYC8HfW.mjs'), De = createFileRoute("/products/view/$id")({ component: lazyRouteComponent(pn, "component", () => De.ssr) }), fn = $e.update({ id: "/login", path: "/login", getParentRoute: () => S }), mn = je.update({ id: "/deferred", path: "/deferred", getParentRoute: () => S }), hn = Le.update({ id: "/", path: "/", getParentRoute: () => S }), gn = Oe.update({ id: "/users/", path: "/users/", getParentRoute: () => S }), yn = Ae.update({ id: "/products/", path: "/products/", getParentRoute: () => S }), vn = Fe.update({ id: "/categories/", path: "/categories/", getParentRoute: () => S }), Sn = ze.update({ id: "/products/edit", path: "/products/edit", getParentRoute: () => S }), wn = dn.update({ id: "/products/create", path: "/products/create", getParentRoute: () => S }), bn = De.update({ id: "/products/view/$id", path: "/products/view/$id", getParentRoute: () => S }), xn = { IndexRoute: hn, DeferredRoute: mn, LoginRoute: fn, ProductsCreateRoute: wn, ProductsEditRoute: Sn, CategoriesIndexRoute: vn, ProductsIndexRoute: yn, UsersIndexRoute: gn, ProductsViewIdRoute: bn }, _n = S._addFileChildren(xn)._addFileTypes();
+function Rn() {
   return jsx("div", { style: { display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }, children: jsx(Spinner, {}) });
 }
 function Be() {
-  return createRouter$2({ routeTree: xn, defaultPreload: "intent", defaultErrorComponent: Me, defaultNotFoundComponent: () => jsx(Ie, {}), defaultPendingComponent: () => jsx(_n, {}), scrollRestoration: true });
+  return createRouter$2({ routeTree: _n, defaultPreload: "intent", defaultErrorComponent: Ee, defaultNotFoundComponent: () => jsx(Te, {}), defaultPendingComponent: () => jsx(Rn, {}), scrollRestoration: true });
 }
-const Z = Be(), eo = or({ createRouter: Be, getRouterManifest: Pr })(gr);
+const Z = Be(), ro = sr({ createRouter: Be, getRouterManifest: br })(yr);
 
 const handlers = [
   { route: '/_server', handler: re, lazy: false, middleware: true, method: undefined },
   { route: '/api', handler: W, lazy: false, middleware: true, method: undefined },
-  { route: '/', handler: eo, lazy: false, middleware: true, method: undefined }
+  { route: '/', handler: ro, lazy: false, middleware: true, method: undefined }
 ];
 
 function wrapToPromise(value) {
@@ -11762,7 +12334,7 @@ function defineCachedEventHandler(handler, opts = defaultCacheOptions()) {
     },
     _opts
   );
-  return defineEventHandler(async (event) => {
+  return defineEventHandler$1(async (event) => {
     if (opts.headersOnly) {
       if (handleCacheHeaders(event, { maxAge: opts.maxAge })) {
         return;
@@ -11788,7 +12360,7 @@ function defineCachedEventHandler(handler, opts = defaultCacheOptions()) {
       if (name === "set-cookie") {
         event.node.res.appendHeader(
           name,
-          splitCookiesString(value)
+          splitCookiesString$1(value)
         );
       } else {
         if (value !== void 0) {
@@ -12054,7 +12626,7 @@ const _routeRulesMatcher = toRouteMatcher(
   createRouter$1({ routes: config.nitro.routeRules })
 );
 function createRouteRulesHandler(ctx) {
-  return eventHandler((event) => {
+  return eventHandler$1((event) => {
     const routeRules = getRouteRules(event);
     if (routeRules.headers) {
       setHeaders(event, routeRules.headers);
@@ -12162,7 +12734,7 @@ function createNitroApp() {
   globalThis.$fetch = $fetch;
   h3App.use(createRouteRulesHandler({ localFetch }));
   h3App.use(
-    eventHandler((event) => {
+    eventHandler$1((event) => {
       event.context.nitro = event.context.nitro || { errors: [] };
       const envContext = event.node.req?.__unenv__;
       if (envContext) {
@@ -12287,5 +12859,5 @@ function getCacheHeaders(url) {
   return {};
 }
 
-export { E, He as H, Yn as Y, Z, _n as _, an as a, Zn as b, f, handler as h, node$1 as n, ze as z };
+export { De as D, Rn as R, Z, eo as e, f, handler as h, je as j, k, ln as l, node$1 as n, to as t };
 //# sourceMappingURL=nitro.mjs.map

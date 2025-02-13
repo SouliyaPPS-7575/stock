@@ -1,7 +1,7 @@
 import { jsxs, jsx } from 'react/jsx-runtime';
 import { Await } from '@tanstack/react-router';
 import { useState, Suspense } from 'react';
-import { H as He } from '../nitro/nitro.mjs';
+import { j as je } from '../nitro/nitro.mjs';
 import 'node:http';
 import 'node:https';
 import 'node:zlib';
@@ -39,9 +39,9 @@ import 'react-dom/server';
 import 'node:stream/web';
 
 const O = function() {
-  const [o, p] = useState(0), { deferredStuff: d, deferredPerson: s, person: e } = He.useLoaderData();
+  const [o, p] = useState(0), { deferredStuff: d, deferredPerson: s, person: e } = je.useLoaderData();
   return jsxs("div", { className: "p-2", children: [jsxs("div", { "data-testid": "regular-person", children: [e.name, " - ", e.randomNumber] }), jsx(Suspense, { fallback: jsx("div", { children: "Loading person..." }), children: jsx(Await, { promise: s, children: (t) => jsxs("div", { "data-testid": "deferred-person", children: [t.name, " - ", t.randomNumber] }) }) }), jsx(Suspense, { fallback: jsx("div", { children: "Loading stuff..." }), children: jsx(Await, { promise: d, children: (t) => jsx("h3", { "data-testid": "deferred-stuff", children: t }) }) }), jsxs("div", { children: ["Count: ", o] }), jsx("div", { children: jsx("button", { onClick: () => p(o + 1), children: "Increment" }) })] });
 };
 
 export { O as component };
-//# sourceMappingURL=deferred-B47IHYAR.mjs.map
+//# sourceMappingURL=deferred-D-h3hGcr.mjs.map
