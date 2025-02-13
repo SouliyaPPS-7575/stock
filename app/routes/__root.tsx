@@ -19,6 +19,8 @@ import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 import { Meta, Scripts } from '@tanstack/start';
 import * as React from 'react';
 
+export const isDevelopment = import.meta.env.MODE === 'development';
+
 export const Route = createRootRoute({
   head: () => ({
     meta: [
@@ -105,7 +107,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             <ReactQueryDevtools initialIsOpen={false} />
           </QueryClientProvider>
         </HeroUIProvider>
-        <TanStackRouterDevtools position='bottom-right' />
+
+        {isDevelopment && <TanStackRouterDevtools position='bottom-right' />}
         <Scripts />
       </body>
     </html>
