@@ -3,21 +3,21 @@
   "name": "Souvenir Stock",
   "icons": [
     {
-      "src": "images/favicon.svg",
-      "type": "image/png",
-      "sizes": "192x192"
+      "src": "/images/favicon.svg",
+      "sizes": "192x192",
+      "type": "image/png"
     },
     {
-      "src": "images/favicon.svg",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "/images/favicon.svg",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
   "start_url": "/",
   "display": "standalone",
   "id": "souvenir_stock",
   "scope": "/",
-  "description": "Souvenir Stock Sale App", 
+  "description": "Souvenir Stock Sale App",
   "dir": "auto",
   "background_color": "#ffff",
   "theme_color": "#ffff"

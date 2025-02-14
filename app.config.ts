@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { defineConfig } from '@tanstack/start/config';
 import { VitePWA } from 'vite-plugin-pwa';
 import tsConfigPaths from 'vite-tsconfig-paths';
@@ -74,7 +75,7 @@ export default defineConfig({
               },
             },
             {
-              urlPattern: /^https:\/\/example-api\.com\/.*/,
+              urlPattern: new RegExp(process.env.API_BASE_URL || 'https://example-api.com/.*'),
               handler: 'NetworkFirst',
               options: {
                 cacheName: 'api-cache',
@@ -91,6 +92,10 @@ export default defineConfig({
         },
       })
     ],
+    define: {
+      'process.env.CLOUDINARY_NAME': JSON.stringify(process.env.CLOUDINARY_NAME),
+      'process.env.CLOUDINARY_UPLOAD_PRESET': JSON.stringify(process.env.CLOUDINARY_UPLOAD_PRESET),
+    },
     build: {
       chunkSizeWarningLimit: 4000, // Increase chunk warning size to 1 MB
       rollupOptions: {
@@ -111,4 +116,4 @@ export default defineConfig({
       logLevel: 'silent', // Suppresses esbuild warnings
     },
   },
-})
+});

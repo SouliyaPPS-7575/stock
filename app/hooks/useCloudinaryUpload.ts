@@ -4,8 +4,8 @@ import { Cloudinary } from '@cloudinary/url-gen';
 
 export const useCloudinaryUpload = () => {
      // Configuration
-     const cloudName = process.env.CLOUDINARY_NAME;
-     const uploadPreset = process.env.CLOUDINARY_UPLOAD_PRESET;
+     const cloudName = 'db84fdke0';
+     const uploadPreset = 'souvenirstock';
 
      // State
      const [publicIds, setPublicIds] = useState<string[]>([]);

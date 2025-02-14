@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "short_name": "",
+  "short_name": "Souvenir Stock",
+  "name": "Souvenir Stock",
   "icons": [
     {
       "src": "/images/favicon.svg",
@@ -13,7 +13,12 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  "start_url": "/",
+  "display": "standalone",
+  "id": "souvenir_stock",
+  "scope": "/",
+  "description": "Souvenir Stock Sale App",
+  "dir": "auto",
+  "background_color": "#ffff",
+  "theme_color": "#ffff"
 }

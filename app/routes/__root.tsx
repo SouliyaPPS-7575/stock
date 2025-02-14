@@ -90,7 +90,15 @@ function RootDocument({ children }: { children: React.ReactNode }) {
     <html>
       <head>
         <Seo />
-        <script src='/sw.js'></script>
+        <script src='/sw.js' />
+
+        {/* Cloudinary */}
+        <script
+          src='https://upload-widget.cloudinary.com/latest/global/all.js'
+          type='text/javascript'
+        />
+        <script src='https://media-library.cloudinary.com/global/all.js' />
+
         <Meta />
       </head>
       <body>
