@@ -27,13 +27,6 @@ export const useCreate = () => {
           },
      });
 
-     useEffect(() => {
-          if (publicIds.length > 0) {
-               setImageUrls(publicIds.map(id => cld.image(id).toURL()));
-          }
-     }, [publicIds, cld]);
-
-
      // Form submission handler
      const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
           e.preventDefault();
