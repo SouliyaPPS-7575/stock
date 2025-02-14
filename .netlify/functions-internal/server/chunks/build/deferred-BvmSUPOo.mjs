@@ -29,7 +29,6 @@ import '@heroui/react';
 import '@tanstack/react-query';
 import 'react-toastify';
 import '@tanstack/react-query-devtools';
-import '@tanstack/router-devtools';
 import 'react-icons/fa';
 import '@cloudinary/url-gen/actions/resize';
 import '@cloudinary/url-gen';

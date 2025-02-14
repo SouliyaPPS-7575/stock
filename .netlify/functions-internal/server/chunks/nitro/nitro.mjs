@@ -25,7 +25,7 @@ import { createContext as createContext$1, useEffect, createElement, useRef, use
 import { Link as Link$1 } from '@heroui/link';
 import { Navbar, NavbarContent, NavbarBrand, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem } from '@heroui/navbar';
 import { link } from '@heroui/theme';
-import A$1 from 'clsx';
+import F$2 from 'clsx';
 import { VisuallyHidden } from '@react-aria/visually-hidden';
 import { useSwitch } from '@heroui/switch';
 import gt from 'pocketbase';
@@ -34,14 +34,13 @@ import { HeroUIProvider, Input, Select, SelectItem, Button, Spinner, Link as Lin
 import { QueryClient, QueryClientProvider, useMutation } from '@tanstack/react-query';
 import { toast } from 'react-toastify';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 import { FaCloudUploadAlt } from 'react-icons/fa';
 import { thumbnail } from '@cloudinary/url-gen/actions/resize';
 import { Cloudinary } from '@cloudinary/url-gen';
 import { Form } from '@heroui/form';
 import C$1 from 'jsesc';
 import { isbot } from 'isbot';
-import L from 'react-dom/server';
+import H$2 from 'react-dom/server';
 import { ReadableStream as ReadableStream$1 } from 'node:stream/web';
 
 var commonjsGlobal$1 = typeof globalThis !== 'undefined' ? globalThis : "undefined" !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
@@ -3921,7 +3920,7 @@ function renderHTMLError(error) {
 }
 
 const appConfig$1 = {"name":"vinxi","routers":[{"name":"public","type":"static","dir":"./public","base":"/","root":"/Users/souliya/Documents/FullStackDev/stock","order":0,"outDir":"/Users/souliya/Documents/FullStackDev/stock/.vinxi/build/public"},{"name":"client","type":"client","target":"browser","handler":"app/client.tsx","base":"/_build","build":{"sourcemap":true},"root":"/Users/souliya/Documents/FullStackDev/stock","outDir":"/Users/souliya/Documents/FullStackDev/stock/.vinxi/build/client","order":1},{"name":"ssr","type":"http","target":"server","handler":"app/ssr.tsx","link":{"client":"client"},"root":"/Users/souliya/Documents/FullStackDev/stock","base":"/","outDir":"/Users/souliya/Documents/FullStackDev/stock/.vinxi/build/ssr","order":2},{"name":"server","type":"http","target":"server","base":"/_server","handler":"node_modules/@tanstack/start-server-functions-handler/dist/esm/index.js","root":"/Users/souliya/Documents/FullStackDev/stock","outDir":"/Users/souliya/Documents/FullStackDev/stock/.vinxi/build/server","order":3},{"name":"api","base":"/api","type":"http","handler":"app/api.ts","target":"server","root":"/Users/souliya/Documents/FullStackDev/stock","outDir":"/Users/souliya/Documents/FullStackDev/stock/.vinxi/build/api","order":4}],"server":{"preset":"netlify","experimental":{"asyncContext":true}},"root":"/Users/souliya/Documents/FullStackDev/stock"};
-				const buildManifest = {"client":{"/Users/souliya/Documents/FullStackDev/stock/app/styles/app.css":{"file":"assets/app-D9nu_773.css","src":"/Users/souliya/Documents/FullStackDev/stock/app/styles/app.css"},"_chunk-MLPFQTYO-C_FR0VMg.js":{"file":"assets/chunk-MLPFQTYO-C_FR0VMg.js","name":"chunk-MLPFQTYO","imports":["_client-CrIQ5dyp.js"]},"_client-CrIQ5dyp.js":{"file":"assets/client-CrIQ5dyp.js","name":"client","dynamicImports":["node_modules/@heroui/dom-animation/dist/index.mjs","node_modules/@heroui/dom-animation/dist/index.mjs","node_modules/@heroui/dom-animation/dist/index.mjs","node_modules/@heroui/dom-animation/dist/index.mjs","node_modules/@heroui/dom-animation/dist/index.mjs","app/routes/login.tsx?tsr-split=component","app/routes/deferred.tsx?tsr-split=component","app/routes/index.tsx?tsr-split=component","app/routes/users/index.tsx?tsr-split=component","app/routes/products/index.tsx?tsr-split=component","app/routes/categories/index.tsx?tsr-split=component","app/routes/products/edit.tsx?tsr-split=component","app/routes/products/view.$id.tsx?tsr-split=component"],"assets":["assets/app-D9nu_773.css"]},"_useBaseQuery-Ds_bxNTK.js":{"file":"assets/useBaseQuery-Ds_bxNTK.js","name":"useBaseQuery","imports":["_client-CrIQ5dyp.js"]},"_useView-CddLGcfH.js":{"file":"assets/useView-CddLGcfH.js","name":"useView","imports":["_client-CrIQ5dyp.js","_useBaseQuery-Ds_bxNTK.js"]},"app/routes/categories/index.tsx?tsr-split=component":{"file":"assets/index-C8gdUR_d.js","name":"index","src":"app/routes/categories/index.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-CrIQ5dyp.js"],"dynamicImports":["node_modules/@heroui/dom-animation/dist/index.mjs"]},"app/routes/deferred.tsx?tsr-split=component":{"file":"assets/deferred-DrXexmPx.js","name":"deferred","src":"app/routes/deferred.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-CrIQ5dyp.js"]},"app/routes/index.tsx?tsr-split=component":{"file":"assets/index-maJYVdRU.js","name":"index","src":"app/routes/index.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-CrIQ5dyp.js"]},"app/routes/login.tsx?tsr-split=component":{"file":"assets/login-CCF8x1Te.js","name":"login","src":"app/routes/login.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-CrIQ5dyp.js"]},"app/routes/products/edit.tsx?tsr-split=component":{"file":"assets/edit-DAkEaqdV.js","name":"edit","src":"app/routes/products/edit.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-CrIQ5dyp.js","_useView-CddLGcfH.js","_useBaseQuery-Ds_bxNTK.js"]},"app/routes/products/index.tsx?tsr-split=component":{"file":"assets/index-acADKn5d.js","name":"index","src":"app/routes/products/index.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-CrIQ5dyp.js","_chunk-MLPFQTYO-C_FR0VMg.js","_useBaseQuery-Ds_bxNTK.js"]},"app/routes/products/view.$id.tsx?tsr-split=component":{"file":"assets/view._id-xPb3IwUc.js","name":"view._id","src":"app/routes/products/view.$id.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-CrIQ5dyp.js","_useView-CddLGcfH.js","_chunk-MLPFQTYO-C_FR0VMg.js","_useBaseQuery-Ds_bxNTK.js"]},"app/routes/users/index.tsx?tsr-split=component":{"file":"assets/index-B2XA7VPH.js","name":"index","src":"app/routes/users/index.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-CrIQ5dyp.js"]},"node_modules/@heroui/dom-animation/dist/index.mjs":{"file":"assets/index-DdgLZzKH.js","name":"index","src":"node_modules/@heroui/dom-animation/dist/index.mjs","isDynamicEntry":true,"imports":["_client-CrIQ5dyp.js"]},"virtual:$vinxi/handler/client":{"file":"assets/client-ByngpesG.js","name":"client","src":"virtual:$vinxi/handler/client","isEntry":true,"imports":["_client-CrIQ5dyp.js"]}},"ssr":{"/Users/souliya/Documents/FullStackDev/stock/app/styles/app.css":{"file":"assets/app-D9nu_773.css","src":"/Users/souliya/Documents/FullStackDev/stock/app/styles/app.css"},"_ssr-DRVMySYd.js":{"file":"assets/ssr-DRVMySYd.js","name":"ssr","dynamicImports":["app/routes/login.tsx?tsr-split=component","app/routes/deferred.tsx?tsr-split=component","app/routes/index.tsx?tsr-split=component","app/routes/users/index.tsx?tsr-split=component","app/routes/products/index.tsx?tsr-split=component","app/routes/categories/index.tsx?tsr-split=component","app/routes/products/edit.tsx?tsr-split=component","app/routes/products/view.$id.tsx?tsr-split=component"],"assets":["assets/app-D9nu_773.css"]},"_useView-BC_GKDQJ.js":{"file":"assets/useView-BC_GKDQJ.js","name":"useView","imports":["_ssr-DRVMySYd.js"]},"app/routes/categories/index.tsx?tsr-split=component":{"file":"assets/index-BDGrPjxy.js","name":"index","src":"app/routes/categories/index.tsx?tsr-split=component","isDynamicEntry":true},"app/routes/deferred.tsx?tsr-split=component":{"file":"assets/deferred-D-h3hGcr.js","name":"deferred","src":"app/routes/deferred.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_ssr-DRVMySYd.js"]},"app/routes/index.tsx?tsr-split=component":{"file":"assets/index-BGtAJ3n5.js","name":"index","src":"app/routes/index.tsx?tsr-split=component","isDynamicEntry":true},"app/routes/login.tsx?tsr-split=component":{"file":"assets/login-fJnEXyon.js","name":"login","src":"app/routes/login.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_ssr-DRVMySYd.js"]},"app/routes/products/edit.tsx?tsr-split=component":{"file":"assets/edit-BwY5vRCz.js","name":"edit","src":"app/routes/products/edit.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_ssr-DRVMySYd.js","_useView-BC_GKDQJ.js"]},"app/routes/products/index.tsx?tsr-split=component":{"file":"assets/index-BcSOJ4Op.js","name":"index","src":"app/routes/products/index.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_ssr-DRVMySYd.js"]},"app/routes/products/view.$id.tsx?tsr-split=component":{"file":"assets/view._id-BMYC8HfW.js","name":"view._id","src":"app/routes/products/view.$id.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_useView-BC_GKDQJ.js","_ssr-DRVMySYd.js"]},"app/routes/users/index.tsx?tsr-split=component":{"file":"assets/index-9XjYg6bF.js","name":"index","src":"app/routes/users/index.tsx?tsr-split=component","isDynamicEntry":true},"virtual:$vinxi/handler/ssr":{"file":"ssr.js","name":"ssr","src":"virtual:$vinxi/handler/ssr","isEntry":true,"imports":["_ssr-DRVMySYd.js"]}},"server":{"_deferred-B44SK-rK.js":{"file":"assets/deferred-B44SK-rK.js","name":"deferred","isDynamicEntry":true,"imports":["_server-II9tPsql.js"],"dynamicImports":["app/routes/deferred.tsx?tsr-split=component"]},"_server-II9tPsql.js":{"file":"assets/server-II9tPsql.js","name":"server","dynamicImports":["_deferred-B44SK-rK.js","_deferred-B44SK-rK.js"]},"app/routes/deferred.tsx?tsr-split=component":{"file":"assets/deferred-BvmSUPOo.js","name":"deferred","src":"app/routes/deferred.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_deferred-B44SK-rK.js","_server-II9tPsql.js"]},"virtual:$vinxi/handler/server":{"file":"server.js","name":"server","src":"virtual:$vinxi/handler/server","isEntry":true,"imports":["_server-II9tPsql.js"]}},"api":{"virtual:$vinxi/handler/api":{"file":"api.js","name":"api","src":"virtual:$vinxi/handler/api","isEntry":true}}};
+				const buildManifest = {"client":{"/Users/souliya/Documents/FullStackDev/stock/app/styles/app.css":{"file":"assets/app-BiSt1Cqq.css","src":"/Users/souliya/Documents/FullStackDev/stock/app/styles/app.css"},"_chunk-MLPFQTYO-LLGSqtpm.js":{"file":"assets/chunk-MLPFQTYO-LLGSqtpm.js","name":"chunk-MLPFQTYO","imports":["_client-By4r23vN.js"]},"_client-By4r23vN.js":{"file":"assets/client-By4r23vN.js","name":"client","dynamicImports":["node_modules/@heroui/dom-animation/dist/index.mjs","node_modules/@heroui/dom-animation/dist/index.mjs","node_modules/@heroui/dom-animation/dist/index.mjs","node_modules/@heroui/dom-animation/dist/index.mjs","node_modules/@heroui/dom-animation/dist/index.mjs","app/routes/login.tsx?tsr-split=component","app/routes/deferred.tsx?tsr-split=component","app/routes/index.tsx?tsr-split=component","app/routes/users/index.tsx?tsr-split=component","app/routes/products/index.tsx?tsr-split=component","app/routes/categories/index.tsx?tsr-split=component","app/routes/products/edit.tsx?tsr-split=component","app/routes/products/view.$id.tsx?tsr-split=component"],"assets":["assets/app-BiSt1Cqq.css"]},"_useBaseQuery-ChLKyWVK.js":{"file":"assets/useBaseQuery-ChLKyWVK.js","name":"useBaseQuery","imports":["_client-By4r23vN.js"]},"_useView-BeEgzdcB.js":{"file":"assets/useView-BeEgzdcB.js","name":"useView","imports":["_client-By4r23vN.js","_useBaseQuery-ChLKyWVK.js"]},"app/routes/categories/index.tsx?tsr-split=component":{"file":"assets/index-U1Na95jH.js","name":"index","src":"app/routes/categories/index.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-By4r23vN.js"],"dynamicImports":["node_modules/@heroui/dom-animation/dist/index.mjs"]},"app/routes/deferred.tsx?tsr-split=component":{"file":"assets/deferred-3sdV4fKV.js","name":"deferred","src":"app/routes/deferred.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-By4r23vN.js"]},"app/routes/index.tsx?tsr-split=component":{"file":"assets/index-BesFsIpv.js","name":"index","src":"app/routes/index.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-By4r23vN.js"]},"app/routes/login.tsx?tsr-split=component":{"file":"assets/login-CyaWtut5.js","name":"login","src":"app/routes/login.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-By4r23vN.js"]},"app/routes/products/edit.tsx?tsr-split=component":{"file":"assets/edit--qGGIQjm.js","name":"edit","src":"app/routes/products/edit.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-By4r23vN.js","_useView-BeEgzdcB.js","_useBaseQuery-ChLKyWVK.js"]},"app/routes/products/index.tsx?tsr-split=component":{"file":"assets/index-Cu_EwKIx.js","name":"index","src":"app/routes/products/index.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-By4r23vN.js","_chunk-MLPFQTYO-LLGSqtpm.js","_useBaseQuery-ChLKyWVK.js"]},"app/routes/products/view.$id.tsx?tsr-split=component":{"file":"assets/view._id-ooTFUrnq.js","name":"view._id","src":"app/routes/products/view.$id.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-By4r23vN.js","_useView-BeEgzdcB.js","_chunk-MLPFQTYO-LLGSqtpm.js","_useBaseQuery-ChLKyWVK.js"]},"app/routes/users/index.tsx?tsr-split=component":{"file":"assets/index-B53b_HQu.js","name":"index","src":"app/routes/users/index.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_client-By4r23vN.js"]},"node_modules/@heroui/dom-animation/dist/index.mjs":{"file":"assets/index-DWFfs6D7.js","name":"index","src":"node_modules/@heroui/dom-animation/dist/index.mjs","isDynamicEntry":true,"imports":["_client-By4r23vN.js"]},"virtual:$vinxi/handler/client":{"file":"assets/client-B8g45vtI.js","name":"client","src":"virtual:$vinxi/handler/client","isEntry":true,"imports":["_client-By4r23vN.js"]}},"ssr":{"/Users/souliya/Documents/FullStackDev/stock/app/styles/app.css":{"file":"assets/app-BiSt1Cqq.css","src":"/Users/souliya/Documents/FullStackDev/stock/app/styles/app.css"},"_ssr-DfLF-VOO.js":{"file":"assets/ssr-DfLF-VOO.js","name":"ssr","dynamicImports":["app/routes/login.tsx?tsr-split=component","app/routes/deferred.tsx?tsr-split=component","app/routes/index.tsx?tsr-split=component","app/routes/users/index.tsx?tsr-split=component","app/routes/products/index.tsx?tsr-split=component","app/routes/categories/index.tsx?tsr-split=component","app/routes/products/edit.tsx?tsr-split=component","app/routes/products/view.$id.tsx?tsr-split=component"],"assets":["assets/app-BiSt1Cqq.css"]},"_useView-DzuxhjQr.js":{"file":"assets/useView-DzuxhjQr.js","name":"useView","imports":["_ssr-DfLF-VOO.js"]},"app/routes/categories/index.tsx?tsr-split=component":{"file":"assets/index-BDGrPjxy.js","name":"index","src":"app/routes/categories/index.tsx?tsr-split=component","isDynamicEntry":true},"app/routes/deferred.tsx?tsr-split=component":{"file":"assets/deferred-DDmnl8qv.js","name":"deferred","src":"app/routes/deferred.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_ssr-DfLF-VOO.js"]},"app/routes/index.tsx?tsr-split=component":{"file":"assets/index-BGtAJ3n5.js","name":"index","src":"app/routes/index.tsx?tsr-split=component","isDynamicEntry":true},"app/routes/login.tsx?tsr-split=component":{"file":"assets/login-CbgIVoYd.js","name":"login","src":"app/routes/login.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_ssr-DfLF-VOO.js"]},"app/routes/products/edit.tsx?tsr-split=component":{"file":"assets/edit-ClsImU3l.js","name":"edit","src":"app/routes/products/edit.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_ssr-DfLF-VOO.js","_useView-DzuxhjQr.js"]},"app/routes/products/index.tsx?tsr-split=component":{"file":"assets/index-CWrryM0x.js","name":"index","src":"app/routes/products/index.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_ssr-DfLF-VOO.js"]},"app/routes/products/view.$id.tsx?tsr-split=component":{"file":"assets/view._id-6ozZXSzv.js","name":"view._id","src":"app/routes/products/view.$id.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_useView-DzuxhjQr.js","_ssr-DfLF-VOO.js"]},"app/routes/users/index.tsx?tsr-split=component":{"file":"assets/index-9XjYg6bF.js","name":"index","src":"app/routes/users/index.tsx?tsr-split=component","isDynamicEntry":true},"virtual:$vinxi/handler/ssr":{"file":"ssr.js","name":"ssr","src":"virtual:$vinxi/handler/ssr","isEntry":true,"imports":["_ssr-DfLF-VOO.js"]}},"server":{"_deferred-B44SK-rK.js":{"file":"assets/deferred-B44SK-rK.js","name":"deferred","isDynamicEntry":true,"imports":["_server-II9tPsql.js"],"dynamicImports":["app/routes/deferred.tsx?tsr-split=component"]},"_server-II9tPsql.js":{"file":"assets/server-II9tPsql.js","name":"server","dynamicImports":["_deferred-B44SK-rK.js","_deferred-B44SK-rK.js"]},"app/routes/deferred.tsx?tsr-split=component":{"file":"assets/deferred-BvmSUPOo.js","name":"deferred","src":"app/routes/deferred.tsx?tsr-split=component","isDynamicEntry":true,"imports":["_deferred-B44SK-rK.js","_server-II9tPsql.js"]},"virtual:$vinxi/handler/server":{"file":"server.js","name":"server","src":"virtual:$vinxi/handler/server","isEntry":true,"imports":["_server-II9tPsql.js"]}},"api":{"virtual:$vinxi/handler/api":{"file":"api.js","name":"api","src":"virtual:$vinxi/handler/api","isEntry":true}}};
 
 				const routeManifest = {"api":{}};
 
@@ -4834,7 +4833,7 @@ function M(e) {
   let t;
   const r = F$1(e), n = { duplex: "half", method: e.method, headers: e.headers };
   return e.node.req.body instanceof ArrayBuffer ? new Request(r, { ...n, body: e.node.req.body }) : new Request(r, { ...n, get body() {
-    return t || (t = B$1(e), t);
+    return t || (t = B(e), t);
   } });
 }
 function P(e) {
@@ -4861,7 +4860,7 @@ function h$1(e) {
     return e(...t);
   };
 }
-const F$1 = h$1(getRequestURL), J = h$1(getResponseStatus), U$1 = h$1(getHeaders), B$1 = h$1(getRequestWebStream);
+const F$1 = h$1(getRequestURL), J = h$1(getResponseStatus), U$1 = h$1(getHeaders), B = h$1(getRequestWebStream);
 function V() {
   var e;
   return getContext("nitro-app", { asyncContext: !!((e = globalThis.app.config.server.experimental) != null && e.asyncContext), AsyncLocalStorage: AsyncLocalStorage });
@@ -4871,16 +4870,16 @@ function x() {
 }
 const G$1 = { "app_routes_deferred_tsx--personServerFn_createServerFn_handler": { functionName: "personServerFn_createServerFn_handler", importer: () => import('../build/deferred-B44SK-rK.mjs').then((e) => e.d) }, "app_routes_deferred_tsx--slowServerFn_createServerFn_handler": { functionName: "slowServerFn_createServerFn_handler", importer: () => import('../build/deferred-B44SK-rK.mjs').then((e) => e.d) } }, re = eventHandler(K$1), g = G$1;
 async function K$1(e) {
-  const t = P(e), r = await X$1(t);
+  const t = P(e), r = await X(t);
   return Object.entries(U$1()).forEach(([n, o]) => {
     n && o && (!r.headers.has(n) || !r.headers.get(n)) && n.toLowerCase() !== "content-length" && r.headers.set(n, o);
   }), r;
 }
-function Q(e) {
+function Q$1(e) {
   return e.replace(/^\/|\/$/g, "");
 }
-async function X$1(e, t) {
-  const r = e.method, n = new URL(e.url, "http://localhost:3000"), o = new RegExp(`${Q("/_server")}/([^/?#]+)`), c = n.pathname.match(o), a = c ? c[1] : null, S = Object.fromEntries(n.searchParams.entries());
+async function X(e, t) {
+  const r = e.method, n = new URL(e.url, "http://localhost:3000"), o = new RegExp(`${Q$1("/_server")}/([^/?#]+)`), c = n.pathname.match(o), a = c ? c[1] : null, S = Object.fromEntries(n.searchParams.entries());
   if (typeof a != "string") throw new Error("Invalid server action param for serverFnId: " + a);
   const m = g[a];
   if (!m) throw console.log("serverFnManifest", g), new Error("Server function info not found for " + a);
@@ -4919,14 +4918,14 @@ function S$1(t) {
   let e;
   const s = y$1(t), o = { duplex: "half", method: t.method, headers: t.headers };
   return t.node.req.body instanceof ArrayBuffer ? new Request(s, { ...o, body: t.node.req.body }) : new Request(s, { ...o, get body() {
-    return e || (e = T(t), e);
+    return e || (e = T$1(t), e);
   } });
 }
 function w(t) {
   var _a;
   return (_a = t.web) != null ? _a : t.web = { request: S$1(t), url: y$1(t) }, t.web.request;
 }
-function k$1() {
+function k() {
   return _();
 }
 const d = Symbol("$HTTPEvent");
@@ -4940,13 +4939,13 @@ function m(t) {
     if (D$1(o)) e[0] = o instanceof H3Event || o.__is_event__ ? o : o[d];
     else {
       if (!((s = globalThis.app.config.server.experimental) != null && s.asyncContext)) throw new Error("AsyncLocalStorage was not enabled. Use the `server.experimental.asyncContext: true` option in your app configuration to enable it. Or, pass the instance of HTTPEvent that you have as the first argument to the function.");
-      if (o = k$1(), !o) throw new Error("No HTTPEvent found in AsyncLocalStorage. Make sure you are using the function within the server runtime.");
+      if (o = k(), !o) throw new Error("No HTTPEvent found in AsyncLocalStorage. Make sure you are using the function within the server runtime.");
       e.unshift(o);
     }
     return t(...e);
   };
 }
-const y$1 = m(getRequestURL), T = m(getRequestWebStream);
+const y$1 = m(getRequestURL), T$1 = m(getRequestWebStream);
 function b() {
   var t;
   return getContext("nitro-app", { asyncContext: !!((t = globalThis.app.config.server.experimental) != null && t.asyncContext), AsyncLocalStorage: AsyncLocalStorage });
@@ -10629,7 +10628,7 @@ var index_umdExports = index_umd$1.exports;
 function ue(e) {
   return jsx(RouterProvider, { router: e.router });
 }
-function Pe({ tag: e, attrs: t, children: r }) {
+function ke({ tag: e, attrs: t, children: r }) {
   switch (e) {
     case "title":
       return jsx("title", { ...t, suppressHydrationWarning: true, children: r });
@@ -10645,39 +10644,39 @@ function Pe({ tag: e, attrs: t, children: r }) {
       return null;
   }
 }
-function Ut(e) {
+function Bt(e) {
   return e instanceof Headers ? new Headers(e) : Array.isArray(e) ? new Headers(e) : typeof e == "object" ? new Headers(e) : new Headers();
 }
-function D(...e) {
+function z(...e) {
   return e.reduce((t, r) => {
-    const n = Ut(r);
+    const n = Bt(r);
     for (const [o, a] of n.entries()) t.set(o, a);
     return t;
   }, new Headers());
 }
 const Wt = [], y = { stringify: (e) => JSON.stringify(e, function(r, n) {
-  const o = this[r], a = O.find((i) => i.stringifyCondition(o));
+  const o = this[r], a = L.find((i) => i.stringifyCondition(o));
   return a ? a.stringify(o) : n;
 }), parse: (e) => JSON.parse(e, function(r, n) {
   const o = this[r];
   if (isPlainObject$1(o)) {
-    const a = O.find((i) => i.parseCondition(o));
+    const a = L.find((i) => i.parseCondition(o));
     if (a) return a.parse(o);
   }
   return n;
 }), encode: (e) => {
   if (Array.isArray(e)) return e.map((r) => y.encode(r));
   if (isPlainObject$1(e)) return Object.fromEntries(Object.entries(e).map(([r, n]) => [r, y.encode(n)]));
-  const t = O.find((r) => r.stringifyCondition(e));
+  const t = L.find((r) => r.stringifyCondition(e));
   return t ? t.stringify(e) : e;
 }, decode: (e) => {
   if (isPlainObject$1(e)) {
-    const t = O.find((r) => r.parseCondition(e));
+    const t = L.find((r) => r.parseCondition(e));
     if (t) return t.parse(e);
   }
   return Array.isArray(e) ? e.map((t) => y.decode(t)) : isPlainObject$1(e) ? Object.fromEntries(Object.entries(e).map(([t, r]) => [t, y.decode(r)])) : e;
-} }, E = (e, t, r, n) => ({ key: e, stringifyCondition: t, stringify: (o) => ({ [`$${e}`]: r(o) }), parseCondition: (o) => Object.hasOwn(o, `$${e}`), parse: (o) => n(o[`$${e}`]) }), O = [E("undefined", (e) => e === void 0, () => 0, () => {
-}), E("date", (e) => e instanceof Date, (e) => e.toISOString(), (e) => new Date(e)), E("error", (e) => e instanceof Error, (e) => ({ ...e, message: e.message, stack: void 0, cause: e.cause }), (e) => Object.assign(new Error(e.message), e)), E("formData", (e) => e instanceof FormData, (e) => {
+} }, T = (e, t, r, n) => ({ key: e, stringifyCondition: t, stringify: (o) => ({ [`$${e}`]: r(o) }), parseCondition: (o) => Object.hasOwn(o, `$${e}`), parse: (o) => n(o[`$${e}`]) }), L = [T("undefined", (e) => e === void 0, () => 0, () => {
+}), T("date", (e) => e instanceof Date, (e) => e.toISOString(), (e) => new Date(e)), T("error", (e) => e instanceof Error, (e) => ({ ...e, message: e.message, stack: void 0, cause: e.cause }), (e) => Object.assign(new Error(e.message), e)), T("formData", (e) => e instanceof FormData, (e) => {
   const t = {};
   return e.forEach((r, n) => {
     const o = t[n];
@@ -10688,13 +10687,13 @@ const Wt = [], y = { stringify: (e) => JSON.stringify(e, function(r, n) {
   return Object.entries(e).forEach(([r, n]) => {
     Array.isArray(n) ? n.forEach((o) => t.append(r, o)) : t.append(r, n);
   }), t;
-}), E("bigint", (e) => typeof e == "bigint", (e) => e.toString(), (e) => BigInt(e))];
-function B(e, t) {
+}), T("bigint", (e) => typeof e == "bigint", (e) => e.toString(), (e) => BigInt(e))];
+function D(e, t) {
   const r = t || e || {};
-  return typeof r.method > "u" && (r.method = "GET"), { options: r, middleware: (n) => B(void 0, Object.assign(r, { middleware: n })), validator: (n) => B(void 0, Object.assign(r, { validator: n })), handler: (...n) => {
+  return typeof r.method > "u" && (r.method = "GET"), { options: r, middleware: (n) => D(void 0, Object.assign(r, { middleware: n })), validator: (n) => D(void 0, Object.assign(r, { validator: n })), handler: (...n) => {
     const [o, a] = n;
     Object.assign(r, { ...o, extractedFn: o, serverFn: a }), o.url || (console.warn(o), warning(false, "createServerFn must be called with a function that has a 'url' property. Ensure that the @tanstack/start-plugin is ordered **before** the @tanstack/server-functions-plugin."));
-    const i = [...r.middleware || [], Gt(r)];
+    const i = [...r.middleware || [], Vt(r)];
     return Object.assign(async (l) => fe(i, "client", { ...o, method: r.method, data: l == null ? void 0 : l.data, headers: l == null ? void 0 : l.headers, context: {} }).then((c) => {
       if (c.error) throw c.error;
       return c.result;
@@ -10713,7 +10712,7 @@ function qt(e) {
     return { data: e };
   }
 }
-function Jt(e) {
+function Ut(e) {
   const t = /* @__PURE__ */ new Set(), r = [], n = (o) => {
     o.forEach((a) => {
       a.options.middleware && n(a.options.middleware), t.has(a) || (t.add(a), r.push(a));
@@ -10723,9 +10722,9 @@ function Jt(e) {
 }
 const pe = async (e, t, r) => e({ ...t, next: async (n = {}) => {
   var _a, _b;
-  return r({ ...t, ...n, context: { ...t.context, ...n.context }, sendContext: { ...t.sendContext, ...(_a = n.sendContext) != null ? _a : {} }, headers: D(t.headers, n.headers), result: n.result !== void 0 ? n.result : t.result, error: (_b = n.error) != null ? _b : t.error });
+  return r({ ...t, ...n, context: { ...t.context, ...n.context }, sendContext: { ...t.sendContext, ...(_a = n.sendContext) != null ? _a : {} }, headers: z(t.headers, n.headers), result: n.result !== void 0 ? n.result : t.result, error: (_b = n.error) != null ? _b : t.error });
 } });
-function Vt(e, t) {
+function Jt(e, t) {
   if (e == null) return {};
   if ("~standard" in e) {
     const r = e["~standard"].validate(t);
@@ -10738,10 +10737,10 @@ function Vt(e, t) {
   throw new Error("Invalid validator type!");
 }
 async function fe(e, t, r) {
-  const n = Jt([...Wt, ...e]), o = async (a) => {
+  const n = Ut([...Wt, ...e]), o = async (a) => {
     const i = n.shift();
     if (!i) return a;
-    i.options.validator && (t !== "client" || i.options.validateClient) && (a.data = await Vt(i.options.validator, a.data));
+    i.options.validator && (t !== "client" || i.options.validateClient) && (a.data = await Jt(i.options.validator, a.data));
     const l = t === "client" ? i.options.client : i.options.server;
     return l ? pe(l, a, async (c) => {
       const d = i.options.clientAfter;
@@ -10757,7 +10756,7 @@ async function fe(e, t, r) {
   };
   return o({ ...r, headers: r.headers || {}, sendContext: r.sendContext || {}, context: r.context || {} });
 }
-function Gt(e) {
+function Vt(e) {
   return { _types: void 0, options: { validator: e.validator, validateClient: e.validateClient, client: async ({ next: t, sendContext: r, ...n }) => {
     var o;
     const a = await ((o = e.extractedFn) == null ? void 0 : o.call(e, { ...n, context: r }));
@@ -10768,7 +10767,7 @@ function Gt(e) {
     return t({ ...r, result: o });
   } } };
 }
-const Qt = () => {
+const Gt = () => {
   const e = useRouter(), t = useRouterState({ select: (a) => a.matches.map((i) => i.meta).filter(Boolean) }), r = at.useMemo(() => {
     const a = [], i = {};
     let l;
@@ -10795,19 +10794,19 @@ const Qt = () => {
       });
     }), i;
   }, structuralSharing: true });
-  return Zt([...r, ...o, ...n], (a) => JSON.stringify(a));
+  return Qt([...r, ...o, ...n], (a) => JSON.stringify(a));
 }, Xt = () => {
-  const e = Qt();
-  return jsx(Fragment, { children: e.map((t) => createElement(Pe, { ...t, key: `tsr-meta-${JSON.stringify(t)}` })) });
+  const e = Gt();
+  return jsx(Fragment, { children: e.map((t) => createElement(ke, { ...t, key: `tsr-meta-${JSON.stringify(t)}` })) });
 }, Kt = () => jsx(Fragment, { children: Xt() });
-function Zt(e, t) {
+function Qt(e, t) {
   const r = /* @__PURE__ */ new Set();
   return e.filter((n) => {
     const o = t(n);
     return r.has(o) ? false : (r.add(o), true);
   });
 }
-const Yt = () => {
+const Zt = () => {
   const e = useRouter(), t = useRouterState({ select: (o) => {
     var a;
     const i = [], l = (a = e.ssr) == null ? void 0 : a.manifest;
@@ -10818,26 +10817,26 @@ const Yt = () => {
       });
     }), i) : (warning(false, "<Scripts /> found no manifest"), []);
   }, structuralSharing: true }), { scripts: r } = useRouterState({ select: (o) => ({ scripts: o.matches.map((a) => a.scripts).flat(1).filter(Boolean).map(({ children: a, ...i }) => ({ tag: "script", attrs: { ...i, suppressHydrationWarning: true }, children: a })) }) }), n = [...r, ...t];
-  return jsx(Fragment, { children: n.map((o, a) => createElement(Pe, { ...o, key: `tsr-scripts-${o.tag}-${a}` })) });
-}, er = `const __TSR_SSR__={matches:[],streamedValues:{},initMatch:o=>(__TSR_SSR__.matches.push(o),o.extracted?.forEach(l=>{if(l.type==="stream"){let r;l.value=new ReadableStream({start(e){r={enqueue:t=>{try{e.enqueue(t)}catch{}},close:()=>{try{e.close()}catch{}}}}}),l.value.controller=r}else{let r,e;l.value=new Promise((t,a)=>{e=a,r=t}),l.value.reject=e,l.value.resolve=r}}),!0),resolvePromise:({matchId:o,id:l,promiseState:r})=>{const e=__TSR_SSR__.matches.find(t=>t.id===o);if(e){const t=e.extracted?.[l];if(t&&t.type==="promise"&&t.value&&r.status==="success")return t.value.resolve(r.data),!0}return!1},injectChunk:({matchId:o,id:l,chunk:r})=>{const e=__TSR_SSR__.matches.find(t=>t.id===o);if(e){const t=e.extracted?.[l];if(t&&t.type==="stream"&&t.value?.controller)return t.value.controller.enqueue(new TextEncoder().encode(r.toString())),!0}return!1},closeStream:({matchId:o,id:l})=>{const r=__TSR_SSR__.matches.find(e=>e.id===o);if(r){const e=r.extracted?.[l];if(e&&e.type==="stream"&&e.value?.controller)return e.value.controller.close(),!0}return!1},cleanScripts:()=>{document.querySelectorAll(".tsr-once").forEach(o=>{o.remove()})}};window.__TSR_SSR__=__TSR_SSR__;
+  return jsx(Fragment, { children: n.map((o, a) => createElement(ke, { ...o, key: `tsr-scripts-${o.tag}-${a}` })) });
+}, Yt = `const __TSR_SSR__={matches:[],streamedValues:{},initMatch:o=>(__TSR_SSR__.matches.push(o),o.extracted?.forEach(l=>{if(l.type==="stream"){let r;l.value=new ReadableStream({start(e){r={enqueue:t=>{try{e.enqueue(t)}catch{}},close:()=>{try{e.close()}catch{}}}}}),l.value.controller=r}else{let r,e;l.value=new Promise((t,a)=>{e=a,r=t}),l.value.reject=e,l.value.resolve=r}}),!0),resolvePromise:({matchId:o,id:l,promiseState:r})=>{const e=__TSR_SSR__.matches.find(t=>t.id===o);if(e){const t=e.extracted?.[l];if(t&&t.type==="promise"&&t.value&&r.status==="success")return t.value.resolve(r.data),!0}return!1},injectChunk:({matchId:o,id:l,chunk:r})=>{const e=__TSR_SSR__.matches.find(t=>t.id===o);if(e){const t=e.extracted?.[l];if(t&&t.type==="stream"&&t.value?.controller)return t.value.controller.enqueue(new TextEncoder().encode(r.toString())),!0}return!1},closeStream:({matchId:o,id:l})=>{const r=__TSR_SSR__.matches.find(e=>e.id===o);if(r){const e=r.extracted?.[l];if(e&&e.type==="stream"&&e.value?.controller)return e.value.controller.close(),!0}return!1},cleanScripts:()=>{document.querySelectorAll(".tsr-once").forEach(o=>{o.remove()})}};window.__TSR_SSR__=__TSR_SSR__;
 `;
-function tr(e, t) {
+function er(e, t) {
   e.ssr = { manifest: t, serializer: y }, e.serverSsr = { injectedHtml: [], streamedKeys: /* @__PURE__ */ new Set(), injectHtml: (r) => {
     const n = Promise.resolve().then(r);
     return e.serverSsr.injectedHtml.push(n), e.emit({ type: "onInjectedHtml", promise: n }), n.then(() => {
     });
   }, injectScript: (r, n) => e.serverSsr.injectHtml(async () => `<script class='tsr-once'>${await r()}; if (typeof __TSR_SSR__ !== 'undefined') __TSR_SSR__.cleanScripts()<\/script>`), streamValue: (r, n) => {
     warning(!e.serverSsr.streamedKeys.has(r), "Key has already been streamed: " + r), e.serverSsr.streamedKeys.add(r), e.serverSsr.injectScript(() => `__TSR_SSR__.streamedValues['${r}'] = { value: ${C$1(e.ssr.serializer.stringify(n), { isScriptContext: true, wrap: true, json: true })}}`);
-  }, onMatchSettled: or }, e.serverSsr.injectScript(() => er, { logScript: false });
+  }, onMatchSettled: nr }, e.serverSsr.injectScript(() => Yt, { logScript: false });
 }
-function rr(e) {
+function tr(e) {
   var t, r;
   const n = { manifest: e.ssr.manifest, dehydratedData: (r = (t = e.options).dehydrate) == null ? void 0 : r.call(t) };
   e.serverSsr.injectScript(() => `__TSR_SSR__.dehydrated = ${C$1(e.ssr.serializer.stringify(n), { isScriptContext: true, wrap: true, json: true })}`);
 }
-function nr(e, t) {
+function rr(e, t) {
   const r = [];
-  return { replaced: K(e, (o, a) => {
+  return { replaced: Q(e, (o, a) => {
     if (o instanceof ReadableStream) {
       const [i, l] = o.tee(), c = { type: "stream", path: a, id: r.length, matchIndex: t.match.index, stream: l };
       return r.push(c), i;
@@ -10848,12 +10847,12 @@ function nr(e, t) {
     return o;
   }), extracted: r };
 }
-function or(e) {
+function nr(e) {
   const { router: t, match: r } = e;
   let n, o;
   if (r.loaderData !== void 0) {
-    const c = nr(r.loaderData, { match: r });
-    r.loaderData = c.replaced, n = c.extracted, o = n.reduce((d, u) => X(d, ["temp", ...u.path], void 0), { temp: c.replaced }).temp;
+    const c = rr(r.loaderData, { match: r });
+    r.loaderData = c.replaced, n = c.extracted, o = n.reduce((d, u) => K(d, ["temp", ...u.path], void 0), { temp: c.replaced }).temp;
   }
   const a = `__TSR_SSR__.initMatch(${C$1({ id: r.id, __beforeLoadContext: t.ssr.serializer.stringify(r.__beforeLoadContext), loaderData: t.ssr.serializer.stringify(o), error: t.ssr.serializer.stringify(r.error), extracted: n == null ? void 0 : n.map((c) => pick(c, ["type", "path"])), updatedAt: r.updatedAt, status: r.status }, { isScriptContext: true, wrap: true, json: true })})`;
   t.serverSsr.injectScript(() => a), n && n.forEach((c) => c.type === "promise" ? i(c) : l(c));
@@ -10877,43 +10876,43 @@ function or(e) {
     });
   }
 }
-function X(e, t, r) {
+function K(e, t, r) {
   if (t.length === 0) return r;
   const [n, ...o] = t;
-  return Array.isArray(e) ? e.map((a, i) => i === Number(n) ? X(a, o, r) : a) : isPlainObject$1(e) ? { ...e, [n]: X(e[n], o, r) } : e;
+  return Array.isArray(e) ? e.map((a, i) => i === Number(n) ? K(a, o, r) : a) : isPlainObject$1(e) ? { ...e, [n]: K(e[n], o, r) } : e;
 }
-function K(e, t, r = []) {
-  if (isPlainArray(e)) return e.map((o, a) => K(o, t, [...r, `${a}`]));
+function Q(e, t, r = []) {
+  if (isPlainArray(e)) return e.map((o, a) => Q(o, t, [...r, `${a}`]));
   if (isPlainObject$1(e)) {
     const o = {};
-    for (const a in e) o[a] = K(e[a], t, [...r, a]);
+    for (const a in e) o[a] = Q(e[a], t, [...r, a]);
     return o;
   }
   const n = t(e, r);
   return n !== e ? n : e;
 }
-function sr({ createRouter: e, getRouterManifest: t }) {
+function or({ createRouter: e, getRouterManifest: t }) {
   return (r) => eventHandler(async (n) => {
     const o = toWebRequest(n), a = new URL(o.url), i = a.href.replace(a.origin, ""), l = createMemoryHistory({ initialEntries: [i] }), c = e();
-    tr(c, t == null ? void 0 : t()), c.update({ history: l }), await c.load(), rr(c);
-    const d = ar({ event: n, router: c });
+    er(c, t == null ? void 0 : t()), c.update({ history: l }), await c.load(), tr(c);
+    const d = sr({ event: n, router: c });
     return await r({ request: o, router: c, responseHeaders: d });
   });
 }
-function ar(e) {
+function sr(e) {
   e.event.__tsrHeadersSent = true;
-  let t = D(getResponseHeaders(e.event), { "Content-Type": "text/html; charset=UTF-8" }, ...e.router.state.matches.map((n) => n.headers));
+  let t = z(getResponseHeaders(e.event), { "Content-Type": "text/html; charset=UTF-8" }, ...e.router.state.matches.map((n) => n.headers));
   const { redirect: r } = e.router.state;
-  return r && (t = D(t, r.headers, { Location: r.href })), t;
+  return r && (t = z(t, r.headers, { Location: r.href })), t;
+}
+function ar(e, t) {
+  return Pe(e, t);
 }
 function ir(e, t) {
-  return ke(e, t);
+  return Readable$1.fromWeb(Pe(e, Readable$1.toWeb(t)));
 }
-function cr(e, t) {
-  return Readable$1.fromWeb(ke(e, Readable$1.toWeb(t)));
-}
-const lr = /(<body)/, dr = /(<\/body>)/, ur = /(<\/html>)/, pr = /(<head.*?>)/, fr = /(<\/[a-zA-Z][\w:.-]*?>)/g, mr = new TextDecoder();
-function hr() {
+const cr = /(<body)/, lr = /(<\/body>)/, dr = /(<\/html>)/, ur = /(<head.*?>)/, pr = /(<\/[a-zA-Z][\w:.-]*?>)/g, fr = new TextDecoder();
+function mr() {
   let e;
   const t = new TextEncoder(), n = { stream: new ReadableStream$1({ start(o) {
     e = o;
@@ -10926,7 +10925,7 @@ function hr() {
   }, destroyed: false };
   return n;
 }
-async function gr(e, t) {
+async function hr(e, t) {
   var r, n, o;
   try {
     const a = e.getReader();
@@ -10937,29 +10936,29 @@ async function gr(e, t) {
     (o = t.onError) == null || o.call(t, a);
   }
 }
-function ke(e, t) {
-  const r = hr();
+function Pe(e, t) {
+  const r = mr();
   let n = true, o = "", a = "", i = false, l = false, c = "", d = "";
   function u() {
     const f = o;
     return o = "", f;
   }
   function m(f) {
-    return f instanceof Uint8Array ? mr.decode(f) : String(f);
+    return f instanceof Uint8Array ? fr.decode(f) : String(f);
   }
   const h = createControlledPromise();
-  let $ = 0;
+  let I = 0;
   e.serverSsr.injectedHtml.forEach((f) => {
     te(f);
   });
-  const Ue = e.subscribe("onInjectedHtml", (f) => {
+  const We = e.subscribe("onInjectedHtml", (f) => {
     te(f.promise);
   });
   function te(f) {
-    $++, f.then((N) => {
-      i ? r.write(N) : o += N;
+    I++, f.then(($) => {
+      i ? r.write($) : o += $;
     }).catch(h.reject).finally(() => {
-      $--, !n && $ === 0 && (Ue(), h.resolve());
+      I--, !n && I === 0 && (We(), h.resolve());
     });
   }
   return h.then(() => {
@@ -10967,50 +10966,50 @@ function ke(e, t) {
     r.end(f);
   }).catch((f) => {
     console.error("Error reading routerStream:", f), r.destroy(f);
-  }), gr(t, { onData: (f) => {
-    const N = m(f.value);
-    let g = c + N;
-    const U = g.match(dr), re = g.match(ur);
-    if (i || g.match(lr) && (i = true), !l) {
-      const w = g.match(pr);
-      if (w) {
+  }), hr(t, { onData: (f) => {
+    const $ = m(f.value);
+    let g = c + $;
+    const W = g.match(lr), re = g.match(dr);
+    if (i || g.match(cr) && (i = true), !l) {
+      const b = g.match(ur);
+      if (b) {
         l = true;
-        const ne = w.index, oe = w[0], We = g.slice(ne + oe.length);
-        r.write(g.slice(0, ne) + oe + u()), g = We;
+        const ne = b.index, oe = b[0], qe = g.slice(ne + oe.length);
+        r.write(g.slice(0, ne) + oe + u()), g = qe;
       }
     }
     if (!i) {
       r.write(g), c = "";
       return;
     }
-    if (U && re && U.index < re.index) {
-      const w = U.index;
-      a = g.slice(w), r.write(g.slice(0, w) + u()), c = "";
+    if (W && re && W.index < re.index) {
+      const b = W.index;
+      a = g.slice(b), r.write(g.slice(0, b) + u()), c = "";
       return;
     }
-    let W, H = 0;
-    for (; (W = fr.exec(g)) !== null; ) H = W.index + W[0].length;
-    if (H > 0) {
-      const w = g.slice(0, H) + u() + d;
-      r.write(w), c = g.slice(H);
+    let q, N = 0;
+    for (; (q = pr.exec(g)) !== null; ) N = q.index + q[0].length;
+    if (N > 0) {
+      const b = g.slice(0, N) + u() + d;
+      r.write(b), c = g.slice(N);
     } else c = g, d += u();
   }, onEnd: () => {
-    n = false, $ === 0 && h.resolve();
+    n = false, I === 0 && h.resolve();
   }, onError: (f) => {
     console.error("Error reading appStream:", f), r.destroy(f);
   } }), r.stream;
 }
-const yr = async ({ request: e, router: t, responseHeaders: r }) => {
-  if (typeof L.renderToReadableStream == "function") {
-    const n = await L.renderToReadableStream(jsx(ue, { router: t }), { signal: e.signal });
+const gr = async ({ request: e, router: t, responseHeaders: r }) => {
+  if (typeof H$2.renderToReadableStream == "function") {
+    const n = await H$2.renderToReadableStream(jsx(ue, { router: t }), { signal: e.signal });
     isbot(e.headers.get("User-Agent")) && await n.allReady;
-    const o = ir(t, n);
+    const o = ar(t, n);
     return new Response(o, { status: t.state.statusCode, headers: r });
   }
-  if (typeof L.renderToPipeableStream == "function") {
+  if (typeof H$2.renderToPipeableStream == "function") {
     const n = new PassThrough();
     try {
-      const a = L.renderToPipeableStream(jsx(ue, { router: t }), { ...isbot(e.headers.get("User-Agent")) ? { onAllReady() {
+      const a = H$2.renderToPipeableStream(jsx(ue, { router: t }), { ...isbot(e.headers.get("User-Agent")) ? { onAllReady() {
         a.pipe(n);
       } } : { onShellReady() {
         a.pipe(n);
@@ -11020,23 +11019,23 @@ const yr = async ({ request: e, router: t, responseHeaders: r }) => {
     } catch (a) {
       console.error("Error in renderToPipeableStream:", a);
     }
-    const o = cr(t, n);
+    const o = ir(t, n);
     return new Response(o, { status: t.state.statusCode, headers: r });
   }
   throw new Error("No renderToReadableStream or renderToPipeableStream found in react-dom/server. Ensure you are using a version of react-dom that supports streaming.");
-}, vr = () => ({ routes: { __root__: { filePath: "__root.tsx", children: ["/", "/deferred", "/login", "/products/create", "/products/edit", "/categories/", "/products/", "/users/", "/products/view/$id"], preloads: ["/_build/assets/client-ByngpesG.js", "/_build/assets/client-CrIQ5dyp.js"] }, "/": { filePath: "index.tsx" }, "/deferred": { filePath: "deferred.tsx" }, "/login": { filePath: "login.tsx" }, "/products/create": { filePath: "products/create.tsx" }, "/products/edit": { filePath: "products/edit.tsx" }, "/categories/": { filePath: "categories/index.tsx" }, "/products/": { filePath: "products/index.tsx" }, "/users/": { filePath: "users/index.tsx" }, "/products/view/$id": { filePath: "products/view.$id.tsx" } } });
-function Sr(e) {
+}, yr = () => ({ routes: { __root__: { filePath: "__root.tsx", children: ["/", "/deferred", "/login", "/products/create", "/products/edit", "/categories/", "/products/", "/users/", "/products/view/$id"], preloads: ["/_build/assets/client-B8g45vtI.js", "/_build/assets/client-By4r23vN.js"] }, "/": { filePath: "index.tsx" }, "/deferred": { filePath: "deferred.tsx" }, "/login": { filePath: "login.tsx" }, "/products/create": { filePath: "products/create.tsx" }, "/products/edit": { filePath: "products/edit.tsx" }, "/categories/": { filePath: "categories/index.tsx" }, "/products/": { filePath: "products/index.tsx" }, "/users/": { filePath: "users/index.tsx" }, "/products/view/$id": { filePath: "products/view.$id.tsx" } } });
+function vr(e) {
   return globalThis.MANIFEST[e];
 }
-function wr() {
+function Sr() {
   var _a;
-  const e = vr(), t = e.routes.__root__ = e.routes.__root__ || {};
+  const e = yr(), t = e.routes.__root__ = e.routes.__root__ || {};
   t.assets = t.assets || [];
-  const r = Sr("client");
+  const r = vr("client");
   return t.assets.push({ tag: "script", attrs: { src: (_a = r.inputs[r.handler]) == null ? void 0 : _a.output.path, type: "module", suppressHydrationWarning: true, async: true } }), e;
 }
 function br() {
-  const e = wr();
+  const e = Sr();
   return { ...e, routes: Object.fromEntries(Object.entries(e.routes).map(([t, r]) => {
     const { preloads: n, assets: o } = r;
     return [t, { preloads: n, assets: o }];
@@ -11113,7 +11112,7 @@ const xr = () => (useEffect(() => {
       });
     });
   }
-}, []), jsxs(Fragment, { children: [jsx("meta", { charSet: "UTF-8" }), jsx("meta", { name: "viewport", content: "width=device-width, initial-scale=1.0" }), jsx("title", { children: "Souvenir Stock" }), jsx("meta", { name: "description", content: "Souvenir Stock Sale App" }), jsx("link", { rel: "manifest", href: "/manifest.json" }), jsx("meta", { property: "og:title", content: "Souvenir Stock" }), jsx("meta", { property: "og:description", content: "Souvenir Stock Sale App" }), jsx("meta", { property: "og:image", content: "https://stock-order.netlify.app/images/favicon.svg" }), jsx("meta", { property: "og:type", content: "website" }), jsx("meta", { property: "og:url", content: "https://stock-order.netlify.app" }), jsx("meta", { name: "twitter:card", content: "summary_large_image" }), jsx("meta", { name: "twitter:title", content: "Souvenir Stock" }), jsx("meta", { name: "twitter:description", content: "Souvenir Stock Sale App" }), jsx("meta", { name: "twitter:image", content: "https://stock-order.netlify.app/images/favicon.svg" }), jsx("link", { rel: "icon", type: "image/png", href: "/images/favicon.svg" }), jsx("meta", { name: "mobile-web-app-capable", content: "yes" }), jsx("meta", { name: "apple-mobile-web-app-status-bar-style", content: "#fff" }), jsx("meta", { name: "apple-mobile-web-app-title", content: "souvenirstock" }), jsx("meta", { name: "theme-color", content: "#fff" }), jsx("link", { rel: "apple-touch-icon", href: "/images/favicon.svg" }), jsx("style", { children: `
+}, []), jsxs("article", { children: [jsx("meta", { charSet: "UTF-8" }), jsx("meta", { name: "viewport", content: "width=device-width, initial-scale=1.0" }), jsx("title", { children: "Souvenir Stock" }), jsx("meta", { name: "description", content: "Souvenir Stock Sale App" }), jsx("link", { rel: "manifest", href: "/manifest.json" }), jsx("meta", { property: "og:title", content: "Souvenir Stock" }), jsx("meta", { property: "og:description", content: "Souvenir Stock Sale App" }), jsx("meta", { property: "og:image", content: "https://stock-order.netlify.app/images/favicon.svg" }), jsx("meta", { property: "og:type", content: "website" }), jsx("meta", { property: "og:url", content: "https://stock-order.netlify.app" }), jsx("meta", { name: "twitter:card", content: "summary_large_image" }), jsx("meta", { name: "twitter:title", content: "Souvenir Stock" }), jsx("meta", { name: "twitter:description", content: "Souvenir Stock Sale App" }), jsx("meta", { name: "twitter:image", content: "https://stock-order.netlify.app/images/favicon.svg" }), jsx("link", { rel: "icon", type: "image/png", href: "/images/favicon.svg" }), jsx("link", { rel: "icon", href: "/images/favicon.svg" }), jsx("meta", { name: "mobile-web-app-capable", content: "yes" }), jsx("meta", { name: "apple-mobile-web-app-status-bar-style", content: "#fff" }), jsx("meta", { name: "apple-mobile-web-app-title", content: "souvenirstock" }), jsx("meta", { name: "theme-color", content: "#fff" }), jsx("link", { rel: "apple-touch-icon", href: "/images/favicon.svg" }), jsx("style", { children: `
           body {
             margin: 0;
             padding: 0;
@@ -11145,73 +11144,73 @@ const xr = () => (useEffect(() => {
           }
         ` })] }));
 function Te({ children: e }) {
-  return jsxs("div", { className: "space-y-2 p-2", children: [jsx("div", { className: "text-gray-600 dark:text-gray-400", children: e || jsx("p", { children: "The page you are looking for does not exist." }) }), jsxs("p", { className: "flex items-center gap-2 flex-wrap", children: [jsx("button", { onClick: () => window.history.back(), className: "bg-emerald-500 text-white px-2 py-1 rounded uppercase font-black text-sm", children: "Go back" }), jsx(Link, { to: "/", className: "bg-cyan-600 text-white px-2 py-1 rounded uppercase font-black text-sm", children: "Start Over" })] })] });
+  return jsxs("div", { className: "flex flex-col items-center justify-center min-h-screen text-center space-y-4 p-6 bg-gray-100 dark:bg-gray-900", children: [jsx("h1", { className: "text-4xl font-bold text-gray-800 dark:text-gray-200", children: "Page Not Found" }), jsx("p", { className: "text-gray-600 dark:text-gray-400", children: e || "The page you are looking for does not exist." }), jsxs("div", { className: "flex gap-4", children: [jsx("button", { onClick: () => window.history.back(), className: "bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-lg uppercase font-bold text-sm transition", children: "Go Back" }), jsx(Link, { to: "/", className: "bg-cyan-600 hover:bg-cyan-700 text-white px-4 py-2 rounded-lg uppercase font-bold text-sm transition", children: "Start Over" })] })] });
 }
-const Me = createContext$1(void 0), _r = ({ children: e }) => {
+const Me = createContext$1(void 0), wr = ({ children: e }) => {
   const [t, r] = useState(false);
   return jsx(Me.Provider, { value: { isMenuOpen: t, setIsMenuOpen: r }, children: e });
-}, Rr = () => {
+}, _r = () => {
   const e = useContext(Me);
   if (!e) throw new Error("useMenu must be used within a MenuProvider");
   return e;
-}, Cr = ({ size: e = 36, height: t, ...r }) => jsx("svg", { fill: "none", height: e || t, viewBox: "0 0 32 32", width: e || t, ...r, children: jsx("path", { clipRule: "evenodd", d: "M17.6482 10.1305L15.8785 7.02583L7.02979 22.5499H10.5278L17.6482 10.1305ZM19.8798 14.0457L18.11 17.1983L19.394 19.4511H16.8453L15.1056 22.5499H24.7272L19.8798 14.0457Z", fill: "currentColor", fillRule: "evenodd" }) }), Pr = ({ size: e = 24, width: t, height: r, ...n }) => jsx("svg", { "aria-hidden": "true", focusable: "false", height: e || r, role: "presentation", viewBox: "0 0 24 24", width: e || t, ...n, children: jsx("path", { d: "M21.53 15.93c-.16-.27-.61-.69-1.73-.49a8.46 8.46 0 01-1.88.13 8.409 8.409 0 01-5.91-2.82 8.068 8.068 0 01-1.44-8.66c.44-1.01.13-1.54-.09-1.76s-.77-.55-1.83-.11a10.318 10.318 0 00-6.32 10.21 10.475 10.475 0 007.04 8.99 10 10 0 002.89.55c.16.01.32.02.48.02a10.5 10.5 0 008.47-4.27c.67-.93.49-1.519.32-1.79z", fill: "currentColor" }) }), kr = ({ size: e = 24, width: t, height: r, ...n }) => jsx("svg", { "aria-hidden": "true", focusable: "false", height: e || r, role: "presentation", viewBox: "0 0 24 24", width: e || t, ...n, children: jsxs("g", { fill: "currentColor", children: [jsx("path", { d: "M19 12a7 7 0 11-7-7 7 7 0 017 7z" }), jsx("path", { d: "M12 22.96a.969.969 0 01-1-.96v-.08a1 1 0 012 0 1.038 1.038 0 01-1 1.04zm7.14-2.82a1.024 1.024 0 01-.71-.29l-.13-.13a1 1 0 011.41-1.41l.13.13a1 1 0 010 1.41.984.984 0 01-.7.29zm-14.28 0a1.024 1.024 0 01-.71-.29 1 1 0 010-1.41l.13-.13a1 1 0 011.41 1.41l-.13.13a1 1 0 01-.7.29zM22 13h-.08a1 1 0 010-2 1.038 1.038 0 011.04 1 .969.969 0 01-.96 1zM2.08 13H2a1 1 0 010-2 1.038 1.038 0 011.04 1 .969.969 0 01-.96 1zm16.93-7.01a1.024 1.024 0 01-.71-.29 1 1 0 010-1.41l.13-.13a1 1 0 011.41 1.41l-.13.13a.984.984 0 01-.7.29zm-14.02 0a1.024 1.024 0 01-.71-.29l-.13-.14a1 1 0 011.41-1.41l.13.13a1 1 0 010 1.41.97.97 0 01-.7.3zM12 3.04a.969.969 0 01-1-.96V2a1 1 0 012 0 1.038 1.038 0 01-1 1.04z" })] }) }), v = { light: "light", dark: "dark" }, Er = (e) => {
+}, Rr = ({ size: e = 36, height: t, ...r }) => jsx("svg", { fill: "none", height: e || t, viewBox: "0 0 32 32", width: e || t, ...r, children: jsx("path", { clipRule: "evenodd", d: "M17.6482 10.1305L15.8785 7.02583L7.02979 22.5499H10.5278L17.6482 10.1305ZM19.8798 14.0457L18.11 17.1983L19.394 19.4511H16.8453L15.1056 22.5499H24.7272L19.8798 14.0457Z", fill: "currentColor", fillRule: "evenodd" }) }), Cr = ({ size: e = 24, width: t, height: r, ...n }) => jsx("svg", { "aria-hidden": "true", focusable: "false", height: e || r, role: "presentation", viewBox: "0 0 24 24", width: e || t, ...n, children: jsx("path", { d: "M21.53 15.93c-.16-.27-.61-.69-1.73-.49a8.46 8.46 0 01-1.88.13 8.409 8.409 0 01-5.91-2.82 8.068 8.068 0 01-1.44-8.66c.44-1.01.13-1.54-.09-1.76s-.77-.55-1.83-.11a10.318 10.318 0 00-6.32 10.21 10.475 10.475 0 007.04 8.99 10 10 0 002.89.55c.16.01.32.02.48.02a10.5 10.5 0 008.47-4.27c.67-.93.49-1.519.32-1.79z", fill: "currentColor" }) }), kr = ({ size: e = 24, width: t, height: r, ...n }) => jsx("svg", { "aria-hidden": "true", focusable: "false", height: e || r, role: "presentation", viewBox: "0 0 24 24", width: e || t, ...n, children: jsxs("g", { fill: "currentColor", children: [jsx("path", { d: "M19 12a7 7 0 11-7-7 7 7 0 017 7z" }), jsx("path", { d: "M12 22.96a.969.969 0 01-1-.96v-.08a1 1 0 012 0 1.038 1.038 0 01-1 1.04zm7.14-2.82a1.024 1.024 0 01-.71-.29l-.13-.13a1 1 0 011.41-1.41l.13.13a1 1 0 010 1.41.984.984 0 01-.7.29zm-14.28 0a1.024 1.024 0 01-.71-.29 1 1 0 010-1.41l.13-.13a1 1 0 011.41 1.41l-.13.13a1 1 0 01-.7.29zM22 13h-.08a1 1 0 010-2 1.038 1.038 0 011.04 1 .969.969 0 01-.96 1zM2.08 13H2a1 1 0 010-2 1.038 1.038 0 011.04 1 .969.969 0 01-.96 1zm16.93-7.01a1.024 1.024 0 01-.71-.29 1 1 0 010-1.41l.13-.13a1 1 0 011.41 1.41l-.13.13a.984.984 0 01-.7.29zm-14.02 0a1.024 1.024 0 01-.71-.29l-.13-.14a1 1 0 011.41-1.41l.13.13a1 1 0 010 1.41.97.97 0 01-.7.3zM12 3.04a.969.969 0 01-1-.96V2a1 1 0 012 0 1.038 1.038 0 01-1 1.04z" })] }) }), v = { light: "light", dark: "dark" }, Pr = (e) => {
   const [t, r] = useState(() => v.light), n = useMemo(() => t === v.dark, [t]), o = useMemo(() => t === v.light, [t]), a = (d) => {
   }, i = () => a(), l = () => a(), c = () => t === v.dark ? i() : l();
   return useEffect(() => {
   }, []), { theme: t, isDark: n, isLight: o, setLightTheme: i, setDarkTheme: l, toggleTheme: c };
 }, me = ({ className: e, classNames: t }) => {
-  const [r, n] = useState(false), { theme: o, toggleTheme: a } = Er(), i = a, { Component: l, slots: c, isSelected: d, getBaseProps: u, getInputProps: m, getWrapperProps: h } = useSwitch({ isSelected: o === "light", onChange: i });
+  const [r, n] = useState(false), { theme: o, toggleTheme: a } = Pr(), i = a, { Component: l, slots: c, isSelected: d, getBaseProps: u, getInputProps: m, getWrapperProps: h } = useSwitch({ isSelected: o === "light", onChange: i });
   return useEffect(() => {
     n(true);
-  }, [r]), r ? jsxs(l, { "aria-label": d ? "Switch to dark mode" : "Switch to light mode", ...u({ className: A$1("px-px transition-opacity hover:opacity-80 cursor-pointer", e, t == null ? void 0 : t.base) }), children: [jsx(VisuallyHidden, { children: jsx("input", { ...m() }) }), jsx("div", { ...h(), className: c.wrapper({ class: A$1(["w-auto h-auto", "bg-transparent", "rounded-lg", "flex items-center justify-center", "group-data-[selected=true]:bg-transparent", "!text-default-500", "pt-px", "px-0", "mx-0"], t == null ? void 0 : t.wrapper) }), children: d ? jsx(Pr, { size: 22 }) : jsx(kr, { size: 22 }) })] }) : jsx("div", { className: "w-6 h-6" });
-}, k = new gt("https://souvenirstock-api.up.railway.app");
-k.autoCancellation(false);
-async function eo(e, t) {
-  return await k.collection(e).getOne(t);
+  }, [r]), r ? jsxs(l, { "aria-label": d ? "Switch to dark mode" : "Switch to light mode", ...u({ className: F$2("px-px transition-opacity hover:opacity-80 cursor-pointer", e, t == null ? void 0 : t.base) }), children: [jsx(VisuallyHidden, { children: jsx("input", { ...m() }) }), jsx("div", { ...h(), className: c.wrapper({ class: F$2(["w-auto h-auto", "bg-transparent", "rounded-lg", "flex items-center justify-center", "group-data-[selected=true]:bg-transparent", "!text-default-500", "pt-px", "px-0", "mx-0"], t == null ? void 0 : t.wrapper) }), children: d ? jsx(Cr, { size: 22 }) : jsx(kr, { size: 22 }) })] }) : jsx("div", { className: "w-6 h-6" });
+}, E = new gt("https://souvenirstock-api.up.railway.app");
+E.autoCancellation(false);
+async function Yn(e, t) {
+  return await E.collection(e).getOne(t);
 }
-async function Tr(e, t) {
-  return (await k.collection(e).create(t)).id;
+async function Er(e, t) {
+  return (await E.collection(e).create(t)).id;
 }
-async function to(e, t, r) {
-  await k.collection(e).update(t, r);
+async function eo(e, t, r) {
+  await E.collection(e).update(t, r);
 }
-const Mr = () => {
+const Tr = () => {
   const e = useNavigate(), [t, r] = useState(false), n = () => r(true), o = () => r(false), a = () => {
-    k.authStore.clear(), e({ to: "/login" });
+    E.authStore.clear(), e({ to: "/login" });
   };
   return { logout: a, handleLogout: () => {
     a(), o();
   }, openModalLogout: n, closeModalLogout: o, isOpen: t };
 }, he = () => {
-  const { handleLogout: e, openModalLogout: t, closeModalLogout: r, isOpen: n } = Mr();
+  const { handleLogout: e, openModalLogout: t, closeModalLogout: r, isOpen: n } = Tr();
   return jsxs(Fragment, { children: [jsx(Link$2, { isExternal: true, title: "Logout", className: "flex items-center gap-2 cursor-pointer", onPress: t, children: jsx("span", { className: "font-bold text-red-500", children: "Logout" }) }), jsx(Modal, { isOpen: n, onClose: r, children: jsxs(ModalContent, { children: [jsx(ModalHeader, { children: "Confirm Logout" }), jsx(ModalBody, { children: "Are you sure you want to log out?" }), jsxs(ModalFooter, { children: [jsx(Button, { variant: "ghost", onPress: r, children: "Cancel" }), jsx(Button, { color: "danger", onPress: e, children: "Logout" })] })] }) })] });
-}, G = { navItems: [{ label: "Products", href: "/products" }, { label: "Categories", href: "/categories" }, { label: "Users", href: "/users" }], navMenuItems: [{ label: "Products", href: "/products" }, { label: "Categories", href: "/categories" }, { label: "Users", href: "/users" }] }, Ir = () => {
-  const [e, t] = useState(""), { isMenuOpen: r, setIsMenuOpen: n } = Rr(), o = (a) => {
+}, G = { navItems: [{ label: "Products", href: "/products" }, { label: "Categories", href: "/categories" }, { label: "Users", href: "/users" }], navMenuItems: [{ label: "Products", href: "/products" }, { label: "Categories", href: "/categories" }, { label: "Users", href: "/users" }] }, Mr = () => {
+  const [e, t] = useState(""), { isMenuOpen: r, setIsMenuOpen: n } = _r(), o = (a) => {
     Z.navigate({ to: a }), t(a), n(false);
   };
-  return jsxs(Navbar, { maxWidth: "xl", position: "sticky", isMenuOpen: r, onMenuOpenChange: n, children: [jsxs(NavbarContent, { className: "basis-1/5 sm:basis-full", justify: "start", children: [jsx(NavbarBrand, { className: "gap-3 max-w-fit", children: jsxs(Link$1, { className: "flex justify-start items-center gap-1", color: "foreground", href: "/", children: [jsx(Cr, {}), jsx("p", { className: "font-bold text-inherit", children: "Stock" })] }) }), jsx("div", { className: "hidden lg:flex sm:flex gap-4 justify-start ml-2", children: G.navItems.map((a) => jsx(NavbarItem, { children: jsx(Link$1, { className: A$1(link({ color: "foreground" }), "data-[active=true]:text-primary data-[active=true]:font-medium"), color: "foreground", as: Link, to: a.href, children: a.label }) }, a.href)) })] }), jsx(NavbarContent, { className: "hidden sm:flex basis-1/5 sm:basis-full", justify: "end", children: jsxs(NavbarItem, { className: "hidden sm:flex gap-8", children: [jsx(me, {}), jsx(he, {})] }) }), jsxs(NavbarContent, { className: "sm:hidden basis-1 pl-4", justify: "end", children: [jsx(me, { className: "mr-3" }), jsx(NavbarMenuToggle, { className: "z-50" })] }), jsxs(NavbarMenu, { children: [jsx("div", { className: "mx-4 mt-2 flex flex-col gap-2", children: G.navMenuItems.map((a, i) => jsxs(NavbarMenuItem, { children: [jsx(Link$1, { className: A$1(link({ color: "foreground" }), "data-[active=true]:text-blue-500 data-[active=true]:font-medium", "flex items-center gap-2", e === a.href ? "text-blue-500 font-medium" : "", "font-bold"), color: "foreground", size: "lg", as: Link, to: a.href, onPress: () => o(a.href), children: jsx("span", { children: a.label }) }), i !== G.navMenuItems.length - 1 && jsx("div", { className: "border-b my-2" })] }, `${a}-${i}`)) }), jsx("div", { className: "border-b my-2" }), jsx("div", { className: "mx-4 mt-1 flex flex-col gap-2", children: jsx(he, {}) })] })] });
+  return jsxs(Navbar, { maxWidth: "xl", position: "sticky", isMenuOpen: r, onMenuOpenChange: n, children: [jsxs(NavbarContent, { className: "basis-1/5 sm:basis-full", justify: "start", children: [jsx(NavbarBrand, { className: "gap-3 max-w-fit", children: jsxs(Link$1, { className: "flex justify-start items-center gap-1", color: "foreground", href: "/", children: [jsx(Rr, {}), jsx("p", { className: "font-bold text-inherit", children: "Stock" })] }) }), jsx("div", { className: "hidden lg:flex sm:flex gap-4 justify-start ml-2", children: G.navItems.map((a) => jsx(NavbarItem, { children: jsx(Link$1, { className: F$2(link({ color: "foreground" }), "data-[active=true]:text-primary data-[active=true]:font-medium"), color: "foreground", as: Link, to: a.href, children: a.label }) }, a.href)) })] }), jsx(NavbarContent, { className: "hidden sm:flex basis-1/5 sm:basis-full", justify: "end", children: jsxs(NavbarItem, { className: "hidden sm:flex gap-8", children: [jsx(me, {}), jsx(he, {})] }) }), jsxs(NavbarContent, { className: "sm:hidden basis-1 pl-4", justify: "end", children: [jsx(me, { className: "mr-3" }), jsx(NavbarMenuToggle, { className: "z-50" })] }), jsxs(NavbarMenu, { children: [jsx("div", { className: "mx-4 mt-2 flex flex-col gap-2", children: G.navMenuItems.map((a, i) => jsxs(NavbarMenuItem, { children: [jsx(Link$1, { className: F$2(link({ color: "foreground" }), "data-[active=true]:text-blue-500 data-[active=true]:font-medium", "flex items-center gap-2", e === a.href ? "text-blue-500 font-medium" : "", "font-bold"), color: "foreground", size: "lg", as: Link, to: a.href, onPress: () => o(a.href), children: jsx("span", { children: a.label }) }), i !== G.navMenuItems.length - 1 && jsx("div", { className: "border-b my-2" })] }, `${a}-${i}`)) }), jsx("div", { className: "border-b my-2" }), jsx("div", { className: "mx-4 mt-1 flex flex-col gap-2", children: jsx(he, {}) })] })] });
 };
-function $r({ children: e }) {
+function Ir({ children: e }) {
   const t = useRouterState({ select: (a) => a.location }), r = useNavigate(), o = t.pathname === "/login";
   return useEffect(() => {
-    !k.authStore.token && !o && r({ to: "/login" });
-  }, [o, r]), jsxs("div", { className: "relative flex flex-col h-screen", children: [!o && jsx(_r, { children: jsx(Ir, {}) }), jsx("main", { className: "container mx-auto max-w-7xl px-1 flex-grow", children: e })] });
+    !E.authStore.token && !o && r({ to: "/login" });
+  }, [o, r]), jsxs("div", { className: "relative flex flex-col h-screen", children: [!o && jsx(wr, { children: jsx(Mr, {}) }), jsx("main", { className: "container mx-auto max-w-7xl px-1 flex-grow", children: e })] });
 }
-const Nr = () => new QueryClient({ defaultOptions: { queries: { retry: 1, staleTime: 5e3, refetchOnWindowFocus: true, throwOnError(e) {
+const $r = () => new QueryClient({ defaultOptions: { queries: { retry: 1, staleTime: 5e3, refetchOnWindowFocus: true, throwOnError(e) {
   return e instanceof Error ? (console.log("=> Mutation error:", e), false) : true;
 } }, mutations: { onSuccess: (e) => {
   toast.success("Successfully!", { position: "top-right", autoClose: 2e3 }), console.log("=> Mutation success:", e);
 }, onError: (e) => {
   e instanceof Error && (toast.error("Failed, Please try again later.", { position: "top-right", autoClose: 2e3 }), console.log("=> Mutation error:", e));
-} } } }), Hr = Nr(), jr = "/_build/assets/app-D9nu_773.css", Lr = ({ title: e, description: t, keywords: r, image: n }) => [{ title: e }, { name: "description", content: t }, { name: "keywords", content: r }, { name: "twitter:title", content: e }, { name: "twitter:description", content: t }, { name: "twitter:creator", content: "@tannerlinsley" }, { name: "twitter:site", content: "@tannerlinsley" }, { name: "og:type", content: "website" }, { name: "og:title", content: e }, { name: "og:description", content: t }, ...n ? [{ name: "twitter:image", content: n }, { name: "twitter:card", content: "summary_large_image" }, { name: "og:image", content: n }] : []], S = createRootRoute({ head: () => ({ meta: [{ charSet: "utf-8" }, { name: "viewport", content: "width=device-width, initial-scale=1" }, ...Lr({ title: "Stock", description: "Stock" })], links: [{ rel: "stylesheet", href: jr }, { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" }, { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" }, { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" }, { rel: "manifest", href: "/site.webmanifest", color: "#fffff" }, { rel: "icon", href: "/favicon.ico" }] }), errorComponent: (e) => jsx(Ie, { children: jsx(Ee, { ...e }) }), notFoundComponent: () => jsx(Te, {}), component: Or });
-function Or() {
+} } } }), Nr = $r(), jr = "/_build/assets/app-BiSt1Cqq.css", Hr = ({ title: e, description: t, keywords: r, image: n }) => [{ title: e }, { name: "description", content: t }, { name: "keywords", content: r }, { name: "twitter:title", content: e }, { name: "twitter:description", content: t }, { name: "twitter:creator", content: "@tannerlinsley" }, { name: "twitter:site", content: "@tannerlinsley" }, { name: "og:type", content: "website" }, { name: "og:title", content: e }, { name: "og:description", content: t }, ...n ? [{ name: "twitter:image", content: n }, { name: "twitter:card", content: "summary_large_image" }, { name: "og:image", content: n }] : []], Lr = false, S = createRootRoute({ head: () => ({ meta: [{ charSet: "utf-8" }, { name: "viewport", content: "width=device-width, initial-scale=1" }, ...Hr({ title: "Stock", description: "Stock" })], links: [{ rel: "stylesheet", href: jr }, { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" }, { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" }, { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" }, { rel: "manifest", href: "/site.webmanifest", color: "#fffff" }, { rel: "icon", href: "/favicon.ico" }] }), errorComponent: (e) => jsx(Ie, { children: jsx(Ee, { ...e }) }), notFoundComponent: () => jsx(Te, {}), component: Fr });
+function Fr() {
   return jsx(Ie, { children: jsx(Outlet, {}) });
 }
 function Ie({ children: e }) {
-  return jsxs("html", { children: [jsxs("head", { children: [jsx(xr, {}), jsx("script", { src: "/sw.js" }), jsx(Kt, {})] }), jsxs("body", { children: [jsx(HeroUIProvider, { navigate: (t, r) => Z.navigate({ to: t, ...r }), useHref: (t) => Z.buildLocation({ to: t }).href, children: jsxs(QueryClientProvider, { client: Hr, children: [jsx($r, { children: jsx("section", { className: "flex flex-col items-center justify-center gap-1 py-1 md:py-0", children: e }) }), jsx(ReactQueryDevtools, { initialIsOpen: false })] }) }), jsx(TanStackRouterDevtools, { position: "bottom-right" }), jsx(Yt, {})] })] });
+  return jsxs("html", { children: [jsxs("head", { children: [jsx(xr, {}), jsx("script", { src: "/sw.js" }), jsx("script", { src: "https://upload-widget.cloudinary.com/latest/global/all.js", type: "text/javascript" }), jsx("script", { src: "https://media-library.cloudinary.com/global/all.js" }), jsx(Kt, {})] }), jsxs("body", { children: [jsx(HeroUIProvider, { navigate: (t, r) => Z.navigate({ to: t, ...r }), useHref: (t) => Z.buildLocation({ to: t }).href, children: jsxs(QueryClientProvider, { client: Nr, children: [jsx(Ir, { children: jsx("section", { className: "flex flex-col items-center justify-center gap-1 py-1 md:py-0", children: e }) }), jsx(ReactQueryDevtools, { initialIsOpen: false })] }) }), Lr, jsx(Zt, {})] })] });
 }
-const Ar = () => import('../build/login-fJnEXyon.mjs'), $e = createFileRoute("/login")({ component: lazyRouteComponent(Ar, "component", () => $e.ssr) });
-async function Fr(e, t, r) {
+const Or = () => import('../build/login-CbgIVoYd.mjs'), $e = createFileRoute("/login")({ component: lazyRouteComponent(Or, "component", () => $e.ssr) });
+async function Ar(e, t, r) {
   var n;
   const o = t[0];
   if (isPlainObject$1(o) && o.method) {
@@ -11249,7 +11248,7 @@ const Ne = Symbol("$HTTPEvent");
 function Br(e) {
   return typeof e == "object" && (e instanceof H3Event || (e == null ? void 0 : e[Ne]) instanceof H3Event || (e == null ? void 0 : e.__is_event__) === true);
 }
-function Ur(e) {
+function Wr(e) {
   return function(...t) {
     var r;
     let n = t[0];
@@ -11262,21 +11261,21 @@ function Ur(e) {
     return e(...t);
   };
 }
-const Wr = Ur(getHeaders);
-function qr() {
+const qr = Wr(getHeaders);
+function Ur() {
   var e;
   return getContext("nitro-app", { asyncContext: !!((e = globalThis.app.config.server.experimental) != null && e.asyncContext), AsyncLocalStorage: AsyncLocalStorage });
 }
 function Jr() {
-  return qr().use().event;
+  return Ur().use().event;
 }
 function Vr(e) {
   return e.replace(/^\/|\/$/g, "");
 }
-const He = (e, t) => {
+const je = (e, t) => {
   const r = `/${Vr(t)}/${e}`;
-  return Object.assign((...o) => Fr(r, o, async (a, i) => (i.headers = D(Wr(), i.headers), $fetch.native(a, i))), { url: r, functionId: e });
-}, Gr = () => import('../build/deferred-D-h3hGcr.mjs'), Qr = He("app_routes_deferred_tsx--personServerFn_createServerFn_handler", "/_server"), Xr = B({ method: "GET" }).validator((e) => e).handler(Qr), Kr = He("app_routes_deferred_tsx--slowServerFn_createServerFn_handler", "/_server"), Zr = B({ method: "GET" }).validator((e) => e).handler(Kr), je = createFileRoute("/deferred")({ loader: async () => ({ deferredStuff: new Promise((e) => setTimeout(() => e("Hello deferred!"), 2e3)), deferredPerson: Zr({ data: "Tanner Linsley" }), person: await Xr({ data: "John Doe" }) }), component: lazyRouteComponent(Gr, "component", () => je.ssr) }), Yr = () => import('../build/index-BGtAJ3n5.mjs'), Le = createFileRoute("/")({ beforeLoad: async () => redirect({ to: "/products" }), component: lazyRouteComponent(Yr, "component", () => Le.ssr) }), en = () => import('../build/index-9XjYg6bF.mjs'), Oe = createFileRoute("/users/")({ component: lazyRouteComponent(en, "component", () => Oe.ssr) }), tn = () => import('../build/index-BcSOJ4Op.mjs'), Ae = createFileRoute("/products/")({ component: lazyRouteComponent(tn, "component", () => Ae.ssr) }), rn = () => import('../build/index-BDGrPjxy.mjs'), Fe = createFileRoute("/categories/")({ component: lazyRouteComponent(rn, "component", () => Fe.ssr) }), nn = () => import('../build/edit-BwY5vRCz.mjs'), ze = createFileRoute("/products/edit")({ component: lazyRouteComponent(nn, "component", () => ze.ssr) }), on = ({ uwConfig: e, setPublicIds: t, setImageUrls: r }) => {
+  return Object.assign((...o) => Ar(r, o, async (a, i) => (i.headers = z(qr(), i.headers), $fetch.native(a, i))), { url: r, functionId: e });
+}, Gr = () => import('../build/deferred-DDmnl8qv.mjs'), Xr = je("app_routes_deferred_tsx--personServerFn_createServerFn_handler", "/_server"), Kr = D({ method: "GET" }).validator((e) => e).handler(Xr), Qr = je("app_routes_deferred_tsx--slowServerFn_createServerFn_handler", "/_server"), Zr = D({ method: "GET" }).validator((e) => e).handler(Qr), He = createFileRoute("/deferred")({ loader: async () => ({ deferredStuff: new Promise((e) => setTimeout(() => e("Hello deferred!"), 2e3)), deferredPerson: Zr({ data: "Tanner Linsley" }), person: await Kr({ data: "John Doe" }) }), component: lazyRouteComponent(Gr, "component", () => He.ssr) }), Yr = () => import('../build/index-BGtAJ3n5.mjs'), Le = createFileRoute("/")({ beforeLoad: async () => redirect({ to: "/products" }), component: lazyRouteComponent(Yr, "component", () => Le.ssr) }), en = () => import('../build/index-9XjYg6bF.mjs'), Fe = createFileRoute("/users/")({ component: lazyRouteComponent(en, "component", () => Fe.ssr) }), tn = () => import('../build/index-CWrryM0x.mjs'), Oe = createFileRoute("/products/")({ component: lazyRouteComponent(tn, "component", () => Oe.ssr) }), rn = () => import('../build/index-BDGrPjxy.mjs'), Ae = createFileRoute("/categories/")({ component: lazyRouteComponent(rn, "component", () => Ae.ssr) }), nn = () => import('../build/edit-ClsImU3l.mjs'), ze = createFileRoute("/products/edit")({ component: lazyRouteComponent(nn, "component", () => ze.ssr) }), on = ({ uwConfig: e, setPublicIds: t, setImageUrls: r }) => {
   const n = useRef(null), o = useRef(null);
   return useEffect(() => {
     (() => {
@@ -11295,14 +11294,18 @@ const He = (e, t) => {
   const r = { display: "inline-block", cursor: "pointer", borderRadius: "8px", overflow: "hidden", boxShadow: "0 2px 10px rgba(0, 0, 0, 0.2)" }, n = { display: "block", width: "200px", height: "200px", objectFit: "cover", borderRadius: "8px" }, o = e.image(t).resize(thumbnail().width(200).height(200));
   return jsx("div", { className: "image-preview", style: r, children: jsx(index_umdExports.AdvancedImage, { style: n, cldImg: o, plugins: [index_umdExports.responsive(), index_umdExports.placeholder()] }) });
 }, an = () => {
-  const e = process.env.CLOUDINARY_NAME, t = process.env.CLOUDINARY_UPLOAD_PRESET, [r, n] = useState([]), [o, a] = useState([]);
+  const e = "db84fdke0", t = "souvenirstock", [r, n] = useState([]), [o, a] = useState([]);
   return { cld: new Cloudinary({ cloud: { cloudName: e } }), uwConfig: { cloudName: e, uploadPreset: t, multiple: true, folder: "souvenirstock", cropping: false }, publicIds: r, imageUrls: o, setPublicIds: n, setImageUrls: a };
 }, cn = () => {
-  const { cld: e, publicIds: t, uwConfig: r, imageUrls: n, setPublicIds: o, setImageUrls: a } = an(), i = useMutation({ mutationFn: (c) => Tr("products", c), onSuccess: () => {
+  const { cld: e, publicIds: t, uwConfig: r, imageUrls: n, setPublicIds: o, setImageUrls: a } = an(), i = useMutation({ mutationFn: (c) => Er("products", c), onSuccess: () => {
     toast.success("Product created successfully!", { position: "top-right", autoClose: 2e3 }), history.back();
   }, onError: (c) => {
     toast.error(`Failed to create product: ${c}`, { position: "top-right", autoClose: 2e3 });
-  } }), l = (c) => {
+  } });
+  useEffect(() => {
+    t.length > 0 && a(t.map((c) => e.image(c).toURL()));
+  }, [t, e]);
+  const l = (c) => {
     c.preventDefault();
     const d = Object.fromEntries(new FormData(c.currentTarget));
     !d.imageurl && n.length > 0 && (d.imageurl = n), i.mutateAsync(d);
@@ -11311,21 +11314,21 @@ const He = (e, t) => {
 }, ln = [{ key: "Clothing", label: "Clothing" }, { key: "PostCards", label: "PostCards" }, { key: "Souvenir", label: "Souvenir" }], dn = createFileRoute("/products/create")({ component: un });
 function un() {
   const { isOpen: e, onOpenChange: t } = useDisclosure({ defaultOpen: true, onClose: () => history.back() }), { cld: r, uwConfig: n, publicIds: o, setPublicIds: a, setImageUrls: i, isPending: l, handleSubmit: c } = cn();
-  return jsx("div", { children: jsx(Modal, { isOpen: e, scrollBehavior: "inside", onOpenChange: t, backdrop: "opaque", classNames: { backdrop: "bg-gradient-to-t from-zinc-900 to-zinc-900/10 backdrop-opacity-20" }, children: jsx(Form, { validationBehavior: "native", onSubmit: c, children: jsxs(ModalContent, { children: [jsx(ModalHeader, { className: "flex flex-col gap-1", children: "Create Products" }), jsxs(ModalBody, { children: [jsx(Input, { isRequired: true, required: true, errorMessage: "Please enter product name", name: "name", placeholder: "Enter product name" }), jsx(Input, { isRequired: true, required: true, errorMessage: "Please enter product description", name: "description", placeholder: "Enter product description" }), jsx(Input, { isRequired: true, required: true, errorMessage: "Please enter product quantity", name: "quantity", placeholder: "Enter product quantity", type: "number" }), jsx(Input, { isRequired: true, required: true, errorMessage: "Please enter product price", name: "price", placeholder: "Enter product price", type: "number" }), jsx(Select, { isRequired: true, required: true, errorMessage: "Please select a category", name: "category", placeholder: "Select category", items: ln, "aria-label": "Select category", children: (d) => jsx(SelectItem, { children: d.label }) }), jsx(on, { uwConfig: n, setPublicIds: a, setImageUrls: i }), jsx("div", { className: "preview-images", children: o.map((d) => jsx(sn, { publicId: d, cld: r }, d)) })] }), jsxs(ModalFooter, { children: [jsx(Button, { color: "danger", variant: "light", onPress: t, children: "Close" }), jsx(Button, { color: "primary", type: "submit", disabled: l, children: l ? "Creating..." : "Create" })] })] }) }) }) });
+  return jsx("div", { children: jsx(Modal, { isOpen: e, scrollBehavior: "inside", onOpenChange: t, backdrop: "opaque", classNames: { backdrop: "bg-gradient-to-t from-zinc-900 to-zinc-900/10 backdrop-opacity-20" }, children: jsx(Form, { validationBehavior: "native", onSubmit: c, children: jsxs(ModalContent, { children: [jsx(ModalHeader, { className: "flex flex-col gap-1", children: "Create Products" }), jsxs(ModalBody, { children: [jsx(Input, { isRequired: true, required: true, errorMessage: "Please enter product name", name: "name", placeholder: "Enter product name" }), jsx(Input, { isRequired: true, required: true, errorMessage: "Please enter product description", name: "description", placeholder: "Enter product description" }), jsx(Input, { isRequired: true, required: true, errorMessage: "Please enter product quantity", name: "quantity", placeholder: "Enter product quantity", type: "number" }), jsx(Input, { isRequired: true, required: true, errorMessage: "Please enter product price", name: "price", placeholder: "Enter product price", type: "number" }), jsx(Select, { isRequired: true, required: true, errorMessage: "Please select a category", name: "category", placeholder: "Select category", items: ln, "aria-label": "Select category", children: (d) => jsx(SelectItem, { children: d.label }) }), jsx(on, { uwConfig: n, setPublicIds: a, setImageUrls: i }), o.length > 0 && jsx("div", { className: "preview-images", children: o.map((d) => jsx(sn, { publicId: d, cld: r }, d)) })] }), jsxs(ModalFooter, { children: [jsx(Button, { color: "danger", variant: "light", onPress: t, children: "Close" }), jsx(Button, { color: "primary", type: "submit", disabled: l, children: l ? "Creating..." : "Create" })] })] }) }) }) });
 }
-const pn = () => import('../build/view._id-BMYC8HfW.mjs'), De = createFileRoute("/products/view/$id")({ component: lazyRouteComponent(pn, "component", () => De.ssr) }), fn = $e.update({ id: "/login", path: "/login", getParentRoute: () => S }), mn = je.update({ id: "/deferred", path: "/deferred", getParentRoute: () => S }), hn = Le.update({ id: "/", path: "/", getParentRoute: () => S }), gn = Oe.update({ id: "/users/", path: "/users/", getParentRoute: () => S }), yn = Ae.update({ id: "/products/", path: "/products/", getParentRoute: () => S }), vn = Fe.update({ id: "/categories/", path: "/categories/", getParentRoute: () => S }), Sn = ze.update({ id: "/products/edit", path: "/products/edit", getParentRoute: () => S }), wn = dn.update({ id: "/products/create", path: "/products/create", getParentRoute: () => S }), bn = De.update({ id: "/products/view/$id", path: "/products/view/$id", getParentRoute: () => S }), xn = { IndexRoute: hn, DeferredRoute: mn, LoginRoute: fn, ProductsCreateRoute: wn, ProductsEditRoute: Sn, CategoriesIndexRoute: vn, ProductsIndexRoute: yn, UsersIndexRoute: gn, ProductsViewIdRoute: bn }, _n = S._addFileChildren(xn)._addFileTypes();
+const pn = () => import('../build/view._id-6ozZXSzv.mjs'), De = createFileRoute("/products/view/$id")({ component: lazyRouteComponent(pn, "component", () => De.ssr) }), fn = $e.update({ id: "/login", path: "/login", getParentRoute: () => S }), mn = He.update({ id: "/deferred", path: "/deferred", getParentRoute: () => S }), hn = Le.update({ id: "/", path: "/", getParentRoute: () => S }), gn = Fe.update({ id: "/users/", path: "/users/", getParentRoute: () => S }), yn = Oe.update({ id: "/products/", path: "/products/", getParentRoute: () => S }), vn = Ae.update({ id: "/categories/", path: "/categories/", getParentRoute: () => S }), Sn = ze.update({ id: "/products/edit", path: "/products/edit", getParentRoute: () => S }), bn = dn.update({ id: "/products/create", path: "/products/create", getParentRoute: () => S }), xn = De.update({ id: "/products/view/$id", path: "/products/view/$id", getParentRoute: () => S }), wn = { IndexRoute: hn, DeferredRoute: mn, LoginRoute: fn, ProductsCreateRoute: bn, ProductsEditRoute: Sn, CategoriesIndexRoute: vn, ProductsIndexRoute: yn, UsersIndexRoute: gn, ProductsViewIdRoute: xn }, _n = S._addFileChildren(wn)._addFileTypes();
 function Rn() {
   return jsx("div", { style: { display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }, children: jsx(Spinner, {}) });
 }
 function Be() {
-  return createRouter$2({ routeTree: _n, defaultPreload: "intent", defaultErrorComponent: Ee, defaultNotFoundComponent: () => jsx(Te, {}), defaultPendingComponent: () => jsx(Rn, {}), scrollRestoration: true });
+  return createRouter$2({ routeTree: _n, defaultPreload: "intent", defaultErrorComponent: Ee, defaultNotFoundComponent: () => jsx(Te, {}), defaultPendingComponent: Rn, scrollRestoration: true });
 }
-const Z = Be(), ro = sr({ createRouter: Be, getRouterManifest: br })(yr);
+const Z = Be(), to = or({ createRouter: Be, getRouterManifest: br })(gr);
 
 const handlers = [
   { route: '/_server', handler: re, lazy: false, middleware: true, method: undefined },
   { route: '/api', handler: W, lazy: false, middleware: true, method: undefined },
-  { route: '/', handler: ro, lazy: false, middleware: true, method: undefined }
+  { route: '/', handler: to, lazy: false, middleware: true, method: undefined }
 ];
 
 function wrapToPromise(value) {
@@ -12859,5 +12862,5 @@ function getCacheHeaders(url) {
   return {};
 }
 
-export { De as D, Rn as R, Z, eo as e, f, handler as h, je as j, k, ln as l, node$1 as n, to as t };
+export { De as D, E, He as H, Rn as R, Yn as Y, Z, eo as e, f, handler as h, ln as l, node$1 as n };
 //# sourceMappingURL=nitro.mjs.map

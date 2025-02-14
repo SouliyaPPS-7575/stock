@@ -1,5 +1,5 @@
 import { jsx, jsxs } from 'react/jsx-runtime';
-import { R as Rn, k, Z } from '../nitro/nitro.mjs';
+import { R as Rn, E, Z } from '../nitro/nitro.mjs';
 import { Button, Link, Badge, Card, CardBody, Image, CardFooter } from '@heroui/react';
 import { useQueryClient, useInfiniteQuery } from '@tanstack/react-query';
 import { useMemo, useState, useEffect, useRef } from 'react';
@@ -28,7 +28,6 @@ import 'pocketbase';
 import '@heroui/modal';
 import 'react-toastify';
 import '@tanstack/react-query-devtools';
-import '@tanstack/router-devtools';
 import 'react-icons/fa';
 import '@cloudinary/url-gen/actions/resize';
 import '@cloudinary/url-gen';
@@ -59,7 +58,7 @@ function O({ hasNextPage: t, isFetchingNextPage: e, fetchNextPage: o }) {
   }, [t, e, o]), n;
 }
 const Q = ({ collection: t, pageSize: e = 12, sort: o = "created" }) => {
-  const s = useQueryClient(), n = async ({ pageParam: i = 1 }) => await k.collection(t).getList(i, e, { sort: o }), { data: a, fetchNextPage: l, hasNextPage: x, isFetchingNextPage: f, isLoading: b } = useInfiniteQuery({ queryKey: [t], queryFn: n, getNextPageParam: (i) => (i == null ? void 0 : i.page) < (i == null ? void 0 : i.totalPages) ? i.page + 1 : void 0, staleTime: 1, initialPageParam: 1 }), p = useMemo(() => {
+  const s = useQueryClient(), n = async ({ pageParam: i = 1 }) => await E.collection(t).getList(i, e, { sort: o }), { data: a, fetchNextPage: l, hasNextPage: x, isFetchingNextPage: f, isLoading: b } = useInfiniteQuery({ queryKey: [t], queryFn: n, getNextPageParam: (i) => (i == null ? void 0 : i.page) < (i == null ? void 0 : i.totalPages) ? i.page + 1 : void 0, staleTime: 1, initialPageParam: 1 }), p = useMemo(() => {
     var _a;
     return (_a = a == null ? void 0 : a.pages.flatMap((i) => i.items)) != null ? _a : [];
   }, [a]), [y, N] = useState(p);
@@ -69,22 +68,22 @@ const Q = ({ collection: t, pageSize: e = 12, sort: o = "created" }) => {
     let i = true;
     return (async () => {
       try {
-        await k.collection(t).subscribe("*", (c) => {
+        await E.collection(t).subscribe("*", (c) => {
           i && (console.log("Realtime event:", c.action, c.record), s.invalidateQueries({ queryKey: [t] }));
         });
       } catch (c) {
         console.error("Realtime subscription failed:", c);
       }
     })(), () => {
-      i = false, k.collection(t).unsubscribe();
+      i = false, E.collection(t).unsubscribe();
     };
   }, [t, s]);
   const v = O({ hasNextPage: !!x, isFetchingNextPage: f, fetchNextPage: l });
   return { items: y, loadMoreRef: v, isLoading: b, isFetchingNextPage: f };
-}, fe = function() {
+}, ue = function() {
   const { items: e, loadMoreRef: o, isLoading: s, isFetchingNextPage: n } = Q({ collection: "products", pageSize: 12 });
   return s ? jsx(Rn, {}) : jsxs("div", { className: "p-2 z-0 min-h-screen", children: [jsx(H, { products: e }), n && jsx(Rn, {}), jsx("div", { ref: o, className: "h-10" }), jsx(Button, { color: "primary", className: "fixed bottom-20 right-4 p-4 rounded-full shadow-lg focus:outline-none z-10", as: Link, href: "/products/create", children: "+ Create" })] });
 };
 
-export { fe as component };
-//# sourceMappingURL=index-BcSOJ4Op.mjs.map
+export { ue as component };
+//# sourceMappingURL=index-CWrryM0x.mjs.map

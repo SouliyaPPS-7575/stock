@@ -1,5 +1,5 @@
 import { jsx, jsxs } from 'react/jsx-runtime';
-import { k } from '../nitro/nitro.mjs';
+import { E } from '../nitro/nitro.mjs';
 import { Form, Input, Button } from '@heroui/react';
 import { useMutation } from '@tanstack/react-query';
 import { useNavigate } from '@tanstack/react-router';
@@ -28,7 +28,6 @@ import '@heroui/switch';
 import 'pocketbase';
 import '@heroui/modal';
 import '@tanstack/react-query-devtools';
-import '@tanstack/router-devtools';
 import 'react-icons/fa';
 import '@cloudinary/url-gen/actions/resize';
 import '@cloudinary/url-gen';
@@ -38,10 +37,10 @@ import 'isbot';
 import 'react-dom/server';
 import 'node:stream/web';
 
-const V = function() {
-  const p = useNavigate(), [a, r] = useState(null), i = useMutation({ mutationFn: async (e) => await k.collection("users").authWithPassword(e.email.trim(), e.password), onSuccess: (e) => {
+const U = function() {
+  const p = useNavigate(), [a, r] = useState(null), i = useMutation({ mutationFn: async (e) => await E.collection("users").authWithPassword(e.email.trim(), e.password), onSuccess: (e) => {
     const o = e.token;
-    o && k.authStore.save(o), p({ to: "/" }), toast.success("Login successful!"), r("Login successful");
+    o && E.authStore.save(o), p({ to: "/" }), toast.success("Login successful!"), r("Login successful");
   }, onError: (e) => {
     toast.error("Login failed. Please check your credentials."), console.error("Login Error:", e), r("Login failed");
   } });
@@ -52,5 +51,5 @@ const V = function() {
   }, children: [jsx("h2", { className: "text-center text-2xl font-bold", children: "Login" }), jsx(Input, { isRequired: true, errorMessage: "Please enter a valid email", label: "Email", labelPlacement: "outside", name: "email", placeholder: "Enter your email", type: "email" }), jsx(Input, { isRequired: true, errorMessage: "Please enter your password", label: "Password", labelPlacement: "outside", name: "password", placeholder: "Enter your password", type: "password" }), jsxs("div", { className: "flex gap-2", children: [jsx(Button, { color: "primary", type: "submit", isLoading: i.isPending, children: i.isPending ? "Logging in..." : "Login" }), jsx(Button, { type: "reset", variant: "flat", children: "Reset" })] }), a && jsxs("div", { className: "text-small text-default-500", children: ["Action: ", jsx("code", { children: a })] })] }) });
 };
 
-export { V as component };
-//# sourceMappingURL=login-fJnEXyon.mjs.map
+export { U as component };
+//# sourceMappingURL=login-CbgIVoYd.mjs.map
