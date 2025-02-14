@@ -111,7 +111,7 @@ const Seo: React.FC = () => {
   }, []);
 
   return (
-    <>
+    <article>
       <meta charSet='UTF-8' />
       <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       <title>Souvenir Stock</title>
@@ -133,6 +133,7 @@ const Seo: React.FC = () => {
         content='https://stock-order.netlify.app/images/favicon.svg'
       />
       <link rel='icon' type='image/png' href='/images/favicon.svg' />
+      <link rel='icon' href='/images/favicon.svg' />
       <meta name='mobile-web-app-capable' content='yes' />
       <meta name='apple-mobile-web-app-status-bar-style' content='#fff' />
       <meta name='apple-mobile-web-app-title' content='souvenirstock' />
@@ -171,7 +172,7 @@ const Seo: React.FC = () => {
           }
         `}
       </style>
-    </>
+    </article>
   );
 };
 

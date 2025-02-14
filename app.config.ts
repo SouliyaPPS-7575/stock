@@ -12,6 +12,7 @@ export default defineConfig({
       tsConfigPaths({
         projects: ['./tsconfig.json'],
       }),
+
       VitePWA({
         registerType: 'autoUpdate',
         injectRegister: 'auto',

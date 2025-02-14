@@ -3,6 +3,7 @@ import { createPocketbaseDocument } from '@/services/pocketbaseService';
 import { useMutation } from '@tanstack/react-query';
 import { toast } from 'react-toastify';
 import { useCloudinaryUpload } from '../useCloudinaryUpload';
+import { useEffect } from 'react';
 
 export const useCreate = () => {
      const { cld, publicIds, uwConfig, imageUrls, setPublicIds, setImageUrls } =
@@ -25,6 +26,13 @@ export const useCreate = () => {
                });
           },
      });
+
+     useEffect(() => {
+          if (publicIds.length > 0) {
+               setImageUrls(publicIds.map(id => cld.image(id).toURL()));
+          }
+     }, [publicIds, cld]);
+
 
      // Form submission handler
      const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {

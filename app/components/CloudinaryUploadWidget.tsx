@@ -65,6 +65,7 @@ const CloudinaryUploadWidget: React.FC<CloudinaryUploadWidgetProps> = ({
     initializeUploadWidget();
   }, [uwConfig, setPublicIds, setImageUrls]);
 
+  
   return (
     <button
       ref={uploadButtonRef}

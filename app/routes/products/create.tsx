@@ -104,11 +104,13 @@ function RouteComponent(): JSX.Element {
                 setPublicIds={setPublicIds}
                 setImageUrls={setImageUrls}
               />
-              <div className='preview-images'>
-                {publicIds.map((id) => (
-                  <ImagePreview key={id} publicId={id} cld={cld} />
-                ))}
-              </div>
+              {publicIds.length > 0 && (
+                <div className='preview-images'>
+                  {publicIds.map((id) => (
+                    <ImagePreview key={id} publicId={id} cld={cld} />
+                  ))}
+                </div>
+              )}
             </ModalBody>
             <ModalFooter>
               <Button color='danger' variant='light' onPress={onOpenChange}>
