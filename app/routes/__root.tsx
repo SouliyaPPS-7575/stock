@@ -7,10 +7,10 @@ import { queryClient } from '@/services/queryClient';
 import appCss from '@/styles/app.css?url';
 import { seo } from '@/utils/seo';
 import { HeroUIProvider } from '@heroui/react';
-import { QueryClientProvider } from '@tanstack/react-query';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import {
-  createRootRoute,
+  createRootRouteWithContext,
   NavigateOptions,
   Outlet,
   ToOptions,
@@ -18,10 +18,11 @@ import {
 import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 import { Meta, Scripts } from '@tanstack/start';
 import * as React from 'react';
+import { isDevelopment } from './api/url';
 
-export const isDevelopment = import.meta.env.MODE === 'development';
-
-export const Route = createRootRoute({
+export const Route = createRootRouteWithContext<{
+  queryClient: QueryClient;
+}>()({
   head: () => ({
     meta: [
       {
@@ -41,22 +42,22 @@ export const Route = createRootRoute({
       {
         rel: 'apple-touch-icon',
         sizes: '180x180',
-        href: '/apple-touch-icon.png',
+        href: '/images/favicon.svg',
       },
       {
         rel: 'icon',
         type: 'image/png',
         sizes: '32x32',
-        href: '/favicon-32x32.png',
+        href: '/images/favicon.svg',
       },
       {
         rel: 'icon',
         type: 'image/png',
         sizes: '16x16',
-        href: '/favicon-16x16.png',
+        href: '/images/favicon.svg',
       },
       { rel: 'manifest', href: '/site.webmanifest', color: '#fffff' },
-      { rel: 'icon', href: '/favicon.ico' },
+      { rel: 'icon', href: '/images/favicon.svg' },
     ],
   }),
   errorComponent: (props) => {
@@ -112,11 +113,12 @@ function RootDocument({ children }: { children: React.ReactNode }) {
                 {children}
               </section>
             </DefaultLayout>
-            <ReactQueryDevtools initialIsOpen={false} />
+            {isDevelopment && (
+              <TanStackRouterDevtools position='bottom-right' />
+            )}
+            <ReactQueryDevtools initialIsOpen />
           </QueryClientProvider>
         </HeroUIProvider>
-
-        {isDevelopment && <TanStackRouterDevtools position='bottom-right' />}
         <Scripts />
       </body>
     </html>

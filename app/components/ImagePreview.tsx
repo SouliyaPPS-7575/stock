@@ -10,7 +10,11 @@ const ImagePreview = ({
   publicId: string;
 }) => {
   const imagePreviewStyles: React.CSSProperties = {
-    display: 'inline-block',
+    display: 'flex', // Center image horizontally and vertically
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%', // Ensures container spans full width
+    height: '100%', // Ensures container spans full height
     cursor: 'pointer',
     borderRadius: '8px',
     overflow: 'hidden',
@@ -18,7 +22,6 @@ const ImagePreview = ({
   };
 
   const imageStyles: React.CSSProperties = {
-    display: 'block',
     width: '200px', // Fixed width
     height: '200px', // Fixed height
     objectFit: 'cover', // Ensures consistent sizing

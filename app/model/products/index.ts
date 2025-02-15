@@ -1,4 +1,3 @@
-import { QueryDocumentSnapshot } from "firebase/firestore";
 
 export interface Products {
      id?: string
@@ -8,11 +7,6 @@ export interface Products {
      price: string;
      description?: string;
      category?: string;
-}
-
-export interface ProductsRes {
-     products: Products[];
-     nextPage: QueryDocumentSnapshot | null; // Allow nextPage to be null when there is no next page
 }
 
 // Category options

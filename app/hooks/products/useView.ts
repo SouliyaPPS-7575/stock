@@ -1,7 +1,23 @@
 import { Products } from "@/model/products";
+import { DEPLOY_URL } from "@/routes/api/url";
 import { fetchPocketbaseDocument } from "@/services/pocketbaseService";
-import { useQuery } from "@tanstack/react-query";
+import { queryOptions, useQuery } from "@tanstack/react-query";
 import { useState } from "react";
+import axios from 'redaxios';
+
+export const ViewProductQueryOptions = (id: string) =>
+     queryOptions({
+          queryKey: ['product', id],
+          queryFn: () =>
+               axios
+                    .get<Products>('http://localhost:3000' + '/api/products/view/' + id)
+                    .then((r) => r.data)
+                    .catch(() => {
+                         throw new Error('Failed to fetch user')
+                    }),
+          enabled: !!id
+     })
+
 
 export const useView = (id: string) => {
      const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -34,6 +50,6 @@ export const useView = (id: string) => {
 
           // Function
           handleNext,
-          handleBack
+          handleBack,
      }
 }

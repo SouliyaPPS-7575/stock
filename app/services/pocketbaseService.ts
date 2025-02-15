@@ -9,9 +9,9 @@ export default pb;
 // Generic function to fetch a single document from the collection
 export async function fetchPocketbaseDocument<T extends Record<string, any>>(
      collectionName: string,
-     id: string
+     id: string | undefined
 ): Promise<T> {
-     const record = await pb.collection(collectionName).getOne(id);
+     const record = await pb.collection(collectionName).getOne(id || '');
      return record as unknown as T;
 }
 
