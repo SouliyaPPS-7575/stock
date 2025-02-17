@@ -9,11 +9,9 @@ export default defineConfig({
   },
   vite: {
     plugins: [
-
       tsConfigPaths({
         projects: ['./tsconfig.json'],
       }),
-
       VitePWA({
         registerType: 'autoUpdate',
         injectRegister: 'auto',

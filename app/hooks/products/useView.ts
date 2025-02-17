@@ -30,7 +30,7 @@ export const useView = (id: string) => {
      // SSR Data
      // const { data } = useQuery(viewProductQueryOptions(id));
 
-     const { data } = useQuery({
+     const { data, isLoading } = useQuery({
           queryKey: ["product", id],
           queryFn: async () => await fetchPocketbaseDocument<Products>('products', id),
           enabled: !!id
@@ -49,8 +49,14 @@ export const useView = (id: string) => {
      };
 
      return {
+          // Data
           data,
+          isLoading,
+
+          // States
           selectedImageIndex,
+
+          // Functions
           setSelectedImageIndex,
           handleNext,
           handleBack,
