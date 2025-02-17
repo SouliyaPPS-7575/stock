@@ -1,10 +1,6 @@
 [build]
 command = "bun run build"
 publish = "dist"
-functions = "dist"
-
-[functions]
-node_bundler = "esbuild"
 
 [[edge_functions]]
 function = "ssr"
