@@ -1,7 +1,7 @@
 [build]
 command = "bun run build"
 publish = "dist"
-functions = "dist/_server"
+functions = "dist"
 
 [functions]
 node_bundler = "esbuild"
