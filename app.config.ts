@@ -6,10 +6,6 @@ import tsConfigPaths from 'vite-tsconfig-paths';
 export default defineConfig({
   server: {
     preset: 'netlify',
-    prerender: {
-      routes: ['/'],
-      crawlLinks: true,
-    },
   },
   vite: {
     plugins: [
