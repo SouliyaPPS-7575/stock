@@ -1,7 +1,7 @@
 [build]
 command = "bun run build --preset netlify"
-publish = ".netlify"
-functions = ".netlify"
+publish = ".netlify/functions-internal"
+functions = ".netlify/functions-internal"
 
 [functions]
 node_bundler = "esbuild"
