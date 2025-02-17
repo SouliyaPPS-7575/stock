@@ -1,36 +1,32 @@
 import { Products } from "@/model/products";
 import { DEPLOY_URL } from "@/routes/api/url";
-import { fetchPocketbaseDocument } from "@/services/pocketbaseService";
 import { queryOptions, useQuery } from "@tanstack/react-query";
 import { useState } from "react";
-import axios from 'redaxios';
+import axios from "redaxios";
 
+// ✅ Query Function
 export const viewProductQueryOptions = (id: string) =>
      queryOptions({
-          queryKey: ['product', id],
+          queryKey: ["product", id],
           queryFn: async () => {
-               const response = await axios.get<Products>(
-                    `${DEPLOY_URL}/api/products/view/${id}`
-               );
-               const product = response.data;
+               const response = await axios.get(`${DEPLOY_URL}/api/products/view/${id}`);
+               const product = response.data as Products;
 
-               // ✅ Ensure all image URLs are absolute before SSR renders
-               product.imageurl = product.imageurl.map((url) =>
-                    url.startsWith('http') ? url : `${DEPLOY_URL}${url}`
-               );
+               product.imageurl = Array.isArray(product.imageurl)
+                    ? product.imageurl.map((url) =>
+                         url.startsWith("http") ? url : `${DEPLOY_URL}${url}`
+                    )
+                    : [];
 
                return product;
           },
      });
 
+// ✅ Hook Using React Query
 export const useView = (id: string) => {
      const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
-     const { data } = useQuery({
-          queryKey: ['product', id],
-          queryFn: () => fetchPocketbaseDocument<Products>('products', id),
-          enabled: !!id, // Only fetch if ID is available
-     });
+     const { data } = useQuery(viewProductQueryOptions(id));
 
      const handleNext = () => {
           if (data?.imageurl && selectedImageIndex < data.imageurl.length - 1) {
@@ -44,17 +40,11 @@ export const useView = (id: string) => {
           }
      };
 
-
      return {
-          // data
           data,
-
-          // State
-          setSelectedImageIndex,
           selectedImageIndex,
-
-          // Function
+          setSelectedImageIndex,
           handleNext,
           handleBack,
-     }
-}
+     };
+};

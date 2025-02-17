@@ -1,15 +1,20 @@
 import { Products } from '@/model/products';
 import { router } from '@/router';
-import { Badge, Card, CardBody, CardFooter, Image } from '@heroui/react';
+import { Badge, Button, Card, CardBody, CardFooter, Image } from '@heroui/react';
 
 export default function ProductList({ products }: { products: Products[] }) {
+  const handleAddToCart = (product: Products) => {
+    console.log(`Added to cart: ${product.name}`);
+    // Implement your cart logic here
+  };
+  
   return (
     <div className='mb-20 z-0'>
       {products.length === 0 ? (
         <p className='text-center text-gray-500 text-lg'>No products found</p>
       ) : (
         /* Desktop/Tablet/Mobile Grid View */
-        <div className='gap-2 grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6'>
+        <div className='gap-2 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6'>
           {products.map((product: Products, index) => (
             <div key={index} className='relative'>
               <Badge
@@ -35,7 +40,7 @@ export default function ProductList({ products }: { products: Products[] }) {
                           ? product?.imageurl?.[0]
                           : 'https://th.bing.com/th/id/OIP.mhEjokf4cHBCeCsOqohUdwHaHa?rs=1&pid=ImgDetMain'
                       }
-                      className='w-[140px] sm:w-[160px] md:w-[180px]object-cover h-[110px] sm:h-[160px] md:h-[180px] rounded-t-lg'
+                      className='w-[180px] sm:w-[160px] md:w-[180px]object-cover h-[180px] sm:h-[160px] md:h-[180px] rounded-t-lg'
                     />
                   </CardBody>
 
@@ -47,6 +52,18 @@ export default function ProductList({ products }: { products: Products[] }) {
                     <p className='text-default-500 text-center w-full max-w-[100px] truncate'>
                       ${product.price}
                     </p>
+
+                    {/* Add to Cart Button */}
+                    <Button
+                      size='sm'
+                      color='primary'
+                      onPress={() => {
+                        handleAddToCart(product);
+                      }}
+                      className='w-full mt-1'
+                    >
+                      Add to Cart
+                    </Button>
                   </CardFooter>
                 </Card>
               </Badge>
