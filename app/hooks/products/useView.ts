@@ -1,5 +1,6 @@
 import { Products } from "@/model/products";
 import { DEPLOY_URL } from "@/routes/api/url";
+import { fetchPocketbaseDocument } from "@/services/pocketbaseService";
 import { queryOptions, useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import axios from "redaxios";
@@ -26,7 +27,13 @@ export const viewProductQueryOptions = (id: string) =>
 export const useView = (id: string) => {
      const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
-     const { data } = useQuery(viewProductQueryOptions(id));
+     // const { data } = useQuery(viewProductQueryOptions(id));
+
+     const { data } = useQuery({
+          queryKey: ["product", id],
+          queryFn: async () => await fetchPocketbaseDocument<Products>('products', id),
+          enabled: !!id
+     });
 
      const handleNext = () => {
           if (data?.imageurl && selectedImageIndex < data.imageurl.length - 1) {

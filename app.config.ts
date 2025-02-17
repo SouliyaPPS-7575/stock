@@ -1,14 +1,11 @@
-import 'dotenv/config';
 import { defineConfig } from '@tanstack/start/config';
+import 'dotenv/config';
 import { VitePWA } from 'vite-plugin-pwa';
 import tsConfigPaths from 'vite-tsconfig-paths';
-import { cloudflare } from 'unenv'
 
 export default defineConfig({
   server: {
-    // preset: 'netlify',
-    preset: 'cloudflare-pages',
-    unenv: cloudflare,
+    preset: 'netlify',
     prerender: {
       routes: ['/'],
       crawlLinks: true,
