@@ -27,6 +27,7 @@ export const viewProductQueryOptions = (id: string) =>
 export const useView = (id: string) => {
      const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
+     // SSR Data
      // const { data } = useQuery(viewProductQueryOptions(id));
 
      const { data } = useQuery({

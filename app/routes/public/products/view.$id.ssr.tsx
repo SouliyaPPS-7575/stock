@@ -1,30 +1,50 @@
-import { useView } from '@/hooks/products/useView'
+import { ErrorComponents } from '@/components/ErrorComponents'
+import { Products } from '@/model/products'
+import { DEPLOY_URL } from '@/routes/api/url'
 import { Card, CardBody, Image } from '@heroui/react'
-import { createFileRoute, useMatch } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
 import { Image as ImageAntd } from 'antd'
+import { useState } from 'react'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
+import axios from 'redaxios'
 
-export const Route = createFileRoute('/public/products/view/$id')({
+export const Route = createFileRoute('/public/products/view/$id/ssr')({
+  loader: async ({ params: { id } }) => {
+    return await fetchProduct(id)
+  },
+  errorComponent: ErrorComponents,
   component: RouteComponent,
 })
 
+// ✅ Fetch function for server-side data loading
+async function fetchProduct(id: string): Promise<Products> {
+  const response = await axios.get(`${DEPLOY_URL}/api/products/view/${id}`)
+  const product = response.data as Products
+
+  product.imageurl = Array.isArray(product.imageurl)
+    ? product.imageurl.map((url) =>
+        url.startsWith('http') ? url : `${DEPLOY_URL}${url}`,
+      )
+    : []
+
+  return product
+}
 function RouteComponent() {
-  const { params } = useMatch({ from: Route.id })
-  const { id } = params
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0)
 
-  const {
-    // data
-    data,
+  // ✅ Use SSR-fetched data directly
+  const data = Route.useLoaderData()
 
-    // State
-    setSelectedImageIndex,
-    selectedImageIndex,
+  const handleNext = () => {
+    setSelectedImageIndex((prev) =>
+      prev < data.imageurl.length - 1 ? prev + 1 : prev,
+    )
+  }
 
-    // Function
-    handleNext,
-    handleBack,
-  } = useView(id)
-  
+  const handleBack = () => {
+    setSelectedImageIndex((prev) => (prev > 0 ? prev - 1 : prev))
+  }
+
   return (
     <div>
       <Card shadow="lg" className="w-screen max-w-none mx-auto px-4 md:px-8">
@@ -34,8 +54,8 @@ function RouteComponent() {
             <div className="flex-1 flex flex-col justify-center items-center p-4 relative w-full">
               <ImageAntd
                 src={
-                  data?.imageurl?.[selectedImageIndex] ||
-                  'https://th.bing.com/th/id/OIP.mhEjokf4cHBCeCsOqohUdwHaHa?rs=1&pid=ImgDetMain'
+                  data.imageurl[selectedImageIndex] ||
+                  'https://via.placeholder.com/400'
                 }
                 alt="Selected Product"
                 className="w-full h-auto object-contain rounded-lg shadow-md"
@@ -44,29 +64,16 @@ function RouteComponent() {
               {/* Navigation Buttons */}
               <div className="flex justify-between w-full absolute top-1/2 transform -translate-y-1/2 px-2">
                 <button
-                  className={`p-2 bg-gray-500 text-white rounded-full ${
-                    selectedImageIndex === 0
-                      ? 'opacity-50 cursor-not-allowed'
-                      : 'hover:bg-gray-200'
-                  }`}
+                  className={`p-2 bg-gray-500 text-white rounded-full ${selectedImageIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-200'}`}
                   onClick={handleBack}
                   disabled={selectedImageIndex === 0}
                 >
                   <FaArrowLeft size={20} />
                 </button>
-
                 <button
-                  className={`p-2 bg-gray-500 text-white rounded-full ${
-                    data?.imageurl &&
-                    selectedImageIndex === data.imageurl.length - 1
-                      ? 'opacity-50 cursor-not-allowed'
-                      : 'hover:bg-gray-200'
-                  }`}
+                  className={`p-2 bg-gray-500 text-white rounded-full ${selectedImageIndex === data.imageurl.length - 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-200'}`}
                   onClick={handleNext}
-                  disabled={
-                    data?.imageurl &&
-                    selectedImageIndex === data.imageurl.length - 1
-                  }
+                  disabled={selectedImageIndex === data.imageurl.length - 1}
                 >
                   <FaArrowRight size={20} />
                 </button>
@@ -75,7 +82,7 @@ function RouteComponent() {
 
             {/* Thumbnails */}
             <div className="flex flex-row md:flex-col space-x-2 md:space-x-0 md:space-y-2 md:w-1/4">
-              {data?.imageurl.map((url, index) => (
+              {data.imageurl.map((url, index) => (
                 <Image
                   key={index}
                   src={url}
@@ -89,11 +96,11 @@ function RouteComponent() {
 
           {/* Product Details */}
           <div className="mt-8 flex flex-col items-center text-center space-y-4">
-            <p className="text-2xl font-bold text-gray-900">{data?.name}</p>
-            <p className="text-lg font-medium">Quantity: {data?.quantity}</p>
-            <p className="text-lg font-medium">Price: ${data?.price}</p>
+            <p className="text-2xl font-bold text-gray-900">{data.name}</p>
+            <p className="text-lg font-medium">Quantity: {data.quantity}</p>
+            <p className="text-lg font-medium">Price: ${data.price}</p>
             <p className="max-w-lg text-gray-600 leading-relaxed">
-              {data?.description}
+              {data.description}
             </p>
           </div>
         </CardBody>

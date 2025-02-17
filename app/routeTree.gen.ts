@@ -22,6 +22,7 @@ import { Route as AdminProductsCreateImport } from './routes/admin/products/crea
 import { Route as PublicProductsViewIdImport } from './routes/public/products/view.$id'
 import { Route as AdminProductsViewIdImport } from './routes/admin/products/view.$id'
 import { Route as AdminProductsEditIdImport } from './routes/admin/products/edit.$id'
+import { Route as PublicProductsViewIdSsrImport } from './routes/public/products/view.$id.ssr'
 
 // Create/Update Routes
 
@@ -89,6 +90,12 @@ const AdminProductsEditIdRoute = AdminProductsEditIdImport.update({
   id: '/admin/products/edit/$id',
   path: '/admin/products/edit/$id',
   getParentRoute: () => rootRoute,
+} as any)
+
+const PublicProductsViewIdSsrRoute = PublicProductsViewIdSsrImport.update({
+  id: '/ssr',
+  path: '/ssr',
+  getParentRoute: () => PublicProductsViewIdRoute,
 } as any)
 
 // Populate the FileRoutesByPath interface
@@ -172,10 +179,28 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PublicProductsViewIdImport
       parentRoute: typeof rootRoute
     }
+    '/public/products/view/$id/ssr': {
+      id: '/public/products/view/$id/ssr'
+      path: '/ssr'
+      fullPath: '/public/products/view/$id/ssr'
+      preLoaderRoute: typeof PublicProductsViewIdSsrImport
+      parentRoute: typeof PublicProductsViewIdImport
+    }
   }
 }
 
 // Create and export the route tree
+
+interface PublicProductsViewIdRouteChildren {
+  PublicProductsViewIdSsrRoute: typeof PublicProductsViewIdSsrRoute
+}
+
+const PublicProductsViewIdRouteChildren: PublicProductsViewIdRouteChildren = {
+  PublicProductsViewIdSsrRoute: PublicProductsViewIdSsrRoute,
+}
+
+const PublicProductsViewIdRouteWithChildren =
+  PublicProductsViewIdRoute._addFileChildren(PublicProductsViewIdRouteChildren)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -188,7 +213,8 @@ export interface FileRoutesByFullPath {
   '/public/products': typeof PublicProductsIndexRoute
   '/admin/products/edit/$id': typeof AdminProductsEditIdRoute
   '/admin/products/view/$id': typeof AdminProductsViewIdRoute
-  '/public/products/view/$id': typeof PublicProductsViewIdRoute
+  '/public/products/view/$id': typeof PublicProductsViewIdRouteWithChildren
+  '/public/products/view/$id/ssr': typeof PublicProductsViewIdSsrRoute
 }
 
 export interface FileRoutesByTo {
@@ -202,7 +228,8 @@ export interface FileRoutesByTo {
   '/public/products': typeof PublicProductsIndexRoute
   '/admin/products/edit/$id': typeof AdminProductsEditIdRoute
   '/admin/products/view/$id': typeof AdminProductsViewIdRoute
-  '/public/products/view/$id': typeof PublicProductsViewIdRoute
+  '/public/products/view/$id': typeof PublicProductsViewIdRouteWithChildren
+  '/public/products/view/$id/ssr': typeof PublicProductsViewIdSsrRoute
 }
 
 export interface FileRoutesById {
@@ -217,7 +244,8 @@ export interface FileRoutesById {
   '/public/products/': typeof PublicProductsIndexRoute
   '/admin/products/edit/$id': typeof AdminProductsEditIdRoute
   '/admin/products/view/$id': typeof AdminProductsViewIdRoute
-  '/public/products/view/$id': typeof PublicProductsViewIdRoute
+  '/public/products/view/$id': typeof PublicProductsViewIdRouteWithChildren
+  '/public/products/view/$id/ssr': typeof PublicProductsViewIdSsrRoute
 }
 
 export interface FileRouteTypes {
@@ -234,6 +262,7 @@ export interface FileRouteTypes {
     | '/admin/products/edit/$id'
     | '/admin/products/view/$id'
     | '/public/products/view/$id'
+    | '/public/products/view/$id/ssr'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -247,6 +276,7 @@ export interface FileRouteTypes {
     | '/admin/products/edit/$id'
     | '/admin/products/view/$id'
     | '/public/products/view/$id'
+    | '/public/products/view/$id/ssr'
   id:
     | '__root__'
     | '/'
@@ -260,6 +290,7 @@ export interface FileRouteTypes {
     | '/admin/products/edit/$id'
     | '/admin/products/view/$id'
     | '/public/products/view/$id'
+    | '/public/products/view/$id/ssr'
   fileRoutesById: FileRoutesById
 }
 
@@ -274,7 +305,7 @@ export interface RootRouteChildren {
   PublicProductsIndexRoute: typeof PublicProductsIndexRoute
   AdminProductsEditIdRoute: typeof AdminProductsEditIdRoute
   AdminProductsViewIdRoute: typeof AdminProductsViewIdRoute
-  PublicProductsViewIdRoute: typeof PublicProductsViewIdRoute
+  PublicProductsViewIdRoute: typeof PublicProductsViewIdRouteWithChildren
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -288,7 +319,7 @@ const rootRouteChildren: RootRouteChildren = {
   PublicProductsIndexRoute: PublicProductsIndexRoute,
   AdminProductsEditIdRoute: AdminProductsEditIdRoute,
   AdminProductsViewIdRoute: AdminProductsViewIdRoute,
-  PublicProductsViewIdRoute: PublicProductsViewIdRoute,
+  PublicProductsViewIdRoute: PublicProductsViewIdRouteWithChildren,
 }
 
 export const routeTree = rootRoute
@@ -345,7 +376,14 @@ export const routeTree = rootRoute
       "filePath": "admin/products/view.$id.tsx"
     },
     "/public/products/view/$id": {
-      "filePath": "public/products/view.$id.tsx"
+      "filePath": "public/products/view.$id.tsx",
+      "children": [
+        "/public/products/view/$id/ssr"
+      ]
+    },
+    "/public/products/view/$id/ssr": {
+      "filePath": "public/products/view.$id.ssr.tsx",
+      "parent": "/public/products/view/$id"
     }
   }
 }
