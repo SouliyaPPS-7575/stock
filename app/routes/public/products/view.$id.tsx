@@ -1,26 +1,34 @@
 import { ErrorComponents } from '@/components/ErrorComponents'
-import { viewProductQueryOptions } from '@/hooks/products/useView'
+import { Products } from '@/model/products'
+import { DEPLOY_URL } from '@/routes/api/url'
 import { Card, CardBody, Image } from '@heroui/react'
 import { createFileRoute } from '@tanstack/react-router'
 import { Image as ImageAntd } from 'antd'
 import { useState } from 'react'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
+import axios from "redaxios"
 
 export const Route = createFileRoute('/public/products/view/$id')({
-  loader: async ({ context, params: { id } }) => {
-    const product = await context.queryClient.ensureQueryData(
-      viewProductQueryOptions(id),
-    )
-    return product
+  loader: async ({ params: { id } }) => {
+    return await fetchProduct(id)
   },
   errorComponent: ErrorComponents,
   component: RouteComponent,
 })
 
+// ✅ Fetch function for server-side data loading
+async function fetchProduct(id: string): Promise<Products> {
+  const response = await axios.get(`${DEPLOY_URL}/api/products/view/${id}`)
+  const product = response.data as Products
+
+  product.imageurl = Array.isArray(product.imageurl)
+    ? product.imageurl.map((url) => (url.startsWith('http') ? url : `${DEPLOY_URL}${url}`))
+    : []
+
+  return product
+}
 function RouteComponent() {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0)
-
-  const { id } = Route.useParams()
 
   // ✅ Use SSR-fetched data directly
   const data = Route.useLoaderData()

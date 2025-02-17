@@ -4,7 +4,7 @@ import { queryOptions, useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import axios from "redaxios";
 
-// ✅ Query Function
+// ✅ Query Function ssr
 export const viewProductQueryOptions = (id: string) =>
      queryOptions({
           queryKey: ["product", id],

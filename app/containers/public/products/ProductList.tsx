@@ -40,7 +40,7 @@ export default function ProductList({ products }: { products: Products[] }) {
                           ? product?.imageurl?.[0]
                           : 'https://th.bing.com/th/id/OIP.mhEjokf4cHBCeCsOqohUdwHaHa?rs=1&pid=ImgDetMain'
                       }
-                      className='w-[180px] sm:w-[160px] md:w-[180px]object-cover h-[180px] sm:h-[160px] md:h-[180px] rounded-t-lg'
+                      className='w-[175px] sm:w-[160px] md:w-[180px]object-cover h-[170px] sm:h-[160px] md:h-[180px] rounded-t-lg'
                     />
                   </CardBody>
 

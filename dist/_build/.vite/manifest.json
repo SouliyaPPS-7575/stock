@@ -1,17 +1,32 @@
 {
   "/Users/souliya/Documents/FullStackDev/stock/app/styles/app.css": {
-    "file": "assets/app-BiSt1Cqq.css",
+    "file": "assets/app-C5zQ9YHu.css",
     "src": "/Users/souliya/Documents/FullStackDev/stock/app/styles/app.css"
   },
-  "_chunk-MLPFQTYO-LLGSqtpm.js": {
-    "file": "assets/chunk-MLPFQTYO-LLGSqtpm.js",
-    "name": "chunk-MLPFQTYO",
+  "_chunk-5PILOUBS-fpsjtpSS.js": {
+    "file": "assets/chunk-5PILOUBS-fpsjtpSS.js",
+    "name": "chunk-5PILOUBS",
     "imports": [
-      "_client-By4r23vN.js"
+      "_client-DoPm94GZ.js"
     ]
   },
-  "_client-By4r23vN.js": {
-    "file": "assets/client-By4r23vN.js",
+  "_chunk-MLPFQTYO-Bfo0gE6e.js": {
+    "file": "assets/chunk-MLPFQTYO-Bfo0gE6e.js",
+    "name": "chunk-MLPFQTYO",
+    "imports": [
+      "_client-DoPm94GZ.js"
+    ]
+  },
+  "_chunk-TE6SZS6W-PzJCvhsC.js": {
+    "file": "assets/chunk-TE6SZS6W-PzJCvhsC.js",
+    "name": "chunk-TE6SZS6W",
+    "imports": [
+      "_chunk-5PILOUBS-fpsjtpSS.js",
+      "_client-DoPm94GZ.js"
+    ]
+  },
+  "_client-DoPm94GZ.js": {
+    "file": "assets/client-DoPm94GZ.js",
     "name": "client",
     "dynamicImports": [
       "node_modules/@heroui/dom-animation/dist/index.mjs",
@@ -22,129 +37,165 @@
       "app/routes/login.tsx?tsr-split=component",
       "app/routes/deferred.tsx?tsr-split=component",
       "app/routes/index.tsx?tsr-split=component",
-      "app/routes/users/index.tsx?tsr-split=component",
-      "app/routes/products/index.tsx?tsr-split=component",
-      "app/routes/categories/index.tsx?tsr-split=component",
-      "app/routes/products/edit.tsx?tsr-split=component",
-      "app/routes/products/view.$id.tsx?tsr-split=component"
+      "app/routes/public/products/index.tsx?tsr-split=component",
+      "app/routes/admin/users/index.tsx?tsr-split=component",
+      "app/routes/admin/products/index.tsx?tsr-split=component",
+      "app/routes/admin/categories/index.tsx?tsr-split=component",
+      "app/routes/public/products/view.$id.tsx?tsr-split=component",
+      "app/routes/public/products/view.$id.tsx?tsr-split=errorComponent",
+      "app/routes/admin/products/view.$id.tsx?tsr-split=component",
+      "app/routes/admin/products/edit.$id.tsx?tsr-split=component"
     ],
     "assets": [
-      "assets/app-BiSt1Cqq.css"
+      "assets/app-C5zQ9YHu.css"
     ]
   },
-  "_useBaseQuery-ChLKyWVK.js": {
-    "file": "assets/useBaseQuery-ChLKyWVK.js",
-    "name": "useBaseQuery",
-    "imports": [
-      "_client-By4r23vN.js"
-    ]
-  },
-  "_useView-BeEgzdcB.js": {
-    "file": "assets/useView-BeEgzdcB.js",
-    "name": "useView",
-    "imports": [
-      "_client-By4r23vN.js",
-      "_useBaseQuery-ChLKyWVK.js"
-    ]
-  },
-  "app/routes/categories/index.tsx?tsr-split=component": {
-    "file": "assets/index-U1Na95jH.js",
+  "_index-BlntVose.js": {
+    "file": "assets/index-BlntVose.js",
     "name": "index",
-    "src": "app/routes/categories/index.tsx?tsr-split=component",
+    "imports": [
+      "_client-DoPm94GZ.js"
+    ]
+  },
+  "_useInfiniteCollection-BWCgWh8y.js": {
+    "file": "assets/useInfiniteCollection-BWCgWh8y.js",
+    "name": "useInfiniteCollection",
+    "imports": [
+      "_client-DoPm94GZ.js"
+    ]
+  },
+  "app/routes/admin/categories/index.tsx?tsr-split=component": {
+    "file": "assets/index-D8ZPSuQh.js",
+    "name": "index",
+    "src": "app/routes/admin/categories/index.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-By4r23vN.js"
+      "_client-DoPm94GZ.js"
     ],
     "dynamicImports": [
       "node_modules/@heroui/dom-animation/dist/index.mjs"
     ]
   },
+  "app/routes/admin/products/edit.$id.tsx?tsr-split=component": {
+    "file": "assets/edit._id-BUxLYRVS.js",
+    "name": "edit._id",
+    "src": "app/routes/admin/products/edit.$id.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client-DoPm94GZ.js"
+    ]
+  },
+  "app/routes/admin/products/index.tsx?tsr-split=component": {
+    "file": "assets/index-CNhgjWdj.js",
+    "name": "index",
+    "src": "app/routes/admin/products/index.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client-DoPm94GZ.js",
+      "_useInfiniteCollection-BWCgWh8y.js",
+      "_chunk-5PILOUBS-fpsjtpSS.js",
+      "_chunk-MLPFQTYO-Bfo0gE6e.js",
+      "_chunk-TE6SZS6W-PzJCvhsC.js"
+    ]
+  },
+  "app/routes/admin/products/view.$id.tsx?tsr-split=component": {
+    "file": "assets/view._id-Bt1n3xAK.js",
+    "name": "view._id",
+    "src": "app/routes/admin/products/view.$id.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client-DoPm94GZ.js",
+      "_index-BlntVose.js",
+      "_chunk-5PILOUBS-fpsjtpSS.js",
+      "_chunk-TE6SZS6W-PzJCvhsC.js"
+    ]
+  },
+  "app/routes/admin/users/index.tsx?tsr-split=component": {
+    "file": "assets/index-CeIaXZQK.js",
+    "name": "index",
+    "src": "app/routes/admin/users/index.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client-DoPm94GZ.js"
+    ]
+  },
   "app/routes/deferred.tsx?tsr-split=component": {
-    "file": "assets/deferred-3sdV4fKV.js",
+    "file": "assets/deferred-DIOzVyuG.js",
     "name": "deferred",
     "src": "app/routes/deferred.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-By4r23vN.js"
+      "_client-DoPm94GZ.js"
     ]
   },
   "app/routes/index.tsx?tsr-split=component": {
-    "file": "assets/index-BesFsIpv.js",
+    "file": "assets/index-DNxzrXcg.js",
     "name": "index",
     "src": "app/routes/index.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-By4r23vN.js"
+      "_client-DoPm94GZ.js"
     ]
   },
   "app/routes/login.tsx?tsr-split=component": {
-    "file": "assets/login-CyaWtut5.js",
+    "file": "assets/login-yFYEpHMD.js",
     "name": "login",
     "src": "app/routes/login.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-By4r23vN.js"
+      "_client-DoPm94GZ.js"
     ]
   },
-  "app/routes/products/edit.tsx?tsr-split=component": {
-    "file": "assets/edit--qGGIQjm.js",
-    "name": "edit",
-    "src": "app/routes/products/edit.tsx?tsr-split=component",
-    "isDynamicEntry": true,
-    "imports": [
-      "_client-By4r23vN.js",
-      "_useView-BeEgzdcB.js",
-      "_useBaseQuery-ChLKyWVK.js"
-    ]
-  },
-  "app/routes/products/index.tsx?tsr-split=component": {
-    "file": "assets/index-Cu_EwKIx.js",
+  "app/routes/public/products/index.tsx?tsr-split=component": {
+    "file": "assets/index-C13cJ8x1.js",
     "name": "index",
-    "src": "app/routes/products/index.tsx?tsr-split=component",
+    "src": "app/routes/public/products/index.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-By4r23vN.js",
-      "_chunk-MLPFQTYO-LLGSqtpm.js",
-      "_useBaseQuery-ChLKyWVK.js"
+      "_client-DoPm94GZ.js",
+      "_useInfiniteCollection-BWCgWh8y.js",
+      "_chunk-5PILOUBS-fpsjtpSS.js",
+      "_chunk-TE6SZS6W-PzJCvhsC.js",
+      "_chunk-MLPFQTYO-Bfo0gE6e.js"
     ]
   },
-  "app/routes/products/view.$id.tsx?tsr-split=component": {
-    "file": "assets/view._id-ooTFUrnq.js",
+  "app/routes/public/products/view.$id.tsx?tsr-split=component": {
+    "file": "assets/view._id-DxZoZNqX.js",
     "name": "view._id",
-    "src": "app/routes/products/view.$id.tsx?tsr-split=component",
+    "src": "app/routes/public/products/view.$id.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-By4r23vN.js",
-      "_useView-BeEgzdcB.js",
-      "_chunk-MLPFQTYO-LLGSqtpm.js",
-      "_useBaseQuery-ChLKyWVK.js"
+      "_client-DoPm94GZ.js",
+      "_index-BlntVose.js",
+      "_chunk-5PILOUBS-fpsjtpSS.js",
+      "_chunk-MLPFQTYO-Bfo0gE6e.js"
     ]
   },
-  "app/routes/users/index.tsx?tsr-split=component": {
-    "file": "assets/index-B53b_HQu.js",
-    "name": "index",
-    "src": "app/routes/users/index.tsx?tsr-split=component",
+  "app/routes/public/products/view.$id.tsx?tsr-split=errorComponent": {
+    "file": "assets/view._id-an0onvr1.js",
+    "name": "view._id",
+    "src": "app/routes/public/products/view.$id.tsx?tsr-split=errorComponent",
     "isDynamicEntry": true,
     "imports": [
-      "_client-By4r23vN.js"
+      "_client-DoPm94GZ.js"
     ]
   },
   "node_modules/@heroui/dom-animation/dist/index.mjs": {
-    "file": "assets/index-DWFfs6D7.js",
+    "file": "assets/index-BjnGTucq.js",
     "name": "index",
     "src": "node_modules/@heroui/dom-animation/dist/index.mjs",
     "isDynamicEntry": true,
     "imports": [
-      "_client-By4r23vN.js"
+      "_client-DoPm94GZ.js"
     ]
   },
   "virtual:$vinxi/handler/client": {
-    "file": "assets/client-B8g45vtI.js",
+    "file": "assets/client-YWlqli9o.js",
     "name": "client",
     "src": "virtual:$vinxi/handler/client",
     "isEntry": true,
     "imports": [
-      "_client-By4r23vN.js"
+      "_client-DoPm94GZ.js"
     ]
   }
 }

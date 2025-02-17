@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vinxi dev",
     "build": "vinxi build",
-    "start": "vinxi start"
+    "start": "vinxi start",
+    "serve": "netlify dev",
+    "deploy": "netlify deploy --prod"
   },
   "dependencies": {
     "@cloudinary/react": "^1.13.1",
@@ -31,6 +33,7 @@
     "dotenv": "^16.4.7",
     "framer-motion": "^12.4.2",
     "h3": "^1.15.0",
+    "netlify-cli": "^18.1.0",
     "pocketbase": "^0.25.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -45,11 +48,12 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@netlify/vite-plugin-netlify-edge": "^1.1.3",
     "@types/node": "^22.5.4",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
-    "postcss": "^8.5.1",
     "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.1",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.2",
     "vite-tsconfig-paths": "^5.1.4"
