@@ -1,7 +1,8 @@
 import { DefaultCatchBoundary } from '@/components/DefaultCatchBoundary';
 import Seo from '@/components/layouts/Seo';
 import { NotFound } from '@/components/NotFound';
-import DefaultLayout from '@/layouts/default';
+import DefaultLayoutAdmin from '@/layouts/admin/default';
+import DefaultLayoutPublic from '@/layouts/public/default';
 import { router } from '@/router';
 import { queryClient } from '@/services/queryClient';
 import appCss from '@/styles/app.css?url';
@@ -87,6 +88,13 @@ declare module '@react-types/shared' {
 }
 
 function RootDocument({ children }: { children: React.ReactNode }) {
+  const currentPath = router.state.location.pathname;
+
+  // Determine layout based on the route
+  const Layout = currentPath.startsWith('/admin')
+    ? DefaultLayoutAdmin
+    : DefaultLayoutPublic;
+
   return (
     <html>
       <head>
@@ -108,11 +116,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           useHref={(to) => router.buildLocation({ to }).href}
         >
           <QueryClientProvider client={queryClient}>
-            <DefaultLayout>
+            <Layout>
               <section className='flex flex-col items-center justify-center gap-1 py-1 md:py-0'>
                 {children}
               </section>
-            </DefaultLayout>
+            </Layout>
             {isDevelopment && (
               <TanStackRouterDevtools position='bottom-right' />
             )}

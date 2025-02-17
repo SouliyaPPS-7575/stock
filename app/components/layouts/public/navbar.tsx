@@ -15,10 +15,10 @@ import clsx from 'clsx';
 import { Logo } from '@/components/layouts/icons';
 import { ThemeSwitch } from '@/components/layouts/theme-switch';
 import { LogoutConfirmModal } from '@/containers/LogoutConfirmModal';
-import { siteConfig } from '@/layouts/site';
+import { siteConfig } from '@/layouts/public/site';
 import { router } from '@/router';
 import { useState } from 'react';
-import { useMenuContext } from './MenuProvider';
+import { useMenuContext } from '../MenuProvider';
 
 export const Navbar = () => {
   const [activeItem, setActiveItem] = useState<string>('');
@@ -83,7 +83,7 @@ export const Navbar = () => {
             <FacebookIcon className='text-default-500 mr-4' />
           </HeroUILink> */}
           <ThemeSwitch />
-          <LogoutConfirmModal />
+          {/* <LogoutConfirmModal /> */}
         </NavbarItem>
       </NavbarContent>
 
@@ -129,9 +129,9 @@ export const Navbar = () => {
           ))}
         </div>
         <div className='border-b my-2' />
-        <div className='mx-4 mt-1 flex flex-col gap-2'>
+        {/* <div className='mx-4 mt-1 flex flex-col gap-2'>
           <LogoutConfirmModal />
-        </div>
+        </div> */}
       </NavbarMenu>
     </HeroUINavbar>
   );

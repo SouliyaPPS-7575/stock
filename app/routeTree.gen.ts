@@ -14,12 +14,14 @@ import { Route as rootRoute } from './routes/__root'
 import { Route as LoginImport } from './routes/login'
 import { Route as DeferredImport } from './routes/deferred'
 import { Route as IndexImport } from './routes/index'
-import { Route as UsersIndexImport } from './routes/users/index'
-import { Route as ProductsIndexImport } from './routes/products/index'
-import { Route as CategoriesIndexImport } from './routes/categories/index'
-import { Route as ProductsEditImport } from './routes/products/edit'
-import { Route as ProductsCreateImport } from './routes/products/create'
-import { Route as ProductsViewIdImport } from './routes/products/view.$id'
+import { Route as PublicProductsIndexImport } from './routes/public/products/index'
+import { Route as AdminUsersIndexImport } from './routes/admin/users/index'
+import { Route as AdminProductsIndexImport } from './routes/admin/products/index'
+import { Route as AdminCategoriesIndexImport } from './routes/admin/categories/index'
+import { Route as AdminProductsCreateImport } from './routes/admin/products/create'
+import { Route as PublicProductsViewIdImport } from './routes/public/products/view.$id'
+import { Route as AdminProductsViewIdImport } from './routes/admin/products/view.$id'
+import { Route as AdminProductsEditIdImport } from './routes/admin/products/edit.$id'
 
 // Create/Update Routes
 
@@ -41,39 +43,51 @@ const IndexRoute = IndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const UsersIndexRoute = UsersIndexImport.update({
-  id: '/users/',
-  path: '/users/',
+const PublicProductsIndexRoute = PublicProductsIndexImport.update({
+  id: '/public/products/',
+  path: '/public/products/',
   getParentRoute: () => rootRoute,
 } as any)
 
-const ProductsIndexRoute = ProductsIndexImport.update({
-  id: '/products/',
-  path: '/products/',
+const AdminUsersIndexRoute = AdminUsersIndexImport.update({
+  id: '/admin/users/',
+  path: '/admin/users/',
   getParentRoute: () => rootRoute,
 } as any)
 
-const CategoriesIndexRoute = CategoriesIndexImport.update({
-  id: '/categories/',
-  path: '/categories/',
+const AdminProductsIndexRoute = AdminProductsIndexImport.update({
+  id: '/admin/products/',
+  path: '/admin/products/',
   getParentRoute: () => rootRoute,
 } as any)
 
-const ProductsEditRoute = ProductsEditImport.update({
-  id: '/products/edit',
-  path: '/products/edit',
+const AdminCategoriesIndexRoute = AdminCategoriesIndexImport.update({
+  id: '/admin/categories/',
+  path: '/admin/categories/',
   getParentRoute: () => rootRoute,
 } as any)
 
-const ProductsCreateRoute = ProductsCreateImport.update({
-  id: '/products/create',
-  path: '/products/create',
+const AdminProductsCreateRoute = AdminProductsCreateImport.update({
+  id: '/admin/products/create',
+  path: '/admin/products/create',
   getParentRoute: () => rootRoute,
 } as any)
 
-const ProductsViewIdRoute = ProductsViewIdImport.update({
-  id: '/products/view/$id',
-  path: '/products/view/$id',
+const PublicProductsViewIdRoute = PublicProductsViewIdImport.update({
+  id: '/public/products/view/$id',
+  path: '/public/products/view/$id',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const AdminProductsViewIdRoute = AdminProductsViewIdImport.update({
+  id: '/admin/products/view/$id',
+  path: '/admin/products/view/$id',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const AdminProductsEditIdRoute = AdminProductsEditIdImport.update({
+  id: '/admin/products/edit/$id',
+  path: '/admin/products/edit/$id',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -102,46 +116,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginImport
       parentRoute: typeof rootRoute
     }
-    '/products/create': {
-      id: '/products/create'
-      path: '/products/create'
-      fullPath: '/products/create'
-      preLoaderRoute: typeof ProductsCreateImport
+    '/admin/products/create': {
+      id: '/admin/products/create'
+      path: '/admin/products/create'
+      fullPath: '/admin/products/create'
+      preLoaderRoute: typeof AdminProductsCreateImport
       parentRoute: typeof rootRoute
     }
-    '/products/edit': {
-      id: '/products/edit'
-      path: '/products/edit'
-      fullPath: '/products/edit'
-      preLoaderRoute: typeof ProductsEditImport
+    '/admin/categories/': {
+      id: '/admin/categories/'
+      path: '/admin/categories'
+      fullPath: '/admin/categories'
+      preLoaderRoute: typeof AdminCategoriesIndexImport
       parentRoute: typeof rootRoute
     }
-    '/categories/': {
-      id: '/categories/'
-      path: '/categories'
-      fullPath: '/categories'
-      preLoaderRoute: typeof CategoriesIndexImport
+    '/admin/products/': {
+      id: '/admin/products/'
+      path: '/admin/products'
+      fullPath: '/admin/products'
+      preLoaderRoute: typeof AdminProductsIndexImport
       parentRoute: typeof rootRoute
     }
-    '/products/': {
-      id: '/products/'
-      path: '/products'
-      fullPath: '/products'
-      preLoaderRoute: typeof ProductsIndexImport
+    '/admin/users/': {
+      id: '/admin/users/'
+      path: '/admin/users'
+      fullPath: '/admin/users'
+      preLoaderRoute: typeof AdminUsersIndexImport
       parentRoute: typeof rootRoute
     }
-    '/users/': {
-      id: '/users/'
-      path: '/users'
-      fullPath: '/users'
-      preLoaderRoute: typeof UsersIndexImport
+    '/public/products/': {
+      id: '/public/products/'
+      path: '/public/products'
+      fullPath: '/public/products'
+      preLoaderRoute: typeof PublicProductsIndexImport
       parentRoute: typeof rootRoute
     }
-    '/products/view/$id': {
-      id: '/products/view/$id'
-      path: '/products/view/$id'
-      fullPath: '/products/view/$id'
-      preLoaderRoute: typeof ProductsViewIdImport
+    '/admin/products/edit/$id': {
+      id: '/admin/products/edit/$id'
+      path: '/admin/products/edit/$id'
+      fullPath: '/admin/products/edit/$id'
+      preLoaderRoute: typeof AdminProductsEditIdImport
+      parentRoute: typeof rootRoute
+    }
+    '/admin/products/view/$id': {
+      id: '/admin/products/view/$id'
+      path: '/admin/products/view/$id'
+      fullPath: '/admin/products/view/$id'
+      preLoaderRoute: typeof AdminProductsViewIdImport
+      parentRoute: typeof rootRoute
+    }
+    '/public/products/view/$id': {
+      id: '/public/products/view/$id'
+      path: '/public/products/view/$id'
+      fullPath: '/public/products/view/$id'
+      preLoaderRoute: typeof PublicProductsViewIdImport
       parentRoute: typeof rootRoute
     }
   }
@@ -153,24 +181,28 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/deferred': typeof DeferredRoute
   '/login': typeof LoginRoute
-  '/products/create': typeof ProductsCreateRoute
-  '/products/edit': typeof ProductsEditRoute
-  '/categories': typeof CategoriesIndexRoute
-  '/products': typeof ProductsIndexRoute
-  '/users': typeof UsersIndexRoute
-  '/products/view/$id': typeof ProductsViewIdRoute
+  '/admin/products/create': typeof AdminProductsCreateRoute
+  '/admin/categories': typeof AdminCategoriesIndexRoute
+  '/admin/products': typeof AdminProductsIndexRoute
+  '/admin/users': typeof AdminUsersIndexRoute
+  '/public/products': typeof PublicProductsIndexRoute
+  '/admin/products/edit/$id': typeof AdminProductsEditIdRoute
+  '/admin/products/view/$id': typeof AdminProductsViewIdRoute
+  '/public/products/view/$id': typeof PublicProductsViewIdRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/deferred': typeof DeferredRoute
   '/login': typeof LoginRoute
-  '/products/create': typeof ProductsCreateRoute
-  '/products/edit': typeof ProductsEditRoute
-  '/categories': typeof CategoriesIndexRoute
-  '/products': typeof ProductsIndexRoute
-  '/users': typeof UsersIndexRoute
-  '/products/view/$id': typeof ProductsViewIdRoute
+  '/admin/products/create': typeof AdminProductsCreateRoute
+  '/admin/categories': typeof AdminCategoriesIndexRoute
+  '/admin/products': typeof AdminProductsIndexRoute
+  '/admin/users': typeof AdminUsersIndexRoute
+  '/public/products': typeof PublicProductsIndexRoute
+  '/admin/products/edit/$id': typeof AdminProductsEditIdRoute
+  '/admin/products/view/$id': typeof AdminProductsViewIdRoute
+  '/public/products/view/$id': typeof PublicProductsViewIdRoute
 }
 
 export interface FileRoutesById {
@@ -178,12 +210,14 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/deferred': typeof DeferredRoute
   '/login': typeof LoginRoute
-  '/products/create': typeof ProductsCreateRoute
-  '/products/edit': typeof ProductsEditRoute
-  '/categories/': typeof CategoriesIndexRoute
-  '/products/': typeof ProductsIndexRoute
-  '/users/': typeof UsersIndexRoute
-  '/products/view/$id': typeof ProductsViewIdRoute
+  '/admin/products/create': typeof AdminProductsCreateRoute
+  '/admin/categories/': typeof AdminCategoriesIndexRoute
+  '/admin/products/': typeof AdminProductsIndexRoute
+  '/admin/users/': typeof AdminUsersIndexRoute
+  '/public/products/': typeof PublicProductsIndexRoute
+  '/admin/products/edit/$id': typeof AdminProductsEditIdRoute
+  '/admin/products/view/$id': typeof AdminProductsViewIdRoute
+  '/public/products/view/$id': typeof PublicProductsViewIdRoute
 }
 
 export interface FileRouteTypes {
@@ -192,34 +226,40 @@ export interface FileRouteTypes {
     | '/'
     | '/deferred'
     | '/login'
-    | '/products/create'
-    | '/products/edit'
-    | '/categories'
-    | '/products'
-    | '/users'
-    | '/products/view/$id'
+    | '/admin/products/create'
+    | '/admin/categories'
+    | '/admin/products'
+    | '/admin/users'
+    | '/public/products'
+    | '/admin/products/edit/$id'
+    | '/admin/products/view/$id'
+    | '/public/products/view/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/deferred'
     | '/login'
-    | '/products/create'
-    | '/products/edit'
-    | '/categories'
-    | '/products'
-    | '/users'
-    | '/products/view/$id'
+    | '/admin/products/create'
+    | '/admin/categories'
+    | '/admin/products'
+    | '/admin/users'
+    | '/public/products'
+    | '/admin/products/edit/$id'
+    | '/admin/products/view/$id'
+    | '/public/products/view/$id'
   id:
     | '__root__'
     | '/'
     | '/deferred'
     | '/login'
-    | '/products/create'
-    | '/products/edit'
-    | '/categories/'
-    | '/products/'
-    | '/users/'
-    | '/products/view/$id'
+    | '/admin/products/create'
+    | '/admin/categories/'
+    | '/admin/products/'
+    | '/admin/users/'
+    | '/public/products/'
+    | '/admin/products/edit/$id'
+    | '/admin/products/view/$id'
+    | '/public/products/view/$id'
   fileRoutesById: FileRoutesById
 }
 
@@ -227,24 +267,28 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DeferredRoute: typeof DeferredRoute
   LoginRoute: typeof LoginRoute
-  ProductsCreateRoute: typeof ProductsCreateRoute
-  ProductsEditRoute: typeof ProductsEditRoute
-  CategoriesIndexRoute: typeof CategoriesIndexRoute
-  ProductsIndexRoute: typeof ProductsIndexRoute
-  UsersIndexRoute: typeof UsersIndexRoute
-  ProductsViewIdRoute: typeof ProductsViewIdRoute
+  AdminProductsCreateRoute: typeof AdminProductsCreateRoute
+  AdminCategoriesIndexRoute: typeof AdminCategoriesIndexRoute
+  AdminProductsIndexRoute: typeof AdminProductsIndexRoute
+  AdminUsersIndexRoute: typeof AdminUsersIndexRoute
+  PublicProductsIndexRoute: typeof PublicProductsIndexRoute
+  AdminProductsEditIdRoute: typeof AdminProductsEditIdRoute
+  AdminProductsViewIdRoute: typeof AdminProductsViewIdRoute
+  PublicProductsViewIdRoute: typeof PublicProductsViewIdRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DeferredRoute: DeferredRoute,
   LoginRoute: LoginRoute,
-  ProductsCreateRoute: ProductsCreateRoute,
-  ProductsEditRoute: ProductsEditRoute,
-  CategoriesIndexRoute: CategoriesIndexRoute,
-  ProductsIndexRoute: ProductsIndexRoute,
-  UsersIndexRoute: UsersIndexRoute,
-  ProductsViewIdRoute: ProductsViewIdRoute,
+  AdminProductsCreateRoute: AdminProductsCreateRoute,
+  AdminCategoriesIndexRoute: AdminCategoriesIndexRoute,
+  AdminProductsIndexRoute: AdminProductsIndexRoute,
+  AdminUsersIndexRoute: AdminUsersIndexRoute,
+  PublicProductsIndexRoute: PublicProductsIndexRoute,
+  AdminProductsEditIdRoute: AdminProductsEditIdRoute,
+  AdminProductsViewIdRoute: AdminProductsViewIdRoute,
+  PublicProductsViewIdRoute: PublicProductsViewIdRoute,
 }
 
 export const routeTree = rootRoute
@@ -260,12 +304,14 @@ export const routeTree = rootRoute
         "/",
         "/deferred",
         "/login",
-        "/products/create",
-        "/products/edit",
-        "/categories/",
-        "/products/",
-        "/users/",
-        "/products/view/$id"
+        "/admin/products/create",
+        "/admin/categories/",
+        "/admin/products/",
+        "/admin/users/",
+        "/public/products/",
+        "/admin/products/edit/$id",
+        "/admin/products/view/$id",
+        "/public/products/view/$id"
       ]
     },
     "/": {
@@ -277,23 +323,29 @@ export const routeTree = rootRoute
     "/login": {
       "filePath": "login.tsx"
     },
-    "/products/create": {
-      "filePath": "products/create.tsx"
+    "/admin/products/create": {
+      "filePath": "admin/products/create.tsx"
     },
-    "/products/edit": {
-      "filePath": "products/edit.tsx"
+    "/admin/categories/": {
+      "filePath": "admin/categories/index.tsx"
     },
-    "/categories/": {
-      "filePath": "categories/index.tsx"
+    "/admin/products/": {
+      "filePath": "admin/products/index.tsx"
     },
-    "/products/": {
-      "filePath": "products/index.tsx"
+    "/admin/users/": {
+      "filePath": "admin/users/index.tsx"
     },
-    "/users/": {
-      "filePath": "users/index.tsx"
+    "/public/products/": {
+      "filePath": "public/products/index.tsx"
     },
-    "/products/view/$id": {
-      "filePath": "products/view.$id.tsx"
+    "/admin/products/edit/$id": {
+      "filePath": "admin/products/edit.$id.tsx"
+    },
+    "/admin/products/view/$id": {
+      "filePath": "admin/products/view.$id.tsx"
+    },
+    "/public/products/view/$id": {
+      "filePath": "public/products/view.$id.tsx"
     }
   }
 }

@@ -5,19 +5,23 @@ import { queryOptions, useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import axios from 'redaxios';
 
-export const ViewProductQueryOptions = (id: string) =>
+export const viewProductQueryOptions = (id: string) =>
      queryOptions({
           queryKey: ['product', id],
-          queryFn: () =>
-               axios
-                    .get<Products>('http://localhost:3000' + '/api/products/view/' + id)
-                    .then((r) => r.data)
-                    .catch(() => {
-                         throw new Error('Failed to fetch user')
-                    }),
-          enabled: !!id
-     })
+          queryFn: async () => {
+               const response = await axios.get<Products>(
+                    `${DEPLOY_URL}/api/products/view/${id}`
+               );
+               const product = response.data;
 
+               // ✅ Ensure all image URLs are absolute before SSR renders
+               product.imageurl = product.imageurl.map((url) =>
+                    url.startsWith('http') ? url : `${DEPLOY_URL}${url}`
+               );
+
+               return product;
+          },
+     });
 
 export const useView = (id: string) => {
      const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -39,6 +43,7 @@ export const useView = (id: string) => {
                setSelectedImageIndex((prev) => prev - 1);
           }
      };
+
 
      return {
           // data

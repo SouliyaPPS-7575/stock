@@ -1,11 +1,11 @@
 import Loading from '@/components/Loading';
-import ProductList from '@/containers/products/ProductList';
+import ProductList from '@/containers/admin/products/ProductList';
 import { useInfiniteCollection } from '@/hooks/pocketbase/useInfiniteCollection';
 import { Products } from '@/model/products';
 import { Button, Link } from '@heroui/react';
 import { createFileRoute } from '@tanstack/react-router';
 
-export const Route = createFileRoute('/products/')({
+export const Route = createFileRoute('/admin/products/')({
   component: RouteComponent,
 });
 
@@ -38,7 +38,7 @@ function RouteComponent() {
         color='primary'
         className='fixed bottom-20 right-4 p-4 rounded-full shadow-lg focus:outline-none z-10'
         as={Link}
-        href='/products/create'
+        href='/admin/products/create'
       >
         + Create
       </Button>

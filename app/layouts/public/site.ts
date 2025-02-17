@@ -6,30 +6,13 @@ export const siteConfig = {
   navItems: [
     {
       label: "Products",
-      href: "/products",
-    },
-    {
-      label: "Categories",
-      href: "/categories",
-    },
-    {
-      label: "Users",
-      href: "/users",
+      href: "/public/products",
     },
   ],
   navMenuItems: [
-
     {
       label: "Products",
-      href: "/products",
-    },
-    {
-      label: "Categories",
-      href: "/categories",
-    },
-    {
-      label: "Users",
-      href: "/users",
+      href: "/public/products",
     },
   ],
   links: {

@@ -1,5 +1,5 @@
 import { MenuProvider } from '@/components/layouts/MenuProvider';
-import { Navbar } from '@/components/layouts/navbar';
+import { Navbar } from '@/components/layouts/admin/navbar';
 import pb from '@/services/pocketbaseService';
 import { useRouterState, useNavigate } from '@tanstack/react-router';
 import { useEffect } from 'react';

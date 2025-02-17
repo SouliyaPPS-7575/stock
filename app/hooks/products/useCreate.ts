@@ -3,7 +3,6 @@ import { createPocketbaseDocument } from '@/services/pocketbaseService';
 import { useMutation } from '@tanstack/react-query';
 import { toast } from 'react-toastify';
 import { useCloudinaryUpload } from '../useCloudinaryUpload';
-import { useEffect } from 'react';
 
 export const useCreate = () => {
      const { cld, publicIds, uwConfig, imageUrls, setPublicIds, setImageUrls } =

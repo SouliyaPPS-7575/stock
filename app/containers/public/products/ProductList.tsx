@@ -22,7 +22,7 @@ export default function ProductList({ products }: { products: Products[] }) {
                   isPressable
                   shadow='sm'
                   onPress={() => {
-                    router.navigate({ to: `/products/view/${product.id}` });
+                    router.navigate({ to: `/public/products/view/${product.id}` });
                   }}
                   className='rounded-lg overflow-hidden relative'
                 >

@@ -32,7 +32,7 @@ function RouteComponent() {
         pb.authStore.save(token); // Save token in PocketBase's auth store
       }
       // Redirect upon successful login
-      navigate({ to: '/' });
+      navigate({ to: '/admin/products' });
       toast.success('Login successful!');
       setAction('Login successful');
     },
