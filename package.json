@@ -45,7 +45,8 @@
     "unenv": "^1.10.0",
     "vinxi": "0.5.3",
     "vite-plugin-pwa": "^0.21.1",
-    "zod": "^3.24.1"
+    "zod": "^3.24.1",
+    "h3": "latest"
   },
   "devDependencies": {
     "@netlify/vite-plugin-netlify-edge": "^1.1.3",
@@ -57,8 +58,5 @@
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.2",
     "vite-tsconfig-paths": "^5.1.4"
-  },
-  "resolutions": {
-    "h3": "latest"
   }
 }
