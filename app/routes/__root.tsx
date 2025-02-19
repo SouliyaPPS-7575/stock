@@ -14,12 +14,12 @@ import {
   NavigateOptions,
   Outlet,
   ToOptions,
+  useLocation,
   useRouter,
 } from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 import { Meta, Scripts } from '@tanstack/start';
 import * as React from 'react';
-import { useEffect, useState } from 'react';
 import { isDevelopment } from './api/url';
 
 export const Route = createRootRouteWithContext<{
@@ -90,19 +90,12 @@ declare module '@react-types/shared' {
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   const router = useRouter();
-  const [currentPath, setCurrentPath] = useState(
-    router.state.location.pathname
-  );
+  const location = useLocation();
+  const currentPath = location.pathname;
 
-  useEffect(() => {
-    setCurrentPath(router.state.location.pathname);
-  }, [router]);
-
-  // Determine layout based on the route
   const Layout = currentPath.startsWith('/admin')
     ? DefaultLayoutAdmin
     : DefaultLayoutPublic;
-
   return (
     <html>
       <head>
