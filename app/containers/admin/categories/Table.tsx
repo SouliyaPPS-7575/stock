@@ -1,4 +1,7 @@
+import { useCategories } from '@/hooks/categories/usecategories';
+import { Categories } from '@/model/categories';
 import {
+  Button,
   Table as HeroTable,
   TableBody,
   TableCell,
@@ -8,26 +11,16 @@ import {
   Tooltip,
 } from '@heroui/react';
 import React from 'react';
-import { FaEdit, FaTrash } from 'react-icons/fa';
-
-export interface Categories {
-  id: string;
-  name: string;
-}
+import { FaEdit, FaPlus, FaTrash } from 'react-icons/fa';
 
 const columns = [
   { name: 'NAME', uid: 'name' },
   { name: 'ACTIONS', uid: 'actions' },
 ];
 
-const categories: Categories[] = [
-  { id: '1', name: 'Technology' },
-  { id: '2', name: 'Health' },
-  { id: '3', name: 'Finance' },
-  { id: '4', name: 'Education' },
-];
-
 export default function Table() {
+  const { categories, isLoading } = useCategories();
+
   const renderCell = (category: Categories, columnKey: React.Key) => {
     const cellValue = category[columnKey as keyof Categories];
     switch (columnKey) {
@@ -57,24 +50,45 @@ export default function Table() {
     }
   };
 
+  // Handler for the "Create" button
+  const handleCreate = () => {
+    console.log('Create new category');
+    // Add logic to open a modal or navigate to a create page
+  };
+
   return (
-    <HeroTable isStriped aria-label='Categories Table'>
-      <TableHeader>
-        {columns.map((column) => (
-          <TableColumn key={column.uid}>{column.name}</TableColumn>
-        ))}
-      </TableHeader>
-      <TableBody>
-        {categories.map((category) => (
-          <TableRow key={category.id}>
-            {columns.map((column) => (
-              <TableCell key={column.uid}>
-                {renderCell(category, column.uid)}
-              </TableCell>
-            ))}
-          </TableRow>
-        ))}
-      </TableBody>
-    </HeroTable>
+    <>
+      {/* Wrapper div for positioning the button */}
+      <div className='flex justify-end mb-2 mt-3'>
+        {/* Create Button */}
+        <Button
+          onPress={handleCreate}
+          className='bg-blue-500 hover:bg-blue-700 text-white'
+        >
+          <FaPlus />
+          Create
+        </Button>
+      </div>
+
+      {/* Table */}
+      <HeroTable isStriped aria-label='Categories Table' isHeaderSticky>
+        <TableHeader>
+          {columns.map((column) => (
+            <TableColumn key={column.uid}>{column.name}</TableColumn>
+          ))}
+        </TableHeader>
+        <TableBody isLoading={isLoading}>
+          {categories.map((category) => (
+            <TableRow key={category.id}>
+              {columns.map((column) => (
+                <TableCell key={column.uid}>
+                  {renderCell(category as Categories, column.uid)}
+                </TableCell>
+              ))}
+            </TableRow>
+          ))}
+        </TableBody>
+      </HeroTable>
+    </>
   );
 }

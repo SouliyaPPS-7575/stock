@@ -14,7 +14,6 @@ import clsx from 'clsx';
 
 import { Logo } from '@/components/layouts/icons';
 import { ThemeSwitch } from '@/components/layouts/theme-switch';
-import { LogoutConfirmModal } from '@/containers/LogoutConfirmModal';
 import { siteConfig } from '@/layouts/public/site';
 import { router } from '@/router';
 import { useState } from 'react';
@@ -42,7 +41,7 @@ export const Navbar = () => {
           <HeroUILink
             className='flex justify-start items-center gap-1'
             color='foreground'
-            href='/'
+            href='/public/products'
           >
             <Logo />
             <p className='font-bold text-inherit'>Stock</p>

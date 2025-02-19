@@ -25,23 +25,25 @@ function RouteComponent() {
   }
 
   return (
-    <div className='p-2 z-0 min-h-screen'>
-      {/* List of Product Cards */}
-      <ProductList products={products as unknown as Products[]} />
+    <section className='flex flex-col items-center justify-center gap-1 py-1 md:py-0'>
+      <div className='p-2 z-0 min-h-screen'>
+        {/* List of Product Cards */}
+        <ProductList products={products as Products[]} />
 
-      {/* Infinite Scroll Trigger */}
-      {isFetchingNextPage && <Loading />}
-      <div ref={loadMoreRef} className='h-10' />
+        {/* Infinite Scroll Trigger */}
+        {isFetchingNextPage && <Loading />}
+        <div ref={loadMoreRef} className='h-10' />
 
-      {/* Floating "Create" Button */}
-      <Button
-        color='primary'
-        className='fixed bottom-20 right-4 p-4 rounded-full shadow-lg focus:outline-none z-10'
-        as={Link}
-        href='/admin/products/create'
-      >
-        + Create
-      </Button>
-    </div>
+        {/* Floating "Create" Button */}
+        <Button
+          color='primary'
+          className='fixed bottom-20 right-4 p-4 rounded-full shadow-lg focus:outline-none z-10'
+          as={Link}
+          href='/admin/products/create'
+        >
+          + Create
+        </Button>
+      </div>
+    </section>
   );
 }

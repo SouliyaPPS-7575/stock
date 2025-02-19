@@ -1,4 +1,4 @@
-import PocketBase, { RecordModel } from 'pocketbase';
+import PocketBase from 'pocketbase';
 
 // Initialize PocketBase instance
 const pb = new PocketBase(import.meta.env.VITE_BASE_URL); // Replace with your PocketBase URL
@@ -20,7 +20,7 @@ export async function fetchAllPocketbaseDocuments<
   T extends Record<string, any>,
 >(collectionName: string): Promise<T[]> {
   const records = await pb.collection(collectionName).getFullList();
-  return records as unknown as T[];
+  return records.map((record) => record as unknown as T);
 }
 
 // Generic function to create a document in the collection

@@ -14,16 +14,18 @@ function Home() {
 
     const currentURL = window.location.origin;
 
-    if (currentURL === 'https://souvenir-order.netlify.app') {
-      navigate({ to: '/public/products', replace: true });
-    }
+    // Mapping object for URL redirection
+    const redirectMap: Record<string, string> = {
+      'https://souvenir-order.netlify.app': '/public/products',
+      'https://souvenir-stock.netlify.app': '/admin/products',
+      'http://localhost:3000': '/public/products',
+      'http://localhost:3000/public': '/public/products',
+      'http://localhost:3000/admin': '/admin/products',
+    };
 
-    if (currentURL === 'https://souvenir-stock.netlify.app') {
-      navigate({ to: '/admin/products', replace: true });
-    }
-
-    if (currentURL === 'http://localhost:3000') {
-      navigate({ to: '/admin/products', replace: true });
+    const targetRoute = redirectMap[currentURL];
+    if (targetRoute) {
+      navigate({ to: targetRoute, replace: true });
     }
   }, [navigate]);
 

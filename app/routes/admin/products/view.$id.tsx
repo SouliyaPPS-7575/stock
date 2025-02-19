@@ -3,7 +3,7 @@ import { useView } from '@/hooks/products/useView';
 import { router } from '@/router';
 import { Button, Card, CardBody, CardFooter } from '@heroui/react';
 import { createFileRoute, useMatch } from '@tanstack/react-router';
-import { Image } from 'antd';
+import { Image as ImageAntd } from 'antd';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 export const Route = createFileRoute('/admin/products/view/$id')({
@@ -41,15 +41,14 @@ function RouteComponent() {
               <div className='grid grid-cols-1 md:grid-cols-1 gap-4 w-full max-w-4xl place-items-center text-center mx-auto'>
                 {/* Main Image */}
                 <div className='flex flex-col justify-center items-center relative w-full'>
-                  <Image
+                  <ImageAntd
                     src={
                       data?.imageurl?.[selectedImageIndex] ||
                       'https://th.bing.com/th/id/OIP.mhEjokf4cHBCeCsOqohUdwHaHa?rs=1&pid=ImgDetMain'
                     }
                     alt='Selected Product'
-                    className='w-full max-w-xs md:max-w-md lg:max-w-lg h-auto object-contain rounded-lg shadow-md transition-transform duration-300 hover:scale-105'
+                    className='w-full h-auto max-w-[500px] max-h-[500px] object-contain rounded-lg shadow-md transition-transform duration-300 hover:scale-105'
                   />
-
                   {/* Navigation Buttons */}
                   <div className='flex justify-between w-full absolute top-1/2 transform -translate-y-1/2 px-4'>
                     <button

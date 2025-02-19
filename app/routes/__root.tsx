@@ -3,7 +3,6 @@ import Seo from '@/components/layouts/Seo';
 import { NotFound } from '@/components/NotFound';
 import DefaultLayoutAdmin from '@/layouts/admin/default';
 import DefaultLayoutPublic from '@/layouts/public/default';
-import { router } from '@/router';
 import { queryClient } from '@/services/queryClient';
 import appCss from '@/styles/app.css?url';
 import { seo } from '@/utils/seo';
@@ -15,10 +14,12 @@ import {
   NavigateOptions,
   Outlet,
   ToOptions,
+  useRouter,
 } from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 import { Meta, Scripts } from '@tanstack/start';
 import * as React from 'react';
+import { useEffect, useState } from 'react';
 import { isDevelopment } from './api/url';
 
 export const Route = createRootRouteWithContext<{
@@ -88,7 +89,14 @@ declare module '@react-types/shared' {
 }
 
 function RootDocument({ children }: { children: React.ReactNode }) {
-  const currentPath = router.state.location.pathname;
+  const router = useRouter();
+  const [currentPath, setCurrentPath] = useState(
+    router.state.location.pathname
+  );
+
+  useEffect(() => {
+    setCurrentPath(router.state.location.pathname);
+  }, [router]);
 
   // Determine layout based on the route
   const Layout = currentPath.startsWith('/admin')
@@ -116,11 +124,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           useHref={(to) => router.buildLocation({ to }).href}
         >
           <QueryClientProvider client={queryClient}>
-            <Layout>
-              <section className='flex flex-col items-center justify-center gap-1 py-1 md:py-0'>
-                {children}
-              </section>
-            </Layout>
+            <Layout>{children}</Layout>
             {isDevelopment && (
               <TanStackRouterDevtools position='bottom-right' />
             )}

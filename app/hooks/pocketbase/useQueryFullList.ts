@@ -1,20 +1,19 @@
-import pb, { fetchPocketbaseDocument } from '@/services/pocketbaseService';
+import pb, { fetchAllPocketbaseDocuments } from '@/services/pocketbaseService';
 import { queryClient } from '@/services/queryClient';
 import { useQuery } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
 
-export const useQueryCollection = <T extends Record<string, any>>(
-  collection: string,
-  id: string
+export const useQueryFullList = <T extends Record<string, any>>(
+  collection: string
 ) => {
-  const { data, isLoading } = useQuery<T>({
-    queryKey: [collection, id],
-    queryFn: async () => fetchPocketbaseDocument<T>(collection, id),
-    enabled: !!id,
+  const { data, isLoading } = useQuery<T[]>({
+    queryKey: [collection],
+    queryFn: async () => fetchAllPocketbaseDocuments<T>(collection),
+    enabled: true,
   });
 
   // Keep state updated with query data
-  const [itemsState, setItemsState] = useState<T | undefined>(data);
+  const [itemsState, setItemsState] = useState(data);
 
   // Update state only if data is different
   useEffect(() => {
