@@ -1,4 +1,4 @@
-import { useCategories } from '@/hooks/categories/usecategories';
+import { useCategories } from '@/hooks/categories/useCategories';
 import { Categories } from '@/model/categories';
 import {
   Button,

@@ -22,7 +22,7 @@ export default {
       },
       // Add the custom `Phetsarath` font to the Tailwind configuration
       fontFamily: {
-        phetsarath: ['NotoSerifLao', 'sans-serif'],
+        lao: ['NotoSerifLao', 'serif'],
       },
       transitionDuration: {
         300: '300ms',

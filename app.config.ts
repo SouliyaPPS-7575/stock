@@ -75,7 +75,9 @@ export default defineConfig({
               },
             },
             {
-              urlPattern: new RegExp(process.env.API_BASE_URL || 'https://example-api.com/.*'),
+              urlPattern: new RegExp(
+                process.env.API_BASE_URL || 'https://example-api.com/.*'
+              ),
               handler: 'NetworkFirst',
               options: {
                 cacheName: 'api-cache',
@@ -88,29 +90,24 @@ export default defineConfig({
           ],
         },
         devOptions: {
-          enabled: true
+          enabled: true,
         },
-      })
+      }),
     ],
     define: {
-      'process.env.CLOUDINARY_NAME': JSON.stringify(process.env.CLOUDINARY_NAME),
-      'process.env.CLOUDINARY_UPLOAD_PRESET': JSON.stringify(process.env.CLOUDINARY_UPLOAD_PRESET),
+      'process.env.CLOUDINARY_NAME': JSON.stringify(
+        process.env.CLOUDINARY_NAME
+      ),
+      'process.env.CLOUDINARY_UPLOAD_PRESET': JSON.stringify(
+        process.env.CLOUDINARY_UPLOAD_PRESET
+      ),
     },
     build: {
       chunkSizeWarningLimit: 4000, // Increase chunk warning size to 1 MB
       rollupOptions: {
+        external: ['h3'],
         treeshake: true, // Ensure tree-shaking removes unused imports
-        output: {
-          manualChunks(id) {
-            if (id.includes('h3')) {
-              return 'h3'; // Put h3-related code into a separate chunk
-            }
-          },
-        },
       },
-    },
-    optimizeDeps: {
-      exclude: ['h3'], // Avoid unnecessary warnings
     },
     esbuild: {
       logLevel: 'silent', // Suppresses esbuild warnings

@@ -3,15 +3,14 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'NotoSerifLao';
-  src: url('/fonts/NotoSerifLao.ttf') format('truetype'); /* Adjust path if needed */
+  font-family: NotoSerifLao;
   font-weight: normal;
   font-style: normal;
 }
 
 /* Apply Tailwind's default body styles using NotoSerifLao */
 body {
-  @apply font-phetsarath;
+  @apply font-sans;
 }
 
 /* Global Smooth Scroll */
