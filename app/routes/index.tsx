@@ -18,6 +18,8 @@ function Home() {
     const redirectMap: Record<string, string> = {
       'https://souvenir-order.netlify.app': '/public/products',
       'https://souvenir-stock.netlify.app': '/admin/products',
+      'https://souvenir-order.netlify.app/public': '/public/products',
+      'https://souvenir-stock.netlify.app/admin': '/admin/products',
       'http://localhost:3000': '/public/products',
       'http://localhost:3000/public': '/public/products',
       'http://localhost:3000/admin': '/admin/products',
