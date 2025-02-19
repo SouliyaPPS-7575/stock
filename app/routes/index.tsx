@@ -13,7 +13,6 @@ function Home() {
     if (typeof window === 'undefined') return; // Prevent SSR issues
 
     const currentURL = window.location.origin;
-    console.log('=> currentURL in useEffect:', currentURL); // Debugging log
 
     if (currentURL === 'https://souvenir-order.netlify.app') {
       navigate({ to: '/public/products', replace: true });

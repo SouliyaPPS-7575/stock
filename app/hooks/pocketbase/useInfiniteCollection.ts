@@ -32,10 +32,10 @@ export const useInfiniteCollection = ({ collection, pageSize = 12, sort = "creat
      const items = useMemo(() => data?.pages.flatMap((page) => page.items) ?? [], [data]);
 
      // Keep state updated with query data
-     const [itemsState, setitemsState] = useState<RecordModel[]>(items);
+     const [itemsState, setItemsState] = useState<RecordModel[]>(items);
 
      useEffect(() => {
-          setitemsState(items); // Always sync state with fetched items
+          setItemsState(items); // Always sync state with fetched items
      }, [items]);
 
      // Setup real-time listener
