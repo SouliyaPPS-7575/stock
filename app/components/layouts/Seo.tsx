@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
 
-const Seo: React.FC = () => {
+// Separate the client-side logic into a hook or component
+const useInstallPrompt = () => {
   useEffect(() => {
     if ('serviceWorker' in navigator) {
+      // Register Service Worker
       window.addEventListener('load', () => {
         navigator.serviceWorker
           .register('/sw.js')
@@ -17,6 +19,7 @@ const Seo: React.FC = () => {
           });
       });
 
+      // Add to Home Screen (A2HS) Prompt
       let deferredPrompt: any;
       const hasShownA2HS = localStorage.getItem('hasShownA2HS') === 'true';
 
@@ -109,36 +112,15 @@ const Seo: React.FC = () => {
       }
     }
   }, []);
+};
+
+// Seo component for metadata only
+const Seo: React.FC = () => {
+  // Call the hook to handle client-side logic
+  useInstallPrompt();
 
   return (
-    <article>
-      <meta charSet='UTF-8' />
-      <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-      <title>Souvenir Stock</title>
-      <meta name='description' content='Souvenir Stock Sale App' />
-      <link rel='manifest' href='/manifest.json' />
-      <meta property='og:title' content='Souvenir Stock' />
-      <meta property='og:description' content='Souvenir Stock Sale App' />
-      <meta
-        property='og:image'
-        content='https://stock-order.netlify.app/images/favicon.svg'
-      />
-      <meta property='og:type' content='website' />
-      <meta property='og:url' content='https://stock-order.netlify.app' />
-      <meta name='twitter:card' content='summary_large_image' />
-      <meta name='twitter:title' content='Souvenir Stock' />
-      <meta name='twitter:description' content='Souvenir Stock Sale App' />
-      <meta
-        name='twitter:image'
-        content='https://stock-order.netlify.app/images/favicon.svg'
-      />
-      <link rel='icon' type='image/png' href='/images/favicon.svg' />
-      <link rel='icon' href='/images/favicon.svg' />
-      <meta name='mobile-web-app-capable' content='yes' />
-      <meta name='apple-mobile-web-app-status-bar-style' content='#fff' />
-      <meta name='apple-mobile-web-app-title' content='souvenirstock' />
-      <meta name='theme-color' content='#fff' />
-      <link rel='apple-touch-icon' href='/images/favicon.svg' />
+    <>
       <style>
         {`
           body {
@@ -172,7 +154,7 @@ const Seo: React.FC = () => {
           }
         `}
       </style>
-    </article>
+    </>
   );
 };
 

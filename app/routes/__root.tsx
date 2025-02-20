@@ -1,11 +1,11 @@
 import { DefaultCatchBoundary } from '@/components/DefaultCatchBoundary';
-import Seo from '@/components/layouts/Seo';
 import { NotFound } from '@/components/NotFound';
 import DefaultLayoutAdmin from '@/layouts/admin/default';
 import DefaultLayoutPublic from '@/layouts/public/default';
 import { queryClient } from '@/services/queryClient';
 import appCss from '@/styles/app.css?url';
 import { seo } from '@/utils/seo';
+import { isDevelopment } from '@/utils/url';
 import { HeroUIProvider } from '@heroui/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
@@ -20,7 +20,6 @@ import {
 import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 import { Meta, Scripts } from '@tanstack/start';
 import * as React from 'react';
-import { isDevelopment } from './api/url';
 
 export const Route = createRootRouteWithContext<{
   queryClient: QueryClient;
@@ -97,11 +96,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
     ? DefaultLayoutAdmin
     : DefaultLayoutPublic;
   return (
-    <html>
+    <html lang='en'>
       <head>
-        <Seo />
-        <script src='/sw.js' />
-
         {/* Cloudinary */}
         <script
           src='https://upload-widget.cloudinary.com/latest/global/all.js'

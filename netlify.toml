@@ -1,6 +1,6 @@
 [build]
-command = "bun run build"
-publish = "dist"
+command = "bun run build --preset netlify"
+publish = ".netlify"
 
 [[edge_functions]]
 function = "ssr"
