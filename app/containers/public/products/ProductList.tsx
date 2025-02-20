@@ -1,13 +1,20 @@
 import { Products } from '@/model/products';
 import { router } from '@/router';
-import { Badge, Button, Card, CardBody, CardFooter, Image } from '@heroui/react';
+import {
+  Badge,
+  Button,
+  Card,
+  CardBody,
+  CardFooter,
+  Image,
+} from '@heroui/react';
 
 export default function ProductList({ products }: { products: Products[] }) {
   const handleAddToCart = (product: Products) => {
     console.log(`Added to cart: ${product.name}`);
     // Implement your cart logic here
   };
-  
+
   return (
     <div className='mb-20 z-0'>
       {products.length === 0 ? (
@@ -27,7 +34,9 @@ export default function ProductList({ products }: { products: Products[] }) {
                   isPressable
                   shadow='sm'
                   onPress={() => {
-                    router.navigate({ to: `/public/products/ssr/view/${product.id}` });
+                    router.navigate({
+                      to: `/public/products/view/${product.id}`,
+                    });
                   }}
                   className='rounded-lg overflow-hidden relative'
                 >
