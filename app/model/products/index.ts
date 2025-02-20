@@ -1,6 +1,6 @@
 
 export interface Products {
-     id?: string
+     id: string
      name: string;
      imageurl: string[];
      quantity: string;
