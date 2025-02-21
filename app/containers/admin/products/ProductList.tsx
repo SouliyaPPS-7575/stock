@@ -1,12 +1,5 @@
 import { Products } from '@/model/products';
-import {
-  Badge,
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  Image,
-} from '@heroui/react';
+import { Badge, Card, CardBody, CardFooter, Image } from '@heroui/react';
 import { Link, useRouter } from '@tanstack/react-router';
 import React from 'react';
 
@@ -14,12 +7,6 @@ import React from 'react';
 const ProductCard = React.memo(({ product }: { product: Products }) => {
   const router = useRouter();
   const params = '/admin/products/view/$id';
-
-  const handleAddToCart = (e: any) => {
-    e.preventDefault(); // Prevent Link navigation
-    console.log(`Added to cart: ${product.name}`);
-    // Implement cart logic here
-  };
 
   // Prefetch the product view route (use prefetch for v1.x, preloadRoute for v0.x)
   const prefetchRoute = () => {
@@ -72,16 +59,6 @@ const ProductCard = React.memo(({ product }: { product: Products }) => {
               <p className='text-default-500 text-center w-full max-w-[100px] truncate'>
                 ${product.price}
               </p>
-
-              {/* Add to Cart Button */}
-              <Button
-                size='sm'
-                color='primary'
-                onPress={handleAddToCart}
-                className='w-full mt-1'
-              >
-                Add to Cart
-              </Button>
             </CardFooter>
           </Card>
         </Link>

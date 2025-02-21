@@ -38,18 +38,21 @@ const ProductCard = React.memo(({ product }: { product: Products }) => {
         className='px-2 py-1 text-xs sm:text-sm md:text-base font-bold rounded-full absolute top-3 right-3 z-10'
         content={product.quantity}
       >
-        <Link
-          to={params}
-          className='no-underline' // Optional: Remove underline
-          params={{ id: product.id }}
-          onMouseEnter={prefetchRoute} // Prefetch on hover
-          onFocus={prefetchRoute} // Prefetch on focus
-          preload='intent' // Preload intent for faster navigation
+        <Card
+          isPressable
+          shadow='sm'
+          className='rounded-lg overflow-hidden relative'
+          onPress={() => {
+            router.navigate({ to: params, params: { id: product.id } });
+          }}
         >
-          <Card
-            isPressable
-            shadow='sm'
-            className='rounded-lg overflow-hidden relative'
+          <Link
+            to={params}
+            className='no-underline' // Optional: Remove underline
+            params={{ id: product.id }}
+            onMouseEnter={prefetchRoute} // Prefetch on hover
+            onFocus={prefetchRoute} // Prefetch on focus
+            preload='intent' // Preload intent for faster navigation
           >
             {/* Product Image */}
             <CardBody className='p-0'>
@@ -63,28 +66,28 @@ const ProductCard = React.memo(({ product }: { product: Products }) => {
                 className='w-[175px] sm:w-[160px] md:w-[180px] object-cover h-[170px] sm:h-[160px] md:h-[180px] rounded-t-lg'
               />
             </CardBody>
+          </Link>
 
-            {/* Product Details */}
-            <CardFooter className='flex flex-col items-center px-1 py-1 space-y-1'>
-              <b className='text-center w-full max-w-[100px] truncate'>
-                {product.name}
-              </b>
-              <p className='text-default-500 text-center w-full max-w-[100px] truncate'>
-                ${product.price}
-              </p>
+          {/* Product Details */}
+          <CardFooter className='flex flex-col items-center px-1 py-1 space-y-1'>
+            <b className='text-center w-full max-w-[100px] truncate'>
+              {product.name}
+            </b>
+            <p className='text-default-500 text-center w-full max-w-[100px] truncate'>
+              ${product.price}
+            </p>
 
-              {/* Add to Cart Button */}
-              <Button
-                size='sm'
-                color='primary'
-                onPress={handleAddToCart}
-                className='w-full mt-1'
-              >
-                Add to Cart
-              </Button>
-            </CardFooter>
-          </Card>
-        </Link>
+            {/* Add to Cart Button */}
+            <Button
+              size='sm'
+              color='primary'
+              onPress={handleAddToCart}
+              className='w-full mt-1'
+            >
+              Add to Cart
+            </Button>
+          </CardFooter>
+        </Card>
       </Badge>
     </div>
   );
