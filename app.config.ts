@@ -2,7 +2,6 @@ import { defineConfig } from '@tanstack/start/config';
 import 'dotenv/config';
 import { VitePWA } from 'vite-plugin-pwa';
 import tsConfigPaths from 'vite-tsconfig-paths';
-import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   server: {
@@ -10,7 +9,6 @@ export default defineConfig({
   },
   vite: {
     plugins: [
-      tailwindcss(),
       tsConfigPaths({
         projects: ['./tsconfig.json'],
       }),
