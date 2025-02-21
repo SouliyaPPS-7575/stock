@@ -8,9 +8,10 @@
   font-style: normal;
 }
 
-/* Apply Tailwind's default body styles using NotoSerifLao */
+/* No need for @apply font-sans; Tailwind applies sans-serif by default */
 body {
-  @apply font-sans;
+  /* Optionally, set a custom font family directly */
+  font-family: 'NotoSerifLao', sans-serif; /* If you want NotoSerifLao */
 }
 
 /* Global Smooth Scroll */
