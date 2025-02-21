@@ -16,7 +16,6 @@ export default defineConfig({
         projects: ['./tsconfig.json'],
       }),
       VitePWA({
-        // ... your PWA config remains unchanged
         registerType: 'autoUpdate',
         injectRegister: 'auto',
         pwaAssets: {
@@ -98,7 +97,12 @@ export default defineConfig({
       }),
     ],
     define: {
-      'process.env.PATH_URL_PRODUCTION': JSON.stringify(env.PATH_URL_PRODUCTION),
+      'process.env.PATH_URL_ORDER_PRODUCTION': JSON.stringify(
+        env.PATH_URL_ORDER_PRODUCTION
+      ),
+      'process.env.PATH_URL_STOCK_PRODUCTION': JSON.stringify(
+        env.PATH_URL_STOCK_PRODUCTION
+      ),
       'process.env.PATH_URL_LOCAL': JSON.stringify(env.PATH_URL_LOCAL),
       'process.env.VITE_BASE_URL': JSON.stringify(env.VITE_BASE_URL),
       'process.env.POCKETBASE_URL': JSON.stringify(env.POCKETBASE_URL),
