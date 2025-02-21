@@ -1,7 +1,19 @@
 [build]
-command = "bun run build --preset netlify"
-publish = "dist"
+  command = "bun run build --preset netlify"
+  publish = "dist"
 
 [[edge_functions]]
-function = "ssr"
-path = "/*"
+  function = "ssr"
+  path = "/*"
+
+[build.environment]
+  NODE_ENV = "production"
+  PATH_URL_ORDER_PRODUCTION = "https://souvenir-order.netlify.app"
+  PATH_URL_STOCK_PRODUCTION = "https://souvenir-stock.netlify.app"
+  VITE_BASE_URL = "https://souvenirstock-api.up.railway.app"
+  POCKETBASE_URL= "https://souvenirstock-api.up.railway.app"
+  CLOUDINARY_NAME = "db84fdke0"
+  API_KEY = "516693115766466"
+  API_SECRET = "QS3EDexkKKafylQeA3b67boOL1Y"
+  CLOUDINARY_UPLOAD_PRESET = "souvenirstock"
+  CLOUDINARY_URL = "cloudinary://516693115766466:QS3EDexkKKafylQeA3b67boOL1Y@db84fdke0"

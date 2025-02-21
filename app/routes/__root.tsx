@@ -21,6 +21,25 @@ import {
 import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 import { Meta, Scripts } from '@tanstack/start';
 import * as React from 'react';
+import { lazy, Suspense } from 'react';
+import 'react-toastify/dist/ReactToastify.css';
+
+// Lazy-load ToastContainer for client-side only
+const ToastifyClient = lazy(() =>
+  import('react-toastify').then((module) => {
+    return {
+      default: () => (
+        <>
+          <module.ToastContainer
+            style={{ zIndex: 50 }}
+            autoClose={3000}
+            position='top-right'
+          />
+        </>
+      ),
+    };
+  })
+);
 
 export const Route = createRootRouteWithContext<{
   queryClient: QueryClient;
@@ -96,6 +115,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
   const Layout = currentPath.startsWith('/admin')
     ? DefaultLayoutAdmin
     : DefaultLayoutPublic;
+
   return (
     <html lang='en'>
       <head>
@@ -121,6 +141,12 @@ function RootDocument({ children }: { children: React.ReactNode }) {
               <TanStackRouterDevtools position='bottom-right' />
             )}
             <ReactQueryDevtools initialIsOpen />
+            {/* Render ToastContainer client-side only */}
+            {typeof window !== 'undefined' && (
+              <Suspense fallback={null}>
+                <ToastifyClient />
+              </Suspense>
+            )}
           </QueryClientProvider>
         </HeroUIProvider>
         <Scripts />

@@ -1,7 +1,10 @@
 import { defineConfig } from '@tanstack/start/config';
-import 'dotenv/config';
+import { loadEnv } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 import tsConfigPaths from 'vite-tsconfig-paths';
+
+// Load environment variables based on mode
+const env = loadEnv(process.env.NODE_ENV || 'development', process.cwd(), '');
 
 export default defineConfig({
   server: {
@@ -13,9 +16,9 @@ export default defineConfig({
         projects: ['./tsconfig.json'],
       }),
       VitePWA({
+        // ... your PWA config remains unchanged
         registerType: 'autoUpdate',
         injectRegister: 'auto',
-
         pwaAssets: {
           disabled: false,
           config: true,
@@ -56,7 +59,7 @@ export default defineConfig({
                 cacheName: 'static-assets',
                 expiration: {
                   maxEntries: 200,
-                  maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
+                  maxAgeSeconds: 60 * 60 * 24 * 30,
                 },
                 cacheableResponse: {
                   statuses: [0, 200],
@@ -70,20 +73,20 @@ export default defineConfig({
                 cacheName: 'html-cache',
                 expiration: {
                   maxEntries: 50,
-                  maxAgeSeconds: 60 * 60 * 24 * 7, // 7 days
+                  maxAgeSeconds: 60 * 60 * 24 * 7,
                 },
               },
             },
             {
               urlPattern: new RegExp(
-                process.env.API_BASE_URL || 'https://example-api.com/.*'
+                env.API_BASE_URL || 'https://example-api.com/.*'
               ),
               handler: 'NetworkFirst',
               options: {
                 cacheName: 'api-cache',
                 expiration: {
                   maxEntries: 50,
-                  maxAgeSeconds: 60 * 60 * 24 * 7, // 7 days
+                  maxAgeSeconds: 60 * 60 * 24 * 7,
                 },
               },
             },
@@ -95,22 +98,27 @@ export default defineConfig({
       }),
     ],
     define: {
-      'process.env.CLOUDINARY_NAME': JSON.stringify(
-        process.env.CLOUDINARY_NAME
-      ),
+      'process.env.PATH_URL_PRODUCTION': JSON.stringify(env.PATH_URL_PRODUCTION),
+      'process.env.PATH_URL_LOCAL': JSON.stringify(env.PATH_URL_LOCAL),
+      'process.env.VITE_BASE_URL': JSON.stringify(env.VITE_BASE_URL),
+      'process.env.POCKETBASE_URL': JSON.stringify(env.POCKETBASE_URL),
+      'process.env.CLOUDINARY_NAME': JSON.stringify(env.CLOUDINARY_NAME),
+      'process.env.API_KEY': JSON.stringify(env.API_KEY),
+      'process.env.API_SECRET': JSON.stringify(env.API_SECRET),
       'process.env.CLOUDINARY_UPLOAD_PRESET': JSON.stringify(
-        process.env.CLOUDINARY_UPLOAD_PRESET
+        env.CLOUDINARY_UPLOAD_PRESET
       ),
+      'process.env.CLOUDINARY_URL': JSON.stringify(env.CLOUDINARY_URL),
     },
     build: {
-      chunkSizeWarningLimit: 4000, // Increase chunk warning size to 1 MB
+      chunkSizeWarningLimit: 4000,
       rollupOptions: {
         external: ['h3'],
-        treeshake: true, // Ensure tree-shaking removes unused imports
+        treeshake: true,
       },
     },
     esbuild: {
-      logLevel: 'silent', // Suppresses esbuild warnings
+      logLevel: 'silent',
     },
   },
 });

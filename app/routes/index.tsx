@@ -16,13 +16,13 @@ function Home() {
 
     // Mapping object for URL redirection
     const redirectMap: Record<string, string> = {
-      'https://souvenir-order.netlify.app': '/public/products',
-      'https://souvenir-stock.netlify.app': '/admin/products',
-      'https://souvenir-order.netlify.app/public': '/public/products',
-      'https://souvenir-stock.netlify.app/admin': '/admin/products',
-      'http://localhost:3000': '/public/products',
-      'http://localhost:3000/public': '/public/products',
-      'http://localhost:3000/admin': '/admin/products',
+      [`${process.env.PATH_URL_ORDER_PRODUCTION}`]: '/public/products',
+      [`${process.env.PATH_URL_STOCK_PRODUCTION}`]: '/admin/products',
+      [`${process.env.PATH_URL_ORDER_PRODUCTION}/public`]: '/public/products',
+      [`${process.env.PATH_URL_STOCK_PRODUCTION}/admin`]: '/admin/products',
+      [`${process.env.PATH_URL_LOCAL}`]: '/public/products',
+      [`${process.env.PATH_URL_LOCAL}/public`]: '/public/products',
+      [`${process.env.PATH_URL_LOCAL}/admin`]: '/admin/products',
     };
 
     const targetRoute = redirectMap[currentURL];

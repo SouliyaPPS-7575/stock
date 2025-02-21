@@ -4,9 +4,9 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "vinxi dev",
+    "dev": "NODE_ENV=development vinxi dev",
     "build": "vinxi build",
-    "start": "vinxi start",
+    "start": "NODE_ENV=production vinxi start",
     "serve": "netlify dev",
     "deploy": "netlify deploy --prod"
   },

@@ -1,8 +1,6 @@
-
 // ✅ Environment Check
-export const isDevelopment = import.meta.env.MODE === "development";
+export const isDevelopment = import.meta.env.MODE === 'development';
 
-export const DEPLOY_URL =
-     isDevelopment
-          ? "http://localhost:3000"
-          : import.meta.env.VITE_BASE_URL || "https://souvenirstock-api.up.railway.app";
+export const DEPLOY_URL = isDevelopment
+  ? process.env.PATH_URL_LOCAL
+  : import.meta.env.VITE_BASE_URL || process.env.POCKETBASE_URL;
