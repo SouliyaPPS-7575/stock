@@ -1,4 +1,5 @@
 import { DefaultCatchBoundary } from '@/components/DefaultCatchBoundary';
+import Seo from '@/components/layouts/Seo';
 import { NotFound } from '@/components/NotFound';
 import DefaultLayoutAdmin from '@/layouts/admin/default';
 import DefaultLayoutPublic from '@/layouts/public/default';
@@ -98,6 +99,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
       <head>
+        <Seo />
+
         {/* Cloudinary */}
         <script
           src='https://upload-widget.cloudinary.com/latest/global/all.js'
