@@ -37,6 +37,9 @@ const ProductCard = React.memo(({ product }: { product: Products }) => {
             isPressable
             shadow='sm'
             className='rounded-lg overflow-hidden relative'
+            onPress={() => {
+              router.navigate({ to: params, params: { id: product.id } });
+            }}
           >
             {/* Product Image */}
             <CardBody className='p-0'>
