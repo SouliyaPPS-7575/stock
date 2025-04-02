@@ -1,200 +1,207 @@
 {
-  "/Users/souliya/Documents/FullStackDev/stock/app/styles/app.css": {
-    "file": "assets/app-f8OZ9I8U.css",
-    "src": "/Users/souliya/Documents/FullStackDev/stock/app/styles/app.css"
+  "/Users/souliya/Documents/FullStackDev/stock/src/styles/app.css": {
+    "file": "assets/app-DHGave7n.css",
+    "src": "/Users/souliya/Documents/FullStackDev/stock/src/styles/app.css"
   },
-  "_chunk-TE6SZS6W-hc9RuhvZ.js": {
-    "file": "assets/chunk-TE6SZS6W-hc9RuhvZ.js",
+  "__vite-browser-external": {
+    "file": "assets/__vite-browser-external-BIHI7g3E.js",
+    "name": "__vite-browser-external",
+    "src": "__vite-browser-external",
+    "isDynamicEntry": true
+  },
+  "_chunk-TE6SZS6W-CNTQbdMA.js": {
+    "file": "assets/chunk-TE6SZS6W-CNTQbdMA.js",
     "name": "chunk-TE6SZS6W",
     "imports": [
-      "_client-DOmGckwP.js"
+      "_client-CBIQp8gY.js"
     ]
   },
-  "_client-DOmGckwP.js": {
-    "file": "assets/client-DOmGckwP.js",
+  "_client-CBIQp8gY.js": {
+    "file": "assets/client-CBIQp8gY.js",
     "name": "client",
     "dynamicImports": [
+      "__vite-browser-external",
+      "__vite-browser-external",
+      "__vite-browser-external",
+      "__vite-browser-external",
       "node_modules/@heroui/dom-animation/dist/index.mjs",
       "node_modules/@heroui/dom-animation/dist/index.mjs",
       "node_modules/@heroui/dom-animation/dist/index.mjs",
       "node_modules/@heroui/dom-animation/dist/index.mjs",
       "node_modules/@heroui/dom-animation/dist/index.mjs",
-      "app/routes/login.tsx?tsr-split=component",
-      "app/routes/deferred.tsx?tsr-split=component",
-      "app/routes/index.tsx?tsr-split=component",
-      "app/routes/public/products/index.tsx?tsr-split=component",
-      "app/routes/admin/users/index.tsx?tsr-split=component",
-      "app/routes/admin/products/index.tsx?tsr-split=component",
-      "app/routes/admin/categories/index.tsx?tsr-split=component",
-      "app/routes/public/products/view.$id.tsx?tsr-split=component",
-      "app/routes/admin/products/view.$id.tsx?tsr-split=component",
-      "app/routes/admin/products/edit.$id.tsx?tsr-split=component",
-      "app/routes/public/products/ssr.view.$id.tsx?tsr-split=pendingComponent",
-      "app/routes/public/products/ssr.view.$id.tsx?tsr-split=component",
-      "app/routes/public/products/ssr.view.$id.tsx?tsr-split=notFoundComponent",
-      "app/routes/public/products/ssr.view.$id.tsx?tsr-split=errorComponent"
+      "src/routes/login.tsx?tsr-split=component",
+      "src/routes/public/products/index.tsx?tsr-split=component",
+      "src/routes/admin/users/index.tsx?tsr-split=component",
+      "src/routes/admin/products/index.tsx?tsr-split=component",
+      "src/routes/admin/categories/index.tsx?tsr-split=component",
+      "src/routes/admin/categories/create.tsx?tsr-split=component",
+      "src/routes/public/products/view.$id.tsx?tsr-split=component",
+      "src/routes/admin/products/view.$id.tsx?tsr-split=component",
+      "src/routes/admin/products/edit.$id.tsx?tsr-split=component",
+      "src/routes/public/products/ssr.view.$id.tsx?tsr-split=pendingComponent",
+      "src/routes/public/products/ssr.view.$id.tsx?tsr-split=component",
+      "src/routes/public/products/ssr.view.$id.tsx?tsr-split=notFoundComponent",
+      "src/routes/public/products/ssr.view.$id.tsx?tsr-split=errorComponent"
+    ],
+    "css": [
+      "assets/client-GNLSjkBZ.css"
     ],
     "assets": [
-      "assets/app-f8OZ9I8U.css"
+      "assets/app-DHGave7n.css"
     ]
   },
-  "_useInfiniteCollection-vf5ysBY8.js": {
-    "file": "assets/useInfiniteCollection-vf5ysBY8.js",
+  "_client-GNLSjkBZ.css": {
+    "file": "assets/client-GNLSjkBZ.css",
+    "src": "_client-GNLSjkBZ.css"
+  },
+  "_useInfiniteCollection-azb67HtX.js": {
+    "file": "assets/useInfiniteCollection-azb67HtX.js",
     "name": "useInfiniteCollection",
     "imports": [
-      "_client-DOmGckwP.js"
+      "_client-CBIQp8gY.js"
     ]
   },
-  "app/routes/admin/categories/index.tsx?tsr-split=component": {
-    "file": "assets/index-CgGkjdF_.js",
+  "node_modules/@heroui/dom-animation/dist/index.mjs": {
+    "file": "assets/index-CAqlA_4z.js",
     "name": "index",
-    "src": "app/routes/admin/categories/index.tsx?tsr-split=component",
+    "src": "node_modules/@heroui/dom-animation/dist/index.mjs",
     "isDynamicEntry": true,
     "imports": [
-      "_client-DOmGckwP.js"
+      "_client-CBIQp8gY.js"
+    ]
+  },
+  "src/routes/admin/categories/create.tsx?tsr-split=component": {
+    "file": "assets/create-SIe1wxYM.js",
+    "name": "create",
+    "src": "src/routes/admin/categories/create.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client-CBIQp8gY.js"
+    ]
+  },
+  "src/routes/admin/categories/index.tsx?tsr-split=component": {
+    "file": "assets/index-CFcXl8Rn.js",
+    "name": "index",
+    "src": "src/routes/admin/categories/index.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client-CBIQp8gY.js"
     ],
     "dynamicImports": [
       "node_modules/@heroui/dom-animation/dist/index.mjs"
     ]
   },
-  "app/routes/admin/products/edit.$id.tsx?tsr-split=component": {
-    "file": "assets/edit._id-Bqei_f1a.js",
+  "src/routes/admin/products/edit.$id.tsx?tsr-split=component": {
+    "file": "assets/edit._id-DSLeotbj.js",
     "name": "edit._id",
-    "src": "app/routes/admin/products/edit.$id.tsx?tsr-split=component",
+    "src": "src/routes/admin/products/edit.$id.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-DOmGckwP.js"
+      "_client-CBIQp8gY.js"
     ]
   },
-  "app/routes/admin/products/index.tsx?tsr-split=component": {
-    "file": "assets/index-CTZ4eqWY.js",
+  "src/routes/admin/products/index.tsx?tsr-split=component": {
+    "file": "assets/index-DQ3bPFF6.js",
     "name": "index",
-    "src": "app/routes/admin/products/index.tsx?tsr-split=component",
+    "src": "src/routes/admin/products/index.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-DOmGckwP.js",
-      "_useInfiniteCollection-vf5ysBY8.js",
-      "_chunk-TE6SZS6W-hc9RuhvZ.js"
+      "_client-CBIQp8gY.js",
+      "_useInfiniteCollection-azb67HtX.js",
+      "_chunk-TE6SZS6W-CNTQbdMA.js"
     ]
   },
-  "app/routes/admin/products/view.$id.tsx?tsr-split=component": {
-    "file": "assets/view._id-BNmqCvrJ.js",
+  "src/routes/admin/products/view.$id.tsx?tsr-split=component": {
+    "file": "assets/view._id-BgOmvVli.js",
     "name": "view._id",
-    "src": "app/routes/admin/products/view.$id.tsx?tsr-split=component",
+    "src": "src/routes/admin/products/view.$id.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-DOmGckwP.js",
-      "_chunk-TE6SZS6W-hc9RuhvZ.js"
+      "_client-CBIQp8gY.js",
+      "_chunk-TE6SZS6W-CNTQbdMA.js"
     ]
   },
-  "app/routes/admin/users/index.tsx?tsr-split=component": {
-    "file": "assets/index-CVbIJW0t.js",
+  "src/routes/admin/users/index.tsx?tsr-split=component": {
+    "file": "assets/index-DycjtVQu.js",
     "name": "index",
-    "src": "app/routes/admin/users/index.tsx?tsr-split=component",
+    "src": "src/routes/admin/users/index.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-DOmGckwP.js"
+      "_client-CBIQp8gY.js"
     ]
   },
-  "app/routes/deferred.tsx?tsr-split=component": {
-    "file": "assets/deferred-DRZVZhSM.js",
-    "name": "deferred",
-    "src": "app/routes/deferred.tsx?tsr-split=component",
-    "isDynamicEntry": true,
-    "imports": [
-      "_client-DOmGckwP.js"
-    ]
-  },
-  "app/routes/index.tsx?tsr-split=component": {
-    "file": "assets/index-Bfj7ew6E.js",
-    "name": "index",
-    "src": "app/routes/index.tsx?tsr-split=component",
-    "isDynamicEntry": true,
-    "imports": [
-      "_client-DOmGckwP.js"
-    ]
-  },
-  "app/routes/login.tsx?tsr-split=component": {
-    "file": "assets/login-DeixXQC_.js",
+  "src/routes/login.tsx?tsr-split=component": {
+    "file": "assets/login-DTJXBlze.js",
     "name": "login",
-    "src": "app/routes/login.tsx?tsr-split=component",
+    "src": "src/routes/login.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-DOmGckwP.js"
+      "_client-CBIQp8gY.js"
     ]
   },
-  "app/routes/public/products/index.tsx?tsr-split=component": {
-    "file": "assets/index-CU-AFbjt.js",
+  "src/routes/public/products/index.tsx?tsr-split=component": {
+    "file": "assets/index-BeDUVjrt.js",
     "name": "index",
-    "src": "app/routes/public/products/index.tsx?tsr-split=component",
+    "src": "src/routes/public/products/index.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-DOmGckwP.js",
-      "_useInfiniteCollection-vf5ysBY8.js",
-      "_chunk-TE6SZS6W-hc9RuhvZ.js"
+      "_client-CBIQp8gY.js",
+      "_useInfiniteCollection-azb67HtX.js",
+      "_chunk-TE6SZS6W-CNTQbdMA.js"
     ]
   },
-  "app/routes/public/products/ssr.view.$id.tsx?tsr-split=component": {
-    "file": "assets/ssr.view._id-C64bCIs3.js",
+  "src/routes/public/products/ssr.view.$id.tsx?tsr-split=component": {
+    "file": "assets/ssr.view._id-2LWoIvBC.js",
     "name": "ssr.view._id",
-    "src": "app/routes/public/products/ssr.view.$id.tsx?tsr-split=component",
+    "src": "src/routes/public/products/ssr.view.$id.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-DOmGckwP.js"
+      "_client-CBIQp8gY.js"
     ]
   },
-  "app/routes/public/products/ssr.view.$id.tsx?tsr-split=errorComponent": {
-    "file": "assets/ssr.view._id-xHwC8QdM.js",
+  "src/routes/public/products/ssr.view.$id.tsx?tsr-split=errorComponent": {
+    "file": "assets/ssr.view._id-Ctpz_cXj.js",
     "name": "ssr.view._id",
-    "src": "app/routes/public/products/ssr.view.$id.tsx?tsr-split=errorComponent",
+    "src": "src/routes/public/products/ssr.view.$id.tsx?tsr-split=errorComponent",
     "isDynamicEntry": true,
     "imports": [
-      "_client-DOmGckwP.js"
+      "_client-CBIQp8gY.js"
     ]
   },
-  "app/routes/public/products/ssr.view.$id.tsx?tsr-split=notFoundComponent": {
-    "file": "assets/ssr.view._id-CpbsksPB.js",
+  "src/routes/public/products/ssr.view.$id.tsx?tsr-split=notFoundComponent": {
+    "file": "assets/ssr.view._id-LS6Yd3aT.js",
     "name": "ssr.view._id",
-    "src": "app/routes/public/products/ssr.view.$id.tsx?tsr-split=notFoundComponent",
+    "src": "src/routes/public/products/ssr.view.$id.tsx?tsr-split=notFoundComponent",
     "isDynamicEntry": true,
     "imports": [
-      "_client-DOmGckwP.js"
+      "_client-CBIQp8gY.js"
     ]
   },
-  "app/routes/public/products/ssr.view.$id.tsx?tsr-split=pendingComponent": {
-    "file": "assets/ssr.view._id-XTQ1UwgO.js",
+  "src/routes/public/products/ssr.view.$id.tsx?tsr-split=pendingComponent": {
+    "file": "assets/ssr.view._id-RUwKbxch.js",
     "name": "ssr.view._id",
-    "src": "app/routes/public/products/ssr.view.$id.tsx?tsr-split=pendingComponent",
+    "src": "src/routes/public/products/ssr.view.$id.tsx?tsr-split=pendingComponent",
     "isDynamicEntry": true,
     "imports": [
-      "_client-DOmGckwP.js"
+      "_client-CBIQp8gY.js"
     ]
   },
-  "app/routes/public/products/view.$id.tsx?tsr-split=component": {
-    "file": "assets/view._id-DUo_8tvG.js",
+  "src/routes/public/products/view.$id.tsx?tsr-split=component": {
+    "file": "assets/view._id-C9x-YP4j.js",
     "name": "view._id",
-    "src": "app/routes/public/products/view.$id.tsx?tsr-split=component",
+    "src": "src/routes/public/products/view.$id.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_client-DOmGckwP.js"
-    ]
-  },
-  "node_modules/@heroui/dom-animation/dist/index.mjs": {
-    "file": "assets/index-DQrY3d2m.js",
-    "name": "index",
-    "src": "node_modules/@heroui/dom-animation/dist/index.mjs",
-    "isDynamicEntry": true,
-    "imports": [
-      "_client-DOmGckwP.js"
+      "_client-CBIQp8gY.js"
     ]
   },
   "virtual:$vinxi/handler/client": {
-    "file": "assets/client-BnbQZ4DQ.js",
+    "file": "assets/client-H4sUvV4P.js",
     "name": "client",
     "src": "virtual:$vinxi/handler/client",
     "isEntry": true,
     "imports": [
-      "_client-DOmGckwP.js"
+      "_client-CBIQp8gY.js"
     ]
   }
 }

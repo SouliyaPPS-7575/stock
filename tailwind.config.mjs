@@ -4,9 +4,9 @@ const { heroui } = require('@heroui/react');
 export default {
   content: [
     './index.html',
-    './app/**/*.{js,ts,jsx,tsx}',
-    './app/layouts/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx}',
+    './src/layouts/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}',
     './node_modules/@heroui/react/**/*.js',
   ],

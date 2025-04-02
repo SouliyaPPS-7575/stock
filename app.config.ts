@@ -1,14 +1,17 @@
-import { defineConfig } from '@tanstack/start/config';
-import { loadEnv } from 'vite';
+import loadEnv from './loadEnv';
 import { VitePWA } from 'vite-plugin-pwa';
 import tsConfigPaths from 'vite-tsconfig-paths';
+import { defineConfig } from '@tanstack/react-start/config';
 
 // Load environment variables based on mode
-const env = loadEnv(process.env.NODE_ENV || 'development', process.cwd(), '');
+const env = loadEnv(process.env.NODE_ENV || 'development', process.cwd());
 
 export default defineConfig({
   server: {
     preset: 'netlify',
+  },
+  tsr: {
+    appDirectory: 'src',
   },
   vite: {
     plugins: [
